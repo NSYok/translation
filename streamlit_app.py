@@ -11,6 +11,17 @@ except ImportError:
     st.error("Could not find `utils_computer.py`. Please ensure the file is in the same directory.")
     st.stop()
 
+# --- Default Base Status ---
+DEFAULT_BASE_STATUS = {
+    'Elem Boost': 0, 'Crit Rate': 0, 'Crit Dmg': 56, 'Counter': 0, 'Dmg Amp': 3,
+    'Skill Dmg': 0, 'Resonance Dmg': 20, 'Elem Dmg': 0, 'Base Atk': 201,
+    'Atk Bonus': 0, 'Strength': 685, 'Agility': 445, 'Str Bonus': 0,
+    'Def Break Atk': 0, 'Def Break Bonus': 0, 'Penetration': 0, 'Extra Dmg': 0,
+    'Def Reduction': 0, 'Multiplier': 0,
+    'Skill Dmg Boost': 0, 'Cooldown': 61.8, 'Class Dmg': 28.8,
+    'Skill Haste': 0, 'Special': 0
+}
+
 # --- Page Config and Data Loading ---
 st.set_page_config(page_title="Crystal Core Calculator", layout="wide")
 
@@ -35,15 +46,13 @@ def run_calculation(equipment_list, manual_inputs):
     method in the original calculator_COA70.py file.
     """
     # 1. Initialize base_status with the same defaults
-    base_status = {
-        'Elem Boost': 0, 'Crit Rate': 0, 'Crit Dmg': 56, 'Counter': 0, 'Dmg Amp': 3,
-        'Skill Dmg': 0, 'Resonance Dmg': 20, 'Elem Dmg': 0, 'Base Atk': 201,
-        'Atk Bonus': 0, 'Strength': 685, 'Agility': 445, 'Str Bonus': 0,
-        'Def Break Atk': 0, 'Def Break Bonus': 0, 'Penetration': 0, 'Extra Dmg': 0,
-        'Def Reduction': 0, 'Monster Def': manual_inputs['monster_def'], 'Multiplier': 0,
-        'Skill Dmg Boost': 0, 'Cooldown': 61.8, 'Class Dmg': 28.8,
-        'Skill Haste': 0, 'Special': 0
-    }
+    base_status = DEFAULT_BASE_STATUS.copy()
+    
+    # Update with user-defined base stats
+    if 'base_stats' in manual_inputs:
+        base_status.update(manual_inputs['base_stats'])
+        
+    base_status['Monster Def'] = manual_inputs['monster_def']
 
     # 2. Add stats from all selected equipment
     for equip_name in equipment_list:
@@ -165,7 +174,7 @@ with input_col:
             # Show current selection icon
             icon_path = os.path.join("icon", f"{current_val}.png")
             if os.path.exists(icon_path):
-                st.image(icon_path, use_container_width=True)
+                st.image(icon_path, width="stretch")
             else:
                 st.markdown("<div style='height:60px; display:flex; align-items:center; justify-content:center; background:#f0f0f0; border-radius:5px;'>No Icon</div>", unsafe_allow_html=True)
         
@@ -184,7 +193,7 @@ with input_col:
                     with col:
                         icon_path = os.path.join("icon", f"{option}.png")
                         if os.path.exists(icon_path):
-                            st.image(icon_path, use_container_width=True)
+                            st.image(icon_path, width="stretch")
                         
                         btn_text = option
                         if omit_trait and option.endswith(omit_trait):
@@ -462,7 +471,8 @@ with input_col:
         c1, c2= st.columns(2)
         in_monster_def = c1.number_input("Monster Def", value=5000, step=100)
         in_dot_ratio = c2.number_input("Effect Ratio", value=5.0, step=0.1) # Default matches save.txt
-        st.subheader("Circuit Adjustments")
+        
+        st.subheader("Circuit Adjustments (Additions)")
         c1, c2, c3 = st.columns(3)
         man_atk = c1.number_input("Base Atk (+)", value=191)
         man_crit_dmg = c2.number_input("Crit Dmg (+)", value=34.7)
@@ -472,6 +482,38 @@ with input_col:
         man_agi = c1.number_input("Agility (+)", value=0)
         man_str = c2.number_input("Strength (+)", value=134)
         man_skill_dmg = c3.number_input("Skill Dmg (+)", value=8)
+        
+        st.subheader("Base Status (Character Base)")
+        c1, c2, c3 = st.columns(3)
+        b_atk = c1.number_input("Base Atk", value=DEFAULT_BASE_STATUS['Base Atk'])
+        b_str = c2.number_input("Strength", value=DEFAULT_BASE_STATUS['Strength'])
+        b_agi = c3.number_input("Agility", value=DEFAULT_BASE_STATUS['Agility'])
+        
+        b_crit_rate = c1.number_input("Crit Rate", value=float(DEFAULT_BASE_STATUS['Crit Rate']))
+        b_crit_dmg = c2.number_input("Crit DMG", value=float(DEFAULT_BASE_STATUS['Crit Dmg']))
+        b_elem_boost = c3.number_input("Elem", value=float(DEFAULT_BASE_STATUS['Elem Boost']))
+        
+        b_cd = c1.number_input("Cooldown", value=float(DEFAULT_BASE_STATUS['Cooldown']))
+        b_skill_dmg = c2.number_input("Skill DMG", value=float(DEFAULT_BASE_STATUS['Skill Dmg']))
+        
+        st.caption("Advanced Stats")
+        c1, c2, c3 = st.columns(3)
+        b_counter = c1.number_input("Dmg Debuff", value=float(DEFAULT_BASE_STATUS['Counter']))
+        b_dmg_amp = c2.number_input("Dmg Bonus", value=float(DEFAULT_BASE_STATUS['Dmg Amp']))
+        b_res_dmg = c3.number_input("DMG during Resonance", value=float(DEFAULT_BASE_STATUS['Resonance Dmg']))
+        
+        b_elem_dmg = c1.number_input("ENH DMG", value=float(DEFAULT_BASE_STATUS['Elem Dmg']))
+        b_def_break = c2.number_input("Def Shred", value=float(DEFAULT_BASE_STATUS['Def Break Atk']))
+        b_pen = c3.number_input("PEN", value=float(DEFAULT_BASE_STATUS['Penetration']))
+        
+        b_extra_dmg = c1.number_input("Additional", value=float(DEFAULT_BASE_STATUS['Extra Dmg']))
+        b_class_dmg = c2.number_input("Class DMG Bonus", value=float(DEFAULT_BASE_STATUS['Class Dmg']))
+        b_skill_boost = c3.number_input("Skill DMG Boost", value=float(DEFAULT_BASE_STATUS['Skill Dmg Boost']))
+        
+        b_skill_haste = c1.number_input("ASPD", value=float(DEFAULT_BASE_STATUS['Skill Haste']))
+        b_special = c2.number_input("Special Stats", value=float(DEFAULT_BASE_STATUS['Special']))
+        b_multiplier = c3.number_input("Skill Ratio", value=float(DEFAULT_BASE_STATUS['Multiplier']))
+
         st.subheader("Other Adjustments")
         c1, c2 = st.columns(2)
         man_atk_bonus = c1.number_input("Atk Bonus (+)", value=0.0)
@@ -521,7 +563,16 @@ manual_inputs = {
     'man_elem': man_elem, 'man_cd': man_cd, 'man_agi': man_agi, 'man_str': man_str,
     'man_skill_dmg': man_skill_dmg, 'man_atk_bonus': man_atk_bonus, 'man_car': man_car,
     'boost_bufan4': boost_bufan4, 'boost_bufan6': boost_bufan6, 'boost_zhuoyue4': boost_zhuoyue4,
-    'boost_zhuoyue7': boost_zhuoyue7, 'boost_zhuoyue9': boost_zhuoyue9, 'boost_chaoran9': boost_chaoran9
+    'boost_zhuoyue7': boost_zhuoyue7, 'boost_zhuoyue9': boost_zhuoyue9, 'boost_chaoran9': boost_chaoran9,
+    'base_stats': {
+        'Base Atk': b_atk, 'Strength': b_str, 'Agility': b_agi,
+        'Crit Rate': b_crit_rate, 'Crit Dmg': b_crit_dmg, 'Elem Boost': b_elem_boost,
+        'Cooldown': b_cd, 'Skill Dmg': b_skill_dmg,
+        'Counter': b_counter, 'Dmg Amp': b_dmg_amp, 'Resonance Dmg': b_res_dmg,
+        'Elem Dmg': b_elem_dmg, 'Def Break Atk': b_def_break, 'Penetration': b_pen,
+        'Extra Dmg': b_extra_dmg, 'Class Dmg': b_class_dmg, 'Skill Dmg Boost': b_skill_boost,
+        'Skill Haste': b_skill_haste, 'Special': b_special, 'Multiplier': b_multiplier
+    }
 }
 
 # --- Run Calculation and Display Results ---
