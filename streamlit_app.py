@@ -14,6 +14,9 @@ except ImportError:
 # --- Page Config and Data Loading ---
 st.set_page_config(page_title="Crystal Core Calculator", layout="wide")
 
+if 'snapshot' not in st.session_state:
+    st.session_state.snapshot = None
+
 @st.cache_data
 def load_data():
     try:
@@ -113,7 +116,7 @@ def run_calculation(equipment_list, manual_inputs):
         'Resonance Dmg': base_status['Resonance Dmg'],
         'Elem Dmg': base_status.get('Elem Dmg', 0) + base_status['Elem Boost'] / 2.2,
         'Def Break Atk': base_status['Def Break Atk'] * (1 + base_status.get('Def Break Bonus', 0) / 100),
-        'Atk': (base_status['Base Atk'] + base_status['Strength'] * 2.5) * (1 + base_status['Atk Bonus'] / 100),
+        'Atk': (base_status['Base Atk'] + base_status['Strength'] * 2.5 * (1 + base_status['Str Bonus'] / 100)) * (1 + base_status['Atk Bonus'] / 100),
         'Monster Def': base_status['Monster Def'],
         'Penetration': base_status['Penetration'],
         'Def Reduction': base_status.get('Def Reduction', 0),
@@ -151,6 +154,9 @@ with input_col:
         if key not in st.session_state:
             st.session_state[key] = default
         
+        def _update(k, v):
+            st.session_state[k] = v
+
         current_val = st.session_state[key]
         
         c1, c2 = st.columns([1, 3])
@@ -189,9 +195,8 @@ with input_col:
                         if st.session_state[key] == option:
                             st.button("✅", key=f"btn_{key}_{i}", disabled=True, use_container_width=True)
                         else:
-                            if st.button("Select", key=f"btn_{key}_{i}", use_container_width=True):
-                                st.session_state[key] = option
-                                st.rerun()
+                            st.button("Select", key=f"btn_{key}_{i}", use_container_width=True,
+                                      on_click=_update, args=(key, option))
             
         return st.session_state[key]
     
@@ -221,6 +226,17 @@ with input_col:
     )
 
     with tab_gear:
+        # Weapon
+        st.caption("Weapon")
+        c1, c2 = st.columns(2)
+        with c1: s_weapon = icon_selector("Equip", opts_weapon, "True Fate Sickle (Withered)", "s_weapon")
+        with c2: emb_weapon = icon_selector("Emblem", ['Elem Mark', 'Verbena', 'Hawk', 'Demon Heart Kraken', 'None'], "Elem Mark", "emb_weapon", "Emblem")
+        c1, c2, c3 = st.columns(3)
+        with c1: t_weapon_1 = icon_selector("Engrave 1", engrave_excellence, "Excellence 3", "t_w_1")
+        with c2: t_weapon_2 = icon_selector("Engrave 2", engrave_excellence, "Unbreakable 2", "t_w_2")
+        with c3: t_weapon_3 = icon_selector("Engrave 3", engrave_excellence, "None", "t_w_3")
+        st.markdown("---")
+
         # Head
         st.caption("Head")
         c1, c2 = st.columns(2)
@@ -274,17 +290,6 @@ with input_col:
         with c1: t_shoes_1 = icon_selector("Engrave 1", engrave_transcendence, "Destruction 3", "t_s_1")
         with c2: t_shoes_2 = icon_selector("Engrave 2", engrave_transcendence, "Adaptation 3", "t_s_2")
         with c3: t_shoes_3 = icon_selector("Engrave 3", engrave_transcendence, "Combo 1", "t_s_3")
-        st.markdown("---")
-
-        # Weapon
-        st.caption("Weapon")
-        c1, c2 = st.columns(2)
-        with c1: s_weapon = icon_selector("Equip", opts_weapon, "True Fate Sickle (Withered)", "s_weapon")
-        with c2: emb_weapon = icon_selector("Emblem", ['Elem Mark', 'Verbena', 'Hawk', 'Demon Heart Kraken', 'None'], "Elem Mark", "emb_weapon", "Emblem")
-        c1, c2, c3 = st.columns(3)
-        with c1: t_weapon_1 = icon_selector("Engrave 1", engrave_excellence, "Excellence 3", "t_w_1")
-        with c2: t_weapon_2 = icon_selector("Engrave 2", engrave_excellence, "Unbreakable 2", "t_w_2")
-        with c3: t_weapon_3 = icon_selector("Engrave 3", engrave_excellence, "None", "t_w_3")
         st.markdown("---")
 
         # Necklace
@@ -531,13 +536,12 @@ try:
         col3.metric("CD rate", f"{final_status['Cooldown Reduction']:.1f}%")
 
         # Comparison Feature
-        if 'snapshot' not in st.session_state:
-            st.session_state.snapshot = None
-
-        c1, c2 = st.columns([1, 4])
-        if c1.button("Save Snapshot"):
+        c1, c2 = st.columns(2)
+        if c1.button("Save Snapshot", use_container_width=True):
             st.session_state.snapshot = (final_status, burst_damage, total_damage)
-            st.toast("Snapshot saved!")
+        
+        if c2.button("Clear Snapshot", use_container_width=True):
+            st.session_state.snapshot = None
 
         if st.session_state.snapshot:
             old_total = st.session_state.snapshot[2]
@@ -555,20 +559,25 @@ try:
             ('Class DMG Bonus', 'Class Dmg'), ('Skill DMG Boost', 'Skill Dmg Boost'), ('Special Stats', 'Special'), ('Skill Ratio', 'Multiplier')
         ]
 
-        # Changed to 2 columns for better visibility in the 1/3 width layout
-        cols = st.columns(2)
-        for i, (label, key) in enumerate(stats_to_show):
-            val = final_status.get(key, 0)
-            cols[i % 2].metric(label, f"{val:,.1f}")
-
         if st.session_state.snapshot:
-            st.markdown("---")
-            st.subheader("Snapshot Panel Stats")
             snapshot_status = st.session_state.snapshot[0]
-            cols_snap = st.columns(2)
+            c1, c2 = st.columns(2)
+            with c1: st.caption("Current")
+            with c2: st.caption("Snapshot")
+            for label, key in stats_to_show:
+                val = final_status.get(key, 0)
+                val_snap = snapshot_status.get(key, 0)
+                delta = val - val_snap
+                with st.container():
+                    r1, r2 = st.columns(2)
+                    r1.metric(label, f"{val:,.1f}", delta=f"{delta:,.1f}")
+                    r2.metric(label, f"{val_snap:,.1f}")
+        else:
+            # Changed to 2 columns for better visibility in the 1/3 width layout
+            cols = st.columns(2)
             for i, (label, key) in enumerate(stats_to_show):
-                val = snapshot_status.get(key, 0)
-                cols_snap[i % 2].metric(label, f"{val:,.1f}")
+                val = final_status.get(key, 0)
+                cols[i % 2].metric(label, f"{val:,.1f}")
 
 except Exception as e:
     st.error(f"An error occurred during calculation: {e}")
