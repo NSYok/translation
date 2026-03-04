@@ -23,7 +23,7 @@ DEFAULT_BASE_STATUS = {
 }
 
 # --- Page Config and Data Loading ---
-st.set_page_config(page_title="Crystal Core Calculator", layout="wide")
+st.set_page_config(page_title="Crystal of Atlan Calculator (EN version)", layout="wide")
 
 if 'snapshot' not in st.session_state:
     st.session_state.snapshot = None
@@ -141,6 +141,7 @@ def run_calculation(equipment_list, manual_inputs):
         'Skill Dmg Boost': base_status.get('Skill Dmg Boost', 0),
         'Skill Haste': base_status.get('Skill Haste', 0),
         'Cooldown Reduction': cdr_percentage,
+        'Cooldown': base_status['Cooldown'],
         'Effect Ratio': base_status.get('Effect Ratio', 0),
         'Def Shred': base_status.get('Def Reduction', 0) # For UI display consistency
     }
@@ -617,7 +618,8 @@ try:
         stats_to_show = [
             ('Attack (ATK)', 'Atk'), ('Crit Rate', 'Crit Rate'), ('Crit DMG', 'Crit Dmg'), ('Elem', 'Elem Boost'),
             ('ENH DMG', 'Elem Dmg'), ('Dmg Bonus', 'Dmg Amp'), ('Skill DMG', 'Skill Dmg'), ('Dmg Debuff', 'Counter'),
-            ('Def Shred', 'Def Break Atk'), ('PEN', 'Penetration'), ('ASPD', 'Skill Haste'), ('DMG during Resonance', 'Resonance Dmg'),
+            ('Def Shred', 'Def Break Atk'), ('PEN', 'Penetration'), ('ASPD', 'Skill Haste'), ('Cooldown', 'Cooldown'),
+            ('Additional', 'Extra Dmg'), ('DMG during Resonance', 'Resonance Dmg'),
             ('Class DMG Bonus', 'Class Dmg'), ('Skill DMG Boost', 'Skill Dmg Boost'), ('Special Stats', 'Special'), ('Skill Ratio', 'Multiplier')
         ]
 
