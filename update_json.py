@@ -53,6 +53,7 @@ stat_mapping = {
     "破坏": "Destruction",
     "迅捷": "Swiftness",
     "连续": "Combo",
+    "攻势": "Offensive",
     "不凡": "Extraordinary",
     "淬火": "Tempering",
     "高阶": "High-Tier",

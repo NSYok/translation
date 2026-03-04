@@ -81,23 +81,28 @@ def run_calculation(equipment_list, manual_inputs):
         set_name, count = outfit
         key = set_name + count
 
-        # Check for special tech boosts that override normal set bonuses
+        # 1. แอดสเตตัสพื้นฐานของชุดเซ็ตก่อนเสมอ (แก้บั๊กที่ของเดิมใส่ else แล้วข้าม)
+        if set_name in data['Sets'] and count in data['Sets'][set_name]:
+            add_equipment(base_status, data['Sets'][set_name][count])
+
+        # 2. นำค่า Custom Tech มาทับซ้อนเอฟเฟกต์ โดยแยกโซนให้ถูกต้อง
         if key == 'Extraordinary4' and manual_inputs['boost_bufan4'] > 0:
-            special_boost *= 1 + manual_inputs['boost_bufan4'] / 100
+            special_boost *= 1 + manual_inputs['boost_bufan4'] / 100  # โซนแยก (Independent)
         elif key == 'Extraordinary6' and manual_inputs['boost_bufan6'] > 0:
-            special_boost *= 1 + manual_inputs['boost_bufan6'] / 100
+            special_boost *= 1 + manual_inputs['boost_bufan6'] / 100  # โซนแยก (Independent)
         elif key == 'Excellence4' and manual_inputs['boost_zhuoyue4'] > 0:
-            special_boost *= 1 + manual_inputs['boost_zhuoyue4'] / 100
+            special_boost *= 1 + manual_inputs['boost_zhuoyue4'] / 100  # โซนแยก (Independent)
+            
+        # --- จัดโซน 7 กับ 9 ใหม่ ---
         elif key == 'Excellence7' and manual_inputs['boost_zhuoyue7'] > 0:
-            special_boost *= 1 + manual_inputs['boost_zhuoyue7'] / 100
+            # Excellence 7 (卓越7) เป็นโซนทั่วไป (Damage Bonus Zone)
+            base_status['Dmg Amp'] += manual_inputs['boost_zhuoyue7'] 
         elif key == 'Excellence9' and manual_inputs['boost_zhuoyue9'] > 0:
-            special_boost *= 1 + manual_inputs['boost_zhuoyue9'] / 100
+            # Excellence 9 (卓越9) เป็นโบนัสความเสียหายเพิ่มเติมธาตุ (Extra Dmg Zone)
+            base_status['Extra Dmg'] += manual_inputs['boost_zhuoyue9']
+            
         elif key == 'Transcendence9' and manual_inputs['boost_chaoran9'] > 0:
             special_boost *= 1 + manual_inputs['boost_chaoran9'] / 100
-        else:
-            # Apply normal set bonus
-            if set_name in data['Sets'] and count in data['Sets'][set_name]:
-                add_equipment(base_status, data['Sets'][set_name][count])
 
     # 6. Apply special item/set interactions
     if 'Avarice Shoes' in equipment_list:
@@ -223,7 +228,7 @@ with input_col:
     enh_opts_hp = [f'+{i}(HP)' for i in range(15, 26)] + ['None']
     enh_opts_wep = [f'+{i}(Weapon)' for i in range(18, 26)] + ['None']
     enh_opts_lr = [f'+{i}(L_R Slot)' for i in range(15, 26)] + ['None']
-    engrave_transcendence = ['Transcendence 3', 'Adaptation 3', 'Destruction 3', 'Swiftness 3', 'Combo 3', 'Transcendence 2', 'Adaptation 2', 'Destruction 2', 'Swiftness 2', 'Combo 2', 'Transcendence 1', 'Adaptation 1', 'Destruction 1', 'Swiftness 1', 'Combo 1', 'None']
+    engrave_transcendence = ['Transcendence 3', 'Adaptation 3', 'Destruction 3', 'Swiftness 3', 'Combo 3','Offensive 3', 'Transcendence 2', 'Adaptation 2', 'Destruction 2', 'Swiftness 2', 'Combo 2','Offensive 2', 'Transcendence 1', 'Adaptation 1', 'Destruction 1', 'Swiftness 1', 'Combo 1','Offensive 1', 'None']
     engrave_extraordinary = ['Extraordinary 3', 'Tempering 3', 'High-Tier 3', 'Status Break 3', 'Basic 3', 'Pierce 3', 'Fortification 3', 'Extraordinary 2', 'Tempering 2', 'High-Tier 2', 'Status Break 2', 'Basic 2', 'Pierce 2', 'Fortification 2', 'Extraordinary 1', 'Tempering 1', 'High-Tier 1', 'Status Break 1', 'Basic 1', 'Pierce 1', 'Fortification 1', 'None']
     engrave_excellence = ['Excellence 3', 'Smite 3', 'Alliance 3', 'Unbreakable 3', 'Excellence 2', 'Smite 2', 'Alliance 2', 'Unbreakable 2', 'Excellence 1', 'Smite 1', 'Alliance 1', 'Unbreakable 1', 'None']
     engrave_elem_master = ['Elem Master 3', 'Challenger 3', 'Resonance 3', 'Evasion 3', 'Elem Resist 3', 'Recovery 3', 'Elem Master 2', 'Challenger 2', 'Resonance 2', 'Evasion 2', 'Elem Resist 2', 'Recovery 2', 'Elem Master 1', 'Challenger 1', 'Resonance 1', 'Evasion 1', 'Elem Resist 1', 'Recovery 1', 'None']
@@ -469,64 +474,64 @@ with input_col:
 
     with tab_manual:
         c1, c2= st.columns(2)
-        in_monster_def = c1.number_input("Monster Def", value=5000, step=100)
-        in_dot_ratio = c2.number_input("Effect Ratio", value=5.0, step=0.1) # Default matches save.txt
+        in_monster_def = c1.number_input("Monster Def", value=5000, step=100, key="monster_def")
+        in_dot_ratio = c2.number_input("Effect Ratio", value=5.0, step=0.1, key="dot_ratio") # Default matches save.txt
         
         st.subheader("Circuit Adjustments (Additions)")
         c1, c2, c3 = st.columns(3)
-        man_atk = c1.number_input("Base Atk (+)", value=191)
-        man_crit_dmg = c2.number_input("Crit Dmg (+)", value=34.7)
-        man_crit_rate = c1.number_input("Crit Rate (+)", value=5.5)
-        man_elem = c2.number_input("Elem Boost (+)", value=20.8)
-        man_cd = c3.number_input("Cooldown (+)", value=0.0)
-        man_agi = c1.number_input("Agility (+)", value=0)
-        man_str = c2.number_input("Strength (+)", value=134)
-        man_skill_dmg = c3.number_input("Skill Dmg (+)", value=8)
+        man_atk = c1.number_input("Base Atk (+)", value=191, key="man_atk")
+        man_crit_dmg = c2.number_input("Crit Dmg (+)", value=34.7, key="man_crit_dmg")
+        man_crit_rate = c1.number_input("Crit Rate (+)", value=5.5, key="man_crit_rate")
+        man_elem = c2.number_input("Elem Boost (+)", value=20.8, key="man_elem")
+        man_cd = c3.number_input("Cooldown (+)", value=0.0, key="man_cd")
+        man_agi = c1.number_input("Agility (+)", value=0, key="man_agi")
+        man_str = c2.number_input("Strength (+)", value=134, key="man_str")
+        man_skill_dmg = c3.number_input("Skill Dmg (+)", value=8, key="man_skill_dmg")
         
         st.subheader("Base Status (Character Base)")
         c1, c2, c3 = st.columns(3)
-        b_atk = c1.number_input("Base Atk", value=DEFAULT_BASE_STATUS['Base Atk'])
-        b_str = c2.number_input("Strength", value=DEFAULT_BASE_STATUS['Strength'])
-        b_agi = c3.number_input("Agility", value=DEFAULT_BASE_STATUS['Agility'])
+        b_atk = c1.number_input("Base Atk", value=DEFAULT_BASE_STATUS['Base Atk'], key="b_atk")
+        b_str = c2.number_input("Strength", value=DEFAULT_BASE_STATUS['Strength'], key="b_str")
+        b_agi = c3.number_input("Agility", value=DEFAULT_BASE_STATUS['Agility'], key="b_agi")
         
-        b_crit_rate = c1.number_input("Crit Rate", value=float(DEFAULT_BASE_STATUS['Crit Rate']))
-        b_crit_dmg = c2.number_input("Crit DMG", value=float(DEFAULT_BASE_STATUS['Crit Dmg']))
-        b_elem_boost = c3.number_input("Elem", value=float(DEFAULT_BASE_STATUS['Elem Boost']))
+        b_crit_rate = c1.number_input("Crit Rate", value=float(DEFAULT_BASE_STATUS['Crit Rate']), key="b_crit_rate")
+        b_crit_dmg = c2.number_input("Crit DMG", value=float(DEFAULT_BASE_STATUS['Crit Dmg']), key="b_crit_dmg")
+        b_elem_boost = c3.number_input("Elem", value=float(DEFAULT_BASE_STATUS['Elem Boost']), key="b_elem_boost")
         
-        b_cd = c1.number_input("Cooldown", value=float(DEFAULT_BASE_STATUS['Cooldown']))
-        b_skill_dmg = c2.number_input("Skill DMG", value=float(DEFAULT_BASE_STATUS['Skill Dmg']))
+        b_cd = c1.number_input("Cooldown", value=float(DEFAULT_BASE_STATUS['Cooldown']), key="b_cd")
+        b_skill_dmg = c2.number_input("Skill DMG", value=float(DEFAULT_BASE_STATUS['Skill Dmg']), key="b_skill_dmg")
         
         st.caption("Advanced Stats")
         c1, c2, c3 = st.columns(3)
-        b_counter = c1.number_input("Dmg Debuff", value=float(DEFAULT_BASE_STATUS['Counter']))
-        b_dmg_amp = c2.number_input("Dmg Bonus", value=float(DEFAULT_BASE_STATUS['Dmg Amp']))
-        b_res_dmg = c3.number_input("DMG during Resonance", value=float(DEFAULT_BASE_STATUS['Resonance Dmg']))
+        b_counter = c1.number_input("Dmg Debuff", value=float(DEFAULT_BASE_STATUS['Counter']), key="b_counter")
+        b_dmg_amp = c2.number_input("Dmg Bonus", value=float(DEFAULT_BASE_STATUS['Dmg Amp']), key="b_dmg_amp")
+        b_res_dmg = c3.number_input("DMG during Resonance", value=float(DEFAULT_BASE_STATUS['Resonance Dmg']), key="b_res_dmg")
         
-        b_elem_dmg = c1.number_input("ENH DMG", value=float(DEFAULT_BASE_STATUS['Elem Dmg']))
-        b_def_break = c2.number_input("Def Shred", value=float(DEFAULT_BASE_STATUS['Def Break Atk']))
-        b_pen = c3.number_input("PEN", value=float(DEFAULT_BASE_STATUS['Penetration']))
+        b_elem_dmg = c1.number_input("ENH DMG", value=float(DEFAULT_BASE_STATUS['Elem Dmg']), key="b_elem_dmg")
+        b_def_break = c2.number_input("Def Shred", value=float(DEFAULT_BASE_STATUS['Def Break Atk']), key="b_def_break")
+        b_pen = c3.number_input("PEN", value=float(DEFAULT_BASE_STATUS['Penetration']), key="b_pen")
         
-        b_extra_dmg = c1.number_input("Additional", value=float(DEFAULT_BASE_STATUS['Extra Dmg']))
-        b_class_dmg = c2.number_input("Class DMG Bonus", value=float(DEFAULT_BASE_STATUS['Class Dmg']))
-        b_skill_boost = c3.number_input("Skill DMG Boost", value=float(DEFAULT_BASE_STATUS['Skill Dmg Boost']))
+        b_extra_dmg = c1.number_input("Additional", value=float(DEFAULT_BASE_STATUS['Extra Dmg']), key="b_extra_dmg")
+        b_class_dmg = c2.number_input("Class DMG Bonus", value=float(DEFAULT_BASE_STATUS['Class Dmg']), key="b_class_dmg")
+        b_skill_boost = c3.number_input("Skill DMG Boost", value=float(DEFAULT_BASE_STATUS['Skill Dmg Boost']), key="b_skill_boost")
         
-        b_skill_haste = c1.number_input("ASPD", value=float(DEFAULT_BASE_STATUS['Skill Haste']))
-        b_special = c2.number_input("Special Stats", value=float(DEFAULT_BASE_STATUS['Special']))
-        b_multiplier = c3.number_input("Skill Ratio", value=float(DEFAULT_BASE_STATUS['Multiplier']))
+        b_skill_haste = c1.number_input("ASPD", value=float(DEFAULT_BASE_STATUS['Skill Haste']), key="b_skill_haste")
+        b_special = c2.number_input("Special Stats", value=float(DEFAULT_BASE_STATUS['Special']), key="b_special")
+        b_multiplier = c3.number_input("Skill Ratio", value=float(DEFAULT_BASE_STATUS['Multiplier']), key="b_multiplier")
 
         st.subheader("Other Adjustments")
         c1, c2 = st.columns(2)
-        man_atk_bonus = c1.number_input("Atk Bonus (+)", value=0.0)
-        man_car = c2.number_input("Car Collection Level", value=34)
+        man_atk_bonus = c1.number_input("Atk Bonus (+)", value=0.0, key="man_atk_bonus")
+        man_car = c2.number_input("Car Collection Level", value=34, key="man_car")
 
         st.subheader("Custom Tech Boosts (%)")
         c1, c2 = st.columns(2)
-        boost_bufan4 = c1.number_input("Extraordinary 4", value=-1.0, help="Set to >0 to override")
-        boost_bufan6 = c2.number_input("Extraordinary 6", value=-1.0, help="Set to >0 to override")
-        boost_zhuoyue4 = c1.number_input("Excellence 4", value=-1.0, help="Set to >0 to override")
-        boost_zhuoyue7 = c2.number_input("Excellence 7", value=-1.0, help="Set to >0 to override")
-        boost_zhuoyue9 = c1.number_input("Excellence 9", value=-1.0, help="Set to >0 to override")
-        boost_chaoran9 = c2.number_input("Transcendence 9", value=-1.0, help="Set to >0 to override")
+        boost_bufan4 = c1.number_input("Extraordinary 4", value=-1.0, help="Set to >0 to override", key="boost_bufan4")
+        boost_bufan6 = c2.number_input("Extraordinary 6", value=-1.0, help="Set to >0 to override", key="boost_bufan6")
+        boost_zhuoyue4 = c1.number_input("Excellence 4", value=-1.0, help="Set to >0 to override", key="boost_zhuoyue4")
+        boost_zhuoyue7 = c2.number_input("Excellence 7", value=-1.0, help="Set to >0 to override", key="boost_zhuoyue7")
+        boost_zhuoyue9 = c1.number_input("Excellence 9", value=-1.0, help="Set to >0 to override", key="boost_zhuoyue9")
+        boost_chaoran9 = c2.number_input("Transcendence 9", value=-1.0, help="Set to >0 to override", key="boost_chaoran9")
 
 # --- Collect All Inputs ---
 equipment_list = [
@@ -579,6 +584,10 @@ manual_inputs = {
 try:
     final_status, burst_damage, total_damage = run_calculation(equipment_list, manual_inputs)
 
+    # Initialize snapshot on first run so stats are displayed immediately
+    if st.session_state.snapshot is None:
+        st.session_state.snapshot = (final_status, burst_damage, total_damage)
+
     with result_col:
         st.header("Calculation Results")
 
@@ -621,16 +630,27 @@ try:
                 val = final_status.get(key, 0)
                 val_snap = snapshot_status.get(key, 0)
                 delta = val - val_snap
+                
                 with st.container():
                     r1, r2 = st.columns(2)
-                    r1.metric(label, f"{val:,.1f}", delta=f"{delta:,.1f}")
+                    
+                    # เช็คว่าค่าเปลี่ยนเป็น 0 หรือไม่ (ปัดเศษ 1 ตำแหน่งเพื่อป้องกันปัญหาทศนิยมลอยตัว)
+                    if round(delta, 1) == 0.0:
+                        # สร้าง HTML จำลองหน้าตา st.metric: สีเหลือง + ไม่มีลูกศร
+                        r1.markdown(f"""
+                            <div style="display: flex; flex-direction: column; margin-bottom: 0.8rem;">
+                                <span style="font-size: 0.875rem; color: rgba(250, 250, 250, 0.6);">{label}</span>
+                                <span style="font-size: 2.25rem; font-weight: 400; color: rgb(250, 250, 250); line-height: 1.2;">{val:,.1f}</span>
+                                <div style="background-color: rgba(255, 193, 7, 0.15); color: rgb(255, 193, 7); padding: 0.125rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem; font-weight: 500; width: fit-content; margin-top: 0.25rem;">
+                                    0.0
+                                </div>
+                            </div>
+                        """, unsafe_allow_html=True)
+                    else:
+                        # ถ้าค่าเปลี่ยนไป (เพิ่ม/ลด) ให้ใช้ st.metric ปกติของ Streamlit
+                        r1.metric(label, f"{val:,.1f}", delta=f"{delta:,.1f}")
+                        
                     r2.metric(label, f"{val_snap:,.1f}")
-        else:
-            # Changed to 2 columns for better visibility in the 1/3 width layout
-            cols = st.columns(2)
-            for i, (label, key) in enumerate(stats_to_show):
-                val = final_status.get(key, 0)
-                cols[i % 2].metric(label, f"{val:,.1f}")
 
 except Exception as e:
     st.error(f"An error occurred during calculation: {e}")
