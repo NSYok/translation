@@ -1,0 +1,123 @@
+Black Feather Head
+Black Feather Armor
+Black Feather Hand
+Black Feather Legs
+Black Feather Shoes
+True Fate Sickle (Withered)
+Holy Glory Necklace
+Holy Glory Bracer
+Holy Glory Ring
+Holy Glory Seal
+Holy Glory Amulet
+Hourglass of World's End
+Soldier
+King
+Bishop
+Goramos
+Eclipse Creator
+Elem Mark
+Thunder Light
+Michael
+Mars
+Azrael
+Heavy Shield
++18(Str_Int)
++16(HP)
++16(Str_Int)
++15(HP)
++17(Str_Int)
++21(Weapon)
++18(Str_Int)
++17(Str_Int)
++17(Str_Int)
++18(L_R Slot)
++18(L_R Slot)
+Destruction 3
+Adaptation 3
+Combo 1
+Extraordinary 2
+Tempering 3
+Basic 2
+Destruction 3
+Adaptation 3
+Combo 1
+Extraordinary 2
+Basic 3
+Tempering 2
+Destruction 3
+Adaptation 3
+Combo 1
+Excellence 3
+Unbreakable 2
+None
+Elem Master 1
+Elem Resist 3
+Challenger 3
+Elem Master 1
+Elem Resist 3
+Challenger 3
+Elem Master 2
+Elem Resist 2
+Challenger 3
+Excellence 3
+Unbreakable 2
+Smite 2
+Excellence 2
+Unbreakable 3
+Smite 2
+Dragon
+Cat
+3 Star
+3 Star
+None
+None
+None
+None
+None
+None
+None
+Void Shadow
+Chrome Arms
+Ancient Guardian
+Demon Touch
+Sun Decree Seat
+Golden Slumber
+New Sky Head
+New Sky Armor
+New Sky Accessory
+New Sky Facewear
+New Sky Badge
+Shining Star Footmark
+Heat Wave Title Emblem
+Mingjin Weapon Emblem
+Mingjin Aura Emblem
+Mingjin Head Emblem
+Demon Sickle Emblem
+Mingjin Accessory Emblem
+Demon Sickle Emblem
+Demon Sickle Emblem
+Mingjin Footmark Emblem
+25 Elem Potion
+10 Crit Dmg
+Morning
+Dragon Breath
+Gale
+Mine War
+Counter
+5.0
+191
+34.7
+5.5
+20.8
+0.0
+0
+134
+8
+-1.0
+-1.0
+-1.0
+-1.0
+-1.0
+-1.0
+0.0
+34

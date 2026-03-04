@@ -5,7 +5,6 @@ rename.py
 update_json.py
 
 # Local save files
-save.txt
 
 # Virtual Environments
 venv/
