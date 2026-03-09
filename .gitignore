@@ -1,0 +1,56 @@
+# Python cache
+# Python
+__pycache__/
+*.pyc
+*.py[cod]
+
+# Utility scripts (not part of app)
+rename.py
+update_json.py
+calculator_COA70.py
+gui.py
+
+# Local save/temp files
+temp.txt
+save.txt
+session-ses_*.md
+
+# Virtual Environments
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Streamlit secrets
+# Streamlit
+.streamlit/secrets.toml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# PyQt6 binaries (install via pip)
+PyQt6/
+*.pyd
+# IDE Settings
+.vscode/
+.idea/
+
+# Pytest
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+# Project Specific (User generated files)
+build_*.json
+save.txt

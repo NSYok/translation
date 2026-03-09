@@ -1,0 +1,2324 @@
+{
+  "Single": {
+    "": {},
+    "None": {},
+
+    "True Fate Sickle (Withered)": {
+      "Crit Rate": 11,
+      "Crit Dmg": 15,
+      "Extra Dmg": 15,
+      "Dmg Amp": 6,
+      "Elem Boost": 32,
+      "Base Atk": 1000,
+      "Atk Bonus": 6,
+      "Strength": 550,
+      "Agility": 330,
+      "Multiplier": 4
+    },
+    "Desperate Dream Song": {
+      "Crit Rate": 7,
+      "Elem Boost": 56,
+      "Counter": 6,
+      "Base Atk": 1000,
+      "Atk Bonus": 5,
+      "Strength": 550,
+      "Agility": 330,
+      "Multiplier": 4
+    },
+    "Abyssal Gaze": {
+      "Crit Rate": 11,
+      "Counter": 5,
+      "Crit Dmg": 34,
+      "Base Atk": 1000,
+      "Atk Bonus": 5,
+      "Strength": 550,
+      "Agility": 330,
+      "Multiplier": 4
+    },
+
+    "Black Feather Head": {
+      "Elem Boost": 15,
+      "Dmg Amp": 14,
+      "Skill Dmg": 5,
+      "Atk Bonus": 5,
+      "Strength": 198,
+      "Agility": 154,
+      "Black Feather": 1
+    },
+    "Glimmer Head": {
+      "Elem Boost": 18,
+      "Dmg Amp": 11,
+      "Skill Dmg": 8,
+      "Atk Bonus": 7,
+      "Strength": 216,
+      "Agility": 168,
+      "Black Feather": 1,
+      "Glimmer": 1
+    },
+    "Avarice Head": {
+      "Elem Boost": 16,
+      "Dmg Amp": 14.5,
+      "Atk Bonus": 5,
+      "Strength": 216,
+      "Agility": 168,
+      "Black Feather": 1,
+      "Avarice": 1
+    },
+    "Venom Head": {
+      "Elem Boost": 20,
+      "Counter": 22,
+      "Atk Bonus": 7,
+      "Strength": 216,
+      "Agility": 168,
+      "Black Feather": 1,
+      "Venom": 1
+    },
+    "Butterfly Head": {
+      "Elem Boost": 20,
+      "Dmg Amp": 12,
+      "Skill Dmg": 10,
+      "Atk Bonus": 8,
+      "Strength": 234,
+      "Agility": 182,
+      "Butterfly": 1,
+      "Glimmer": 1
+    },
+    "Demon Heart Head": {
+      "Elem Boost": 23,
+      "Dmg Amp": 18.5,
+      "Atk Bonus": 6,
+      "Strength": 234,
+      "Agility": 182,
+      "Demon Heart": 1,
+      "Avarice": 1
+    },
+    "Cursed Head": {
+      "Elem Boost": 22,
+      "Counter": 23.5,
+      "Atk Bonus": 8,
+      "Strength": 234,
+      "Agility": 182,
+      "Cursed": 1,
+      "Venom": 1
+    },
+
+    "Black Feather Armor": {
+      "Crit Rate": 5,
+      "Crit Dmg": 15,
+      "Resonance Dmg": 10,
+      "Strength": 242,
+      "Skill Haste": 13.6,
+      "Black Feather": 1
+    },
+    "Venom Armor": {
+      "Crit Rate": 5,
+      "Crit Dmg": 18,
+      "Counter": 12,
+      "Dmg Amp": 6,
+      "Strength": 264,
+      "Black Feather": 1,
+      "Venom": 1
+    },
+    "Cursed Armor": {
+      "Crit Rate": 5,
+      "Crit Dmg": 20,
+      "Counter": 13.5,
+      "Dmg Amp": 6.9,
+      "Strength": 286,
+      "Cursed": 1,
+      "Venom": 1
+    },
+    "Glimmer Armor": {
+      "Crit Rate": 5,
+      "Crit Dmg": 17,
+      "Dmg Amp": 6,
+      "Strength": 264,
+      "Skill Haste": 15.9,
+      "Black Feather": 1,
+      "Glimmer": 1
+    },
+    "Butterfly Armor": {
+      "Crit Rate": 5,
+      "Crit Dmg": 19,
+      "Dmg Amp": 7,
+      "Counter": 6,
+      "Strength": 286,
+      "Skill Haste": 15.9,
+      "Butterfly": 1,
+      "Glimmer": 1
+    },
+    "Avarice Armor": {
+      "Crit Rate": 6,
+      "Crit Dmg": 16,
+      "Dmg Amp": 5,
+      "Strength": 264,
+      "Black Feather": 1,
+      "Avarice": 1
+    },
+    "Demon Heart Armor": {
+      "Crit Rate": 6,
+      "Crit Dmg": 18,
+      "Dmg Amp": 6,
+      "Strength": 286,
+      "Counter": 3,
+      "Demon Heart": 1,
+      "Avarice": 1
+    },
+
+    "Black Feather Hand": {
+      "Counter": 7,
+      "Strength": 254,
+      "Penetration": 15,
+      "Atk Bonus": 12,
+      "Agility": 132,
+      "Black Feather": 1
+    },
+    "Venom Hand": {
+      "Counter": 17,
+      "Strength": 168,
+      "Penetration": 16,
+      "Agility": 144,
+      "Black Feather": 1,
+      "Venom": 1
+    },
+    "Cursed Hand": {
+      "Counter": 19.5,
+      "Strength": 182,
+      "Penetration": 17,
+      "Agility": 156,
+      "Cursed": 1,
+      "Venom": 1
+    },
+    "Glimmer Hand": {
+      "Counter": 8.5,
+      "Atk Bonus": 15,
+      "Strength": 298,
+      "Penetration": 17,
+      "Agility": 144,
+      "Black Feather": 1,
+      "Glimmer": 1
+    },
+    "Butterfly Hand": {
+      "Counter": 9.5,
+      "Atk Bonus": 17,
+      "Strength": 342,
+      "Penetration": 18,
+      "Agility": 156,
+      "Butterfly": 1,
+      "Glimmer": 1
+    },
+    "Avarice Hand": {
+      "Counter": 8,
+      "Skill Dmg": 10,
+      "Strength": 318,
+      "Penetration": 17,
+      "Agility": 144,
+      "Black Feather": 1,
+      "Avarice": 1
+    },
+    "Demon Heart Hand": {
+      "Counter": 9,
+      "Skill Dmg": 15,
+      "Strength": 382,
+      "Penetration": 18,
+      "Dmg Amp": 2,
+      "Agility": 156,
+      "Demon Heart": 1,
+      "Avarice": 1
+    },
+
+    "Black Feather Legs": {
+      "Elem Boost": 18,
+      "Crit Dmg": 20,
+      "Counter": 5,
+      "Cooldown": 35,
+      "Strength": 242,
+      "Black Feather": 1
+    },
+    "Venom Legs": {
+      "Elem Boost": 22,
+      "Counter": 13,
+      "Strength": 264,
+      "Black Feather": 1,
+      "Venom": 1
+    },
+    "Cursed Legs": {
+      "Elem Boost": 24,
+      "Counter": 14.5,
+      "Strength": 286,
+      "Cursed": 1,
+      "Venom": 1
+    },
+    "Glimmer Legs": {
+      "Elem Boost": 21,
+      "Crit Dmg": 24,
+      "Counter": 7,
+      "Strength": 264,
+      "Cooldown": 50,
+      "Black Feather": 1,
+      "Glimmer": 1
+    },
+    "Butterfly Legs": {
+      "Elem Boost": 23,
+      "Crit Dmg": 32,
+      "Counter": 8,
+      "Strength": 286,
+      "Cooldown": 50,
+      "Butterfly": 1,
+      "Glimmer": 1
+    },
+    "Avarice Legs": {
+      "Elem Boost": 20,
+      "Counter": 6,
+      "Strength": 264,
+      "Str Bonus": 14,
+      "Black Feather": 1,
+      "Avarice": 1
+    },
+    "Demon Heart Legs": {
+      "Elem Boost": 22,
+      "Counter": 7,
+      "Strength": 286,
+      "Str Bonus": 21,
+      "Demon Heart": 1,
+      "Avarice": 1
+    },
+
+    "Black Feather Shoes": {
+      "Elem Boost": 32,
+      "Skill Dmg": 10,
+      "Strength": 168,
+      "Str Bonus": 8,
+      "Agility": 132,
+      "Black Feather": 1
+    },
+    "Venom Shoes": {
+      "Elem Boost": 30,
+      "Counter": 6,
+      "Skill Dmg": 11,
+      "Strength": 168,
+      "Str Bonus": 11,
+      "Def Reduction": 20,
+      "Agility": 144,
+      "Black Feather": 1,
+      "Venom": 1
+    },
+    "Cursed Shoes": {
+      "Elem Boost": 30,
+      "Counter": 6.5,
+      "Dmg Amp": 4.5,
+      "Skill Dmg": 12,
+      "Strength": 168,
+      "Str Bonus": 12,
+      "Def Reduction": 20,
+      "Agility": 156,
+      "Cursed": 1,
+      "Venom": 1
+    },
+    "Glimmer Shoes": {
+      "Elem Boost": 40,
+      "Skill Dmg": 12,
+      "Strength": 182,
+      "Str Bonus": 10,
+      "Agility": 144,
+      "Black Feather": 1,
+      "Glimmer": 1
+    },
+    "Butterfly Shoes": {
+      "Elem Boost": 40,
+      "Skill Dmg": 13,
+      "Elem Dmg": 3,
+      "Strength": 182,
+      "Str Bonus": 11,
+      "Agility": 156,
+      "Butterfly": 1,
+      "Glimmer": 1
+    },
+    "Avarice Shoes": {
+      "Skill Dmg": 12,
+      "Strength": 168,
+      "Str Bonus": 9,
+      "Agility": 144,
+      "Black Feather": 1,
+      "Avarice": 1
+    },
+    "Demon Heart Shoes": {
+      "Crit Rate": 3,
+      "Crit Dmg": 6,
+      "Skill Dmg": 13,
+      "Strength": 182,
+      "Str Bonus": 10,
+      "Agility": 156,
+      "Demon Heart": 1,
+      "Avarice": 1
+    },
+
+    "Solar Necklace": {
+      "Elem Boost": 15,
+      "Skill Dmg": 16,
+      "Strength": 330,
+      "Cooldown": 40,
+      "Solar": 1
+    },
+    "Holy Glory Necklace": {
+      "Crit Dmg": 16,
+      "Elem Boost": 20,
+      "Skill Dmg": 5,
+      "Strength": 330,
+      "Cooldown": 50,
+      "Holy Glory": 1
+    },
+    "Demon Shadow Necklace": {
+      "Elem Boost": 18,
+      "Skill Dmg": 6,
+      "Strength": 330,
+      "Demon Shadow": 1
+    },
+
+    "Solar Bracer": {
+      "Crit Rate": 7,
+      "Counter": 5,
+      "Strength": 330,
+      "Elem Boost": 15,
+      "Solar": 1
+    },
+    "Holy Glory Bracer": {
+      "Crit Rate": 5,
+      "Counter": 6,
+      "Skill Dmg": 10,
+      "Strength": 330,
+      "Holy Glory": 1
+    },
+    "Demon Shadow Bracer": {
+      "Crit Rate": 5,
+      "Counter": 5,
+      "Strength": 330,
+      "Demon Shadow": 1
+    },
+
+    "Solar Ring": {
+      "Dmg Amp": 7,
+      "Crit Dmg": 29,
+      "Penetration": 6,
+      "Agility": 330,
+      "Solar": 1
+    },
+    "Holy Glory Ring": {
+      "Dmg Amp": 8,
+      "Crit Dmg": 11,
+      "Elem Boost": 12,
+      "Agility": 330,
+      "Holy Glory": 1
+    },
+    "Demon Shadow Ring": {
+      "Dmg Amp": 12,
+      "Crit Dmg": 9,
+      "Str Bonus": 8,
+      "Cooldown": 80,
+      "Agility": 330,
+      "Demon Shadow": 1
+    },
+
+    "Solar Seal": {
+      "Elem Boost": 20,
+      "Skill Dmg": 5,
+      "Counter": 4,
+      "Cooldown": 40,
+      "Strength": 264,
+      "Agility": 264,
+      "Solar": 1
+    },
+    "Holy Glory Seal": {
+      "Elem Boost": 19,
+      "Counter": 4,
+      "Dmg Amp": 10,
+      "Strength": 264,
+      "Agility": 264,
+      "Holy Glory": 1
+    },
+    "Demon Shadow Seal": {
+      "Elem Boost": 17,
+      "Counter": 6,
+      "Atk Bonus": 3,
+      "Strength": 264,
+      "Cooldown": 40,
+      "Agility": 264,
+      "Skill Haste": 15,
+      "Demon Shadow": 1
+    },
+
+    "Solar Amulet": {
+      "Elem Boost": 12,
+      "Str Bonus": 10,
+      "Dmg Amp": 10,
+      "Strength": 264,
+      "Agility": 264,
+      "Solar": 1
+    },
+    "Holy Glory Amulet": {
+      "Elem Boost": 13,
+      "Str Bonus": 22.5,
+      "Resonance Dmg": 6,
+      "Strength": 264,
+      "Agility": 264,
+      "Holy Glory": 1
+    },
+    "Demon Shadow Amulet": {
+      "Elem Boost": 27,
+      "Dmg Amp": 6,
+      "Skill Dmg": 6,
+      "Atk Bonus": 3,
+      "Strength": 264,
+      "Agility": 264,
+      "Demon Shadow": 1
+    },
+
+    "Hourglass of World's End": {
+      "Resonance Effect I": 500
+    },
+    "Hymn of Ancient Demon God": {
+      "Resonance Effect I": 500,
+      "Resonance Effect II": 500
+    },
+
+    "Elem Mark": {
+      "Elem Boost": 18
+    },
+    "Verbena": {
+      "Atk Bonus": 10
+    },
+    "Hawk": {
+      "Elem Boost": 18,
+      "Counter": 2
+    },
+    "Void Dragon": {
+      "Counter": 6
+    },
+    "Eclipse Creator": {
+      "Skill Dmg": 7
+    },
+    "Soldier": {
+      "Crit Rate": 4,
+      "Crit Dmg": 10
+    },
+    "Centaur": {
+      "Skill Dmg": 8
+    },
+    "Bishop": {
+      "Elem Boost": 20,
+      "Cooldown": 40
+    },
+    "Chariot": {
+      "Crit Rate": 10
+    },
+    "King": {
+      "Crit Dmg": 20
+    },
+    "Queen": {
+      "Dmg Amp": 8
+    },
+    "Plague": {
+      "Counter": 4,
+      "Elem Boost": 16
+    },
+    "Famion": {
+      "Counter": 4,
+      "Elem Boost": 18
+    },
+    "Azrael": {
+      "Counter": 12
+    },
+    "Mars": {
+      "Skill Dmg": 7,
+      "Crit Dmg": 8
+    },
+    "Michael": {
+      "Counter": 4,
+      "Dmg Amp": 8
+    },
+    "Skull": {
+      "Counter": 4,
+      "Elem Boost": 18
+    },
+    "Bogit": {
+      "Dmg Amp": 5,
+      "Crit Dmg": 10
+    },
+    "Charlotte": {
+      "Counter": 6,
+      "Crit Dmg": 10
+    },
+    "Glimmer Venom Wing": {
+      "Crit Dmg": 25
+    },
+    "Venom Behemoth": {
+      "Counter": 6,
+      "Dmg Amp": 6
+    },
+    "Touch of Greed": {
+      "Counter": 6,
+      "Skill Dmg": 8
+    },
+    "Demon Heart Kraken": {
+      "Crit Dmg": 16,
+      "Elem Boost": 22
+    },
+    "Ice Fist (Vic)": {
+      "Counter": 4,
+      "Elem Boost": 12
+    },
+    "Electric Whip (Joker)": {
+      "Counter": 4,
+      "Elem Boost": 12
+    },
+    "Goramos": {
+      "Dmg Amp": 4
+    },
+    "Andre": {
+      "Elem Boost": 12
+    },
+    "Clockwork": {
+      "Crit Rate": 6
+    },
+    "Thunder Light": {
+      "Crit Dmg": 10
+    },
+    "Heavy Shield": {
+      "Skill Dmg": 5
+    },
+    "Isaac": {
+      "Counter": 2,
+      "Elem Boost": 12
+    },
+    "Odisha": {
+      "Dmg Amp": 5
+    },
+    "Gorga": {
+      "Crit Dmg": 12
+    },
+    "Puzzle": {
+      "Counter": 9
+    },
+    "Sword of Power": {
+      "Counter": 3,
+      "Dmg Amp": 6
+    },
+
+    "+15(HP)": {
+      "Resonance Effect I": 15,
+      "Resonance Effect II": 15
+    },
+    "+16(HP)": {
+      "Resonance Effect I": 16,
+      "Resonance Effect II": 16
+    },
+    "+17(HP)": {
+      "Resonance Effect I": 17,
+      "Resonance Effect II": 17
+    },
+    "+18(HP)": {
+      "Resonance Effect I": 18,
+      "Resonance Effect II": 18
+    },
+    "+19(HP)": {
+      "Resonance Effect I": 19,
+      "Resonance Effect II": 19
+    },
+    "+20(HP)": {
+      "Resonance Effect I": 20,
+      "Resonance Effect II": 20
+    },
+    "+21(HP)": {
+      "Resonance Effect I": 21,
+      "Resonance Effect II": 21
+    },
+    "+22(HP)": {
+      "Resonance Effect I": 22,
+      "Resonance Effect II": 22
+    },
+    "+23(HP)": {
+      "Resonance Effect I": 23,
+      "Resonance Effect II": 23
+    },
+    "+24(HP)": {
+      "Resonance Effect I": 24,
+      "Resonance Effect II": 24
+    },
+    "+25(HP)": {
+      "Resonance Effect I": 25,
+      "Resonance Effect II": 25
+    },
+
+    "+15(Str_Int)": {
+      "Strength": 117,
+      "Resonance Effect I": 15,
+      "Resonance Effect II": 15
+    },
+    "+16(Str_Int)": {
+      "Strength": 155,
+      "Resonance Effect I": 16,
+      "Resonance Effect II": 16
+    },
+    "+17(Str_Int)": {
+      "Strength": 198,
+      "Resonance Effect I": 17,
+      "Resonance Effect II": 17
+    },
+    "+18(Str_Int)": {
+      "Strength": 246,
+      "Resonance Effect I": 18,
+      "Resonance Effect II": 18
+    },
+    "+19(Str_Int)": {
+      "Strength": 300,
+      "Resonance Effect I": 19,
+      "Resonance Effect II": 19
+    },
+    "+20(Str_Int)": {
+      "Strength": 360,
+      "Resonance Effect I": 20,
+      "Resonance Effect II": 20
+    },
+    "+21(Str_Int)": {
+      "Strength": 426,
+      "Resonance Effect I": 21,
+      "Resonance Effect II": 21
+    },
+    "+22(Str_Int)": {
+      "Strength": 497,
+      "Resonance Effect I": 22,
+      "Resonance Effect II": 22
+    },
+    "+23(Str_Int)": {
+      "Strength": 573,
+      "Resonance Effect I": 23,
+      "Resonance Effect II": 23
+    },
+    "+24(Str_Int)": {
+      "Strength": 656,
+      "Resonance Effect I": 24,
+      "Resonance Effect II": 24
+    },
+    "+25(Str_Int)": {
+      "Strength": 743,
+      "Resonance Effect I": 25,
+      "Resonance Effect II": 25
+    },
+
+    "+15(L_R Slot)": {
+      "Def Break Atk": 362,
+      "Resonance Effect I": 15,
+      "Resonance Effect II": 15
+    },
+    "+16(L_R Slot)": {
+      "Def Break Atk": 450,
+      "Resonance Effect I": 16,
+      "Resonance Effect II": 16
+    },
+    "+17(L_R Slot)": {
+      "Def Break Atk": 560,
+      "Resonance Effect I": 17,
+      "Resonance Effect II": 17
+    },
+    "+18(L_R Slot)": {
+      "Def Break Atk": 695,
+      "Resonance Effect I": 18,
+      "Resonance Effect II": 18
+    },
+    "+19(L_R Slot)": {
+      "Def Break Atk": 873,
+      "Resonance Effect I": 19,
+      "Resonance Effect II": 19
+    },
+    "+20(L_R Slot)": {
+      "Def Break Atk": 1084,
+      "Resonance Effect I": 20,
+      "Resonance Effect II": 20
+    },
+    "+21(L_R Slot)": {
+      "Def Break Atk": 1355,
+      "Resonance Effect I": 21,
+      "Resonance Effect II": 21
+    },
+    "+22(L_R Slot)": {
+      "Def Break Atk": 1682,
+      "Resonance Effect I": 22,
+      "Resonance Effect II": 22
+    },
+    "+23(L_R Slot)": {
+      "Def Break Atk": 2065,
+      "Resonance Effect I": 23,
+      "Resonance Effect II": 23
+    },
+    "+24(L_R Slot)": {
+      "Def Break Atk": 2541,
+      "Resonance Effect I": 24,
+      "Resonance Effect II": 24
+    },
+    "+25(L_R Slot)": {
+      "Def Break Atk": 3111,
+      "Resonance Effect I": 25,
+      "Resonance Effect II": 25
+    },
+
+    "+18(Weapon)": {
+      "Def Break Atk": 3476,
+      "Resonance Effect I": 18,
+      "Resonance Effect II": 18
+    },
+    "+19(Weapon)": {
+      "Def Break Atk": 4368,
+      "Resonance Effect I": 19,
+      "Resonance Effect II": 19
+    },
+    "+20(Weapon)": {
+      "Def Break Atk": 5420,
+      "Resonance Effect I": 20,
+      "Resonance Effect II": 20
+    },
+    "+21(Weapon)": {
+      "Def Break Atk": 6775,
+      "Resonance Effect I": 21,
+      "Resonance Effect II": 21
+    },
+    "+22(Weapon)": {
+      "Def Break Atk": 8410,
+      "Resonance Effect I": 22,
+      "Resonance Effect II": 22
+    },
+    "+23(Weapon)": {
+      "Def Break Atk": 10326,
+      "Resonance Effect I": 23,
+      "Resonance Effect II": 23
+    },
+    "+24(Weapon)": {
+      "Def Break Atk": 12709,
+      "Resonance Effect I": 24,
+      "Resonance Effect II": 24
+    },
+    "+25(Weapon)": {
+      "Def Break Atk": 15559,
+      "Resonance Effect I": 25,
+      "Resonance Effect II": 25
+    },
+
+    "Transcendence 3": {"Transcendence": 3},
+    "Adaptation 3": {"Adaptation": 3},
+    "Destruction 3": {"Destruction": 3},
+    "Swiftness 3": {"Swiftness": 3},
+    "Combo 3": {"Combo": 3},
+    "Offensive 3": {"Offensive": 3},
+    "Transcendence 2": {"Transcendence": 2},
+    "Adaptation 2": {"Adaptation": 2},
+    "Destruction 2": {"Destruction": 2},
+    "Swiftness 2": {"Swiftness": 2},
+    "Combo 2": {"Combo": 2},
+    "Offensive 2": {"Offensive": 2},
+    "Transcendence 1": {"Transcendence": 1},
+    "Adaptation 1": {"Adaptation": 1},
+    "Destruction 1": {"Destruction": 1},
+    "Swiftness 1": {"Swiftness": 1},
+    "Combo 1": {"Combo": 1},
+    "Offensive 1": {"Offensive": 1},
+
+    "Extraordinary 3": {"Extraordinary": 3},
+    "Tempering 3": {"Tempering": 3},
+    "High-Tier 3": {"High-Tier": 3},
+    "Status Break 3": {"Status Break": 3},
+    "Basic 3": {"Basic": 3},
+    "Pierce 3": {"Pierce": 3},
+    "Fortification 3": {"Fortification": 3},
+    "Extraordinary 2": {"Extraordinary": 2},
+    "Tempering 2": {"Tempering": 2},
+    "High-Tier 2": {"High-Tier": 2},
+    "Status Break 2": {"Status Break": 2},
+    "Basic 2": {"Basic": 2},
+    "Pierce 2": {"Pierce": 2},
+    "Fortification 2": {"Fortification": 2},
+    "Extraordinary 1": {"Extraordinary": 1},
+    "Tempering 1": {"Tempering": 1},
+    "High-Tier 1": {"High-Tier": 1},
+    "Status Break 1": {"Status Break": 1},
+    "Basic 1": {"Basic": 1},
+    "Pierce 1": {"Pierce": 1},
+    "Fortification 1": {"Fortification": 1},
+
+    "Excellence 3": {"Excellence": 3},
+    "Smite 3": {"Smite": 3},
+    "Alliance 3": {"Alliance": 3},
+    "Unbreakable 3": {"Unbreakable": 3},
+    "Excellence 2": {"Excellence": 2},
+    "Smite 2": {"Smite": 2},
+    "Alliance 2": {"Alliance": 2},
+    "Unbreakable 2": {"Unbreakable": 2},
+    "Excellence 1": {"Excellence": 1},
+    "Smite 1": {"Smite": 1},
+    "Alliance 1": {"Alliance": 1},
+    "Unbreakable 1": {"Unbreakable": 1},
+
+    "Elem Master 3": {"Elem Master": 3},
+    "Challenger 3": {"Challenger": 3},
+    "Resonance 3": {"Resonance": 3},
+    "Evasion 3": {"Evasion": 3},
+    "Elem Resist 3": {"Elem Resist": 3},
+    "Recovery 3": {"Recovery": 3},
+    "Elem Master 2": {"Elem Master": 2},
+    "Challenger 2": {"Challenger": 2},
+    "Resonance 2": {"Resonance": 2},
+    "Evasion 2": {"Evasion": 2},
+    "Elem Resist 2": {"Elem Resist": 2},
+    "Recovery 2": {"Recovery": 2},
+    "Elem Master 1": {"Elem Master": 1},
+    "Challenger 1": {"Challenger": 1},
+    "Resonance 1": {"Resonance": 1},
+    "Evasion 1": {"Evasion": 1},
+    "Elem Resist 1": {"Elem Resist": 1},
+    "Recovery 1": {"Recovery": 1},
+
+    "Cat": {},
+    "Eagle": {},
+    "Panda": {},
+    "Dragon": {},
+    "PiaoPiao": {},
+    "Koto": {},
+    "Fox": {},
+
+    "NoneCat": {},
+    "NoneEagle": {},
+    "NonePanda": {},
+    "NoneDragon": {},
+    "NonePiaoPiao": {},
+    "NoneKoto": {},
+    "NoneFox": {},
+    "NoneNone": {},
+
+    "1 Star": {},
+    "2 Star": {},
+    "3 Star": {},
+    "1 StarNone": {},
+    "2 StarNone": {},
+    "3 StarNone": {},
+
+    "1 StarCat": {},
+    "2 StarCat": {},
+    "3 StarCat": {
+      "Strength": 330,
+      "Base Atk": 86,
+      "Crit Rate": 6,
+      "Elem Boost": 15,
+      "Skill Haste": 37
+    },
+
+    "1 StarEagle": {
+      "Strength": 230,
+      "Counter": 18.7,
+      "Extra Dmg": 5.1,
+      "Elem Boost": 40,
+      "Multiplier": 4
+    },
+    "2 StarEagle": {
+      "Strength": 287,
+      "Counter": 20.3,
+      "Extra Dmg": 7.7,
+      "Elem Boost": 40,
+      "Multiplier": 4
+    },
+    "3 StarEagle": {
+      "Strength": 345,
+      "Counter": 22,
+      "Extra Dmg": 11.5,
+      "Elem Boost": 40,
+      "Multiplier": 4
+    },
+
+    "1 StarPanda": {
+      "Strength": 230,
+      "Counter": 6,
+      "爆伤": 9.3,
+      "Special": 9
+    },
+    "2 StarPanda": {
+      "Strength": 287,
+      "Counter": 6,
+      "爆伤": 11.7,
+      "Special": 9
+    },
+    "3 StarPanda": {
+      "Strength": 345,
+      "Counter": 6,
+      "爆伤": 20.6,
+      "Special": 9
+    },
+
+    "1 StarDragon": {
+      "Strength": 230,
+      "Dmg Amp": 11.9,
+      "Extra Dmg": 10,
+      "Elem Dmg": 7.5
+    },
+    "2 StarDragon": {
+      "Strength": 287,
+      "Dmg Amp": 13,
+      "Extra Dmg": 10,
+      "Elem Dmg": 7.5
+    },
+    "3 StarDragon": {
+      "Strength": 345,
+      "Dmg Amp": 17.2,
+      "Extra Dmg": 10,
+      "Elem Dmg": 7.5
+    },
+
+    "1 StarPiaoPiao": {
+      "Strength": 230,
+      "Base Atk": 64,
+      "Dmg Amp": 1,
+      "Elem Boost": 6.5,
+      "Extra Dmg": 6.25,
+      "Counter": 4,
+      "Skill Dmg": 3
+    },
+    "2 StarPiaoPiao": {
+      "Strength": 287,
+      "Base Atk": 80,
+      "Dmg Amp": 1,
+      "Elem Boost": 6.5,
+      "Extra Dmg": 6.25,
+      "Counter": 4,
+      "Skill Dmg": 3
+    },
+    "3 StarPiaoPiao": {
+      "Strength": 345,
+      "Base Atk": 96,
+      "Dmg Amp": 1.7,
+      "Elem Boost": 12,
+      "Extra Dmg": 6.25,
+      "Counter": 4,
+      "Skill Dmg": 3
+    },
+
+    "1 StarKoto": {
+      "Strength": 230,
+      "爆伤": 7.3,
+      "Elem Boost": 15,
+      "Counter": 6,
+      "Multiplier": 1.7
+    },
+    "2 StarKoto": {
+      "Strength": 287,
+      "爆伤": 9.2,
+      "Elem Boost": 15,
+      "Counter": 6,
+      "Multiplier": 1.7
+    },
+    "3 StarKoto": {
+      "Strength": 345,
+      "爆伤": 11,
+      "Elem Boost": 15,
+      "Counter": 6,
+      "Multiplier": 2.8
+    },
+
+    "1 StarFox": {
+      "Strength": 230,
+      "Cooldown": 46.7,
+      "Dmg Amp": 14.2,
+      "Extra Dmg": 6
+    },
+    "2 StarFox": {
+      "Strength": 287,
+      "Cooldown": 58.3,
+      "Dmg Amp": 14.2,
+      "Extra Dmg": 6
+    },
+    "3 StarFox": {
+      "Strength": 345,
+      "Cooldown": 70,
+      "Dmg Amp": 16.5,
+      "Extra Dmg": 6
+    },
+
+    "Cat Paw": {
+      "Strength": 67,
+      "Base Atk": 17,
+      "Crit Rate": 1.2,
+      "Elem Dmg": 5
+    },
+    "Emperor Thorn": {
+      "Strength": 69,
+      "Dmg Amp": 1,
+      "Counter": 1.5
+    },
+    "Insight Eye": {
+      "Strength": 35
+    },
+
+    "Magic Witch": {
+      "Elem Boost": 4,
+      "Resonance Dmg": 2,
+      "Special": 1
+    },
+    "Beast Tooth Mark": {
+      "Special": 0.5,
+      "Base Atk": 30
+    },
+
+    "Wind Butterfly": {
+      "Special": 1,
+      "Cooldown": 10,
+      "Skill Dmg": 1.5
+    },
+    "Maple Curse": {
+      "Special": 0.5
+    },
+
+    "Loyal Partner": {
+      "Strength": 350,
+      "Dmg Amp": 11
+    },
+
+    "The evil hook": {
+      "Counter": 10,
+      "Dmg Amp": 10
+    },
+
+    "Void Shadow": {
+      "Strength": 36,
+      "Crit Rate": 4,
+      "Crit Dmg": 15
+    },
+    "Chrome Arms": {
+      "Cooldown": 7,
+      "Skill Dmg": 0.8,
+      "Counter": 4,
+      "Dmg Amp": 4
+    },
+    "Ancient Guardian": {
+      "Dmg Amp": 10
+    },
+    "Deep Space Swarm": {
+      "Base Atk": 15,
+      "Counter": 2
+    },
+    "Realm Creature": {
+      "Agility": 48,
+      "Counter": 2,
+      "Skill Dmg": 1,
+      "Elem Boost": 7.5
+    },
+    "Magic Era": {
+      "Resonance Dmg": 3
+    },
+    "Dark Realm Madman": {
+      "Strength": 54,
+      "Crit Dmg": 4,
+      "Crit Rate": 2
+    },
+    "Light Chaser": {
+      "Crit Rate": 3,
+      "Crit Dmg": 6
+    },
+    "Clockwork Legion": {
+      "Elem Boost": 11
+    },
+    "Mech Empire": {
+      "Counter": 2
+    },
+    "Beast Legion": {
+      "攻击": 20,
+      "Skill Dmg": 2
+    },
+    "Gloomy Forbidden Area": {
+      "Counter": 3,
+      "Cooldown": 8
+    },
+    "Park Guard": {},
+
+    "Demon Touch": {
+      "Strength": 80,
+      "Agility": 80,
+      "Base Atk": 25,
+      "Crit Rate": 4,
+      "Crit Dmg": 8,
+      "Elem Boost": 8,
+      "Dmg Amp": 13
+    },
+    "Void Crown": {
+      "Strength": 80,
+      "Agility": 80,
+      "Base Atk": 25,
+      "Crit Rate": 4,
+      "Crit Dmg": 8,
+      "Elem Boost": 12,
+      "Dmg Amp": 11
+    },
+    "Gold Crown": {
+      "Strength": 80,
+      "Agility": 80,
+      "Base Atk": 25,
+      "Crit Rate": 4,
+      "Crit Dmg": 8,
+      "Elem Boost": 13.2,
+      "Dmg Amp": 9.6
+    },
+
+    "Sun Decree Seat": {
+      "Strength": 80,
+      "Agility": 80,
+      "Atk Bonus": 5,
+      "Penetration": 7,
+      "Multiplier": 3,
+      "Elem Boost": 10,
+      "Dmg Amp": 7,
+      "Cooldown": 30
+    },
+    "S-Rank Fashion Weapon": {
+      "Strength": 60,
+      "Agility": 60,
+      "Atk Bonus": 3,
+      "Penetration": 5,
+      "Multiplier": 0.5,
+      "Dmg Amp": 3
+    },
+
+    "Golden Slumber": {
+      "Strength": 80,
+      "Agility": 80,
+      "Base Atk": 20,
+      "Elem Boost": 15,
+      "Multiplier": 2,
+      "Dmg Amp": 9
+    },
+    "Eclipse Realm": {
+      "Strength": 80,
+      "Agility": 80,
+      "Base Atk": 20,
+      "Elem Boost": 16,
+      "Multiplier": 2.5,
+      "Dmg Amp": 6,
+      "Skill Dmg": 4
+    },
+    "Eclipse Realm II": {
+      "Strength": 90,
+      "Agility": 90,
+      "Base Atk": 25,
+      "Elem Boost": 20,
+      "Counter": 3,
+      "Multiplier": 3.5,
+      "Dmg Amp": 8,
+      "Skill Dmg": 7
+    },
+    "Shining Star": {
+      "Strength": 90,
+      "Agility": 90,
+      "Base Atk": 25,
+      "Elem Boost": 20,
+      "Counter": 3,
+      "Multiplier": 3,
+      "Dmg Amp": 13
+    },
+
+    "New Sky Head": {
+      "Strength": 50,
+      "Agility": 50,
+      "Crit Rate": 4,
+      "Crit Dmg": 3,
+      "Old Sky": 1,
+      "New Sky": 1
+    },
+    "Old Sky Head": {
+      "Strength": 40,
+      "Agility": 40,
+      "Crit Rate": 3,
+      "Crit Dmg": 2,
+      "Old Sky": 1
+    },
+
+    "New Sky Armor": {
+      "Strength": 80,
+      "Agility": 80,
+      "Old Sky": 1,
+      "New Sky": 1
+    },
+    "Old Sky Armor": {
+      "Strength": 80,
+      "Agility": 80,
+      "Old Sky": 1
+    },
+
+    "New Sky Accessory": {
+      "Strength": 50,
+      "Agility": 50,
+      "Cooldown": 40,
+      "Old Sky": 1,
+      "New Sky": 1
+    },
+    "Old Sky Accessory": {
+      "Strength": 40,
+      "Agility": 40,
+      "Cooldown": 30,
+      "Old Sky": 1
+    },
+
+    "New Sky Facewear": {
+      "Strength": 50,
+      "Agility": 50,
+      "Old Sky": 1,
+      "New Sky": 1
+    },
+    "Old Sky Facewear": {
+      "Strength": 40,
+      "Agility": 40,
+      "Old Sky": 1
+    },
+
+    "New Sky Badge": {
+      "Strength": 50,
+      "Agility": 50,
+      "Elem Boost": 9,
+      "Old Sky": 1,
+      "New Sky": 1
+    },
+    "Old Sky Badge": {
+      "Strength": 40,
+      "Agility": 40,
+      "Elem Boost": 7,
+      "Old Sky": 1
+    },
+
+    "Shining Star Footmark": {
+      "Strength": 80,
+      "Agility": 80,
+      "Crit Rate": 4,
+      "Crit Dmg": 8,
+      "Multiplier": 2,
+      "Elem Boost": 15,
+      "Skill Dmg": 10
+    },
+
+    "Demon Sickle Emblem": {
+      "Multiplier": 0.25
+    },
+    "Heat Wave Title Emblem": {
+      "Multiplier": 4,
+      "Skill Dmg Boost": 3.5
+    },
+    "Mingjin Title Emblem": {
+      "Multiplier": 3
+    },
+    "Mingjin Weapon Emblem": {
+      "Skill Dmg": 5,
+      "Dmg Amp": 2
+    },
+    "Mingjin Aura Emblem": {
+      "Atk Bonus": 6,
+      "Dmg Amp": 2
+    },
+    "Star God Aura Emblem": {
+      "Atk Bonus": 7,
+      "Dmg Amp": 3,
+      "Counter": 3
+    },
+    "Mingjin Armor Emblem": {
+      "Elem Boost": 8,
+      "Str Bonus": 4
+    },
+    "Mingjin Accessory Emblem": {
+      "Elem Boost": 8,
+      "Str Bonus": 4
+    },
+    "Mingjin Head Emblem": {
+      "Counter": 5
+    },
+    "Mingjin Footmark Emblem": {
+      "Elem Boost": 8,
+      "Dmg Amp": 2
+    },
+    "22 Elem Potion": {
+      "Elem Boost": 22
+    },
+    "25 Elem Potion": {
+      "Elem Boost": 25
+    },
+    "8 Crit": {
+      "Crit Rate": 8
+    },
+    "6 Counter": {
+      "Counter": 6
+    },
+    "8 Skill Dmg": {
+      "Skill Dmg": 8
+    },
+    "8 Atk": {
+      "Atk Bonus": 8
+    },
+    "10 Crit Dmg": {
+      "Crit Dmg": 10
+    },
+    "Morning": {
+      "Dmg Amp": 5
+    },
+    "Cliff": {
+      "Atk Bonus": 5
+    },
+    "East": {
+      "Resonance Dmg": 5
+    },
+    "Dragon Breath": {
+      "Crit Rate": 5,
+      "Base Atk": 50
+    },
+    "Gale": {
+      "Cooldown": 30
+    },
+    "Mine War": {
+      "Atk Bonus": 3,
+      "Crit Rate": 3
+    },
+    "Counter": {
+      "Counter": 6
+    }
+  },
+  "Sets": {
+    "Black Feather": {
+      "2": {
+        "Strength": 100,
+        "Agility": 100,
+        "Skill Dmg": 12,
+        "Atk Bonus": 6
+      },
+      "3": {
+        "Strength": 150,
+        "Agility": 150,
+        "Counter": 20,
+        "Dmg Amp": 16
+      },
+      "5": {
+        "Strength": 200,
+        "Agility": 200,
+        "Elem Boost": 35,
+        "Resonance Dmg": 10,
+        "Elem Dmg": 10
+      }
+    },
+    "Venom": {
+      "2": {
+        "Counter": 4,
+        "Dmg Amp": 3
+      },
+      "3": {
+        "Crit Dmg": 18,
+        "Counter": 6,
+        "Dmg Amp": 5
+      },
+      "5": {
+        "Counter": 20,
+        "Dmg Amp": 4
+      }
+    },
+    "Cursed": {
+      "2": {
+        "Counter": 5.5,
+        "Dmg Amp": 6.5
+      },
+      "3": {
+        "Crit Dmg": 24,
+        "Counter": 15,
+        "Dmg Amp": 7,
+        "Extra Dmg": -3,
+        "Multiplier": -2
+      },
+      "5": {
+        "Counter": 25.5,
+        "Dmg Amp": 10
+      }
+    },
+    "Glimmer": {
+      "2": {
+        "Elem Boost": 16,
+        "Dmg Amp": 10,
+        "Skill Dmg": 6
+      },
+      "3": {
+        "Elem Boost": 7.5,
+        "Crit Dmg": 24,
+        "Counter": 8,
+        "Dmg Amp": 6
+      },
+      "5": {
+        "Elem Boost": 20,
+        "Dmg Amp": 10,
+        "Skill Dmg": 16,
+        "Counter": 14,
+        "Multiplier": 4
+      }
+    },
+    "Butterfly": {
+      "2": {
+        "Elem Boost": 32,
+        "Dmg Amp": 10,
+        "Skill Dmg": 7,
+        "Cooldown": 30
+      },
+      "3": {
+        "Elem Boost": 28,
+        "Crit Dmg": 42,
+        "Counter": 18,
+        "Dmg Amp": 8
+      },
+      "5": {
+        "Elem Boost": 23,
+        "Dmg Amp": 17,
+        "Skill Dmg": 18,
+        "Counter": 14,
+        "Multiplier": 4,
+        "Skill Dmg Boost": 8.4
+      }
+    },
+    "Avarice": {
+      "2": {
+        "Counter": 4,
+        "Skill Dmg": 10
+      },
+      "3": {
+        "Crit Dmg": 20,
+        "Counter": 17,
+        "Dmg Amp": 13
+      },
+      "5": {
+        "Elem Boost": 35,
+        "Extra Dmg": 14,
+        "Skill Dmg": 10,
+        "Counter": 5
+      }
+    },
+    "Demon Heart": {
+      "2": {
+        "Counter": 5,
+        "Skill Dmg": 12,
+        "Dmg Amp": 5
+      },
+      "3": {
+        "Crit Dmg": 38,
+        "Counter": 19,
+        "Dmg Amp": 18.5
+      },
+      "5": {
+        "Elem Boost": 37,
+        "Extra Dmg": 17,
+        "Elem Dmg": 8,
+        "Skill Dmg": 10,
+        "Counter": 6,
+        "Crit Dmg": 5,
+        "Dmg Amp": 2.5
+      }
+    },
+    "Solar": {
+      "3": {
+        "Skill Haste": 27.3
+      },
+      "5": {
+        "Dmg Amp": 19,
+        "Skill Dmg": 9
+      }
+    },
+    "Holy Glory": {
+      "3": {
+        "Resonance Dmg": 20,
+        "Skill Dmg Boost": 10
+      },
+      "5": {
+        "Dmg Amp": 5,
+        "Skill Dmg": 12,
+        "爆伤": 8,
+        "Elem Boost": 6,
+        "Str Bonus": 4.5,
+        "Resonance Dmg": 20
+      }
+    },
+    "Demon Shadow": {
+      "3": {},
+      "5": {
+        "Dmg Amp": 11,
+        "Counter": 6,
+        "Skill Haste": 7.5
+      }
+    },
+    "Resonance Effect I": {
+      "550": {
+        "Def Break Bonus": 1.6
+      },
+      "600": {
+        "Def Break Bonus": 2
+      },
+      "630": {
+        "Def Break Atk": 50
+      },
+      "640": {
+        "Def Break Atk": 70
+      },
+      "650": {
+        "Def Break Bonus": 2.4
+      },
+      "660": {
+        "Atk Bonus": 1.2
+      },
+      "670": {
+        "Elem Boost": 6
+      },
+      "680": {
+        "Atk Bonus": 1.8
+      },
+      "690": {
+        "Resonance Dmg": 3.5
+      },
+      "700": {
+        "Def Break Bonus": 2.8
+      },
+      "720": {
+        "Resonance Dmg": 2
+      },
+      "730": {
+        "Def Break Bonus": 3.2
+      },
+      "740": {
+        "Multiplier": 0.25
+      },
+      "745": {
+        "Atk Bonus": 2.4
+      },
+      "750": {
+        "Multiplier": 1
+      },
+      "755": {
+        "Crit Dmg": 5
+      },
+      "760": {
+        "Str Bonus": 3
+      },
+      "765": {
+        "Dmg Amp": 3
+      },
+      "770": {
+        "Multiplier": 1.75
+      },
+      "775": {
+        "Counter": 5
+      }
+    },
+    "Resonance Effect II": {
+      "690": {
+        "Base Atk": 20
+      },
+      "700": {
+        "Base Atk": 20
+      },
+      "710": {
+        "Base Atk": 20,
+        "Def Break Atk": 100
+      },
+      "720": {
+        "Base Atk": 20,
+        "Def Break Atk": 100
+      },
+      "730": {
+        "Base Atk": 20,
+        "Def Break Atk": 100
+      },
+      "740": {
+        "Base Atk": 20,
+        "Def Break Atk": 100
+      },
+      "750": {
+        "Base Atk": 20,
+        "Def Break Atk": 100
+      },
+      "760": {
+        "Base Atk": 20,
+        "Def Break Atk": 100
+      },
+      "770": {
+        "Multiplier": 1,
+        "Base Atk": 20,
+        "Def Break Atk": 100
+      },
+      "775": {
+        "Base Atk": 10,
+        "Def Break Atk": 50
+      }
+    },
+
+    "Transcendence": {
+      "1": {
+        "Skill Dmg Boost": 1
+      },
+      "2": {
+        "Skill Dmg Boost": 1
+      },
+      "3": {
+        "Skill Dmg Boost": 1
+      },
+      "4": {
+        "Skill Dmg Boost": 2
+      },
+      "5": {
+        "Skill Dmg Boost": 1
+      },
+      "6": {
+        "Skill Dmg Boost": 1
+      },
+      "7": {
+        "Skill Dmg Boost": 2
+      },
+      "8": {
+        "Skill Dmg Boost": 1
+      },
+      "9": {
+        "Elem Dmg": 5,
+        "Special": 10
+      }
+    },
+    "Adaptation": {
+      "1": {
+        "Skill Dmg Boost": 1.3
+      },
+      "2": {
+        "Skill Dmg Boost": 1.3
+      },
+      "3": {
+        "Skill Dmg Boost": 1.3
+      },
+      "4": {
+        "Skill Haste": 3.9
+      },
+      "5": {
+        "Skill Dmg Boost": 1.95
+      },
+      "6": {
+        "Skill Dmg Boost": 1.95
+      },
+      "7": {
+        "Skill Dmg Boost": 1.3,
+        "Skill Haste": 7.2
+      },
+      "8": {
+        "Skill Dmg Boost": 2.6
+      },
+      "9": {
+        "Skill Haste": 5.6
+      }
+    },
+    "Destruction": {
+      "1": {
+        "Dmg Amp": 2
+      },
+      "2": {
+        "Dmg Amp": 2
+      },
+      "3": {
+        "Dmg Amp": 2
+      },
+      "4": {
+        "Skill Haste": 1.8
+      },
+      "5": {
+        "Dmg Amp": 2
+      },
+      "6": {
+        "Dmg Amp": 4
+      },
+      "7": {
+        "Skill Haste": 5.6
+      },
+      "8": {
+        "Dmg Amp": 8
+      },
+      "9": {
+        "Skill Haste": 5.6
+      }
+    },
+    "Swiftness": {
+      "1": {
+        "Cooldown": 10
+      },
+      "2": {
+        "Cooldown": 10
+      },
+      "3": {
+        "Cooldown": 10
+      },
+      "4": {
+        "Dmg Amp": 3
+      },
+      "5": {
+        "Cooldown": 15,
+        "Dmg Amp": 2
+      },
+      "6": {
+        "Cooldown": 15,
+        "Dmg Amp": 2
+      },
+      "7": {
+        "Dmg Amp": 3
+      },
+      "8": {
+        "Cooldown": 20,
+        "Dmg Amp": 2
+      },
+      "9": {
+        "Dmg Amp": 9
+      }
+    },
+    "Combo": {
+      "1": {
+        "Dmg Amp": 2
+      },
+      "2": {
+        "Dmg Amp": 2
+      },
+      "3": {
+        "Dmg Amp": 2
+      },
+      "4": {
+        "Dmg Amp": 2
+      },
+      "5": {
+        "Dmg Amp": 2
+      },
+      "6": {
+        "Dmg Amp": 2
+      },
+      "7": {
+        "Dmg Amp": 5
+      },
+      "8": {
+        "Dmg Amp": 3
+      },
+      "9": {
+        "Dmg Amp": 6
+      }
+    },
+    "Offensive": {
+      "1": {
+        "Skill Haste": 10
+      },
+      "2": {
+        "Skill Haste": 10
+      },
+      "3": {
+        "Skill Haste": 10
+      },
+      "4": {
+        "Dmg Amp": 3
+      },
+      "5": {
+        "Skill Haste": 15,
+        "Dmg Amp": 2
+      },
+      "6": {
+        "Skill Haste": 15,
+        "Dmg Amp": 2
+      },
+      "7": {
+        "Dmg Amp": 3
+      },
+      "8": {
+        "Skill Haste": 20,
+        "Dmg Amp": 2
+      },
+      "9": {
+        "Dmg Amp": 9
+      }
+    },
+
+    "Extraordinary": {
+      "1": {
+        "Skill Haste": 0.22
+      },
+      "2": {
+        "Skill Haste": 0.65
+      },
+      "3": {
+        "Skill Haste": 0.58,
+        "Skill Dmg Boost": 0.35
+      },
+      "4": {
+        "Skill Dmg": 12
+      },
+      "5": {
+        "Skill Dmg Boost": 2.45
+      },
+      "6": {
+        "Skill Haste": 10,
+        "Skill Dmg Boost": 3
+      }
+    },
+    "Tempering": {
+      "1": {
+        "Extra Dmg": 2
+      },
+      "2": {
+        "Extra Dmg": 1
+      },
+      "3": {
+        "Extra Dmg": 1
+      },
+      "4": {
+        "Extra Dmg": 3
+      },
+      "5": {
+        "Extra Dmg": 2
+      },
+      "6": {
+        "Extra Dmg": 5
+      }
+    },
+    "High-Tier": {
+      "1": {
+        "Skill Dmg Boost": 2.5
+      },
+      "2": {
+        "Skill Dmg Boost": 2.5
+      },
+      "3": {
+        "Skill Dmg Boost": 2.5
+      },
+      "4": {
+        "Multiplier": 5.6
+      },
+      "5": {
+        "Skill Dmg Boost": 0.75
+      },
+      "6": {
+        "Skill Dmg Boost": 2.75,
+        "Multiplier": 0.96
+      }
+    },
+    "Status Break": {
+      "1": {
+        "Counter": 1
+      },
+      "2": {
+        "Counter": 1
+      },
+      "3": {
+        "Counter": 1
+      },
+      "4": {
+        "Counter": 2
+      },
+      "5": {
+        "Counter": 2
+      },
+      "6": {
+        "Counter": 6
+      }
+    },
+    "Basic": {
+      "1": {
+        "Skill Dmg Boost": 0.8
+      },
+      "2": {
+        "Skill Dmg Boost": 0.8
+      },
+      "3": {
+        "Skill Dmg Boost": 0.8
+      },
+      "4": {
+        "Multiplier": 0.64
+      },
+      "5": {
+        "Skill Dmg Boost": 1.5
+      },
+      "6": {
+        "Skill Dmg Boost": 2.6,
+        "Multiplier": 0.4
+      }
+    },
+    "Pierce": {
+      "1": {
+        "Penetration": 1
+      },
+      "2": {
+        "Penetration": 1
+      },
+      "3": {
+        "Penetration": 1
+      },
+      "4": {
+        "Penetration": 2
+      },
+      "5": {
+        "Penetration": 3
+      },
+      "6": {
+        "Penetration": 4
+      }
+    },
+    "Fortification": {
+      "4": {
+        "Def Reduction": 3
+      },
+      "5": {
+        "Def Reduction": 3
+      },
+      "6": {
+        "Dmg Amp": 6
+      }
+    },
+
+    "Excellence": {
+      "1": {
+        "Multiplier": 0.04
+      },
+      "2": {
+        "Multiplier": 0.32
+      },
+      "3": {
+        "Multiplier": 0.2
+      },
+      "4": {
+        "Class Dmg": 8
+      },
+      "5": {
+        "Multiplier": 0.2
+      },
+      "6": {
+        "Multiplier": 0.2
+      },
+      "7": {
+        "Skill Haste": 7
+      },
+      "8": {
+        "Multiplier": 1
+      },
+      "9": {
+        "Multiplier": 1,
+        "Class Dmg": 12
+      }
+    },
+    "Smite": {
+      "1": {
+        "Crit Rate": 1
+      },
+      "2": {
+        "Crit Rate": 0.5
+      },
+      "3": {
+        "Crit Rate": 0.5
+      },
+      "4": {
+        "Crit Rate": 2,
+        "Crit Dmg": 8
+      },
+      "5": {
+        "Crit Rate": 0.5,
+        "Crit Dmg": 2
+      },
+      "6": {
+        "Crit Rate": 0.5,
+        "Crit Dmg": 2
+      },
+      "7": {
+        "Crit Rate": 1,
+        "Crit Dmg": 6
+      },
+      "8": {
+        "Crit Rate": 1,
+        "Crit Dmg": 2
+      },
+      "9": {
+        "Crit Rate": 2,
+        "Crit Dmg": 2
+      }
+    },
+    "Alliance": {
+      "1": {
+        "Crit Dmg": 4
+      },
+      "2": {
+        "Crit Dmg": 4
+      },
+      "3": {
+        "Crit Dmg": 4
+      },
+      "4": {
+        "Skill Dmg": 4
+      },
+      "5": {
+        "Skill Dmg": 4
+      },
+      "6": {
+        "Skill Dmg": 4
+      },
+      "7": {
+        "Dmg Amp": 4
+      },
+      "8": {
+        "Dmg Amp": 4
+      }
+    },
+    "Unbreakable": {
+      "1": {
+        "Skill Dmg": 3
+      },
+      "2": {
+        "Skill Dmg": 3
+      },
+      "3": {
+        "Skill Dmg": 3
+      },
+      "5": {
+        "Skill Dmg": 3
+      },
+      "6": {
+        "Skill Dmg": 3
+      },
+      "7": {
+        "Skill Dmg": 12
+      },
+      "8": {
+        "Skill Dmg": 5
+      }
+    },
+
+    "Elem Master": {
+      "1": {
+        "Elem Boost": 2
+      },
+      "2": {
+        "Elem Boost": 2
+      },
+      "3": {
+        "Elem Boost": 1
+      },
+      "4": {
+        "Elem Boost": 3,
+        "Elem Dmg": 3
+      },
+      "5": {
+        "Elem Boost": 3
+      },
+      "6": {
+        "Elem Boost": 3
+      },
+      "7": {
+        "Elem Boost": 3,
+        "Elem Dmg": 2
+      },
+      "8": {
+        "Elem Boost": 3,
+        "Crit Dmg": 2
+      },
+      "9": {
+        "Elem Boost": 6,
+        "Elem Dmg": 2
+      }
+    },
+    "Challenger": {
+      "1": {
+        "Counter": 1
+      },
+      "2": {
+        "Counter": 1
+      },
+      "3": {
+        "Counter": 1
+      },
+      "4": {
+        "Skill Dmg": 4.5
+      },
+      "5": {
+        "Counter": 1.5
+      },
+      "6": {
+        "Counter": 1.5
+      },
+      "7": {
+        "Counter": 2,
+        "Skill Dmg": 1.5
+      },
+      "8": {
+        "Counter": 2
+      },
+      "9": {
+        "Skill Dmg": 12
+      }
+    },
+    "Resonance": {
+      "4": {
+        "Resonance Dmg": 3
+      },
+      "5": {
+        "Resonance Dmg": 1
+      },
+      "6": {
+        "Resonance Dmg": 1
+      },
+      "8": {
+        "Resonance Dmg": 5
+      }
+    },
+    "Evasion": {
+      "7": {
+        "Dmg Amp": 10
+      },
+      "8": {
+        "Dmg Amp": 8
+      }
+    },
+    "Elem Resist": {
+      "4": {
+        "Elem Dmg": 3
+      },
+      "5": {
+        "Elem Dmg": 0.5
+      },
+      "6": {
+        "Elem Dmg": 0.5
+      },
+      "7": {
+        "Elem Dmg": 2
+      },
+      "8": {
+        "Elem Dmg": 2
+      },
+      "9": {
+        "Elem Dmg": 2,
+        "Elem Boost": 10
+      }
+    },
+    "Recovery": {
+      "4": {
+        "Dmg Amp": 6
+      },
+      "7": {
+        "Dmg Amp": 6
+      },
+      "8": {
+        "Dmg Amp": 2
+      },
+      "9": {
+        "Dmg Amp": 13
+      }
+    },
+    "New Sky": {
+      "2": {
+        "Strength": 40,
+        "Dmg Amp": 6
+      },
+      "3": {
+        "Crit Rate": 4,
+        "Crit Dmg": 12
+      },
+      "5": {
+        "Elem Boost": 20,
+        "Dmg Amp": 7
+      }
+    },
+    "Old Sky": {
+      "2": {
+        "Strength": 30,
+        "Dmg Amp": 5
+      },
+      "3": {
+        "Crit Rate": 3,
+        "Crit Dmg": 10
+      },
+      "5": {
+        "Elem Boost": 8,
+        "Resonance Dmg": 10
+      }
+    },
+
+    "Car Collection": {
+      "1": {
+        "Agility": 75
+      },
+      "3": {
+        "Skill Dmg": 2
+      },
+      "5": {
+        "Strength": 150
+      },
+      "7": {
+        "Agility": 150
+      },
+      "9": {
+        "Skill Dmg": 2
+      },
+      "11": {
+        "Strength": 150
+      },
+      "13": {
+        "Agility": 150
+      },
+      "15": {
+        "Skill Dmg": 2
+      },
+       "17": {
+        "Strength": 150
+      },
+      "19": {
+        "Agility": 150
+      },
+      "21": {
+        "Skill Dmg": 2
+      },
+      "23": {
+        "Strength": 150
+      },
+      "25": {
+        "Agility": 150
+      },
+      "27": {
+        "Skill Dmg": 2
+      },
+      "29": {
+        "Strength": 150
+      },
+      "31": {
+        "Agility": 150
+      },
+      "33": {
+        "Skill Dmg": 2
+      },
+      "35": {
+        "Strength": 150
+      },
+      "37": {
+        "Agility": 150
+      },
+      "39": {
+        "Skill Dmg": 2
+      },
+      "41": {
+        "Strength": 150
+      },
+      "43": {
+        "Agility": 150
+      },
+      "45": {
+        "Skill Dmg": 2
+      },
+      "47": {
+        "Strength": 150
+      },
+      "49": {
+        "Agility": 150
+      },
+      "51": {
+        "Skill Dmg": 2
+      },
+      "53": {
+        "Strength": 150
+      },
+      "55": {
+        "Agility": 150
+      },
+      "57": {
+        "Skill Dmg": 2
+      }
+    }
+  }
+}
