@@ -1,10 +1,17 @@
 # Python cache
 __pycache__/
 *.pyc
+
+# Utility scripts (not part of app)
 rename.py
 update_json.py
+calculator_COA70.py
+gui.py
 
-# Local save files
+# Local save/temp files
+temp.txt
+save.txt
+session-ses_*.md
 
 # Virtual Environments
 venv/
@@ -21,3 +28,15 @@ env/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# PyQt6 binaries (install via pip)
+PyQt6/
+*.pyd
+
+# Pytest
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
