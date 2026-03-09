@@ -48,8 +48,8 @@ mypy .              # Type check
 - **Load**: Upload a previously saved JSON build file
 - Build files contain all equipment, enhancements, engravings, pets, cards, fashion, buffs, and manual inputs
 
-### Damage Formula (Fixed)
-The damage calculation now correctly uses the game's formula:
+### Damage Formula
+The damage calculation uses the game's formula:
 ```
 Damage Reduction % = Defense / (3000 + Defense)
 Actual Attack = Total PATK * (1 - Damage Reduction %) + PDEF Shred
@@ -199,6 +199,24 @@ class TestDamageCompute:
 1. Use `@st.fragment` for expensive calculations that should run independently
 2. Cache icon file existence checks with `@st.cache_data`
 3. Validate data.json structure at load time
+4. Use `BUILD_WIDGET_KEYS` constant to track all session state keys for save/load
+
+---
+
+## Changelog
+
+### v1.1 - Performance & Quality Improvements
+- Fixed critical bug: Weapon Enhancement (Def Break Atk) now correctly affects burst damage
+- Added `@st.fragment` for partial re-rendering (improves performance)
+- Added type hints to all functions
+- Implemented save/load build functionality with JSON files
+- Added icon file existence caching
+- Added data validation on load
+- Created comprehensive unit tests (11 tests passing)
+- Updated `.gitignore` with proper patterns
+
+### Known Issues
+- **Resonance Effect I/II**: Enhancement tiers add these stats but they are collected but not applied to damage calculation (needs research)
 
 ---
 
