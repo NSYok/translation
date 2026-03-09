@@ -63,7 +63,7 @@ def _check_icon_exists(icon_name: str) -> bool:
 # --- Build Save/Load Functions ---
 BUILD_WIDGET_KEYS = [
     # Equipment
-    's_weapon', 's_head', 's_armor', 's_hand', 's_shoes', 's_neck', 's_bracer', 's_ring', 's_seal', 's_amulet', 's_treasure',
+    's_weapon', 's_head', 's_armor', 's_hand', 's_legs', 's_shoes', 's_neck', 's_bracer', 's_ring', 's_seal', 's_amulet', 's_treasure',
     # Emblems
     'emb_weapon', 'emb_head', 'emb_armor', 'emb_hand', 'emb_legs', 'emb_shoes', 'emb_neck', 'emb_bracer', 'emb_ring', 'emb_seal', 'emb_amulet',
     # Enhancements
