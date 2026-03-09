@@ -247,7 +247,7 @@ def calculation_fragment(equipment_list: EquipmentList, manual_inputs: ManualInp
     return final_status, burst_damage, total_damage
 
 # --- UI Definition (Sidebar) ---
-st.title("Crystal Core Panel Calculator (Web App)")
+st.title("Crystal of Atlan Panel Calculator (Web App)")
 
 input_col, result_col = st.columns([2, 1])
 
