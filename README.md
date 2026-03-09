@@ -1,8 +1,8 @@
-# Crystal Core Panel Calculator (Streamlit Web App)
+# Crystal of Atlan Panel Calculator (Streamlit Web App)
 
 **Live Website:** [https://coa-translation.streamlit.app/](https://coa-translation.streamlit.app/)
 
-This is a web-based damage calculator for the game **Crystal Core (晶核)**. It allows players to simulate their character's stats based on equipment, enchantments, emblems, pets, and buffs to calculate theoretical damage output.
+This is a web-based damage calculator for the game **Crystal of Atlan (晶核)**. It allows players to simulate their character's stats based on equipment, enchantments, emblems, pets, and buffs to calculate theoretical damage output.
 
 This project is a web port of the original desktop application, designed to be easily accessible via a browser.
 
