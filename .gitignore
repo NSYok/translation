@@ -54,3 +54,8 @@ htmlcov/
 # Project Specific (User generated files)
 build_*.json
 save.txt
+
+# Local Development Folders (Files in these folders will NOT be uploaded)
+_dev_tools/
+archive/
+backup/
