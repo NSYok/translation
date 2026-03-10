@@ -1928,54 +1928,54 @@
         "Cooldown": 10
       },
       "4": {
-        "Dmg Amp": 3
+        "Extra Dmg": 3
       },
       "5": {
         "Cooldown": 15,
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "6": {
         "Cooldown": 15,
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "7": {
-        "Dmg Amp": 3
+        "Extra Dmg": 3
       },
       "8": {
         "Cooldown": 20,
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "9": {
-        "Dmg Amp": 9
+        "Extra Dmg": 9
       }
     },
     "Combo": {
       "1": {
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "2": {
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "3": {
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "4": {
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "5": {
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "6": {
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "7": {
-        "Dmg Amp": 5
+        "Extra Dmg": 5
       },
       "8": {
-        "Dmg Amp": 3
+        "Extra Dmg": 3
       },
       "9": {
-        "Dmg Amp": 6
+        "Extra Dmg": 6
       }
     },
     "Offensive": {
@@ -2446,11 +2446,11 @@
       }
     },
     "Evasion": {
-      "7": {
-        "Dmg Amp": 10
+      "4": {
+        "Extra Dmg": 10
       },
       "8": {
-        "Dmg Amp": 8
+        "Extra Dmg": 8
       }
     },
     "Elem Resist": {
@@ -2476,16 +2476,16 @@
     },
     "Recovery": {
       "4": {
-        "Dmg Amp": 6
+        "Extra Dmg": 6
       },
       "7": {
-        "Dmg Amp": 6
+        "Extra Dmg": 6
       },
       "8": {
-        "Dmg Amp": 2
+        "Extra Dmg": 2
       },
       "9": {
-        "Dmg Amp": 13
+        "Extra Dmg": 13
       }
     },
     "Solitary": {
@@ -2548,15 +2548,15 @@
     },
     "Unyielding": {
       "9": {
-        "Dmg Amp": 8
+        "Extra Dmg": 8
       }
     },
     "Sprint": {
       "7": {
-        "Dmg Amp": 10
+        "Extra Dmg": 10
       },
       "9": {
-        "Dmg Amp": 10
+        "Extra Dmg": 10
       }
     },
     "Lightning Summon": {
