@@ -29,6 +29,35 @@ def damage_compute(status_dict: dict[str, Any]) -> tuple[float, float]:
     
     multiplier = 1 + status_dict['Multiplier'] / 100
     skill_dmg_boost = 1 + status_dict['Skill Dmg Boost'] / 100
+    # ... (existing code) ...
+
+    # Skill Haste Note:
+    # 'Skill Haste' is a proxy for DPS increase from complex flat Cooldown Reduction (CDR) mechanics.
+    # These values (e.g., for Destruction engraving) are pre-calculated "magic numbers".
+    #
+    # How they are calculated (Reverse Engineered Example for Destruction Lv. 7):
+    # Effect: "Reduce Finisher CD by 0.5s every 2s." -> Mapped to "Skill Haste: 5.6"
+    #
+    # 1. Assumptions:
+    #    - Finisher Base Cooldown: 60s
+    #    - Finisher's share of total damage: ~17%
+    #
+    # 2. Calculate Effective Cooldown:
+    #    - Over 60s, the effect triggers 60 / 2 = 30 times.
+    #    - Total flat reduction = 30 * 0.5s = 15s.
+    #    - New Effective Cooldown = 60s - 15s = 45s.
+    #
+    # 3. Calculate DPS Gain:
+    #    - The skill can be used (60 / 45) = 1.333 times more often, a ~33.3% frequency increase.
+    #
+    # 4. Convert to Equivalent Skill Haste:
+    #    - Equivalent Haste % = (Frequency Increase) * (Skill's Damage Share)
+    #    - Equivalent Haste % = 33.3% * 17% ~= 5.66%
+    #    - This is why data.json has {"Skill Haste": 5.6} for this effect.
+    #
+    # The same logic applies to other levels:
+    # - Lv 4 (1.8): For a normal skill with a smaller damage share.
+    # - Lv 9 (5.6): Adds another 0.5s reduction to the Finisher, so it adds another 5.6%.
     skill_haste = 1 + status_dict['Skill Haste'] / 100
     cooldown_reduction = 1 / (1 - status_dict['Cooldown Reduction'] / 100)
     effect_ratio = 1 + status_dict['Effect Ratio'] / (100 - status_dict['Effect Ratio'])
