@@ -13,6 +13,7 @@ This project is a web port of the original desktop application, designed to be e
 *   **Pet & Card System**: Support for Pet selection, Pet Souls, and Cards.
 *   **Fashion & Buffs**: Include Fashion stats and consumable buffs (Potions, Wines, etc.).
 *   **Real-time Calculation**: Instantly see Burst Damage and Sustained Damage (DPS) updates.
+*   **Save/Load Builds**: Save and load complete build configurations to/from JSON files.
 *   **Snapshot Comparison**: Compare your current build against a saved snapshot.
 
 ## How to Run Locally
@@ -30,6 +31,26 @@ This project is a web port of the original desktop application, designed to be e
     ```
 
 4.  The app should open automatically in your default web browser at `http://localhost:8501`.
+
+## Development
+
+### Testing
+To run the test suite:
+```bash
+pip install pytest pytest-cov
+pytest
+```
+
+### Linting & Formatting
+To lint and format the codebase:
+```bash
+# Lint
+ruff check .
+# Auto-fix
+ruff check --fix .
+# Format
+black .
+```
 
 ## Deployment
 
