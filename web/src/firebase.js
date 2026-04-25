@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -16,6 +16,16 @@ const db = getFirestore(app);
 
 // Collection: 'gameData', Document: 'main'
 const DATA_DOC = doc(db, "gameData", "main");
+
+export function subscribeToGameData(callback) {
+  return onSnapshot(DATA_DOC, (docSnap) => {
+    if (docSnap.exists()) {
+      callback(docSnap.data());
+    }
+  }, (error) => {
+    console.error("Firebase subscription error:", error);
+  });
+}
 
 export async function fetchGameData() {
   try {

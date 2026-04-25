@@ -254,7 +254,7 @@
 
   <script type="module">
     import { SLOTS, EMBLEMS, PETS, CARDS, FASHION, FASHION_EMBLEMS, BUFFS, ARMOR_SETS, ACC_SETS } from './src/options.js';
-    import { fetchGameData, saveGameData } from './src/firebase.js';
+    import { fetchGameData, saveGameData, subscribeToGameData } from './src/firebase.js';
 
     function getCategory(name) {
       if (data && data.Single && data.Single[name]) {
@@ -286,6 +286,7 @@
     let data = null;
     let editingKey = null;
     let editingSection = 'Single';
+    let isEditing = false; // Prevention lock
 
     // --- Toast ---
     function toast(msg, type = 'ok') {
@@ -319,23 +320,24 @@
       e.target.value = '';
     });
 
-    // Try auto-loading from server
-    async function initData() {
-      data = await fetchGameData();
-      if (!data) {
-        try {
-          const resp = await fetch('/data.json');
-          data = await resp.json();
-        } catch (e) {
-          console.log("No local data.json found either.");
+    // Real-time Cloud Sync
+    function initSync() {
+      subscribeToGameData((newData) => {
+        // Only update UI if user is NOT currently editing something
+        // to prevent modal data from disappearing while typing
+        if (!isEditing) {
+          data = newData;
+          enableUI();
+          renderAll();
+          console.log("Cloud data synced!");
+        } else {
+          // If editing, we still update the background data 
+          // so when they save, they have the latest base
+          data = newData; 
         }
-      }
-      if (data) {
-        enableUI();
-        renderAll();
-      }
+      });
     }
-    initData();
+    initSync();
 
     function enableUI() {
       document.getElementById('btn-download').disabled = false;
@@ -433,22 +435,7 @@
     document.getElementById('search').addEventListener('input', renderAll);
 
     // --- Item Editor ---
-    function openEditor(name, section) {
-      editingKey = name;
-      editingSection = section;
-      const modal = document.getElementById('modal-edit');
-      document.getElementById('modal-edit-title').textContent = `Edit: ${name}`;
-      document.getElementById('edit-name').value = name;
-      const stats = (section === 'Single' ? data.Single : data.Sets)[name] || {};
-      
-      if (section === 'Single') {
-        document.getElementById('edit-type-container').style.display = 'block';
-        document.getElementById('edit-type').value = stats.type || stats.Type || '';
-      } else {
-        document.getElementById('edit-type-container').style.display = 'none';
-      }
-
-      renderStatFields(stats);
+      isEditing = true;
       modal.classList.remove('hidden');
     }
 
@@ -462,6 +449,7 @@
       const tiers = data.Sets[setName] || {};
       renderSetTiers(tiers);
       
+      isEditing = true;
       modal.classList.remove('hidden');
     }
 
@@ -546,6 +534,7 @@
     document.getElementById('btn-cancel-edit').addEventListener('click', () => {
       document.getElementById('modal-edit').classList.add('hidden');
       document.getElementById('edit-name').disabled = false;
+      isEditing = false;
     });
 
     document.getElementById('btn-save-edit').addEventListener('click', () => {
@@ -570,6 +559,7 @@
 
       document.getElementById('modal-edit').classList.add('hidden');
       document.getElementById('edit-name').disabled = false;
+      isEditing = false;
       renderAll();
       toast('Saved');
     });
@@ -579,6 +569,7 @@
       delete data.Single[editingKey];
       document.getElementById('modal-edit').classList.add('hidden');
       document.getElementById('edit-name').disabled = false;
+      isEditing = false;
       renderAll();
       toast('Deleted');
     });
@@ -596,6 +587,7 @@
 
     document.getElementById('btn-cancel-set-edit').addEventListener('click', () => {
       document.getElementById('modal-edit-set').classList.add('hidden');
+      isEditing = false;
     });
 
     document.getElementById('btn-save-set-edit').addEventListener('click', () => {
@@ -620,6 +612,7 @@
       data.Sets[newName] = tiers;
 
       document.getElementById('modal-edit-set').classList.add('hidden');
+      isEditing = false;
       renderAll();
       toast('Saved Set');
     });
@@ -628,6 +621,7 @@
       if (!confirm(`Delete entire set "${editingKey}"?`)) return;
       delete data.Sets[editingKey];
       document.getElementById('modal-edit-set').classList.add('hidden');
+      isEditing = false;
       renderAll();
       toast('Set Deleted');
     });
