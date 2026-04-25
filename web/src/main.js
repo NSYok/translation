@@ -2,12 +2,17 @@ import './styles.css';
 import { runCalculation, DEFAULT_BASE_STATUS } from './calculator.js';
 import { initState, getState, setState, subscribe, saveSnapshot, getSnapshot, clearSnapshot, exportBuild, importBuild, getAllState } from './state.js';
 import { SLOTS, EMBLEMS, ENHANCEMENT_SLOTS, ENHANCEMENTS, ENGRAVING_SLOTS, ENGRAVINGS, PETS, CARDS, FASHION, FASHION_EMBLEMS, BUFFS, MANUAL_DEFAULTS, generateDefaults } from './options.js';
+import { fetchGameData } from './firebase.js';
 
 let gameData = null;
 
 async function loadGameData() {
-  const resp = await fetch('/data.json');
-  gameData = await resp.json();
+  let data = await fetchGameData();
+  if (!data) {
+    const resp = await fetch('/data.json');
+    data = await resp.json();
+  }
+  gameData = data;
   
   if (gameData && gameData.Single) {
     const injectOptions = (objMap) => {

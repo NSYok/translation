@@ -109,7 +109,8 @@
 
     <div class="toolbar">
       <button type="button" class="btn btn-primary" id="btn-load">📂 Load data.json</button>
-      <button type="button" class="btn btn-primary" id="btn-download" disabled>💾 Download Edited</button>
+      <button type="button" class="btn btn-primary" id="btn-save-cloud" disabled>☁️ Save to Cloud</button>
+      <button type="button" class="btn btn-secondary" id="btn-download" disabled>💾 Download</button>
       <div class="search-box">
         <input type="text" id="search" placeholder="Search items..." disabled />
       </div>
@@ -253,6 +254,7 @@
 
   <script type="module">
     import { SLOTS, EMBLEMS, PETS, CARDS, FASHION, FASHION_EMBLEMS, BUFFS, ARMOR_SETS, ACC_SETS } from './src/options.js';
+    import { fetchGameData, saveGameData } from './src/firebase.js';
 
     function getCategory(name) {
       if (data && data.Single && data.Single[name]) {
@@ -318,14 +320,26 @@
     });
 
     // Try auto-loading from server
-    fetch('/data.json').then(r => r.json()).then(d => {
-      data = d;
-      enableUI();
-      renderAll();
-    }).catch(() => {});
+    async function initData() {
+      data = await fetchGameData();
+      if (!data) {
+        try {
+          const resp = await fetch('/data.json');
+          data = await resp.json();
+        } catch (e) {
+          console.log("No local data.json found either.");
+        }
+      }
+      if (data) {
+        enableUI();
+        renderAll();
+      }
+    }
+    initData();
 
     function enableUI() {
       document.getElementById('btn-download').disabled = false;
+      document.getElementById('btn-save-cloud').disabled = false;
       document.getElementById('search').disabled = false;
       document.getElementById('btn-add-item').disabled = false;
       document.getElementById('btn-add-set').disabled = false;
@@ -668,6 +682,21 @@
       } catch (err) {
         toast('Invalid JSON: ' + err.message, 'err');
       }
+    });
+
+    // --- Save to Cloud ---
+    document.getElementById('btn-save-cloud').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-save-cloud');
+      btn.textContent = '⏳ Saving...';
+      btn.disabled = true;
+      try {
+        await saveGameData(data);
+        toast('Saved to Firebase Cloud!', 'ok');
+      } catch (err) {
+        toast('Failed to save: ' + err.message, 'err');
+      }
+      btn.textContent = '☁️ Save to Cloud';
+      btn.disabled = false;
     });
 
     // --- Download ---
