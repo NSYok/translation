@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot, updateDoc, deleteField } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -42,27 +42,46 @@ export async function fetchGameData() {
   }
 }
 
-export async function saveGameData(localData) {
+// Used for bulk uploads (like importing JSON file)
+export async function saveGameData(data) {
   try {
-    // 1. Fetch latest data from cloud to avoid overwriting others' work
-    const docSnap = await getDoc(DATA_DOC);
-    let cloudData = docSnap.exists() ? docSnap.data() : { Single: {}, Sets: {} };
-
-    // 2. Perform Deep Merge (Local data takes priority for specific items changed)
-    const mergedData = {
-      Single: { ...(cloudData.Single || {}), ...(localData.Single || {}) },
-      Sets: { ...(cloudData.Sets || {}), ...(localData.Sets || {}) }
-    };
-
-    // 3. Remove any potential empty keys that Firestore hates
-    if (mergedData.Single[""]) delete mergedData.Single[""];
-    if (mergedData.Sets[""]) delete mergedData.Sets[""];
-
-    // 4. Save merged result
-    await setDoc(DATA_DOC, mergedData);
+    if (data.Single && data.Single[""]) delete data.Single[""];
+    if (data.Sets && data.Sets[""]) delete data.Sets[""];
+    await setDoc(DATA_DOC, data);
     return true;
   } catch (error) {
     console.error("Error saving to Firebase:", error);
     throw error;
   }
+}
+
+// Granular updates to prevent "last man wins" overwrites
+export async function saveSingleItem(oldName, newName, stats) {
+  const updates = {};
+  if (oldName && oldName !== newName) {
+    updates[`Single.${oldName}`] = deleteField();
+  }
+  updates[`Single.${newName}`] = stats;
+  return updateDoc(DATA_DOC, updates);
+}
+
+export async function deleteSingleItem(name) {
+  return updateDoc(DATA_DOC, {
+    [`Single.${name}`]: deleteField()
+  });
+}
+
+export async function saveSetItem(oldName, newName, tiers) {
+  const updates = {};
+  if (oldName && oldName !== newName) {
+    updates[`Sets.${oldName}`] = deleteField();
+  }
+  updates[`Sets.${newName}`] = tiers;
+  return updateDoc(DATA_DOC, updates);
+}
+
+export async function deleteSetItem(name) {
+  return updateDoc(DATA_DOC, {
+    [`Sets.${name}`]: deleteField()
+  });
 }

@@ -254,7 +254,8 @@
 
   <script type="module">
     import { SLOTS, EMBLEMS, PETS, CARDS, FASHION, FASHION_EMBLEMS, BUFFS, ARMOR_SETS, ACC_SETS } from './src/options.js';
-    import { fetchGameData, saveGameData, subscribeToGameData } from './src/firebase.js';
+    import { fetchGameData, saveGameData, subscribeToGameData, saveSingleItem, deleteSingleItem, saveSetItem, deleteSetItem } from './src/firebase.js';
+
 
     function getCategory(name) {
       if (data && data.Single && data.Single[name]) {
@@ -553,7 +554,7 @@
       isEditing = false;
     });
 
-    document.getElementById('btn-save-edit').addEventListener('click', () => {
+    document.getElementById('btn-save-edit').addEventListener('click', async () => {
       const newName = document.getElementById('edit-name').value.trim();
       if (!newName) return toast('Name required', 'err');
 
@@ -570,24 +571,28 @@
         if (key && key.toLowerCase() !== 'type') stats[key] = val;
       });
 
-      if (editingKey !== newName) delete data.Single[editingKey];
-      data.Single[newName] = stats;
-
-      document.getElementById('modal-edit').classList.add('hidden');
-      document.getElementById('edit-name').disabled = false;
-      isEditing = false;
-      renderAll();
-      toast('Saved');
+      try {
+        await saveSingleItem(editingKey, newName, stats);
+        document.getElementById('modal-edit').classList.add('hidden');
+        document.getElementById('edit-name').disabled = false;
+        isEditing = false;
+        toast('Saved');
+      } catch (err) {
+        toast('Error saving: ' + err.message, 'err');
+      }
     });
 
-    document.getElementById('btn-delete-item').addEventListener('click', () => {
+    document.getElementById('btn-delete-item').addEventListener('click', async () => {
       if (!confirm(`Delete "${editingKey}"?`)) return;
-      delete data.Single[editingKey];
-      document.getElementById('modal-edit').classList.add('hidden');
-      document.getElementById('edit-name').disabled = false;
-      isEditing = false;
-      renderAll();
-      toast('Deleted');
+      try {
+        await deleteSingleItem(editingKey);
+        document.getElementById('modal-edit').classList.add('hidden');
+        document.getElementById('edit-name').disabled = false;
+        isEditing = false;
+        toast('Deleted');
+      } catch(err) {
+        toast('Error: ' + err.message, 'err');
+      }
     });
 
     // --- Set Editor Events ---
@@ -606,7 +611,7 @@
       isEditing = false;
     });
 
-    document.getElementById('btn-save-set-edit').addEventListener('click', () => {
+    document.getElementById('btn-save-set-edit').addEventListener('click', async () => {
       const newName = document.getElementById('edit-set-name').value.trim();
       if (!newName) return toast('Set Name required', 'err');
 
@@ -622,24 +627,26 @@
         tiers[count] = stats;
       });
 
-      if (editingKey !== newName && data.Sets[editingKey]) {
-        delete data.Sets[editingKey];
+      try {
+        await saveSetItem(editingKey, newName, tiers);
+        document.getElementById('modal-edit-set').classList.add('hidden');
+        isEditing = false;
+        toast('Saved Set');
+      } catch (err) {
+        toast('Error: ' + err.message, 'err');
       }
-      data.Sets[newName] = tiers;
-
-      document.getElementById('modal-edit-set').classList.add('hidden');
-      isEditing = false;
-      renderAll();
-      toast('Saved Set');
     });
 
-    document.getElementById('btn-delete-set').addEventListener('click', () => {
+    document.getElementById('btn-delete-set').addEventListener('click', async () => {
       if (!confirm(`Delete entire set "${editingKey}"?`)) return;
-      delete data.Sets[editingKey];
-      document.getElementById('modal-edit-set').classList.add('hidden');
-      isEditing = false;
-      renderAll();
-      toast('Set Deleted');
+      try {
+        await deleteSetItem(editingKey);
+        document.getElementById('modal-edit-set').classList.add('hidden');
+        isEditing = false;
+        toast('Set Deleted');
+      } catch (err) {
+        toast('Error: ' + err.message, 'err');
+      }
     });
 
     // Close modals on overlay click
