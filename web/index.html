@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystal of Atlan — Damage Calculator</title>
+  <meta name="description" content="Advanced damage calculator for Crystal of Atlan (晶核). Simulate equipment, engravings, pets, fashion, and buffs to optimize your build." />
+  <link rel="icon" type="image/png" href="/icons/icon.png" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>⚔️ Crystal of Atlan — Calculator</h1>
+      <div class="header-actions">
+        <button class="btn btn-sm" id="btn-import" title="Load Build">📂 Load</button>
+        <button class="btn btn-sm" id="btn-export" title="Save Build">💾 Save</button>
+        <input type="file" id="file-import" accept=".json" class="hidden" />
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+      <!-- Left: Configuration Panel -->
+      <div class="config-panel">
+        <!-- Tab Navigation -->
+        <nav class="tab-nav" id="tab-nav">
+          <button class="tab-btn active" data-tab="gear">⚔️ Gear</button>
+          <button class="tab-btn" data-tab="enhance">🔧 Enhance</button>
+          <button class="tab-btn" data-tab="pet">🐾 Pet/Card</button>
+          <button class="tab-btn" data-tab="fashion">👗 Fashion</button>
+          <button class="tab-btn" data-tab="manual">📝 Manual</button>
+        </nav>
+
+        <!-- Tab: Gear -->
+        <div class="tab-content active" id="tab-gear"></div>
+
+        <!-- Tab: Enhance -->
+        <div class="tab-content" id="tab-enhance"></div>
+
+        <!-- Tab: Pet/Card -->
+        <div class="tab-content" id="tab-pet"></div>
+
+        <!-- Tab: Fashion/Buff -->
+        <div class="tab-content" id="tab-fashion"></div>
+
+        <!-- Tab: Manual -->
+        <div class="tab-content" id="tab-manual"></div>
+      </div>
+
+      <!-- Right: Results Panel -->
+      <div class="results-panel" id="results-panel">
+        <!-- Hero damage display -->
+        <div class="result-hero" id="result-hero">
+          <div class="damage-label">Burst Damage</div>
+          <div class="damage-value" id="val-burst">—</div>
+          <div class="damage-sub">
+            <div class="result-sub-item">
+              <div class="sub-label">Sustained DPS</div>
+              <div class="sub-value" id="val-sustained">—</div>
+            </div>
+            <div class="result-sub-item">
+              <div class="sub-label">CDR</div>
+              <div class="sub-value" id="val-cdr">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Snapshot actions -->
+        <div class="btn-group mb-4">
+          <button class="btn btn-sm" id="btn-snapshot" style="flex:1">📸 Save Snapshot</button>
+          <button class="btn btn-sm" id="btn-clear-snap" style="flex:1">🗑️ Clear</button>
+        </div>
+        <div id="snapshot-delta" class="text-center mb-4" style="display:none"></div>
+
+        <!-- Detailed Stats -->
+        <div class="section-title">Detailed Panel Stats</div>
+        <div class="stat-list" id="stat-list"></div>
+      </div>
+    </div>
+
+    <!-- Icon Selection Modal -->
+    <div class="icon-modal-overlay hidden" id="icon-modal">
+      <div class="icon-modal">
+        <h3 id="modal-title">Select Item</h3>
+        <div class="icon-grid" id="modal-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

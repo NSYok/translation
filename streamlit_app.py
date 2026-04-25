@@ -16,7 +16,7 @@ except ImportError:
 
 # --- Default Base Status ---
 DEFAULT_BASE_STATUS: StatusDict = {
-    'Elem Boost': 0, 'Crit Rate': 0, 'Crit Dmg': 56, 'Counter': 0, 'Dmg Amp': 3,
+    'Elem Boost': 0, 'Crit Rate': 0, 'Crit Dmg': 56, 'dmgToDebuff': 0, 'Boss Dmg': 0, 'Dmg Amp': 3,
     'Skill Dmg': 0, 'Resonance Dmg': 20, 'Elem Dmg': 0, 'Base Atk': 201,
     'Atk Bonus': 0, 'Strength': 685, 'Agility': 445, 'Str Bonus': 0,
     'Def Break Atk': 0, 'Def Break Bonus': 0, 'Penetration': 0, 'Extra Dmg': 0,
@@ -88,7 +88,7 @@ BUILD_WIDGET_KEYS = [
     'boost_bufan4', 'boost_bufan6', 'boost_zhuoyue4', 'boost_zhuoyue7', 'boost_zhuoyue9', 'boost_chaoran9',
     # Base stats
     'b_atk', 'b_str', 'b_agi', 'b_crit_rate', 'b_crit_dmg', 'b_elem_boost', 'b_cd', 'b_skill_dmg',
-    'b_counter', 'b_dmg_amp', 'b_res_dmg', 'b_elem_dmg', 'b_def_break', 'b_pen',
+    'b_counter', 'b_boss_dmg', 'b_dmg_amp', 'b_res_dmg', 'b_elem_dmg', 'b_def_break', 'b_pen',
     'b_extra_dmg', 'b_class_dmg', 'b_skill_boost', 'b_skill_haste', 'b_special', 'b_multiplier'
 ]
 
@@ -191,10 +191,10 @@ def run_calculation(equipment_list: EquipmentList, manual_inputs: ManualInputs) 
 
     if ('Venom', '2') in outfits:
         extra_kezhi = min(4 * base_status.get('Venom', 0), 16)
-        base_status['Counter'] += extra_kezhi
+        base_status['dmgToDebuff'] += extra_kezhi
     elif ('Cursed', '2') in outfits:
         extra_kezhi = min(4 * base_status.get('Venom', 0) + base_status.get('Cursed', 0), 22)
-        base_status['Counter'] += extra_kezhi
+        base_status['dmgToDebuff'] += extra_kezhi
 
     # 7. Calculate derived stats and create the final_status dictionary
     cdr_percentage = (base_status['Cooldown'] / (base_status['Cooldown'] + 1133)) * 100
@@ -203,13 +203,14 @@ def run_calculation(equipment_list: EquipmentList, manual_inputs: ManualInputs) 
         'Elem Boost': base_status['Elem Boost'],
         'Crit Rate': base_status['Crit Rate'] - 7e-07 * base_status['Agility'] + 0.0125 * base_status['Agility'] + 0.3034,
         'Crit Dmg': base_status['Crit Dmg'],
-        'Counter': base_status['Counter'],
+        'dmgToDebuff': base_status['dmgToDebuff'],
+        'Boss Dmg': base_status['Boss Dmg'],
         'Dmg Amp': base_status['Dmg Amp'],
         'Skill Dmg': base_status['Skill Dmg'],
         'Resonance Dmg': base_status['Resonance Dmg'],
         'Elem Dmg': base_status.get('Elem Dmg', 0) + base_status['Elem Boost'] / 2.2,
         'Def Break Atk': base_status['Def Break Atk'] * (1 + base_status.get('Def Break Bonus', 0) / 100),
-        'Atk': (base_status['Base Atk'] + base_status['Strength'] * 2.5 * (1 + base_status['Str Bonus'] / 100)) * (1 + base_status['Atk Bonus'] / 100),
+        'Atk': base_status['Base Atk'] * (1 + (base_status['Strength'] * (1 + base_status.get('Str Bonus', 0) / 100)) / 1000) * (1 + base_status.get('Atk Bonus', 0) / 100),
         'Monster Def': base_status['Monster Def'],
         'Penetration': base_status['Penetration'],
         'Def Reduction': base_status.get('Def Reduction', 0),
@@ -540,7 +541,7 @@ with input_col:
         st.write("Buffs")
         c1, c2, c3 = st.columns(3)
         with c1: in_buff_elem = icon_selector("Elem Potion", ['22 Elem Potion', '25 Elem Potion', 'None'], "25 Elem Potion", "in_buff_elem", "Elem Potion")
-        with c2: in_buff_atk = icon_selector("Atk Buff", ['8 Crit', '6 Counter', '8 Skill Dmg', '8 Atk', '10 Crit Dmg', 'None'], "10 Crit Dmg", "in_buff_atk", "Buff")
+        with c2: in_buff_atk = icon_selector("Atk Buff", ['8 Crit', '6 dmgToDebuff', '8 Skill Dmg', '8 Atk', '10 Crit Dmg', 'None'], "10 Crit Dmg", "in_buff_atk", "Buff")
         with c3: in_buff_wine = icon_selector("Wine", ['Morning', 'Cliff', 'East', 'None'], "Morning", "in_buff_wine")
         
         c1, c2, c3 = st.columns(3)
@@ -549,7 +550,7 @@ with input_col:
         with c3: in_buff_mine = icon_selector("Mine War", ['Mine War', 'None'], "Mine War", "in_buff_mine")
         
         c1, c2, c3 = st.columns(3)
-        with c1: in_buff_counter = icon_selector("Counter Buff", ['Counter', 'None'], "Counter", "in_buff_counter")
+        with c1: in_buff_counter = icon_selector("Debuff Buff", ['dmgToDebuff', 'None'], "dmgToDebuff", "in_buff_counter")
 
     with tab_manual:
         c1, c2= st.columns(2)
@@ -582,21 +583,23 @@ with input_col:
         
         st.caption("Advanced Stats")
         c1, c2, c3 = st.columns(3)
-        b_counter = c1.number_input("Dmg Debuff", value=float(DEFAULT_BASE_STATUS['Counter']), key="b_counter")
-        b_dmg_amp = c2.number_input("Dmg Bonus", value=float(DEFAULT_BASE_STATUS['Dmg Amp']), key="b_dmg_amp")
-        b_res_dmg = c3.number_input("DMG during Resonance", value=float(DEFAULT_BASE_STATUS['Resonance Dmg']), key="b_res_dmg")
+        b_counter = c1.number_input("Dmg Debuff", value=float(DEFAULT_BASE_STATUS['dmgToDebuff']), key="b_counter")
+        b_boss_dmg = c2.number_input("DMG to Boss", value=float(DEFAULT_BASE_STATUS['Boss Dmg']), key="b_boss_dmg")
+        b_dmg_amp = c3.number_input("Dmg Bonus", value=float(DEFAULT_BASE_STATUS['Dmg Amp']), key="b_dmg_amp")
         
-        b_elem_dmg = c1.number_input("ENH DMG", value=float(DEFAULT_BASE_STATUS['Elem Dmg']), key="b_elem_dmg")
-        b_def_break = c2.number_input("Def Shred", value=float(DEFAULT_BASE_STATUS['Def Break Atk']), key="b_def_break")
-        b_pen = c3.number_input("PEN", value=float(DEFAULT_BASE_STATUS['Penetration']), key="b_pen")
+        b_res_dmg = c1.number_input("DMG during Resonance", value=float(DEFAULT_BASE_STATUS['Resonance Dmg']), key="b_res_dmg")
+        b_elem_dmg = c2.number_input("ENH DMG", value=float(DEFAULT_BASE_STATUS['Elem Dmg']), key="b_elem_dmg")
+        b_def_break = c3.number_input("Def Shred", value=float(DEFAULT_BASE_STATUS['Def Break Atk']), key="b_def_break")
         
-        b_extra_dmg = c1.number_input("Additional", value=float(DEFAULT_BASE_STATUS['Extra Dmg']), key="b_extra_dmg")
-        b_class_dmg = c2.number_input("Class DMG Bonus", value=float(DEFAULT_BASE_STATUS['Class Dmg']), key="b_class_dmg")
-        b_skill_boost = c3.number_input("Skill DMG Boost", value=float(DEFAULT_BASE_STATUS['Skill Dmg Boost']), key="b_skill_boost")
+        b_pen = c1.number_input("PEN", value=float(DEFAULT_BASE_STATUS['Penetration']), key="b_pen")
+        b_extra_dmg = c2.number_input("Additional", value=float(DEFAULT_BASE_STATUS['Extra Dmg']), key="b_extra_dmg")
+        b_class_dmg = c3.number_input("Class DMG Bonus", value=float(DEFAULT_BASE_STATUS['Class Dmg']), key="b_class_dmg")
         
-        b_skill_haste = c1.number_input("ASPD", value=float(DEFAULT_BASE_STATUS['Skill Haste']), key="b_skill_haste")
-        b_special = c2.number_input("Special Stats", value=float(DEFAULT_BASE_STATUS['Special']), key="b_special")
-        b_multiplier = c3.number_input("Skill Ratio", value=float(DEFAULT_BASE_STATUS['Multiplier']), key="b_multiplier")
+        b_skill_boost = c1.number_input("Skill DMG Boost", value=float(DEFAULT_BASE_STATUS['Skill Dmg Boost']), key="b_skill_boost")
+        b_skill_haste = c2.number_input("ASPD", value=float(DEFAULT_BASE_STATUS['Skill Haste']), key="b_skill_haste")
+        b_special = c3.number_input("Special Stats", value=float(DEFAULT_BASE_STATUS['Special']), key="b_special")
+        
+        b_multiplier = c1.number_input("Skill Ratio", value=float(DEFAULT_BASE_STATUS['Multiplier']), key="b_multiplier")
 
         st.subheader("Other Adjustments")
         c1, c2 = st.columns(2)
@@ -651,7 +654,7 @@ manual_inputs = {
         'Base Atk': b_atk, 'Strength': b_str, 'Agility': b_agi,
         'Crit Rate': b_crit_rate, 'Crit Dmg': b_crit_dmg, 'Elem Boost': b_elem_boost,
         'Cooldown': b_cd, 'Skill Dmg': b_skill_dmg,
-        'Counter': b_counter, 'Dmg Amp': b_dmg_amp, 'Resonance Dmg': b_res_dmg,
+        'Boss Dmg': b_boss_dmg, 'dmgToDebuff': b_counter, 'Dmg Amp': b_dmg_amp, 'Resonance Dmg': b_res_dmg,
         'Elem Dmg': b_elem_dmg, 'Def Break Atk': b_def_break, 'Penetration': b_pen,
         'Extra Dmg': b_extra_dmg, 'Class Dmg': b_class_dmg, 'Skill Dmg Boost': b_skill_boost,
         'Skill Haste': b_skill_haste, 'Special': b_special, 'Multiplier': b_multiplier
@@ -716,7 +719,7 @@ try:
             st.subheader("Detailed Panel Stats")
             stats_to_show = [
                 ('Attack (ATK)', 'Atk'), ('Crit Rate', 'Crit Rate'), ('Crit DMG', 'Crit Dmg'), ('Elem', 'Elem Boost'),
-                ('ENH DMG', 'Elem Dmg'), ('Dmg Bonus', 'Dmg Amp'), ('Skill DMG', 'Skill Dmg'), ('Dmg Debuff', 'Counter'),
+                ('ENH DMG', 'Elem Dmg'), ('Dmg Bonus', 'Dmg Amp'), ('Skill DMG', 'Skill Dmg'), ('Dmg Debuff', 'dmgToDebuff'),
                 ('Def Shred', 'Def Break Atk'), ('PEN', 'Penetration'), ('ASPD', 'Skill Haste'), ('Cooldown', 'Cooldown'),
                 ('Additional', 'Extra Dmg'), ('DMG during Resonance', 'Resonance Dmg'),
                 ('Class DMG Bonus', 'Class Dmg'), ('Skill DMG Boost', 'Skill Dmg Boost'), ('Special Stats', 'Special'), ('Skill Ratio', 'Multiplier')

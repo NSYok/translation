@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COA Data Editor — Admin</title>
+  <link rel="icon" type="image/png" href="/icons/icon.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #06080f; --bg2: #0a0e1a; --bg3: #111827;
+      --glass: rgba(255,255,255,0.04); --glass-h: rgba(255,255,255,0.08);
+      --accent: #6366f1; --accent-l: #818cf8;
+      --ok: #10b981; --warn: #f59e0b; --err: #ef4444;
+      --t1: #f1f5f9; --t2: #94a3b8; --t3: #64748b;
+      --border: rgba(255,255,255,0.06); --border-h: rgba(255,255,255,0.12);
+      --font: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+      --r: 10px;
+    }
+    html { font-size: 15px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); background: var(--bg); color: var(--t1); min-height: 100vh; }
+    body::before { content:''; position:fixed; inset:0; background: radial-gradient(ellipse 80% 50% at 20% 0%, rgba(99,102,241,0.08) 0%, transparent 60%); pointer-events:none; z-index:0; }
+
+    .page { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+    header h1 { font-size: 1.25rem; font-weight: 700; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    header a { color: var(--t2); text-decoration: none; font-size: 0.8rem; }
+    header a:hover { color: var(--t1); }
+
+    .toolbar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; gap:0.4rem; padding:0.45rem 0.9rem; border:1px solid var(--border); border-radius:var(--r); background:var(--glass); color:var(--t1); font-family:var(--font); font-size:0.8rem; font-weight:500; cursor:pointer; transition:all 150ms; }
+    .btn:hover { background:var(--glass-h); border-color:var(--border-h); transform:translateY(-1px); }
+    .btn-primary { background:linear-gradient(135deg,#6366f1,#8b5cf6); border-color:transparent; color:#fff; }
+    .btn-primary:hover { box-shadow:0 0 20px rgba(99,102,241,0.25); }
+    .btn-danger { border-color: rgba(239,68,68,0.3); color: var(--err); }
+    .btn-danger:hover { background: rgba(239,68,68,0.1); }
+
+    input[type="text"], input[type="number"], select, textarea {
+      width:100%; padding:0.4rem 0.6rem; background:var(--glass); border:1px solid var(--border);
+      border-radius:var(--r); color:var(--t1); font-family:var(--font); font-size:0.8rem;
+      transition: border-color 150ms;
+    }
+    input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 2px rgba(99,102,241,0.15); }
+    textarea { font-family: var(--mono); min-height: 200px; resize: vertical; }
+
+    .search-box { max-width: 300px; }
+    .search-box input { padding-left: 2rem; }
+    .search-box { position: relative; }
+    .search-box::before { content: '🔍'; position: absolute; left: 0.6rem; top: 50%; transform: translateY(-50%); font-size: 0.75rem; }
+
+    .tab-bar { display:flex; gap:2px; background:var(--glass); border-radius:var(--r); padding:3px; margin-bottom:1.5rem; }
+    .tab-bar button { flex:1; padding:0.4rem 0.8rem; border:none; background:transparent; color:var(--t2); font-family:var(--font); font-size:0.8rem; font-weight:500; cursor:pointer; border-radius:8px; transition:all 200ms; }
+    .tab-bar button:hover { color:var(--t1); }
+    .tab-bar button.active { color:var(--t1); background:var(--bg3); box-shadow:0 1px 2px rgba(0,0,0,0.3); }
+
+    .panel { display: none; }
+    .panel.active { display: block; animation: fadeIn 200ms ease-out; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+
+    /* Item cards */
+    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
+    .item-card { background: var(--glass); border: 1px solid var(--border); border-radius: var(--r); padding: 0.75rem; cursor: pointer; transition: all 150ms; }
+    .item-card:hover { background: var(--glass-h); border-color: var(--border-h); transform: translateY(-1px); }
+    .item-card.editing { border-color: var(--accent); background: rgba(99,102,241,0.06); }
+    .item-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .item-stats { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .stat-tag { font-size: 0.7rem; padding: 2px 6px; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--t2); font-family: var(--mono); }
+
+    /* Editor modal */
+    .modal-bg { position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:200; display:flex; align-items:center; justify-content:center; }
+    .modal-bg.hidden { display: none; }
+    .modal { background:var(--bg3); border:1px solid var(--border); border-radius:14px; padding:1.5rem; max-width:600px; width:90vw; max-height:80vh; overflow-y:auto; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
+    .modal h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+    .modal .form-group { margin-bottom: 0.75rem; }
+    .modal .form-group label { display:block; font-size:0.7rem; color:var(--t3); margin-bottom:0.25rem; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; }
+    .modal .form-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem; }
+    .modal .form-row .btn { padding: 0.4rem; }
+    .modal .btn-row { display:flex; gap:0.5rem; margin-top:1rem; justify-content:flex-end; }
+
+    .toast { position:fixed; bottom:1.5rem; right:1.5rem; padding:0.6rem 1rem; border-radius:var(--r); font-size:0.8rem; font-weight:500; z-index:300; animation:slideUp 300ms ease-out; }
+    .toast.ok { background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:var(--ok); }
+    .toast.err { background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.3); color:var(--err); }
+    @keyframes slideUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+    .count-badge { font-size: 0.7rem; padding: 1px 6px; background: rgba(99,102,241,0.15); color: var(--accent-l); border-radius: 99px; margin-left: 0.4rem; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:transparent; } ::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.1); border-radius:99px; }
+    .category-section { margin-bottom: 2rem; }
+    .category-title { font-size: 1rem; font-weight: 600; color: var(--accent-l); margin-bottom: 0.75rem; display:flex; align-items:center; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+
+    /* Fix select option visibility */
+    select option {
+      background-color: var(--bg3);
+      color: var(--t1);
+    }
+    select optgroup {
+      background-color: var(--bg3);
+      color: var(--accent-l);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>🛠️ COA Data Editor</h1>
+      <a href="/">← Back to Calculator</a>
+    </header>
+
+    <div class="toolbar">
+      <button type="button" class="btn btn-primary" id="btn-load">📂 Load data.json</button>
+      <button type="button" class="btn btn-primary" id="btn-download" disabled>💾 Download Edited</button>
+      <div class="search-box">
+        <input type="text" id="search" placeholder="Search items..." disabled />
+      </div>
+      <button type="button" class="btn" id="btn-add-item" disabled>➕ Add Item</button>
+      <button type="button" class="btn" id="btn-add-set" disabled>➕ Add Set</button>
+      <button type="button" class="btn" id="btn-raw" disabled>📝 Raw JSON</button>
+      <input type="file" id="file-input" accept=".json" class="hidden" style="display:none" />
+    </div>
+
+    <div class="tab-bar" id="tabs">
+      <button type="button" class="active" data-tab="singles">Single Items <span class="count-badge" id="count-singles">0</span></button>
+      <button type="button" data-tab="sets">Set Bonuses <span class="count-badge" id="count-sets">0</span></button>
+    </div>
+
+    <div class="panel active" id="panel-singles">
+      <div id="grid-singles-container"></div>
+    </div>
+    <div class="panel" id="panel-sets">
+      <div id="grid-sets-container"></div>
+    </div>
+
+    <!-- Edit Item Modal -->
+    <div class="modal-bg hidden" id="modal-edit">
+      <div class="modal">
+        <h3 id="modal-edit-title">Edit Item</h3>
+        <div class="form-group">
+          <label>Item Name</label>
+          <input type="text" id="edit-name" />
+        </div>
+        <div class="form-group" id="edit-type-container">
+          <label>Category Type</label>
+          <select id="edit-type">
+            <option value="">None (Auto-detect)</option>
+            <optgroup label="Gear">
+              <option value="Weapon">Weapon</option>
+              <option value="Head">Head</option>
+              <option value="Armor">Armor</option>
+              <option value="Hand">Hand</option>
+              <option value="Legs">Legs</option>
+              <option value="Shoes">Shoes</option>
+              <option value="Necklace">Necklace</option>
+              <option value="Bracer">Bracer</option>
+              <option value="Ring">Ring</option>
+              <option value="Seal">Seal</option>
+              <option value="Amulet">Amulet</option>
+              <option value="Treasure">Treasure</option>
+            </optgroup>
+            <optgroup label="Emblems">
+              <option value="Weapon Emblem">Weapon Emblem</option>
+              <option value="Head Emblem">Head Emblem</option>
+              <option value="Armor Emblem">Armor Emblem</option>
+              <option value="Hand Emblem">Hand Emblem</option>
+              <option value="Legs Emblem">Legs Emblem</option>
+              <option value="Shoes Emblem">Shoes Emblem</option>
+              <option value="Necklace Emblem">Necklace Emblem</option>
+              <option value="Bracer Emblem">Bracer Emblem</option>
+              <option value="Ring Emblem">Ring Emblem</option>
+              <option value="Seal Emblem">Seal Emblem</option>
+              <option value="Amulet Emblem">Amulet Emblem</option>
+            </optgroup>
+            <optgroup label="Fashion">
+              <option value="Title">Title</option>
+              <option value="Fashion Weapon">Fashion Weapon</option>
+              <option value="Aura">Aura</option>
+              <option value="Fashion Head">Fashion Head</option>
+              <option value="Fashion Cloth">Fashion Cloth</option>
+              <option value="Fashion Acc">Fashion Acc</option>
+              <option value="Fashion Face">Fashion Face</option>
+              <option value="Fashion Badge">Fashion Badge</option>
+              <option value="Footprint">Footprint</option>
+              <option value="Title Emblem">Title Emblem</option>
+              <option value="Aura Emblem">Aura Emblem</option>
+              <option value="Cloth Emblem">Cloth Emblem</option>
+              <option value="Acc Emblem">Acc Emblem</option>
+              <option value="Face Emblem">Face Emblem</option>
+              <option value="Badge Emblem">Badge Emblem</option>
+              <option value="Foot Emblem">Foot Emblem</option>
+            </optgroup>
+            <optgroup label="Pets & Cards">
+              <option value="Pet">Pet</option>
+              <option value="Card">Card</option>
+              <option value="Str Soul">Str Soul</option>
+              <option value="Skill Soul">Skill Soul</option>
+              <option value="Spd Soul">Spd Soul</option>
+            </optgroup>
+            <optgroup label="Buffs">
+              <option value="Elem Potion">Elem Potion</option>
+              <option value="Atk Buff">Atk Buff</option>
+              <option value="Wine">Wine</option>
+              <option value="Dragon Breath">Dragon Breath</option>
+              <option value="Gale">Gale</option>
+              <option value="Mine War">Mine War</option>
+              <option value="Debuff Buff">Debuff Buff</option>
+            </optgroup>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div id="edit-stats-list"></div>
+        <button type="button" class="btn btn-sm" id="btn-add-stat" style="margin-bottom:0.75rem">➕ Add Stat</button>
+        <div class="btn-row">
+          <button type="button" class="btn btn-danger" id="btn-delete-item">🗑️ Delete</button>
+          <button type="button" class="btn" id="btn-cancel-edit">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btn-save-edit">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Set Modal -->
+    <div class="modal-bg hidden" id="modal-edit-set">
+      <div class="modal" style="max-height: 90vh; overflow-y: auto; max-width: 600px;">
+        <h3 id="modal-edit-set-title">Edit Set</h3>
+        <div class="form-group">
+          <label>Set Name</label>
+          <input type="text" id="edit-set-name" style="padding: 0.5rem; background: var(--bg-deep); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 4px; width: 100%; box-sizing: border-box;" />
+        </div>
+        <div id="edit-set-tiers"></div>
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <input type="number" id="edit-set-new-tier-count" placeholder="Pieces (e.g. 2)" style="width: 120px; padding: 0.5rem; background: var(--bg-deep); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 4px;" />
+          <button type="button" class="btn btn-sm" id="btn-add-set-tier">➕ Add Tier</button>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn btn-danger" id="btn-delete-set">🗑️ Delete Set</button>
+          <button type="button" class="btn" id="btn-cancel-set-edit">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btn-save-set-edit">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raw JSON Modal -->
+    <div class="modal-bg hidden" id="modal-raw">
+      <div class="modal" style="max-width:800px">
+        <h3>Raw JSON Editor</h3>
+        <textarea id="raw-json"></textarea>
+        <div class="btn-row">
+          <button type="button" class="btn" id="btn-raw-cancel">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btn-raw-apply">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { SLOTS, EMBLEMS, PETS, CARDS, FASHION, FASHION_EMBLEMS, BUFFS, ARMOR_SETS, ACC_SETS } from './src/options.js';
+
+    function getCategory(name) {
+      if (data && data.Single && data.Single[name]) {
+        const customType = data.Single[name].type || data.Single[name].Type;
+        if (customType) return customType;
+      }
+
+      if (SLOTS.weapon.options && SLOTS.weapon.options.includes(name)) return 'Weapon';
+      if (SLOTS.treasure.options && SLOTS.treasure.options.includes(name)) return 'Treasure';
+      if (PETS.options.includes(name)) return 'Pet';
+      if (CARDS.options.includes(name)) return 'Card';
+      
+      for (const v of Object.values(EMBLEMS)) if (v.options && v.options.includes(name)) return v.label;
+      for (const v of Object.values(FASHION)) if (v.options && v.options.includes(name)) return v.label;
+      for (const v of Object.values(FASHION_EMBLEMS)) if (v.options && v.options.includes(name)) return v.label;
+      for (const v of Object.values(BUFFS)) if (v.options && v.options.includes(name)) return v.label;
+      for (const v of Object.values(PETS.souls)) if (v.options && v.options.includes(name)) return v.label;
+
+      for (const set of ARMOR_SETS) {
+        if (name === `${set} Head` || name === `${set} Armor` || name === `${set} Hand` || name === `${set} Legs` || name === `${set} Shoes`) return 'Armor';
+      }
+      for (const set of ACC_SETS) {
+        if (name === `${set} Necklace` || name === `${set} Bracer` || name === `${set} Ring` || name === `${set} Seal` || name === `${set} Amulet`) return 'Accessory';
+      }
+
+      return 'Other';
+    }
+
+    let data = null;
+    let editingKey = null;
+    let editingSection = 'Single';
+
+    // --- Toast ---
+    function toast(msg, type = 'ok') {
+      const el = document.createElement('div');
+      el.className = `toast ${type}`;
+      el.textContent = msg;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 2500);
+    }
+
+    // --- Load ---
+    document.getElementById('btn-load').addEventListener('click', () => {
+      document.getElementById('file-input').click();
+    });
+
+    document.getElementById('file-input').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          data = JSON.parse(reader.result);
+          enableUI();
+          renderAll();
+          toast(`Loaded ${Object.keys(data.Single || {}).length} items, ${Object.keys(data.Sets || {}).length} sets`);
+        } catch (err) {
+          toast('Invalid JSON: ' + err.message, 'err');
+        }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    });
+
+    // Try auto-loading from server
+    fetch('/data.json').then(r => r.json()).then(d => {
+      data = d;
+      enableUI();
+      renderAll();
+    }).catch(() => {});
+
+    function enableUI() {
+      document.getElementById('btn-download').disabled = false;
+      document.getElementById('search').disabled = false;
+      document.getElementById('btn-add-item').disabled = false;
+      document.getElementById('btn-add-set').disabled = false;
+      document.getElementById('btn-raw').disabled = false;
+    }
+
+    // --- Tabs ---
+    document.getElementById('tabs').addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      document.querySelectorAll('#tabs button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
+    });
+
+    // --- Render ---
+    function renderAll() {
+      if (!data) return;
+      const filter = document.getElementById('search').value.toLowerCase();
+      renderCategorizedGrid('grid-singles-container', data.Single || {}, filter);
+      renderSets('grid-sets-container', data.Sets || {}, filter);
+      document.getElementById('count-singles').textContent = Object.keys(data.Single || {}).length;
+      document.getElementById('count-sets').textContent = Object.keys(data.Sets || {}).length;
+    }
+
+    function renderCategorizedGrid(containerId, items, filter) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      
+      const groups = {};
+      for (const [name, stats] of Object.entries(items)) {
+        if (filter && !name.toLowerCase().includes(filter)) continue;
+        const cat = getCategory(name);
+        if (!groups[cat]) groups[cat] = [];
+        groups[cat].push({ name, stats });
+      }
+
+      const catOrder = ['Weapon', 'Armor', 'Accessory', 'Treasure', 'Emblem', 'Pet', 'Pet Soul', 'Card', 'Fashion', 'Fashion Emblem', 'Buff', 'Other'];
+      const sortedCats = Object.keys(groups).sort((a, b) => {
+        let ia = catOrder.indexOf(a); if(ia === -1) ia = 99;
+        let ib = catOrder.indexOf(b); if(ib === -1) ib = 99;
+        return ia - ib;
+      });
+
+      for (const cat of sortedCats) {
+        const section = document.createElement('div');
+        section.className = 'category-section';
+        section.innerHTML = `<h2 class="category-title">${cat} <span class="count-badge">${groups[cat].length}</span></h2><div class="item-grid"></div>`;
+        const grid = section.querySelector('.item-grid');
+        
+        groups[cat].sort((a, b) => a.name.localeCompare(b.name));
+
+        for (const item of groups[cat]) {
+          const card = document.createElement('div');
+          card.className = 'item-card';
+          // Filter out 'type' from stats display
+          const displayStats = Object.entries(item.stats)
+            .filter(([k]) => k.toLowerCase() !== 'type')
+            .map(([k,v]) => `<span class="stat-tag">${k}: ${v}</span>`)
+            .join('');
+          card.innerHTML = `<div class="item-name">${item.name}</div><div class="item-stats">${displayStats}</div>`;
+          card.addEventListener('click', () => openEditor(item.name, 'Single'));
+          grid.appendChild(card);
+        }
+        container.appendChild(section);
+      }
+    }
+
+    function renderSets(containerId, sets, filter) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '<div class="item-grid" id="sets-grid-inner"></div>';
+      const grid = container.querySelector('.item-grid');
+      
+      const sortedSets = Object.keys(sets).sort((a, b) => a.localeCompare(b));
+
+      for (const setName of sortedSets) {
+        if (filter && !setName.toLowerCase().includes(filter)) continue;
+        const tiers = sets[setName];
+        const numPieces = Object.keys(tiers).length;
+        
+        const card = document.createElement('div');
+        card.className = 'item-card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `<div class="item-name" style="font-size: 1.1rem; color: var(--primary-color)">${setName}</div><div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem">${numPieces} Tiers</div>`;
+        card.addEventListener('click', () => openSetEditor(setName));
+        grid.appendChild(card);
+      }
+    }
+
+    document.getElementById('search').addEventListener('input', renderAll);
+
+    // --- Item Editor ---
+    function openEditor(name, section) {
+      editingKey = name;
+      editingSection = section;
+      const modal = document.getElementById('modal-edit');
+      document.getElementById('modal-edit-title').textContent = `Edit: ${name}`;
+      document.getElementById('edit-name').value = name;
+      const stats = (section === 'Single' ? data.Single : data.Sets)[name] || {};
+      
+      if (section === 'Single') {
+        document.getElementById('edit-type-container').style.display = 'block';
+        document.getElementById('edit-type').value = stats.type || stats.Type || '';
+      } else {
+        document.getElementById('edit-type-container').style.display = 'none';
+      }
+
+      renderStatFields(stats);
+      modal.classList.remove('hidden');
+    }
+
+    function openSetEditor(setName) {
+      editingKey = setName;
+      editingSection = 'Set';
+      const modal = document.getElementById('modal-edit-set');
+      document.getElementById('modal-edit-set-title').textContent = `Edit Set: ${setName}`;
+      document.getElementById('edit-set-name').value = setName;
+      
+      const tiers = data.Sets[setName] || {};
+      renderSetTiers(tiers);
+      
+      modal.classList.remove('hidden');
+    }
+
+    function renderSetTiers(tiers) {
+      const container = document.getElementById('edit-set-tiers');
+      container.innerHTML = '';
+      const sortedTiers = Object.keys(tiers).sort((a, b) => Number(a) - Number(b));
+      
+      for (const count of sortedTiers) {
+        addTierSection(container, count, tiers[count]);
+      }
+    }
+
+    function addTierSection(container, count, stats) {
+      const tierSection = document.createElement('div');
+      tierSection.className = 'set-tier-section';
+      tierSection.dataset.count = count;
+      tierSection.style.marginBottom = '1rem';
+      tierSection.style.padding = '0.75rem';
+      tierSection.style.background = 'rgba(255,255,255,0.05)';
+      tierSection.style.borderRadius = '8px';
+      
+      tierSection.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <h4 style="margin:0; font-size:1.1rem; color:var(--text-glow)">${count} Pieces</h4>
+          <button type="button" class="btn btn-danger btn-sm btn-drop-tier">🗑️ Drop</button>
+        </div>
+        <div class="tier-stats-list"></div>
+        <button type="button" class="btn btn-sm btn-add-tier-stat" style="margin-top:0.5rem">➕ Add Stat</button>
+      `;
+      
+      const statsList = tierSection.querySelector('.tier-stats-list');
+      for (const [key, val] of Object.entries(stats || {})) {
+        addStatRow(statsList, key, val);
+      }
+      
+      tierSection.querySelector('.btn-drop-tier').addEventListener('click', () => tierSection.remove());
+      tierSection.querySelector('.btn-add-tier-stat').addEventListener('click', () => addStatRow(statsList));
+      
+      container.appendChild(tierSection);
+    }
+
+    function renderStatFields(stats) {
+      const container = document.getElementById('edit-stats-list');
+      container.innerHTML = '';
+      for (const [key, val] of Object.entries(stats)) {
+        if (key.toLowerCase() === 'type') continue;
+        addStatRow(container, key, val);
+      }
+    }
+
+    const ALL_STATS = [
+      "Atk", "Crit Rate", "Crit Dmg", "Elem Boost", "Elem Dmg", "Dmg Amp", "Skill Dmg", "dmgToDebuff",
+      "Def Reduction", "Def Break Atk", "Penetration", "Extra Dmg", "Special", "Class Dmg",
+      "Multiplier", "Skill Dmg Boost", "Skill Haste", "Cooldown Reduction", "Effect Ratio",
+      "Resonance Dmg", "Str", "Agi", "Int", "HP", "PDEF", "MDEF", "Monster Def"
+    ];
+
+    function addStatRow(container, key = '', val = 0) {
+      const row = document.createElement('div');
+      row.className = 'form-row';
+      
+      let optionsHTML = '<option value="">Select Stat</option>';
+      let isCustom = key !== '' && key.toLowerCase() !== 'type' && !ALL_STATS.includes(key);
+      
+      for (const stat of ALL_STATS) {
+        optionsHTML += `<option value="${stat}" ${key === stat ? 'selected' : ''}>${stat}</option>`;
+      }
+      
+      if (isCustom) {
+        optionsHTML += `<option value="${key}" selected>${key} (Custom)</option>`;
+      }
+      
+      row.innerHTML = `<select class="stat-key">${optionsHTML}</select><input type="number" class="stat-val" value="${val}" step="0.1" placeholder="Value"><button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">✕</button>`;
+      container.appendChild(row);
+    }
+
+    document.getElementById('btn-add-stat').addEventListener('click', () => {
+      addStatRow(document.getElementById('edit-stats-list'));
+    });
+
+    document.getElementById('btn-cancel-edit').addEventListener('click', () => {
+      document.getElementById('modal-edit').classList.add('hidden');
+      document.getElementById('edit-name').disabled = false;
+    });
+
+    document.getElementById('btn-save-edit').addEventListener('click', () => {
+      const newName = document.getElementById('edit-name').value.trim();
+      if (!newName) return toast('Name required', 'err');
+
+      const stats = {};
+      
+      if (editingSection === 'Single') {
+        const typeVal = document.getElementById('edit-type').value.trim();
+        if (typeVal) stats.type = typeVal;
+      }
+
+      document.querySelectorAll('#edit-stats-list .form-row').forEach(row => {
+        const key = row.querySelector('.stat-key').value.trim();
+        const val = parseFloat(row.querySelector('.stat-val').value) || 0;
+        if (key && key.toLowerCase() !== 'type') stats[key] = val;
+      });
+
+      if (editingKey !== newName) delete data.Single[editingKey];
+      data.Single[newName] = stats;
+
+      document.getElementById('modal-edit').classList.add('hidden');
+      document.getElementById('edit-name').disabled = false;
+      renderAll();
+      toast('Saved');
+    });
+
+    document.getElementById('btn-delete-item').addEventListener('click', () => {
+      if (!confirm(`Delete "${editingKey}"?`)) return;
+      delete data.Single[editingKey];
+      document.getElementById('modal-edit').classList.add('hidden');
+      document.getElementById('edit-name').disabled = false;
+      renderAll();
+      toast('Deleted');
+    });
+
+    // --- Set Editor Events ---
+    document.getElementById('btn-add-set-tier').addEventListener('click', () => {
+      const input = document.getElementById('edit-set-new-tier-count');
+      const count = parseInt(input.value);
+      if (!count || count <= 0) return toast('Enter a valid piece count', 'err');
+      const container = document.getElementById('edit-set-tiers');
+      if (container.querySelector(`[data-count="${count}"]`)) return toast('Tier already exists', 'err');
+      addTierSection(container, count, {});
+      input.value = '';
+    });
+
+    document.getElementById('btn-cancel-set-edit').addEventListener('click', () => {
+      document.getElementById('modal-edit-set').classList.add('hidden');
+    });
+
+    document.getElementById('btn-save-set-edit').addEventListener('click', () => {
+      const newName = document.getElementById('edit-set-name').value.trim();
+      if (!newName) return toast('Set Name required', 'err');
+
+      const tiers = {};
+      document.querySelectorAll('.set-tier-section').forEach(section => {
+        const count = section.dataset.count;
+        const stats = {};
+        section.querySelectorAll('.form-row').forEach(row => {
+          const key = row.querySelector('.stat-key').value.trim();
+          const val = parseFloat(row.querySelector('.stat-val').value) || 0;
+          if (key) stats[key] = val;
+        });
+        tiers[count] = stats;
+      });
+
+      if (editingKey !== newName && data.Sets[editingKey]) {
+        delete data.Sets[editingKey];
+      }
+      data.Sets[newName] = tiers;
+
+      document.getElementById('modal-edit-set').classList.add('hidden');
+      renderAll();
+      toast('Saved Set');
+    });
+
+    document.getElementById('btn-delete-set').addEventListener('click', () => {
+      if (!confirm(`Delete entire set "${editingKey}"?`)) return;
+      delete data.Sets[editingKey];
+      document.getElementById('modal-edit-set').classList.add('hidden');
+      renderAll();
+      toast('Set Deleted');
+    });
+
+    // Close modals on overlay click
+    document.querySelectorAll('.modal-bg').forEach(bg => {
+      bg.addEventListener('click', (e) => {
+        if (e.target === bg) {
+          bg.classList.add('hidden');
+          document.getElementById('edit-name').disabled = false;
+        }
+      });
+    });
+
+    // --- Add Item / Set ---
+    document.getElementById('btn-add-item').addEventListener('click', () => {
+      const name = prompt('New item name:');
+      if (!name || !name.trim()) return;
+      if (!data) data = { Single: {}, Sets: {} };
+      if (!data.Single) data.Single = {};
+      data.Single[name.trim()] = {};
+      openEditor(name.trim(), 'Single');
+      renderAll();
+    });
+
+    document.getElementById('btn-add-set').addEventListener('click', () => {
+      const name = prompt('Set name:');
+      if (!name || !name.trim()) return;
+      if (!data) data = { Single: {}, Sets: {} };
+      if (!data.Sets) data.Sets = {};
+      if (!data.Sets[name]) data.Sets[name.trim()] = {};
+      openSetEditor(name.trim());
+      renderAll();
+    });
+
+    // --- Raw JSON ---
+    document.getElementById('btn-raw').addEventListener('click', () => {
+      document.getElementById('raw-json').value = JSON.stringify(data, null, 2);
+      document.getElementById('modal-raw').classList.remove('hidden');
+    });
+
+    document.getElementById('btn-raw-cancel').addEventListener('click', () => {
+      document.getElementById('modal-raw').classList.add('hidden');
+    });
+
+    document.getElementById('btn-raw-apply').addEventListener('click', () => {
+      try {
+        data = JSON.parse(document.getElementById('raw-json').value);
+        document.getElementById('modal-raw').classList.add('hidden');
+        renderAll();
+        toast('JSON applied');
+      } catch (err) {
+        toast('Invalid JSON: ' + err.message, 'err');
+      }
+    });
+
+    // --- Download ---
+    document.getElementById('btn-download').addEventListener('click', () => {
+      const json = JSON.stringify(data, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'data.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      toast('Downloaded data.json');
+    });
+  </script>
+</body>
+</html>

@@ -2,7 +2,8 @@ from typing import Any
 
 def damage_compute(status_dict: dict[str, Any]) -> tuple[float, float]:
     crit_multiplier = 1 + min(status_dict['Crit Rate'] / 100, 1) * (status_dict['Crit Dmg'] / 100)
-    counter_multiplier = 1 + status_dict['Counter'] / 100
+    dmg_to_debuff_multiplier = 1 + status_dict['dmgToDebuff'] / 100
+    dmg_to_boss_multiplier = 1 + status_dict.get('Boss Dmg', 0) / 100
     dmg_amp = 1 + status_dict['Dmg Amp'] / 100
     
     skill_resonance = 1 + (status_dict['Skill Dmg'] + status_dict['Resonance Dmg']) / 100
@@ -20,6 +21,8 @@ def damage_compute(status_dict: dict[str, Any]) -> tuple[float, float]:
     
     # Actual Attack = Total PATK * (1 - Damage Reduction %) + PDEF Shred
     # PDEF Shred = Def Break Atk
+    # Total PATK = Base Atk * (1 + STR Increase %) * (1 + PATK%) (From guide)
+    # But wait, utils_computer.py uses status_dict['Atk'] which is already computed outside damage_compute?
     attack_zone = status_dict['Atk'] * (1 - dmg_reduction_pct) + status_dict.get('Def Break Atk', 0)
     
     extra_dmg = 1 + status_dict['Extra Dmg'] / 100
@@ -62,11 +65,12 @@ def damage_compute(status_dict: dict[str, Any]) -> tuple[float, float]:
     cooldown_reduction = 1 / (1 - status_dict['Cooldown Reduction'] / 100)
     effect_ratio = 1 + status_dict['Effect Ratio'] / (100 - status_dict['Effect Ratio'])
     
-    burst_damage = crit_multiplier * counter_multiplier * dmg_amp * skill_resonance * elem_dmg_multiplier * attack_zone * extra_dmg * special * class_dmg * multiplier * skill_dmg_boost * effect_ratio
+    burst_damage = crit_multiplier * dmg_to_debuff_multiplier * dmg_to_boss_multiplier * dmg_amp * skill_resonance * elem_dmg_multiplier * attack_zone * extra_dmg * special * class_dmg * multiplier * skill_dmg_boost * effect_ratio
     
     return (burst_damage, burst_damage * skill_haste * cooldown_reduction)
 def add_equipment(status_dict: dict[str, Any], equipment: dict[str, Any]) -> dict[str, Any]:
     for key in equipment.keys():
+        if key.lower() == 'type' or key == '_category': continue
         if key not in status_dict.keys():
             status_dict[key] = equipment[key]
         else:
@@ -75,6 +79,7 @@ def add_equipment(status_dict: dict[str, Any], equipment: dict[str, Any]) -> dic
 
 def remove_equipment(status_dict: dict[str, Any], equipment: dict[str, Any]) -> dict[str, Any]:
     for key in equipment.keys():
+        if key.lower() == 'type' or key == '_category': continue
         if key not in status_dict.keys():
             status_dict[key] = equipment[key]
         else:

@@ -6,7 +6,7 @@ class TestDamageCompute:
     def test_basic_damage(self):
         status = {
             'Atk': 1000, 'Crit Rate': 50, 'Crit Dmg': 150,
-            'Counter': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
+            'dmgToDebuff': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
             'Resonance Dmg': 0, 'Elem Dmg': 0, 'Monster Def': 5000,
             'Def Reduction': 0, 'Penetration': 0, 'Def Break Atk': 0,
             'Extra Dmg': 0, 'Special': 0, 'Class Dmg': 0,
@@ -20,7 +20,7 @@ class TestDamageCompute:
     def test_zero_crit_rate(self):
         status = {
             'Atk': 1000, 'Crit Rate': 0, 'Crit Dmg': 150,
-            'Counter': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
+            'dmgToDebuff': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
             'Resonance Dmg': 0, 'Elem Dmg': 0, 'Monster Def': 5000,
             'Def Reduction': 0, 'Penetration': 0, 'Def Break Atk': 0,
             'Extra Dmg': 0, 'Special': 0, 'Class Dmg': 0,
@@ -33,7 +33,7 @@ class TestDamageCompute:
     def test_def_break_atk_increases_damage(self):
         status_no_shred = {
             'Atk': 1000, 'Crit Rate': 50, 'Crit Dmg': 150,
-            'Counter': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
+            'dmgToDebuff': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
             'Resonance Dmg': 0, 'Elem Dmg': 0, 'Monster Def': 5000,
             'Def Reduction': 0, 'Penetration': 0, 'Def Break Atk': 0,
             'Extra Dmg': 0, 'Special': 0, 'Class Dmg': 0,
@@ -52,7 +52,7 @@ class TestDamageCompute:
     def test_def_reduction_reduces_damage(self):
         status_no_pen = {
             'Atk': 1000, 'Crit Rate': 50, 'Crit Dmg': 150,
-            'Counter': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
+            'dmgToDebuff': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
             'Resonance Dmg': 0, 'Elem Dmg': 0, 'Monster Def': 5000,
             'Def Reduction': 0, 'Penetration': 0, 'Def Break Atk': 0,
             'Extra Dmg': 0, 'Special': 0, 'Class Dmg': 0,
@@ -70,7 +70,7 @@ class TestDamageCompute:
     def test_zero_monster_def(self):
         status = {
             'Atk': 1000, 'Crit Rate': 50, 'Crit Dmg': 150,
-            'Counter': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
+            'dmgToDebuff': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
             'Resonance Dmg': 0, 'Elem Dmg': 0, 'Monster Def': 0,
             'Def Reduction': 0, 'Penetration': 0, 'Def Break Atk': 0,
             'Extra Dmg': 0, 'Special': 0, 'Class Dmg': 0,
@@ -83,7 +83,7 @@ class TestDamageCompute:
     def test_crit_rate_capped_at_100(self):
         status = {
             'Atk': 1000, 'Crit Rate': 150, 'Crit Dmg': 150,
-            'Counter': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
+            'dmgToDebuff': 0, 'Dmg Amp': 0, 'Skill Dmg': 0,
             'Resonance Dmg': 0, 'Elem Dmg': 0, 'Monster Def': 5000,
             'Def Reduction': 0, 'Penetration': 0, 'Def Break Atk': 0,
             'Extra Dmg': 0, 'Special': 0, 'Class Dmg': 0,

@@ -54,6 +54,7 @@ black .
 
 ## Deployment
 
+### Python Version (Streamlit)
 This app is designed to be deployed easily on **Streamlit Community Cloud**:
 
 1.  Push this code to a GitHub repository.
@@ -61,7 +62,60 @@ This app is designed to be deployed easily on **Streamlit Community Cloud**:
 3.  Select the repository and the main file (`streamlit_app.py`).
 4.  Click **Deploy**.
 
+### Web Version (Netlify / Vercel / GitHub Pages)
+The Vite-based web version (located in the `web/` directory) can be deployed to any static hosting provider:
+
+1.  **Build the project**:
+    ```bash
+    cd web
+    npm install
+    npm run build
+    ```
+2.  **Deploy**:
+    *   **Netlify**: Drag and drop the `web/dist` folder or connect your GitHub repository and set the build command to `npm run build` and the publish directory to `web/dist`.
+    *   **Vercel**: Import the repository, set the "Root Directory" to `web`, and it will automatically detect the Vite configuration.
+    *   **Cloudflare Pages**: Connect your GitHub, select the `web` directory, and use the Vite preset.
+
 ## Credits
 
 *   **Original Desktop App & Logic**: Bilibili: 丶霜月流星
 *   **Translation & Web Port**: NSYok
+
+## Data Schema (data.json)
+
+The data.json file contains all the equipment, sets, and buffs. Here is an explanation of the statistics used within the JSON to calculate damage:
+
+### Primary Stats
+*   **Base Atk**: Flat Base Attack (PATK or MATK).
+*   **Atk Bonus**: Percentage increase to Base Attack (ATK %).
+*   **Strength**: Primary main stat (Strength for Physical, Intelligence for Magic).
+*   **Str Bonus**: Percentage increase to Strength.
+*   **Agility**: Agility stat (provides base Crit Rate).
+
+### Critical & Elemental
+*   **Crit Rate**: Critical Hit Rate percentage.
+*   **Crit Dmg**: Critical Damage multiplier percentage.
+*   **Elem Boost**: Elemental Boost stat (scales into Elem Dmg).
+*   **Elem Dmg**: Flat Elemental Damage (also known as ENH DMG).
+
+### Damage Multipliers
+*   **Dmg Amp**: General Damage Bonus / Amplification (%).
+*   **Skill Dmg**: Bonus damage applied to skills.
+*   **dmgToDebuff**: Damage multiplier against Debuffed/Abnormal status targets.
+*   **Boss Dmg**: Damage multiplier specifically against Boss enemies.
+*   **Class Dmg**: Class-specific damage bonus (%).
+*   **Resonance Dmg**: Bonus damage while in Resonance state.
+*   **Extra Dmg**: Additional/Extra damage modifier (Can find it in set Bonus).
+*   **Special**: Special independent damage multiplier.
+*   **Multiplier**: Skill ratio multiplier (Active Skill Lv 1-30:0.5, 30-60:2.5, 45-60:2, 1-60:3, 1-70:4) .
+*   **Skill Dmg Boost**: Overall skill damage boost.
+
+### Defense Penetration
+*   **Def Reduction**: Percentage-based Defense Penetration (%).
+*   **Def Break Atk**: Flat Defense Shred.
+*   **Penetration**: Additional Flat Defense Reduction.
+
+### Utility
+*   **Skill Haste**: Attack speed / animation speed modifier (ASPD).
+*   **Cooldown**: Cooldown reduction (%).
+*   **Effect Ratio**: Status effect application ratio.
