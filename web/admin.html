@@ -690,6 +690,12 @@
       btn.textContent = '⏳ Saving...';
       btn.disabled = true;
       try {
+        if (data && data.Single && data.Single[""]) {
+          delete data.Single[""];
+        }
+        if (data && data.Sets && data.Sets[""]) {
+          delete data.Sets[""];
+        }
         await saveGameData(data);
         toast('Saved to Firebase Cloud!', 'ok');
       } catch (err) {
