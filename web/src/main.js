@@ -9,8 +9,12 @@ let gameData = null;
 async function loadGameData() {
   let data = await fetchGameData();
   if (!data) {
-    const resp = await fetch('/data.json');
-    data = await resp.json();
+    try {
+      const resp = await fetch('/data.json');
+      data = await resp.json();
+    } catch (e) {
+      console.error("Local fallback failed:", e);
+    }
   }
   gameData = data;
   
@@ -21,7 +25,7 @@ async function loadGameData() {
         const typeLabel = obj.label;
         const matchingItems = Object.keys(gameData.Single).filter(itemName => {
           const item = gameData.Single[itemName];
-          return item.type === typeLabel || item.Type === typeLabel;
+          return (item.type === typeLabel || item.Type === typeLabel);
         });
         for (const itemName of matchingItems) {
           if (!obj.options.includes(itemName)) {
@@ -37,12 +41,11 @@ async function loadGameData() {
     injectOptions(BUFFS);
     injectOptions(EMBLEMS);
     
-    // For single option arrays like PETS and CARDS
     const injectSingle = (obj, label) => {
       if (!obj.options) return;
       const matchingItems = Object.keys(gameData.Single).filter(itemName => {
         const item = gameData.Single[itemName];
-        return item.type === label || item.Type === label;
+        return (item.type === label || item.Type === label);
       });
       for (const itemName of matchingItems) {
         if (!obj.options.includes(itemName)) {
@@ -54,6 +57,9 @@ async function loadGameData() {
     };
     injectSingle(PETS, 'Pet');
     injectSingle(CARDS, 'Card');
+
+    // CRITICAL: Rebuild tabs after data is injected so dropdowns see the new items
+    buildAllTabs();
   }
 }
 
