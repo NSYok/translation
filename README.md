@@ -81,6 +81,7 @@ The Vite-based web version (located in the `web/` directory) can be deployed to 
 
 *   **Original Desktop App & Logic**: Bilibili: 丶霜月流星
 *   **Translation & Web Port**: NSYok
+*   **Damage Formula Reference**: [Boarhat - Damage Formula Guide](https://boarhat.gg/games/crystal-of-atlan/guide/damage-formula-guide/)
 
 ## Data Schema (data.json)
 
