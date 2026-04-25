@@ -59,3 +59,7 @@ save.txt
 _dev_tools/
 archive/
 backup/
+
+# Environment Variables
+.env
+web/.env
