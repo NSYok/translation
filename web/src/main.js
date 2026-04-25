@@ -21,12 +21,19 @@ async function loadGameData() {
   if (gameData && gameData.Single) {
     const injectOptions = (objMap) => {
       for (const obj of Object.values(objMap)) {
-        if (!obj.options) continue;
+        if (!obj.options && !obj.sets) continue;
         const typeLabel = obj.label;
         const matchingItems = Object.keys(gameData.Single).filter(itemName => {
           const item = gameData.Single[itemName];
           return (item.type === typeLabel || item.Type === typeLabel);
         });
+        
+        // Ensure obj.options exists if we're adding to it
+        if (!obj.options) {
+          // If it's a SLOT that normally uses sets, we need to handle its options array
+          obj.options = obj.sets ? obj.sets.filter(s => s !== 'None').map(s => `${s} ${obj.suffix}`).concat('None') : ['None'];
+        }
+
         for (const itemName of matchingItems) {
           if (!obj.options.includes(itemName)) {
             const noneIdx = obj.options.indexOf('None');
@@ -36,6 +43,7 @@ async function loadGameData() {
         }
       }
     };
+    injectOptions(SLOTS); // Added SLOTS here to catch Weapons, Armor, etc.
     injectOptions(FASHION);
     injectOptions(FASHION_EMBLEMS);
     injectOptions(BUFFS);
