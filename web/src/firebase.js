@@ -32,9 +32,24 @@ export async function fetchGameData() {
   }
 }
 
-export async function saveGameData(data) {
+export async function saveGameData(localData) {
   try {
-    await setDoc(DATA_DOC, data);
+    // 1. Fetch latest data from cloud to avoid overwriting others' work
+    const docSnap = await getDoc(DATA_DOC);
+    let cloudData = docSnap.exists() ? docSnap.data() : { Single: {}, Sets: {} };
+
+    // 2. Perform Deep Merge (Local data takes priority for specific items changed)
+    const mergedData = {
+      Single: { ...(cloudData.Single || {}), ...(localData.Single || {}) },
+      Sets: { ...(cloudData.Sets || {}), ...(localData.Sets || {}) }
+    };
+
+    // 3. Remove any potential empty keys that Firestore hates
+    if (mergedData.Single[""]) delete mergedData.Single[""];
+    if (mergedData.Sets[""]) delete mergedData.Sets[""];
+
+    // 4. Save merged result
+    await setDoc(DATA_DOC, mergedData);
     return true;
   } catch (error) {
     console.error("Error saving to Firebase:", error);
