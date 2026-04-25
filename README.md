@@ -33,50 +33,6 @@ This project is a web port of the original desktop application, designed to be e
 
 4.  The app should open automatically in your default web browser at `http://localhost:8501`.
 
-## Development
-
-### Testing
-To run the test suite:
-```bash
-pip install pytest pytest-cov
-pytest
-```
-
-### Linting & Formatting
-To lint and format the codebase:
-```bash
-# Lint
-ruff check .
-# Auto-fix
-ruff check --fix .
-# Format
-black .
-```
-
-## Deployment
-
-### Python Version (Streamlit)
-This app is designed to be deployed easily on **Streamlit Community Cloud**:
-
-1.  Push this code to a GitHub repository.
-2.  Go to share.streamlit.io.
-3.  Select the repository and the main file (`streamlit_app.py`).
-4.  Click **Deploy**.
-
-### Web Version (Netlify / Vercel / GitHub Pages)
-The Vite-based web version (located in the `web/` directory) can be deployed to any static hosting provider:
-
-1.  **Build the project**:
-    ```bash
-    cd web
-    npm install
-    npm run build
-    ```
-2.  **Deploy**:
-    *   **Netlify**: Drag and drop the `web/dist` folder or connect your GitHub repository and set the build command to `npm run build` and the publish directory to `web/dist`.
-    *   **Vercel**: Import the repository, set the "Root Directory" to `web`, and it will automatically detect the Vite configuration.
-    *   **Cloudflare Pages**: Connect your GitHub, select the `web` directory, and use the Vite preset.
-
 ## Credits
 
 *   **Original Desktop App & Logic**: Bilibili: 丶霜月流星
@@ -121,3 +77,27 @@ The data.json file contains all the equipment, sets, and buffs. Here is an expla
 *   **Skill Haste**: Attack speed / animation speed modifier (ASPD).
 *   **Cooldown**: Cooldown reduction (%).
 *   **Effect Ratio**: Status effect application ratio.
+
+## Deployment
+
+### Python Version (Streamlit)
+This app is designed to be deployed easily on **Streamlit Community Cloud**:
+
+1.  Push this code to a GitHub repository.
+2.  Go to share.streamlit.io.
+3.  Select the repository and the main file (`streamlit_app.py`).
+4.  Click **Deploy**.
+
+### Web Version (Netlify / Vercel / GitHub Pages)
+The Vite-based web version (located in the `web/` directory) can be deployed to any static hosting provider:
+
+1.  **Build the project**:
+    ```bash
+    cd web
+    npm install
+    npm run build
+    ```
+2.  **Deploy**:
+    *   **Netlify**: Drag and drop the `web/dist` folder or connect your GitHub repository and set the build command to `npm run build` and the publish directory to `web/dist`.
+    *   **Vercel**: Import the repository, set the "Root Directory" to `web`, and it will automatically detect the Vite configuration.
+    *   **Cloudflare Pages**: Connect your GitHub, select the `web` directory, and use the Vite preset.
