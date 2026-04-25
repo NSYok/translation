@@ -435,6 +435,22 @@
     document.getElementById('search').addEventListener('input', renderAll);
 
     // --- Item Editor ---
+    function openEditor(name, section) {
+      editingKey = name;
+      editingSection = section;
+      const modal = document.getElementById('modal-edit');
+      document.getElementById('modal-edit-title').textContent = `Edit: ${name}`;
+      document.getElementById('edit-name').value = name;
+      const stats = (section === 'Single' ? data.Single : data.Sets)[name] || {};
+      
+      if (section === 'Single') {
+        document.getElementById('edit-type-container').style.display = 'block';
+        document.getElementById('edit-type').value = stats.type || stats.Type || '';
+      } else {
+        document.getElementById('edit-type-container').style.display = 'none';
+      }
+
+      renderStatFields(stats);
       isEditing = true;
       modal.classList.remove('hidden');
     }
