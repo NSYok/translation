@@ -155,7 +155,7 @@
               <option value="Bracer">Bracer</option>
               <option value="Ring">Ring</option>
               <option value="Seal">Seal</option>
-              <option value="Amulet">Amulet</option>
+              <option value="Talisman">Talisman</option>
               <option value="Treasure">Treasure</option>
             </optgroup>
             <optgroup label="Emblems">
@@ -169,7 +169,7 @@
               <option value="Bracer Emblem">Bracer Emblem</option>
               <option value="Ring Emblem">Ring Emblem</option>
               <option value="Seal Emblem">Seal Emblem</option>
-              <option value="Amulet Emblem">Amulet Emblem</option>
+              <option value="Talisman Emblem">Talisman Emblem</option>
             </optgroup>
             <optgroup label="Fashion">
               <option value="Title">Title</option>
@@ -206,6 +206,11 @@
               <option value="Debuff Buff">Debuff Buff</option>
             </optgroup>
             <option value="Other">Other</option>
+          </select>
+        <div class="form-group" id="edit-set-bonus-container">
+          <label>Linked Set Bonus</label>
+          <select id="edit-set-bonus">
+            <option value="">None (Auto-detect)</option>
           </select>
         </div>
         <div id="edit-stats-list"></div>
@@ -274,12 +279,16 @@
       for (const v of Object.values(BUFFS)) if (v.options && v.options.includes(name)) return v.label;
       for (const v of Object.values(PETS.souls)) if (v.options && v.options.includes(name)) return v.label;
 
-      for (const set of ARMOR_SETS) {
-        if (name === `${set} Head` || name === `${set} Armor` || name === `${set} Hand` || name === `${set} Legs` || name === `${set} Shoes`) return 'Armor';
-      }
-      for (const set of ACC_SETS) {
-        if (name === `${set} Necklace` || name === `${set} Bracer` || name === `${set} Ring` || name === `${set} Seal` || name === `${set} Amulet`) return 'Accessory';
-      }
+      if (name.endsWith(' Head')) return 'Head';
+      if (name.endsWith(' Armor')) return 'Armor';
+      if (name.endsWith(' Hand')) return 'Hand';
+      if (name.endsWith(' Legs')) return 'Legs';
+      if (name.endsWith(' Shoes')) return 'Shoes';
+      if (name.endsWith(' Necklace')) return 'Necklace';
+      if (name.endsWith(' Bracer')) return 'Bracer';
+      if (name.endsWith(' Ring')) return 'Ring';
+      if (name.endsWith(' Seal')) return 'Seal';
+      if (name.endsWith(' Talisman')) return 'Talisman';
 
       return 'Other';
     }
@@ -447,8 +456,23 @@
       if (section === 'Single') {
         document.getElementById('edit-type-container').style.display = 'block';
         document.getElementById('edit-type').value = stats.type || stats.Type || '';
+        
+        // Populate and set set_bonus
+        const setBonusSel = document.getElementById('edit-set-bonus');
+        setBonusSel.innerHTML = '<option value="">None (Auto-detect)</option>';
+        if (data && data.Sets) {
+          Object.keys(data.Sets).sort().forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s;
+            opt.textContent = s;
+            if (stats.set_bonus === s) opt.selected = true;
+            setBonusSel.appendChild(opt);
+          });
+        }
+        document.getElementById('edit-set-bonus-container').style.display = 'block';
       } else {
         document.getElementById('edit-type-container').style.display = 'none';
+        document.getElementById('edit-set-bonus-container').style.display = 'none';
       }
 
       renderStatFields(stats);
@@ -519,10 +543,15 @@
     }
 
     const ALL_STATS = [
-      "Atk", "Crit Rate", "Crit Dmg", "Elem Boost", "Elem Dmg", "Dmg Amp", "Skill Dmg", "dmgToDebuff",
-      "Def Reduction", "Def Break Atk", "Penetration", "Extra Dmg", "Special", "Class Dmg",
-      "Multiplier", "Skill Dmg Boost", "Skill Haste", "Cooldown Reduction", "Effect Ratio",
-      "Resonance Dmg", "Str", "Agi", "Int", "HP", "PDEF", "MDEF", "Monster Def"
+      "Atk (flat)", "Atk Bonus (%)", "Crit Rate (%)", "Crit Dmg (%)", "Elem Boost (%)", "Elem Dmg (%)", "Dmg Bonus (%)", "Skill DMG (%)", "Dmg Debuff (%)",
+      "DMG to Boss (%)", "Def Reduction (%)", "PDEF Shred (flat)", "Def Break Bonus (%)", "PEN (flat)", "Additional (%)", "Special (%)", "Class DMG Bonus (%)",
+      "Skill Ratio (%)", "Skill DMG Boost (%)", "ASPD (%)", "Cooldown (flat)", "Effect Ratio (%)", "Cooldown Reduction (%)",
+      "Resonance DMG (%)", "Strength (flat)", "Strength Bonus (%)", "Agility (flat)", "Intelligence (flat)", "HP (flat)", "PDEF (flat)", "MDEF (flat)", "Monster Def (flat)",
+      "Resonance Effect I", "Resonance Effect II",
+      "Adaptation", "Transcendence", "Destruction", "Swiftness", "Combo", "Offensive", "Suppress", "Unyielding", "Sprint",
+      "Extraordinary", "Quenching", "Advanced Tech", "Status Break", "Basic", "Pierce", "Siege", "Charge", "Wall Break",
+      "Excellence", "Smite", "Alliance", "Unbreakable", "Adversity", "Fullness", "Air Supremacy",
+      "Elem Master", "Challenger", "Resonance", "Evasion", "Elem Resist", "Recovery", "Solitary", "Lightning Summon"
     ];
 
     function addStatRow(container, key = '', val = 0) {
@@ -530,10 +559,22 @@
       row.className = 'form-row';
       
       let optionsHTML = '<option value="">Select Stat</option>';
-      let isCustom = key !== '' && key.toLowerCase() !== 'type' && !ALL_STATS.includes(key);
       
+      const setKeys = data && data.Sets ? Object.keys(data.Sets) : [];
+      let isCustom = key !== '' && key.toLowerCase() !== 'type' && !ALL_STATS.includes(key) && !setKeys.includes(key);
+      
+      optionsHTML += '<optgroup label="Standard Stats">';
       for (const stat of ALL_STATS) {
         optionsHTML += `<option value="${stat}" ${key === stat ? 'selected' : ''}>${stat}</option>`;
+      }
+      optionsHTML += '</optgroup>';
+      
+      if (setKeys.length > 0) {
+        optionsHTML += '<optgroup label="Set Bonuses">';
+        for (const setKey of setKeys) {
+          optionsHTML += `<option value="${setKey}" ${key === setKey ? 'selected' : ''}>${setKey} (Set)</option>`;
+        }
+        optionsHTML += '</optgroup>';
       }
       
       if (isCustom) {
@@ -563,6 +604,9 @@
       if (editingSection === 'Single') {
         const typeVal = document.getElementById('edit-type').value.trim();
         if (typeVal) stats.type = typeVal;
+        
+        const setBonusVal = document.getElementById('edit-set-bonus').value.trim();
+        if (setBonusVal) stats.set_bonus = setBonusVal;
       }
 
       document.querySelectorAll('#edit-stats-list .form-row').forEach(row => {

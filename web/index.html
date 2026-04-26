@@ -13,6 +13,10 @@
     <header class="app-header">
       <h1>⚔️ Crystal of Atlan — Calculator</h1>
       <div class="header-actions">
+        <select id="data-source-select" class="btn btn-sm" style="margin-right: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white;">
+          <option value="firebase">🌐 Firebase</option>
+          <option value="local">📁 Local JSON</option>
+        </select>
         <button class="btn btn-sm" id="btn-import" title="Load Build">📂 Load</button>
         <button class="btn btn-sm" id="btn-export" title="Save Build">💾 Save</button>
         <input type="file" id="file-import" accept=".json" class="hidden" />

@@ -237,13 +237,20 @@ body::before {
 }
 
 /* --- Section & Slot Styling --- */
-.slot-section {
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-6);
-  border-bottom: 1px solid var(--border);
+.gear-group-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+  background: rgba(255, 255, 255, 0.02);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
 }
 
-.slot-section:last-child {
+.slot-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
   border-bottom: none;
 }
 

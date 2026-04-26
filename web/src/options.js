@@ -23,7 +23,7 @@ export const SLOTS = {
   bracer: { label: 'Bracer', sets: ACC_SETS, suffix: 'Bracer', default: 'Holy Glory Bracer' },
   ring: { label: 'Ring', sets: ACC_SETS, suffix: 'Ring', default: 'Holy Glory Ring' },
   seal: { label: 'Seal', sets: ACC_SETS, suffix: 'Seal', default: 'Holy Glory Seal' },
-  amulet: { label: 'Amulet', sets: ACC_SETS, suffix: 'Amulet', default: 'Holy Glory Amulet' },
+  talisman: { label: 'Talisman', sets: ACC_SETS, suffix: 'Talisman', default: 'Holy Glory Talisman' },
   treasure: {
     label: 'Treasure',
     options: ["Hourglass of World's End", 'Hymn of Ancient Demon God', 'None'],
@@ -42,28 +42,28 @@ export const EMBLEMS = {
   bracer: { label: 'Bracer Emblem', options: ['Michael', 'Sword of Power', 'Ice Fist (Vic)', 'Thunder Light', 'Gorga', 'None'], default: 'Michael' },
   ring: { label: 'Ring Emblem', options: ['Mars', 'Andre', 'Gorga', 'None'], default: 'Mars' },
   seal: { label: 'Seal Emblem', options: ['Azrael', 'Plague', 'Puzzle', 'Goramos', 'None'], default: 'Azrael' },
-  amulet: { label: 'Amulet Emblem', options: ['Azrael', 'Famion', 'Puzzle', 'Heavy Shield', 'None'], default: 'Heavy Shield' },
+  talisman: { label: 'Talisman Emblem', options: ['Azrael', 'Famion', 'Puzzle', 'Heavy Shield', 'None'], default: 'Heavy Shield' },
 };
 
 export const ENHANCEMENTS = {
-  str: { label: 'Str/Int', options: Array.from({ length: 11 }, (_, i) => `+${i + 15}(Str_Int)`).concat('None') },
+  strength: { label: 'Strength/Intelligence', options: Array.from({ length: 11 }, (_, i) => `+${i + 15}(Strength_Intelligence)`).concat('None') },
   hp: { label: 'HP', options: Array.from({ length: 11 }, (_, i) => `+${i + 15}(HP)`).concat('None') },
   weapon: { label: 'Weapon', options: Array.from({ length: 8 }, (_, i) => `+${i + 18}(Weapon)`).concat('None') },
   lr: { label: 'L/R Slot', options: Array.from({ length: 11 }, (_, i) => `+${i + 15}(L_R Slot)`).concat('None') },
 };
 
 export const ENHANCEMENT_SLOTS = {
-  head: { type: 'str', default: '+18(Str_Int)' },
+  head: { type: 'strength', default: '+18(Strength_Intelligence)' },
   armor: { type: 'hp', default: '+16(HP)' },
-  hand: { type: 'str', default: '+16(Str_Int)' },
+  hand: { type: 'strength', default: '+16(Strength_Intelligence)' },
   legs: { type: 'hp', default: '+15(HP)' },
-  shoes: { type: 'str', default: '+17(Str_Int)' },
+  shoes: { type: 'strength', default: '+17(Strength_Intelligence)' },
   weapon: { type: 'weapon', default: '+21(Weapon)' },
-  neck: { type: 'str', default: '+18(Str_Int)' },
-  bracer: { type: 'str', default: '+17(Str_Int)' },
-  ring: { type: 'str', default: '+17(Str_Int)' },
+  neck: { type: 'strength', default: '+18(Strength_Intelligence)' },
+  bracer: { type: 'strength', default: '+17(Strength_Intelligence)' },
+  ring: { type: 'strength', default: '+17(Strength_Intelligence)' },
   seal: { type: 'lr', default: '+18(L_R Slot)' },
-  amulet: { type: 'lr', default: '+18(L_R Slot)' },
+  talisman: { type: 'lr', default: '+18(L_R Slot)' },
 };
 
 const engraveLevels = (names) => {
@@ -93,14 +93,14 @@ export const ENGRAVING_SLOTS = {
   bracer: { type: 'RBN', defaults: ['Elem Master 1', 'Elem Resist 3', 'Challenger 3'] },
   ring: { type: 'RBN', defaults: ['Elem Master 2', 'Elem Resist 2', 'Challenger 3'] },
   seal: { type: 'WSA', defaults: ['Excellence 3', 'Unbreakable 3', 'Smite 1'] },
-  amulet: { type: 'WSA', defaults: ['Excellence 3', 'Unbreakable 2', 'Smite 2'] },
+  talisman: { type: 'WSA', defaults: ['Excellence 3', 'Unbreakable 2', 'Smite 2'] },
 };
 
 export const PETS = {
   options: ['Cat', 'Eagle', 'Panda', 'Dragon', 'PiaoPiao', 'Koto', 'Fox', 'None'],
   stars: ['1 Star', '2 Star', '3 Star'],
   souls: {
-    str: { label: 'Str Soul', options: ['Cat Paw', 'Emperor Thorn', 'Insight Eye', 'None'] },
+    strength: { label: 'Strength Soul', options: ['Cat Paw', 'Emperor Thorn', 'Insight Eye', 'None'] },
     skill: { label: 'Skill Soul', options: ['Magic Witch', 'Beast Tooth Mark', 'None'] },
     spd: { label: 'Spd Soul', options: ['Wind Butterfly', 'Maple Curse', 'None'] },
   },
@@ -141,7 +141,7 @@ export const BUFFS = {
   dragon: { label: 'Dragon Breath', options: ['Dragon Breath', 'None'], default: 'Dragon Breath' },
   wind: { label: 'Gale', options: ['Gale', 'None'], default: 'Gale' },
   mine: { label: 'Mine War', options: ['Mine War', 'None'], default: 'Mine War' },
-  counter: { label: 'Debuff Buff', options: ['dmgToDebuff', 'None'], default: 'dmgToDebuff' },
+  counter: { label: 'Debuff Buff', options: ['Dmg Debuff (%)', 'None'], default: 'Dmg Debuff (%)' },
 };
 
 export const MANUAL_DEFAULTS = {
@@ -152,8 +152,8 @@ export const MANUAL_DEFAULTS = {
   manCritRate: 5.5,
   manElem: 20.8,
   manCd: 0.0,
-  manAgi: 0,
-  manStr: 134,
+  manAgility: 0,
+  manStrength: 134,
   manSkillDmg: 8,
   manAtkBonus: 0.0,
   manCar: 34,
@@ -163,6 +163,7 @@ export const MANUAL_DEFAULTS = {
   boostZhuoyue7: -1.0,
   boostZhuoyue9: -1.0,
   boostChaoran9: -1.0,
+  dataSource: 'firebase',
 };
 
 /**
@@ -197,12 +198,12 @@ export function generateDefaults() {
   // Pets
   defaults.pet_main = 'Dragon';
   defaults.pet_star_1 = '3 Star';
-  defaults.pet_soul_1_str = 'None';
+  defaults.pet_soul_1_strength = 'None';
   defaults.pet_soul_1_skill = 'None';
   defaults.pet_soul_1_spd = 'None';
   defaults.pet_2 = 'Cat';
   defaults.pet_star_2 = '3 Star';
-  defaults.pet_soul_2_str = 'None';
+  defaults.pet_soul_2_strength = 'None';
   defaults.pet_soul_2_skill = 'None';
   defaults.pet_soul_2_spd = 'None';
 

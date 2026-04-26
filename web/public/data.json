@@ -3,535 +3,535 @@
     "None": {},
     "Abyssal Gaze": {
       "type": "Weapon",
-      "Crit Rate": 11,
-      "dmgToDebuff": 5,
-      "Crit Dmg": 34,
-      "Base Atk": 1000,
-      "Atk Bonus": 5,
-      "Strength": 550,
-      "Agility": 330,
-      "Multiplier": 4
+      "Crit Rate (%)": 11,
+      "Dmg Debuff (%)": 5,
+      "Crit Dmg (%)": 34,
+      "Atk (flat)": 1000,
+      "Atk Bonus (%)": 5,
+      "Strength (flat)": 550,
+      "Agility (flat)": 330,
+      "Skill Ratio (%)": 4
     },
     "Desperate Dream Song": {
       "type": "Weapon",
-      "Crit Rate": 7,
-      "Elem Boost": 56,
-      "dmgToDebuff": 6,
-      "Base Atk": 1000,
-      "Atk Bonus": 5,
-      "Strength": 550,
-      "Agility": 330,
-      "Multiplier": 4
+      "Crit Rate (%)": 7,
+      "Elem Boost (%)": 56,
+      "Dmg Debuff (%)": 6,
+      "Atk (flat)": 1000,
+      "Atk Bonus (%)": 5,
+      "Strength (flat)": 550,
+      "Agility (flat)": 330,
+      "Skill Ratio (%)": 4
     },
     "True Fate Sickle (Withered)": {
       "type": "Weapon",
-      "Crit Rate": 11,
-      "Crit Dmg": 15,
-      "Extra Dmg": 15,
-      "Dmg Amp": 6,
-      "Elem Boost": 32,
-      "Base Atk": 1000,
-      "Atk Bonus": 6,
-      "Strength": 550,
-      "Agility": 330,
-      "Multiplier": 4
+      "Crit Rate (%)": 11,
+      "Crit Dmg (%)": 15,
+      "Additional (%)": 15,
+      "Dmg Bonus (%)": 6,
+      "Elem Boost (%)": 32,
+      "Atk (flat)": 1000,
+      "Atk Bonus (%)": 6,
+      "Strength (flat)": 550,
+      "Agility (flat)": 330,
+      "Skill Ratio (%)": 4
     },
     "Avarice Armor": {
       "type": "Armor",
-      "Crit Rate": 6,
-      "Crit Dmg": 16,
-      "Dmg Amp": 5,
-      "Strength": 264,
+      "Crit Rate (%)": 6,
+      "Crit Dmg (%)": 16,
+      "Dmg Bonus (%)": 5,
+      "Strength (flat)": 264,
       "Black Feather": 1,
       "Avarice": 1
     },
     "Avarice Hand": {
-      "type": "Armor",
-      "dmgToDebuff": 8,
-      "Skill Dmg": 10,
-      "Strength": 318,
-      "Penetration": 17,
-      "Agility": 144,
+      "type": "Hand",
+      "Dmg Debuff (%)": 8,
+      "Skill DMG (%)": 10,
+      "Strength (flat)": 318,
+      "PEN (flat)": 17,
+      "Agility (flat)": 144,
       "Black Feather": 1,
       "Avarice": 1
     },
     "Avarice Head": {
-      "type": "Armor",
-      "Elem Boost": 16,
-      "Dmg Amp": 14.5,
-      "Atk Bonus": 5,
-      "Strength": 216,
-      "Agility": 168,
+      "type": "Head",
+      "Elem Boost (%)": 16,
+      "Dmg Bonus (%)": 14.5,
+      "Atk Bonus (%)": 5,
+      "Strength (flat)": 216,
+      "Agility (flat)": 168,
       "Black Feather": 1,
       "Avarice": 1
     },
     "Avarice Legs": {
-      "type": "Armor",
-      "Elem Boost": 20,
-      "dmgToDebuff": 6,
-      "Strength": 264,
-      "Str Bonus": 14,
+      "type": "Legs",
+      "Elem Boost (%)": 20,
+      "Dmg Debuff (%)": 6,
+      "Strength (flat)": 264,
+      "Strength Bonus (%)": 14,
       "Black Feather": 1,
       "Avarice": 1
     },
     "Avarice Shoes": {
-      "type": "Armor",
-      "Skill Dmg": 12,
-      "Strength": 168,
-      "Str Bonus": 9,
-      "Agility": 144,
+      "type": "Shoes",
+      "Skill DMG (%)": 12,
+      "Strength (flat)": 168,
+      "Strength Bonus (%)": 9,
+      "Agility (flat)": 144,
       "Black Feather": 1,
       "Avarice": 1
     },
     "Black Feather Armor": {
       "type": "Armor",
-      "Crit Rate": 5,
-      "Crit Dmg": 15,
-      "Resonance Dmg": 10,
-      "Strength": 242,
-      "Skill Haste": 13.6,
+      "Crit Rate (%)": 5,
+      "Crit Dmg (%)": 15,
+      "Resonance DMG (%)": 10,
+      "Strength (flat)": 242,
+      "ASPD (%)": 13.6,
       "Black Feather": 1
     },
     "Black Feather Hand": {
-      "type": "Armor",
-      "dmgToDebuff": 7,
-      "Strength": 254,
-      "Penetration": 15,
-      "Atk Bonus": 12,
-      "Agility": 132,
+      "type": "Hand",
+      "Dmg Debuff (%)": 7,
+      "Strength (flat)": 254,
+      "PEN (flat)": 15,
+      "Atk Bonus (%)": 12,
+      "Agility (flat)": 132,
       "Black Feather": 1
     },
     "Black Feather Head": {
-      "type": "Armor",
-      "Elem Boost": 15,
-      "Dmg Amp": 14,
-      "Skill Dmg": 5,
-      "Atk Bonus": 5,
-      "Strength": 198,
-      "Agility": 154,
+      "type": "Head",
+      "Elem Boost (%)": 15,
+      "Dmg Bonus (%)": 14,
+      "Skill DMG (%)": 5,
+      "Atk Bonus (%)": 5,
+      "Strength (flat)": 198,
+      "Agility (flat)": 154,
       "Black Feather": 1
     },
     "Black Feather Legs": {
-      "type": "Armor",
-      "Elem Boost": 18,
-      "Crit Dmg": 20,
-      "dmgToDebuff": 5,
-      "Cooldown": 35,
-      "Strength": 242,
-      "Black Feather": 1
+      "type": "Legs",
+      "Elem Boost (%)": 18,
+      "Crit Dmg (%)": 20,
+      "Dmg Debuff (%)": 5,
+      "Strength (flat)": 242,
+      "Black Feather": 1,
+      "Cooldown (flat)": 35
     },
     "Black Feather Shoes": {
-      "type": "Armor",
-      "Elem Boost": 32,
-      "Skill Dmg": 10,
-      "Strength": 168,
-      "Str Bonus": 8,
-      "Agility": 132,
+      "type": "Shoes",
+      "Elem Boost (%)": 32,
+      "Skill DMG (%)": 10,
+      "Strength (flat)": 168,
+      "Strength Bonus (%)": 8,
+      "Agility (flat)": 132,
       "Black Feather": 1
     },
     "Butterfly Armor": {
       "type": "Armor",
-      "Crit Rate": 5,
-      "Crit Dmg": 19,
-      "Dmg Amp": 7,
-      "dmgToDebuff": 6,
-      "Strength": 286,
-      "Skill Haste": 15.9,
+      "Crit Rate (%)": 5,
+      "Crit Dmg (%)": 19,
+      "Dmg Bonus (%)": 7,
+      "Dmg Debuff (%)": 6,
+      "Strength (flat)": 286,
+      "ASPD (%)": 15.9,
       "Butterfly": 1,
       "Glimmer": 1
     },
     "Butterfly Hand": {
-      "type": "Armor",
-      "dmgToDebuff": 9.5,
-      "Atk Bonus": 17,
-      "Strength": 342,
-      "Penetration": 18,
-      "Agility": 156,
+      "type": "Hand",
+      "Dmg Debuff (%)": 9.5,
+      "Atk Bonus (%)": 17,
+      "Strength (flat)": 342,
+      "PEN (flat)": 18,
+      "Agility (flat)": 156,
       "Butterfly": 1,
       "Glimmer": 1
     },
     "Butterfly Head": {
-      "type": "Armor",
-      "Elem Boost": 20,
-      "Dmg Amp": 12,
-      "Skill Dmg": 10,
-      "Atk Bonus": 8,
-      "Strength": 234,
-      "Agility": 182,
+      "type": "Head",
+      "Elem Boost (%)": 20,
+      "Dmg Bonus (%)": 12,
+      "Skill DMG (%)": 10,
+      "Atk Bonus (%)": 8,
+      "Strength (flat)": 234,
+      "Agility (flat)": 182,
       "Butterfly": 1,
       "Glimmer": 1
     },
     "Butterfly Legs": {
-      "type": "Armor",
-      "Elem Boost": 23,
-      "Crit Dmg": 32,
-      "dmgToDebuff": 8,
-      "Strength": 286,
-      "Cooldown": 50,
+      "type": "Legs",
+      "Elem Boost (%)": 23,
+      "Crit Dmg (%)": 32,
+      "Dmg Debuff (%)": 8,
+      "Strength (flat)": 286,
       "Butterfly": 1,
-      "Glimmer": 1
+      "Glimmer": 1,
+      "Cooldown (flat)": 50
     },
     "Butterfly Shoes": {
-      "type": "Armor",
-      "Elem Boost": 40,
-      "Skill Dmg": 13,
-      "Elem Dmg": 3,
-      "Strength": 182,
-      "Str Bonus": 11,
-      "Agility": 156,
+      "type": "Shoes",
+      "Elem Boost (%)": 40,
+      "Skill DMG (%)": 13,
+      "Elem Dmg (%)": 3,
+      "Strength (flat)": 182,
+      "Strength Bonus (%)": 11,
+      "Agility (flat)": 156,
       "Butterfly": 1,
       "Glimmer": 1
     },
     "Cursed Armor": {
       "type": "Armor",
-      "Crit Rate": 5,
-      "Crit Dmg": 20,
-      "dmgToDebuff": 13.5,
-      "Dmg Amp": 6.9,
-      "Strength": 286,
+      "Crit Rate (%)": 5,
+      "Crit Dmg (%)": 20,
+      "Dmg Debuff (%)": 13.5,
+      "Dmg Bonus (%)": 6.9,
+      "Strength (flat)": 286,
       "Cursed": 1,
       "Venom": 1
     },
     "Cursed Hand": {
-      "type": "Armor",
-      "dmgToDebuff": 19.5,
-      "Strength": 182,
-      "Penetration": 17,
-      "Agility": 156,
+      "type": "Hand",
+      "Dmg Debuff (%)": 19.5,
+      "Strength (flat)": 182,
+      "PEN (flat)": 17,
+      "Agility (flat)": 156,
       "Cursed": 1,
       "Venom": 1
     },
     "Cursed Head": {
-      "type": "Armor",
-      "Elem Boost": 22,
-      "dmgToDebuff": 23.5,
-      "Atk Bonus": 8,
-      "Strength": 234,
-      "Agility": 182,
+      "type": "Head",
+      "Elem Boost (%)": 22,
+      "Dmg Debuff (%)": 23.5,
+      "Atk Bonus (%)": 8,
+      "Strength (flat)": 234,
+      "Agility (flat)": 182,
       "Cursed": 1,
       "Venom": 1
     },
     "Cursed Legs": {
-      "type": "Armor",
-      "Elem Boost": 24,
-      "dmgToDebuff": 14.5,
-      "Strength": 286,
+      "type": "Legs",
+      "Elem Boost (%)": 24,
+      "Dmg Debuff (%)": 14.5,
+      "Strength (flat)": 286,
       "Cursed": 1,
       "Venom": 1
     },
     "Cursed Shoes": {
-      "type": "Armor",
-      "Elem Boost": 30,
-      "dmgToDebuff": 6.5,
-      "Dmg Amp": 4.5,
-      "Skill Dmg": 12,
-      "Strength": 168,
-      "Str Bonus": 12,
-      "Def Reduction": 20,
-      "Agility": 156,
+      "type": "Shoes",
+      "Elem Boost (%)": 30,
+      "Dmg Debuff (%)": 6.5,
+      "Dmg Bonus (%)": 4.5,
+      "Skill DMG (%)": 12,
+      "Strength (flat)": 168,
+      "Strength Bonus (%)": 12,
+      "Def Reduction (%)": 20,
+      "Agility (flat)": 156,
       "Cursed": 1,
       "Venom": 1
     },
     "Demon Heart Armor": {
       "type": "Armor",
-      "Crit Rate": 6,
-      "Crit Dmg": 18,
-      "Dmg Amp": 6,
-      "Strength": 286,
-      "dmgToDebuff": 3,
+      "Crit Rate (%)": 6,
+      "Crit Dmg (%)": 18,
+      "Dmg Bonus (%)": 6,
+      "Strength (flat)": 286,
+      "Dmg Debuff (%)": 3,
       "Demon Heart": 1,
       "Avarice": 1
     },
     "Demon Heart Hand": {
-      "type": "Armor",
-      "dmgToDebuff": 9,
-      "Skill Dmg": 15,
-      "Strength": 382,
-      "Penetration": 18,
-      "Dmg Amp": 2,
-      "Agility": 156,
+      "type": "Hand",
+      "Dmg Debuff (%)": 9,
+      "Skill DMG (%)": 15,
+      "Strength (flat)": 382,
+      "PEN (flat)": 18,
+      "Dmg Bonus (%)": 2,
+      "Agility (flat)": 156,
       "Demon Heart": 1,
       "Avarice": 1
     },
     "Demon Heart Head": {
-      "type": "Armor",
-      "Elem Boost": 23,
-      "Dmg Amp": 18.5,
-      "Atk Bonus": 6,
-      "Strength": 234,
-      "Agility": 182,
+      "type": "Head",
+      "Elem Boost (%)": 23,
+      "Dmg Bonus (%)": 18.5,
+      "Atk Bonus (%)": 6,
+      "Strength (flat)": 234,
+      "Agility (flat)": 182,
       "Demon Heart": 1,
       "Avarice": 1
     },
     "Demon Heart Kraken": {
       "type": "Emblem",
-      "Crit Dmg": 16,
-      "Elem Boost": 22
+      "Crit Dmg (%)": 16,
+      "Elem Boost (%)": 22
     },
     "Demon Heart Legs": {
-      "type": "Armor",
-      "Elem Boost": 22,
-      "dmgToDebuff": 7,
-      "Strength": 286,
-      "Str Bonus": 21,
+      "type": "Legs",
+      "Elem Boost (%)": 22,
+      "Dmg Debuff (%)": 7,
+      "Strength (flat)": 286,
+      "Strength Bonus (%)": 21,
       "Demon Heart": 1,
       "Avarice": 1
     },
     "Demon Heart Shoes": {
-      "type": "Armor",
-      "Crit Rate": 3,
-      "Crit Dmg": 6,
-      "Skill Dmg": 13,
-      "Strength": 182,
-      "Str Bonus": 10,
-      "Agility": 156,
+      "type": "Shoes",
+      "Crit Rate (%)": 3,
+      "Crit Dmg (%)": 6,
+      "Skill DMG (%)": 13,
+      "Strength (flat)": 182,
+      "Strength Bonus (%)": 10,
+      "Agility (flat)": 156,
       "Demon Heart": 1,
       "Avarice": 1
     },
     "Glimmer Armor": {
       "type": "Armor",
-      "Crit Rate": 5,
-      "Crit Dmg": 17,
-      "Dmg Amp": 6,
-      "Strength": 264,
-      "Skill Haste": 15.9,
+      "Crit Rate (%)": 5,
+      "Crit Dmg (%)": 17,
+      "Dmg Bonus (%)": 6,
+      "Strength (flat)": 264,
+      "ASPD (%)": 15.9,
       "Black Feather": 1,
       "Glimmer": 1
     },
     "Glimmer Hand": {
-      "type": "Armor",
-      "dmgToDebuff": 8.5,
-      "Atk Bonus": 15,
-      "Strength": 298,
-      "Penetration": 17,
-      "Agility": 144,
+      "type": "Hand",
+      "Dmg Debuff (%)": 8.5,
+      "Atk Bonus (%)": 15,
+      "Strength (flat)": 298,
+      "PEN (flat)": 17,
+      "Agility (flat)": 144,
       "Black Feather": 1,
       "Glimmer": 1
     },
     "Glimmer Head": {
-      "type": "Armor",
-      "Elem Boost": 18,
-      "Dmg Amp": 11,
-      "Skill Dmg": 8,
-      "Atk Bonus": 7,
-      "Strength": 216,
-      "Agility": 168,
+      "type": "Head",
+      "Elem Boost (%)": 18,
+      "Dmg Bonus (%)": 11,
+      "Skill DMG (%)": 8,
+      "Atk Bonus (%)": 7,
+      "Strength (flat)": 216,
+      "Agility (flat)": 168,
       "Black Feather": 1,
       "Glimmer": 1
     },
     "Glimmer Legs": {
-      "type": "Armor",
-      "Elem Boost": 21,
-      "Crit Dmg": 24,
-      "dmgToDebuff": 7,
-      "Strength": 264,
-      "Cooldown": 50,
+      "type": "Legs",
+      "Elem Boost (%)": 21,
+      "Crit Dmg (%)": 24,
+      "Dmg Debuff (%)": 7,
+      "Strength (flat)": 264,
       "Black Feather": 1,
-      "Glimmer": 1
+      "Glimmer": 1,
+      "Cooldown (flat)": 50
     },
     "Glimmer Shoes": {
-      "type": "Armor",
-      "Elem Boost": 40,
-      "Skill Dmg": 12,
-      "Strength": 182,
-      "Str Bonus": 10,
-      "Agility": 144,
+      "type": "Shoes",
+      "Elem Boost (%)": 40,
+      "Skill DMG (%)": 12,
+      "Strength (flat)": 182,
+      "Strength Bonus (%)": 10,
+      "Agility (flat)": 144,
       "Black Feather": 1,
       "Glimmer": 1
     },
     "Glimmer Venom Wing": {
       "type": "Emblem",
-      "Crit Dmg": 25
+      "Crit Dmg (%)": 25
     },
     "Venom Armor": {
       "type": "Armor",
-      "Crit Rate": 5,
-      "Crit Dmg": 18,
-      "dmgToDebuff": 12,
-      "Dmg Amp": 6,
-      "Strength": 264,
+      "Crit Rate (%)": 5,
+      "Crit Dmg (%)": 18,
+      "Dmg Debuff (%)": 12,
+      "Dmg Bonus (%)": 6,
+      "Strength (flat)": 264,
       "Black Feather": 1,
       "Venom": 1
     },
     "Venom Behemoth": {
       "type": "Emblem",
-      "dmgToDebuff": 6,
-      "Dmg Amp": 6
+      "Dmg Debuff (%)": 6,
+      "Dmg Bonus (%)": 6
     },
     "Venom Hand": {
-      "type": "Armor",
-      "dmgToDebuff": 17,
-      "Strength": 168,
-      "Penetration": 16,
-      "Agility": 144,
+      "type": "Hand",
+      "Dmg Debuff (%)": 17,
+      "Strength (flat)": 168,
+      "PEN (flat)": 16,
+      "Agility (flat)": 144,
       "Black Feather": 1,
       "Venom": 1
     },
     "Venom Head": {
-      "type": "Armor",
-      "Elem Boost": 20,
-      "dmgToDebuff": 22,
-      "Atk Bonus": 7,
-      "Strength": 216,
-      "Agility": 168,
+      "type": "Head",
+      "Elem Boost (%)": 20,
+      "Dmg Debuff (%)": 22,
+      "Atk Bonus (%)": 7,
+      "Strength (flat)": 216,
+      "Agility (flat)": 168,
       "Black Feather": 1,
       "Venom": 1
     },
     "Venom Legs": {
-      "type": "Armor",
-      "Elem Boost": 22,
-      "dmgToDebuff": 13,
-      "Strength": 264,
+      "type": "Legs",
+      "Elem Boost (%)": 22,
+      "Dmg Debuff (%)": 13,
+      "Strength (flat)": 264,
       "Black Feather": 1,
       "Venom": 1
     },
     "Venom Shoes": {
-      "type": "Armor",
-      "Elem Boost": 30,
-      "dmgToDebuff": 6,
-      "Skill Dmg": 11,
-      "Strength": 168,
-      "Str Bonus": 11,
-      "Def Reduction": 20,
-      "Agility": 144,
+      "type": "Shoes",
+      "Elem Boost (%)": 30,
+      "Dmg Debuff (%)": 6,
+      "Skill DMG (%)": 11,
+      "Strength (flat)": 168,
+      "Strength Bonus (%)": 11,
+      "Def Reduction (%)": 20,
+      "Agility (flat)": 144,
       "Black Feather": 1,
       "Venom": 1
     },
     "Wind Butterfly": {
       "type": "Pet Soul",
-      "Special": 1,
-      "Cooldown": 10,
-      "Skill Dmg": 1.5
+      "Special (%)": 1,
+      "Skill DMG (%)": 1.5,
+      "Cooldown (flat)": 10
     },
-    "Demon Shadow Amulet": {
-      "type": "Accessory",
-      "Elem Boost": 27,
-      "Dmg Amp": 6,
-      "Skill Dmg": 6,
-      "Atk Bonus": 3,
-      "Strength": 264,
-      "Agility": 264,
+    "Demon Shadow Talisman": {
+      "type": "Talisman",
+      "Elem Boost (%)": 27,
+      "Dmg Bonus (%)": 6,
+      "Skill DMG (%)": 6,
+      "Atk Bonus (%)": 3,
+      "Strength (flat)": 264,
+      "Agility (flat)": 264,
       "Demon Shadow": 1
     },
     "Demon Shadow Bracer": {
-      "type": "Accessory",
-      "Crit Rate": 5,
-      "dmgToDebuff": 5,
-      "Strength": 330,
+      "type": "Bracer",
+      "Crit Rate (%)": 5,
+      "Dmg Debuff (%)": 5,
+      "Strength (flat)": 330,
       "Demon Shadow": 1
     },
     "Demon Shadow Necklace": {
-      "type": "Accessory",
-      "Elem Boost": 18,
-      "Skill Dmg": 6,
-      "Strength": 330,
+      "type": "Necklace",
+      "Elem Boost (%)": 18,
+      "Skill DMG (%)": 6,
+      "Strength (flat)": 330,
       "Demon Shadow": 1
     },
     "Demon Shadow Ring": {
-      "type": "Accessory",
-      "Dmg Amp": 12,
-      "Crit Dmg": 9,
-      "Str Bonus": 8,
-      "Cooldown": 80,
-      "Agility": 330,
-      "Demon Shadow": 1
+      "type": "Ring",
+      "Dmg Bonus (%)": 12,
+      "Crit Dmg (%)": 9,
+      "Strength Bonus (%)": 8,
+      "Agility (flat)": 330,
+      "Demon Shadow": 1,
+      "Cooldown (flat)": 80
     },
     "Demon Shadow Seal": {
-      "type": "Accessory",
-      "Elem Boost": 17,
-      "dmgToDebuff": 6,
-      "Atk Bonus": 3,
-      "Strength": 264,
-      "Cooldown": 40,
-      "Agility": 264,
-      "Skill Haste": 15,
-      "Demon Shadow": 1
+      "type": "Seal",
+      "Elem Boost (%)": 17,
+      "Dmg Debuff (%)": 6,
+      "Atk Bonus (%)": 3,
+      "Strength (flat)": 264,
+      "Agility (flat)": 264,
+      "ASPD (%)": 15,
+      "Demon Shadow": 1,
+      "Cooldown (flat)": 40
     },
-    "Holy Glory Amulet": {
-      "type": "Accessory",
-      "Elem Boost": 13,
-      "Str Bonus": 22.5,
-      "Resonance Dmg": 6,
-      "Strength": 264,
-      "Agility": 264,
+    "Holy Glory Talisman": {
+      "type": "Talisman",
+      "Elem Boost (%)": 13,
+      "Strength Bonus (%)": 22.5,
+      "Resonance DMG (%)": 6,
+      "Strength (flat)": 264,
+      "Agility (flat)": 264,
       "Holy Glory": 1
     },
     "Holy Glory Bracer": {
-      "type": "Accessory",
-      "Crit Rate": 5,
-      "dmgToDebuff": 6,
-      "Skill Dmg": 10,
-      "Strength": 330,
+      "type": "Bracer",
+      "Crit Rate (%)": 5,
+      "Dmg Debuff (%)": 6,
+      "Skill DMG (%)": 10,
+      "Strength (flat)": 330,
       "Holy Glory": 1
     },
     "Holy Glory Necklace": {
-      "type": "Accessory",
-      "Crit Dmg": 16,
-      "Elem Boost": 20,
-      "Skill Dmg": 5,
-      "Strength": 330,
-      "Cooldown": 50,
-      "Holy Glory": 1
+      "type": "Necklace",
+      "Crit Dmg (%)": 16,
+      "Elem Boost (%)": 20,
+      "Skill DMG (%)": 5,
+      "Strength (flat)": 330,
+      "Holy Glory": 1,
+      "Cooldown (flat)": 50
     },
     "Holy Glory Ring": {
-      "type": "Accessory",
-      "Dmg Amp": 8,
-      "Crit Dmg": 11,
-      "Elem Boost": 12,
-      "Agility": 330,
+      "type": "Ring",
+      "Dmg Bonus (%)": 8,
+      "Crit Dmg (%)": 11,
+      "Elem Boost (%)": 12,
+      "Agility (flat)": 330,
       "Holy Glory": 1
     },
     "Holy Glory Seal": {
-      "type": "Accessory",
-      "Elem Boost": 19,
-      "dmgToDebuff": 4,
-      "Dmg Amp": 10,
-      "Strength": 264,
-      "Agility": 264,
+      "type": "Seal",
+      "Elem Boost (%)": 19,
+      "Dmg Debuff (%)": 4,
+      "Dmg Bonus (%)": 10,
+      "Strength (flat)": 264,
+      "Agility (flat)": 264,
       "Holy Glory": 1
     },
-    "Solar Amulet": {
-      "type": "Accessory",
-      "Elem Boost": 12,
-      "Str Bonus": 10,
-      "Dmg Amp": 10,
-      "Strength": 264,
-      "Agility": 264,
+    "Solar Talisman": {
+      "type": "Talisman",
+      "Elem Boost (%)": 12,
+      "Strength Bonus (%)": 10,
+      "Dmg Bonus (%)": 10,
+      "Strength (flat)": 264,
+      "Agility (flat)": 264,
       "Solar": 1
     },
     "Solar Bracer": {
-      "type": "Accessory",
-      "Crit Rate": 7,
-      "dmgToDebuff": 5,
-      "Strength": 330,
-      "Elem Boost": 15,
+      "type": "Bracer",
+      "Crit Rate (%)": 7,
+      "Dmg Debuff (%)": 5,
+      "Strength (flat)": 330,
+      "Elem Boost (%)": 15,
       "Solar": 1
     },
     "Solar Necklace": {
-      "type": "Accessory",
-      "Elem Boost": 15,
-      "Skill Dmg": 16,
-      "Strength": 330,
-      "Cooldown": 40,
-      "Solar": 1
+      "type": "Necklace",
+      "Elem Boost (%)": 15,
+      "Skill DMG (%)": 16,
+      "Strength (flat)": 330,
+      "Solar": 1,
+      "Cooldown (flat)": 40
     },
     "Solar Ring": {
-      "type": "Accessory",
-      "Dmg Amp": 7,
-      "Crit Dmg": 29,
-      "Penetration": 6,
-      "Agility": 330,
+      "type": "Ring",
+      "Dmg Bonus (%)": 7,
+      "Crit Dmg (%)": 29,
+      "PEN (flat)": 6,
+      "Agility (flat)": 330,
       "Solar": 1
     },
     "Solar Seal": {
-      "type": "Accessory",
-      "Elem Boost": 20,
-      "Skill Dmg": 5,
-      "dmgToDebuff": 4,
-      "Cooldown": 40,
-      "Strength": 264,
-      "Agility": 264,
-      "Solar": 1
+      "type": "Seal",
+      "Elem Boost (%)": 20,
+      "Skill DMG (%)": 5,
+      "Dmg Debuff (%)": 4,
+      "Strength (flat)": 264,
+      "Agility (flat)": 264,
+      "Solar": 1,
+      "Cooldown (flat)": 40
     },
     "Hourglass of World's End": {
       "type": "Treasure",
@@ -549,13 +549,13 @@
     },
     "+15(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 362,
+      "PDEF Shred (flat)": 362,
       "Resonance Effect I": 15,
       "Resonance Effect II": 15
     },
     "+15(Str_Int)": {
       "type": "Other",
-      "Strength": 117,
+      "Strength (flat)": 117,
       "Resonance Effect I": 15,
       "Resonance Effect II": 15
     },
@@ -566,13 +566,13 @@
     },
     "+16(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 450,
+      "PDEF Shred (flat)": 450,
       "Resonance Effect I": 16,
       "Resonance Effect II": 16
     },
     "+16(Str_Int)": {
       "type": "Other",
-      "Strength": 155,
+      "Strength (flat)": 155,
       "Resonance Effect I": 16,
       "Resonance Effect II": 16
     },
@@ -583,13 +583,13 @@
     },
     "+17(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 560,
+      "PDEF Shred (flat)": 560,
       "Resonance Effect I": 17,
       "Resonance Effect II": 17
     },
     "+17(Str_Int)": {
       "type": "Other",
-      "Strength": 198,
+      "Strength (flat)": 198,
       "Resonance Effect I": 17,
       "Resonance Effect II": 17
     },
@@ -600,19 +600,19 @@
     },
     "+18(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 695,
+      "PDEF Shred (flat)": 695,
       "Resonance Effect I": 18,
       "Resonance Effect II": 18
     },
     "+18(Str_Int)": {
       "type": "Other",
-      "Strength": 246,
+      "Strength (flat)": 246,
       "Resonance Effect I": 18,
       "Resonance Effect II": 18
     },
     "+18(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 3476,
+      "PDEF Shred (flat)": 3476,
       "Resonance Effect I": 18,
       "Resonance Effect II": 18
     },
@@ -623,19 +623,19 @@
     },
     "+19(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 873,
+      "PDEF Shred (flat)": 873,
       "Resonance Effect I": 19,
       "Resonance Effect II": 19
     },
     "+19(Str_Int)": {
       "type": "Other",
-      "Strength": 300,
+      "Strength (flat)": 300,
       "Resonance Effect I": 19,
       "Resonance Effect II": 19
     },
     "+19(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 4368,
+      "PDEF Shred (flat)": 4368,
       "Resonance Effect I": 19,
       "Resonance Effect II": 19
     },
@@ -646,19 +646,19 @@
     },
     "+20(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 1084,
+      "PDEF Shred (flat)": 1084,
       "Resonance Effect I": 20,
       "Resonance Effect II": 20
     },
     "+20(Str_Int)": {
       "type": "Other",
-      "Strength": 360,
+      "Strength (flat)": 360,
       "Resonance Effect I": 20,
       "Resonance Effect II": 20
     },
     "+20(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 5420,
+      "PDEF Shred (flat)": 5420,
       "Resonance Effect I": 20,
       "Resonance Effect II": 20
     },
@@ -669,19 +669,19 @@
     },
     "+21(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 1355,
+      "PDEF Shred (flat)": 1355,
       "Resonance Effect I": 21,
       "Resonance Effect II": 21
     },
     "+21(Str_Int)": {
       "type": "Other",
-      "Strength": 426,
+      "Strength (flat)": 426,
       "Resonance Effect I": 21,
       "Resonance Effect II": 21
     },
     "+21(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 6775,
+      "PDEF Shred (flat)": 6775,
       "Resonance Effect I": 21,
       "Resonance Effect II": 21
     },
@@ -692,19 +692,19 @@
     },
     "+22(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 1682,
+      "PDEF Shred (flat)": 1682,
       "Resonance Effect I": 22,
       "Resonance Effect II": 22
     },
     "+22(Str_Int)": {
       "type": "Other",
-      "Strength": 497,
+      "Strength (flat)": 497,
       "Resonance Effect I": 22,
       "Resonance Effect II": 22
     },
     "+22(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 8410,
+      "PDEF Shred (flat)": 8410,
       "Resonance Effect I": 22,
       "Resonance Effect II": 22
     },
@@ -715,19 +715,19 @@
     },
     "+23(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 2065,
+      "PDEF Shred (flat)": 2065,
       "Resonance Effect I": 23,
       "Resonance Effect II": 23
     },
     "+23(Str_Int)": {
       "type": "Other",
-      "Strength": 573,
+      "Strength (flat)": 573,
       "Resonance Effect I": 23,
       "Resonance Effect II": 23
     },
     "+23(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 10326,
+      "PDEF Shred (flat)": 10326,
       "Resonance Effect I": 23,
       "Resonance Effect II": 23
     },
@@ -738,19 +738,19 @@
     },
     "+24(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 2541,
+      "PDEF Shred (flat)": 2541,
       "Resonance Effect I": 24,
       "Resonance Effect II": 24
     },
     "+24(Str_Int)": {
       "type": "Other",
-      "Strength": 656,
+      "Strength (flat)": 656,
       "Resonance Effect I": 24,
       "Resonance Effect II": 24
     },
     "+24(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 12709,
+      "PDEF Shred (flat)": 12709,
       "Resonance Effect I": 24,
       "Resonance Effect II": 24
     },
@@ -761,19 +761,19 @@
     },
     "+25(L_R Slot)": {
       "type": "Other",
-      "Def Break Atk": 3111,
+      "PDEF Shred (flat)": 3111,
       "Resonance Effect I": 25,
       "Resonance Effect II": 25
     },
     "+25(Str_Int)": {
       "type": "Other",
-      "Strength": 743,
+      "Strength (flat)": 743,
       "Resonance Effect I": 25,
       "Resonance Effect II": 25
     },
     "+25(Weapon)": {
       "type": "Other",
-      "Def Break Atk": 15559,
+      "PDEF Shred (flat)": 15559,
       "Resonance Effect I": 25,
       "Resonance Effect II": 25
     },
@@ -785,57 +785,57 @@
     },
     "1 Star Dragon": {
       "type": "Other",
-      "Strength": 230,
-      "Dmg Amp": 11.9,
-      "Extra Dmg": 10,
-      "Elem Dmg": 7.5
+      "Strength (flat)": 230,
+      "Dmg Bonus (%)": 11.9,
+      "Additional (%)": 10,
+      "Elem Dmg (%)": 7.5
     },
     "1 Star Eagle": {
       "type": "Other",
-      "Strength": 230,
-      "dmgToDebuff": 18.7,
-      "Extra Dmg": 5.1,
-      "Elem Boost": 40,
-      "Multiplier": 4
+      "Strength (flat)": 230,
+      "Dmg Debuff (%)": 18.7,
+      "Additional (%)": 5.1,
+      "Elem Boost (%)": 40,
+      "Skill Ratio (%)": 4
     },
     "1 Star Fox": {
       "type": "Other",
-      "Strength": 230,
-      "Cooldown": 46.7,
-      "Dmg Amp": 14.2,
-      "Extra Dmg": 6
+      "Strength (flat)": 230,
+      "Dmg Bonus (%)": 14.2,
+      "Additional (%)": 6,
+      "Cooldown (flat)": 46.7
     },
     "1 Star Koto": {
       "type": "Other",
-      "Strength": 230,
-      "Crit Dmg": 7.3,
-      "Elem Boost": 15,
-      "dmgToDebuff": 6,
-      "Multiplier": 1.7
+      "Strength (flat)": 230,
+      "Crit Dmg (%)": 7.3,
+      "Elem Boost (%)": 15,
+      "Dmg Debuff (%)": 6,
+      "Skill Ratio (%)": 1.7
     },
     "1 Star None": {
       "type": "Other"
     },
     "1 Star Panda": {
       "type": "Other",
-      "Strength": 230,
-      "dmgToDebuff": 6,
-      "Crit Dmg": 9.3,
-      "Special": 9
+      "Strength (flat)": 230,
+      "Dmg Debuff (%)": 6,
+      "Crit Dmg (%)": 9.3,
+      "Special (%)": 9
     },
     "1 Star PiaoPiao": {
       "type": "Other",
-      "Strength": 230,
-      "Base Atk": 64,
-      "Dmg Amp": 1,
-      "Elem Boost": 6.5,
-      "Extra Dmg": 6.25,
-      "dmgToDebuff": 4,
-      "Skill Dmg": 3
+      "Strength (flat)": 230,
+      "Atk (flat)": 64,
+      "Dmg Bonus (%)": 1,
+      "Elem Boost (%)": 6.5,
+      "Additional (%)": 6.25,
+      "Dmg Debuff (%)": 4,
+      "Skill DMG (%)": 3
     },
     "10 Crit Dmg": {
       "type": "Buff",
-      "Crit Dmg": 10
+      "Crit Dmg (%)": 10
     },
     "2 Star": {
       "type": "Other"
@@ -845,138 +845,138 @@
     },
     "2 Star Dragon": {
       "type": "Other",
-      "Strength": 287,
-      "Dmg Amp": 13,
-      "Extra Dmg": 10,
-      "Elem Dmg": 7.5
+      "Strength (flat)": 287,
+      "Dmg Bonus (%)": 13,
+      "Additional (%)": 10,
+      "Elem Dmg (%)": 7.5
     },
     "2 Star Eagle": {
       "type": "Other",
-      "Strength": 287,
-      "dmgToDebuff": 20.3,
-      "Extra Dmg": 7.7,
-      "Elem Boost": 40,
-      "Multiplier": 4
+      "Strength (flat)": 287,
+      "Dmg Debuff (%)": 20.3,
+      "Additional (%)": 7.7,
+      "Elem Boost (%)": 40,
+      "Skill Ratio (%)": 4
     },
     "2 Star Fox": {
       "type": "Other",
-      "Strength": 287,
-      "Cooldown": 58.3,
-      "Dmg Amp": 14.2,
-      "Extra Dmg": 6
+      "Strength (flat)": 287,
+      "Dmg Bonus (%)": 14.2,
+      "Additional (%)": 6,
+      "Cooldown (flat)": 58.3
     },
     "2 Star Koto": {
       "type": "Other",
-      "Strength": 287,
-      "Crit Dmg": 9.2,
-      "Elem Boost": 15,
-      "dmgToDebuff": 6,
-      "Multiplier": 1.7
+      "Strength (flat)": 287,
+      "Crit Dmg (%)": 9.2,
+      "Elem Boost (%)": 15,
+      "Dmg Debuff (%)": 6,
+      "Skill Ratio (%)": 1.7
     },
     "2 Star None": {
       "type": "Other"
     },
     "2 Star Panda": {
       "type": "Other",
-      "Strength": 287,
-      "dmgToDebuff": 6,
-      "Crit Dmg": 11.7,
-      "Special": 9
+      "Strength (flat)": 287,
+      "Dmg Debuff (%)": 6,
+      "Crit Dmg (%)": 11.7,
+      "Special (%)": 9
     },
     "2 Star PiaoPiao": {
       "type": "Other",
-      "Strength": 287,
-      "Base Atk": 80,
-      "Dmg Amp": 1,
-      "Elem Boost": 6.5,
-      "Extra Dmg": 6.25,
-      "dmgToDebuff": 4,
-      "Skill Dmg": 3
+      "Strength (flat)": 287,
+      "Atk (flat)": 80,
+      "Dmg Bonus (%)": 1,
+      "Elem Boost (%)": 6.5,
+      "Additional (%)": 6.25,
+      "Dmg Debuff (%)": 4,
+      "Skill DMG (%)": 3
     },
     "22 Elem Potion": {
       "type": "Buff",
-      "Elem Boost": 22
+      "Elem Boost (%)": 22
     },
     "25 Elem Potion": {
       "type": "Buff",
-      "Elem Boost": 25
+      "Elem Boost (%)": 25
     },
     "3 Star": {
       "type": "Other"
     },
     "3 Star Cat": {
       "type": "Other",
-      "Strength": 330,
-      "Base Atk": 86,
-      "Crit Rate": 6,
-      "Elem Boost": 15,
-      "Skill Haste": 37
+      "Strength (flat)": 330,
+      "Atk (flat)": 86,
+      "Crit Rate (%)": 6,
+      "Elem Boost (%)": 15,
+      "ASPD (%)": 37
     },
     "3 Star Dragon": {
       "type": "Other",
-      "Strength": 345,
-      "Dmg Amp": 17.2,
-      "Extra Dmg": 10,
-      "Elem Dmg": 7.5
+      "Strength (flat)": 345,
+      "Dmg Bonus (%)": 17.2,
+      "Additional (%)": 10,
+      "Elem Dmg (%)": 7.5
     },
     "3 Star Eagle": {
       "type": "Other",
-      "Strength": 345,
-      "dmgToDebuff": 22,
-      "Extra Dmg": 11.5,
-      "Elem Boost": 40,
-      "Multiplier": 4
+      "Strength (flat)": 345,
+      "Dmg Debuff (%)": 22,
+      "Additional (%)": 11.5,
+      "Elem Boost (%)": 40,
+      "Skill Ratio (%)": 4
     },
     "3 Star Fox": {
       "type": "Other",
-      "Strength": 345,
-      "Cooldown": 70,
-      "Dmg Amp": 16.5,
-      "Extra Dmg": 6
+      "Strength (flat)": 345,
+      "Dmg Bonus (%)": 16.5,
+      "Additional (%)": 6,
+      "Cooldown (flat)": 70
     },
     "3 Star Koto": {
       "type": "Other",
-      "Strength": 345,
-      "Crit Dmg": 11,
-      "Elem Boost": 15,
-      "dmgToDebuff": 6,
-      "Multiplier": 2.8
+      "Strength (flat)": 345,
+      "Crit Dmg (%)": 11,
+      "Elem Boost (%)": 15,
+      "Dmg Debuff (%)": 6,
+      "Skill Ratio (%)": 2.8
     },
     "3 Star None": {
       "type": "Other"
     },
     "3 Star Panda": {
       "type": "Other",
-      "Strength": 345,
-      "dmgToDebuff": 6,
-      "Crit Dmg": 20.6,
-      "Special": 9
+      "Strength (flat)": 345,
+      "Dmg Debuff (%)": 6,
+      "Crit Dmg (%)": 20.6,
+      "Special (%)": 9
     },
     "3 Star PiaoPiao": {
       "type": "Other",
-      "Strength": 345,
-      "Base Atk": 96,
-      "Dmg Amp": 1.7,
-      "Elem Boost": 12,
-      "Extra Dmg": 6.25,
-      "dmgToDebuff": 4,
-      "Skill Dmg": 3
+      "Strength (flat)": 345,
+      "Atk (flat)": 96,
+      "Dmg Bonus (%)": 1.7,
+      "Elem Boost (%)": 12,
+      "Additional (%)": 6.25,
+      "Dmg Debuff (%)": 4,
+      "Skill DMG (%)": 3
     },
     "6 dmgToDebuff": {
       "type": "Buff",
-      "dmgToDebuff": 6
+      "Dmg Debuff (%)": 6
     },
     "8 Atk": {
       "type": "Buff",
-      "Atk Bonus": 8
+      "Atk Bonus (%)": 8
     },
     "8 Crit": {
       "type": "Buff",
-      "Crit Rate": 8
+      "Crit Rate (%)": 8
     },
     "8 Skill Dmg": {
       "type": "Buff",
-      "Skill Dmg": 8
+      "Skill DMG (%)": 8
     },
     "Adaptation 1": {
       "type": "Other",
@@ -1040,15 +1040,15 @@
     },
     "Ancient Guardian": {
       "type": "Card",
-      "Dmg Amp": 10
+      "Dmg Bonus (%)": 10
     },
     "Andre": {
       "type": "Emblem",
-      "Elem Boost": 12
+      "Elem Boost (%)": 12
     },
     "Azrael": {
       "type": "Emblem",
-      "dmgToDebuff": 12
+      "Dmg Debuff (%)": 12
     },
     "Basic 1": {
       "type": "Other",
@@ -1064,37 +1064,37 @@
     },
     "Beast Legion": {
       "type": "Card",
-      "Base Atk": 20,
-      "Skill Dmg": 2
+      "Atk (flat)": 20,
+      "Skill DMG (%)": 2
     },
     "Beast Tooth Mark": {
       "type": "Pet Soul",
-      "Special": 0.5,
-      "Base Atk": 30
+      "Special (%)": 0.5,
+      "Atk (flat)": 30
     },
     "Bishop": {
       "type": "Emblem",
-      "Elem Boost": 20,
-      "Cooldown": 40
+      "Elem Boost (%)": 20,
+      "Cooldown (flat)": 40
     },
     "Bogit": {
       "type": "Emblem",
-      "Dmg Amp": 5,
-      "Crit Dmg": 10
+      "Dmg Bonus (%)": 5,
+      "Crit Dmg (%)": 10
     },
     "Cat": {
       "type": "Pet"
     },
     "Cat Paw": {
       "type": "Pet Soul",
-      "Strength": 67,
-      "Base Atk": 17,
-      "Crit Rate": 1.2,
-      "Elem Dmg": 5
+      "Strength (flat)": 67,
+      "Atk (flat)": 17,
+      "Crit Rate (%)": 1.2,
+      "Elem Dmg (%)": 5
     },
     "Centaur": {
       "type": "Emblem",
-      "Skill Dmg": 8
+      "Skill DMG (%)": 8
     },
     "Challenger 1": {
       "type": "Other",
@@ -1122,31 +1122,31 @@
     },
     "Chariot": {
       "type": "Emblem",
-      "Crit Rate": 10
+      "Crit Rate (%)": 10
     },
     "Charlotte": {
       "type": "Emblem",
-      "dmgToDebuff": 6,
-      "Crit Dmg": 10
+      "Dmg Debuff (%)": 6,
+      "Crit Dmg (%)": 10
     },
     "Chrome Arms": {
       "type": "Card",
-      "Cooldown": 7,
-      "Skill Dmg": 0.8,
-      "dmgToDebuff": 4,
-      "Dmg Amp": 4
+      "Skill DMG (%)": 0.8,
+      "Dmg Debuff (%)": 4,
+      "Dmg Bonus (%)": 4,
+      "Cooldown (flat)": 7
     },
     "Cliff": {
       "type": "Buff",
-      "Atk Bonus": 5
+      "Atk Bonus (%)": 5
     },
     "Clockwork": {
       "type": "Other",
-      "Crit Rate": 6
+      "Crit Rate (%)": 6
     },
     "Clockwork Legion": {
       "type": "Card",
-      "Elem Boost": 11
+      "Elem Boost (%)": 11
     },
     "Combo 1": {
       "type": "Other",
@@ -1160,34 +1160,34 @@
       "type": "Other",
       "Combo": 3
     },
-    "dmgToDebuff": {
+    "Dmg Debuff (%)": {
       "type": "Buff",
-      "dmgToDebuff": 6
+      "Dmg Debuff (%)": 6
     },
     "Dark Realm Madman": {
       "type": "Card",
-      "Strength": 54,
-      "Crit Dmg": 4,
-      "Crit Rate": 2
+      "Strength (flat)": 54,
+      "Crit Dmg (%)": 4,
+      "Crit Rate (%)": 2
     },
     "Deep Space Swarm": {
       "type": "Card",
-      "Base Atk": 15,
-      "dmgToDebuff": 2
+      "Atk (flat)": 15,
+      "Dmg Debuff (%)": 2
     },
     "Demon Sickle Emblem": {
       "type": "Fashion Emblem",
-      "Multiplier": 0.25
+      "Skill Ratio (%)": 0.25
     },
     "Demon Touch": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
-      "Base Atk": 25,
-      "Crit Rate": 4,
-      "Crit Dmg": 8,
-      "Elem Boost": 8,
-      "Dmg Amp": 13
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
+      "Atk (flat)": 25,
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 8,
+      "Elem Boost (%)": 8,
+      "Dmg Bonus (%)": 13
     },
     "Destruction 1": {
       "type": "Other",
@@ -1206,49 +1206,49 @@
     },
     "Dragon Breath": {
       "type": "Buff",
-      "Crit Rate": 5,
-      "Base Atk": 50
+      "Crit Rate (%)": 5,
+      "Atk (flat)": 50
     },
     "Eagle": {
       "type": "Pet"
     },
     "East": {
       "type": "Buff",
-      "Resonance Dmg": 5
+      "Resonance DMG (%)": 5
     },
     "Eclipse Creator": {
       "type": "Emblem",
-      "Skill Dmg": 7
+      "Skill DMG (%)": 7
     },
     "Eclipse Realm": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
-      "Base Atk": 20,
-      "Elem Boost": 16,
-      "Multiplier": 2.5,
-      "Dmg Amp": 6,
-      "Skill Dmg": 4
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
+      "Atk (flat)": 20,
+      "Elem Boost (%)": 16,
+      "Skill Ratio (%)": 2.5,
+      "Dmg Bonus (%)": 6,
+      "Skill DMG (%)": 4
     },
     "Eclipse Realm II": {
       "type": "Fashion",
-      "Strength": 90,
-      "Agility": 90,
-      "Base Atk": 25,
-      "Elem Boost": 20,
-      "dmgToDebuff": 3,
-      "Multiplier": 3.5,
-      "Dmg Amp": 8,
-      "Skill Dmg": 7
+      "Strength (flat)": 90,
+      "Agility (flat)": 90,
+      "Atk (flat)": 25,
+      "Elem Boost (%)": 20,
+      "Dmg Debuff (%)": 3,
+      "Skill Ratio (%)": 3.5,
+      "Dmg Bonus (%)": 8,
+      "Skill DMG (%)": 7
     },
     "Electric Whip (Joker)": {
       "type": "Emblem",
-      "dmgToDebuff": 4,
-      "Elem Boost": 12
+      "Dmg Debuff (%)": 4,
+      "Elem Boost (%)": 12
     },
     "Elem Mark": {
       "type": "Emblem",
-      "Elem Boost": 18
+      "Elem Boost (%)": 18
     },
     "Elem Master 1": {
       "type": "Other",
@@ -1276,9 +1276,9 @@
     },
     "Emperor Thorn": {
       "type": "Pet Soul",
-      "Strength": 69,
-      "Dmg Amp": 1,
-      "dmgToDebuff": 1.5
+      "Strength (flat)": 69,
+      "Dmg Bonus (%)": 1,
+      "Dmg Debuff (%)": 1.5
     },
     "Evasion 1": {
       "type": "Other",
@@ -1318,8 +1318,8 @@
     },
     "Famion": {
       "type": "Emblem",
-      "dmgToDebuff": 4,
-      "Elem Boost": 18
+      "Dmg Debuff (%)": 4,
+      "Elem Boost (%)": 18
     },
     "Fox": {
       "type": "Pet"
@@ -1338,79 +1338,79 @@
     },
     "Gale": {
       "type": "Buff",
-      "Cooldown": 30
+      "Cooldown (flat)": 30
     },
     "Gloomy Forbidden Area": {
       "type": "Card",
-      "dmgToDebuff": 3,
-      "Cooldown": 8
+      "Dmg Debuff (%)": 3,
+      "Cooldown (flat)": 8
     },
     "Gold Crown": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
-      "Base Atk": 25,
-      "Crit Rate": 4,
-      "Crit Dmg": 8,
-      "Elem Boost": 13.2,
-      "Dmg Amp": 9.6
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
+      "Atk (flat)": 25,
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 8,
+      "Elem Boost (%)": 13.2,
+      "Dmg Bonus (%)": 9.6
     },
     "Golden Slumber": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
-      "Base Atk": 20,
-      "Elem Boost": 15,
-      "Multiplier": 2,
-      "Dmg Amp": 9
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
+      "Atk (flat)": 20,
+      "Elem Boost (%)": 15,
+      "Skill Ratio (%)": 2,
+      "Dmg Bonus (%)": 9
     },
     "Goramos": {
       "type": "Emblem",
-      "Dmg Amp": 4
+      "Dmg Bonus (%)": 4
     },
     "Gorga": {
       "type": "Emblem",
-      "Crit Dmg": 12
+      "Crit Dmg (%)": 12
     },
     "Hawk": {
       "type": "Emblem",
-      "Elem Boost": 18,
-      "dmgToDebuff": 2
+      "Elem Boost (%)": 18,
+      "Dmg Debuff (%)": 2
     },
     "Heat Wave Title Emblem": {
       "type": "Fashion Emblem",
-      "Multiplier": 4,
-      "Skill Dmg Boost": 3.5
+      "Skill Ratio (%)": 4,
+      "Skill DMG Boost (%)": 3.5
     },
     "Heavy Shield": {
       "type": "Emblem",
-      "Skill Dmg": 5
+      "Skill DMG (%)": 5
     },
     "Ice Fist (Vic)": {
       "type": "Emblem",
-      "dmgToDebuff": 4,
-      "Elem Boost": 12
+      "Dmg Debuff (%)": 4,
+      "Elem Boost (%)": 12
     },
     "Insight Eye": {
       "type": "Pet Soul",
-      "Strength": 35
+      "Strength (flat)": 35
     },
     "Isaac": {
       "type": "Emblem",
-      "dmgToDebuff": 2,
-      "Elem Boost": 12
+      "Dmg Debuff (%)": 2,
+      "Elem Boost (%)": 12
     },
     "King": {
       "type": "Emblem",
-      "Crit Dmg": 20
+      "Crit Dmg (%)": 20
     },
     "Koto": {
       "type": "Pet"
     },
     "Light Chaser": {
       "type": "Card",
-      "Crit Rate": 3,
-      "Crit Dmg": 6
+      "Crit Rate (%)": 3,
+      "Crit Dmg (%)": 6
     },
     "Lightning Summon 1": {
       "type": "Other",
@@ -1426,115 +1426,115 @@
     },
     "Loyal Partner": {
       "type": "Card",
-      "Strength": 350,
-      "Dmg Amp": 11
+      "Strength (flat)": 350,
+      "Dmg Bonus (%)": 11
     },
     "Magic Era": {
       "type": "Card",
-      "Resonance Dmg": 3
+      "Resonance DMG (%)": 3
     },
     "Magic Witch": {
       "type": "Pet Soul",
-      "Elem Boost": 4,
-      "Resonance Dmg": 2,
-      "Special": 1
+      "Elem Boost (%)": 4,
+      "Resonance DMG (%)": 2,
+      "Special (%)": 1
     },
     "Maple Curse": {
       "type": "Pet Soul",
-      "Special": 0.5
+      "Special (%)": 0.5
     },
     "Mars": {
       "type": "Emblem",
-      "Skill Dmg": 7,
-      "Crit Dmg": 8
+      "Skill DMG (%)": 7,
+      "Crit Dmg (%)": 8
     },
     "Mech Empire": {
       "type": "Card",
-      "dmgToDebuff": 2
+      "Dmg Debuff (%)": 2
     },
     "Michael": {
       "type": "Emblem",
-      "dmgToDebuff": 4,
-      "Dmg Amp": 8
+      "Dmg Debuff (%)": 4,
+      "Dmg Bonus (%)": 8
     },
     "Mine War": {
       "type": "Buff",
-      "Atk Bonus": 3,
-      "Crit Rate": 3
+      "Atk Bonus (%)": 3,
+      "Crit Rate (%)": 3
     },
     "Mingjin Accessory Emblem": {
       "type": "Fashion Emblem",
-      "Elem Boost": 8,
-      "Str Bonus": 4
+      "Elem Boost (%)": 8,
+      "Strength Bonus (%)": 4
     },
     "Mingjin Armor Emblem": {
       "type": "Fashion Emblem",
-      "Elem Boost": 8,
-      "Str Bonus": 4
+      "Elem Boost (%)": 8,
+      "Strength Bonus (%)": 4
     },
     "Mingjin Aura Emblem": {
       "type": "Fashion Emblem",
-      "Atk Bonus": 6,
-      "Dmg Amp": 2
+      "Atk Bonus (%)": 6,
+      "Dmg Bonus (%)": 2
     },
     "Mingjin Footmark Emblem": {
       "type": "Fashion Emblem",
-      "Elem Boost": 8,
-      "Dmg Amp": 2
+      "Elem Boost (%)": 8,
+      "Dmg Bonus (%)": 2
     },
     "Mingjin Head Emblem": {
       "type": "Fashion Emblem",
-      "dmgToDebuff": 5
+      "Dmg Debuff (%)": 5
     },
     "Mingjin Title Emblem": {
       "type": "Fashion Emblem",
-      "Multiplier": 3
+      "Skill Ratio (%)": 3
     },
     "Mingjin Weapon Emblem": {
       "type": "Fashion Emblem",
-      "Skill Dmg": 5,
-      "Dmg Amp": 2
+      "Skill DMG (%)": 5,
+      "Dmg Bonus (%)": 2
     },
     "Morning": {
       "type": "Buff",
-      "Dmg Amp": 5
+      "Dmg Bonus (%)": 5
     },
     "New Sky Accessory": {
       "type": "Fashion",
-      "Strength": 50,
-      "Agility": 50,
-      "Cooldown": 40,
+      "Strength (flat)": 50,
+      "Agility (flat)": 50,
       "Old Sky": 1,
-      "New Sky": 1
+      "New Sky": 1,
+      "Cooldown (flat)": 40
     },
     "New Sky Armor": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
       "Old Sky": 1,
       "New Sky": 1
     },
     "New Sky Badge": {
       "type": "Fashion",
-      "Strength": 50,
-      "Agility": 50,
-      "Elem Boost": 9,
+      "Strength (flat)": 50,
+      "Agility (flat)": 50,
+      "Elem Boost (%)": 9,
       "Old Sky": 1,
       "New Sky": 1
     },
     "New Sky Facewear": {
       "type": "Fashion",
-      "Strength": 50,
-      "Agility": 50,
+      "Strength (flat)": 50,
+      "Agility (flat)": 50,
       "Old Sky": 1,
       "New Sky": 1
     },
     "New Sky Head": {
       "type": "Fashion",
-      "Strength": 50,
-      "Agility": 50,
-      "Crit Rate": 4,
-      "Crit Dmg": 3,
+      "Strength (flat)": 50,
+      "Agility (flat)": 50,
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 3,
       "Old Sky": 1,
       "New Sky": 1
     },
@@ -1564,7 +1564,7 @@
     },
     "Odisha": {
       "type": "Emblem",
-      "Dmg Amp": 5
+      "Dmg Bonus (%)": 5
     },
     "Offensive 1": {
       "type": "Other",
@@ -1580,36 +1580,36 @@
     },
     "Old Sky Accessory": {
       "type": "Fashion",
-      "Strength": 40,
-      "Agility": 40,
-      "Cooldown": 30,
-      "Old Sky": 1
+      "Strength (flat)": 40,
+      "Agility (flat)": 40,
+      "Old Sky": 1,
+      "Cooldown (flat)": 30
     },
     "Old Sky Armor": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
       "Old Sky": 1
     },
     "Old Sky Badge": {
       "type": "Fashion",
-      "Strength": 40,
-      "Agility": 40,
-      "Elem Boost": 7,
+      "Strength (flat)": 40,
+      "Agility (flat)": 40,
+      "Elem Boost (%)": 7,
       "Old Sky": 1
     },
     "Old Sky Facewear": {
       "type": "Fashion",
-      "Strength": 40,
-      "Agility": 40,
+      "Strength (flat)": 40,
+      "Agility (flat)": 40,
       "Old Sky": 1
     },
     "Old Sky Head": {
       "type": "Fashion",
-      "Strength": 40,
-      "Agility": 40,
-      "Crit Rate": 3,
-      "Crit Dmg": 2,
+      "Strength (flat)": 40,
+      "Agility (flat)": 40,
+      "Crit Rate (%)": 3,
+      "Crit Dmg (%)": 2,
       "Old Sky": 1
     },
     "Panda": {
@@ -1635,16 +1635,16 @@
     },
     "Plague": {
       "type": "Emblem",
-      "dmgToDebuff": 4,
-      "Elem Boost": 16
+      "Dmg Debuff (%)": 4,
+      "Elem Boost (%)": 16
     },
     "Puzzle": {
       "type": "Emblem",
-      "dmgToDebuff": 9
+      "Dmg Debuff (%)": 9
     },
     "Queen": {
       "type": "Emblem",
-      "Dmg Amp": 8
+      "Dmg Bonus (%)": 8
     },
     "Quenching 1": {
       "type": "Other",
@@ -1660,10 +1660,10 @@
     },
     "Realm Creature": {
       "type": "Card",
-      "Agility": 48,
-      "dmgToDebuff": 2,
-      "Skill Dmg": 1,
-      "Elem Boost": 7.5
+      "Agility (flat)": 48,
+      "Dmg Debuff (%)": 2,
+      "Skill DMG (%)": 1,
+      "Elem Boost (%)": 7.5
     },
     "Recovery 1": {
       "type": "Other",
@@ -1691,32 +1691,32 @@
     },
     "S-Rank Fashion Weapon": {
       "type": "Fashion",
-      "Strength": 60,
-      "Agility": 60,
-      "Atk Bonus": 3,
-      "Penetration": 5,
-      "Multiplier": 0.5,
-      "Dmg Amp": 3
+      "Strength (flat)": 60,
+      "Agility (flat)": 60,
+      "Atk Bonus (%)": 3,
+      "PEN (flat)": 5,
+      "Skill Ratio (%)": 0.5,
+      "Dmg Bonus (%)": 3
     },
     "Shining Star": {
       "type": "Fashion",
-      "Strength": 90,
-      "Agility": 90,
-      "Base Atk": 25,
-      "Elem Boost": 20,
-      "dmgToDebuff": 3,
-      "Multiplier": 3,
-      "Dmg Amp": 13
+      "Strength (flat)": 90,
+      "Agility (flat)": 90,
+      "Atk (flat)": 25,
+      "Elem Boost (%)": 20,
+      "Dmg Debuff (%)": 3,
+      "Skill Ratio (%)": 3,
+      "Dmg Bonus (%)": 13
     },
     "Shining Star Footmark": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
-      "Crit Rate": 4,
-      "Crit Dmg": 8,
-      "Multiplier": 2,
-      "Elem Boost": 15,
-      "Skill Dmg": 10
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 8,
+      "Skill Ratio (%)": 2,
+      "Elem Boost (%)": 15,
+      "Skill DMG (%)": 10
     },
     "Siege 1": {
       "type": "Other",
@@ -1732,8 +1732,8 @@
     },
     "Skull": {
       "type": "Emblem",
-      "dmgToDebuff": 4,
-      "Elem Boost": 18
+      "Dmg Debuff (%)": 4,
+      "Elem Boost (%)": 18
     },
     "Smite 1": {
       "type": "Other",
@@ -1749,8 +1749,8 @@
     },
     "Soldier": {
       "type": "Emblem",
-      "Crit Rate": 4,
-      "Crit Dmg": 10
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 10
     },
     "Solitary 1": {
       "type": "Other",
@@ -1766,9 +1766,9 @@
     },
     "Star God Aura Emblem": {
       "type": "Fashion Emblem",
-      "Atk Bonus": 7,
-      "Dmg Amp": 3,
-      "dmgToDebuff": 3
+      "Atk Bonus (%)": 7,
+      "Dmg Bonus (%)": 3,
+      "Dmg Debuff (%)": 3
     },
     "Status Break 1": {
       "type": "Other",
@@ -1784,14 +1784,14 @@
     },
     "Sun Decree Seat": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
-      "Atk Bonus": 5,
-      "Penetration": 7,
-      "Multiplier": 3,
-      "Elem Boost": 10,
-      "Dmg Amp": 7,
-      "Cooldown": 30
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
+      "Atk Bonus (%)": 5,
+      "PEN (flat)": 7,
+      "Skill Ratio (%)": 3,
+      "Elem Boost (%)": 10,
+      "Dmg Bonus (%)": 7,
+      "Cooldown (flat)": 30
     },
     "Swiftness 1": {
       "type": "Other",
@@ -1807,22 +1807,22 @@
     },
     "Sword of Power": {
       "type": "Emblem",
-      "dmgToDebuff": 3,
-      "Dmg Amp": 6
+      "Dmg Debuff (%)": 3,
+      "Dmg Bonus (%)": 6
     },
     "The evil hook": {
       "type": "Card",
-      "dmgToDebuff": 10,
-      "Dmg Amp": 10
+      "Dmg Debuff (%)": 10,
+      "Dmg Bonus (%)": 10
     },
     "Thunder Light": {
       "type": "Emblem",
-      "Crit Dmg": 10
+      "Crit Dmg (%)": 10
     },
     "Touch of Greed": {
       "type": "Emblem",
-      "dmgToDebuff": 6,
-      "Skill Dmg": 8
+      "Dmg Debuff (%)": 6,
+      "Skill DMG (%)": 8
     },
     "Transcendence 1": {
       "type": "Other",
@@ -1850,27 +1850,27 @@
     },
     "Verbena": {
       "type": "Emblem",
-      "Atk Bonus": 10
+      "Atk Bonus (%)": 10
     },
     "Void Crown": {
       "type": "Fashion",
-      "Strength": 80,
-      "Agility": 80,
-      "Base Atk": 25,
-      "Crit Rate": 4,
-      "Crit Dmg": 8,
-      "Elem Boost": 12,
-      "Dmg Amp": 11
+      "Strength (flat)": 80,
+      "Agility (flat)": 80,
+      "Atk (flat)": 25,
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 8,
+      "Elem Boost (%)": 12,
+      "Dmg Bonus (%)": 11
     },
     "Void Dragon": {
       "type": "Other",
-      "dmgToDebuff": 6
+      "Dmg Debuff (%)": 6
     },
     "Void Shadow": {
       "type": "Card",
-      "Strength": 36,
-      "Crit Rate": 4,
-      "Crit Dmg": 15
+      "Strength (flat)": 36,
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 15
     },
     "Wall Break 1": {
       "type": "Other",
@@ -1924,1000 +1924,1000 @@
   "Sets": {
     "Black Feather": {
       "2": {
-        "Strength": 100,
-        "Agility": 100,
-        "Skill Dmg": 12,
-        "Atk Bonus": 6
+        "Strength (flat)": 100,
+        "Agility (flat)": 100,
+        "Skill DMG (%)": 12,
+        "Atk Bonus (%)": 6
       },
       "3": {
-        "Strength": 150,
-        "Agility": 150,
-        "dmgToDebuff": 20,
-        "Dmg Amp": 16
+        "Strength (flat)": 150,
+        "Agility (flat)": 150,
+        "Dmg Debuff (%)": 20,
+        "Dmg Bonus (%)": 16
       },
       "5": {
-        "Strength": 200,
-        "Agility": 200,
-        "Elem Boost": 35,
-        "Resonance Dmg": 10,
-        "Elem Dmg": 10
+        "Strength (flat)": 200,
+        "Agility (flat)": 200,
+        "Elem Boost (%)": 35,
+        "Resonance DMG (%)": 10,
+        "Elem Dmg (%)": 10
       }
     },
     "Venom": {
       "2": {
-        "dmgToDebuff": 4,
-        "Dmg Amp": 3
+        "Dmg Debuff (%)": 4,
+        "Dmg Bonus (%)": 3
       },
       "3": {
-        "Crit Dmg": 18,
-        "dmgToDebuff": 6,
-        "Dmg Amp": 5
+        "Crit Dmg (%)": 18,
+        "Dmg Debuff (%)": 6,
+        "Dmg Bonus (%)": 5
       },
       "5": {
-        "dmgToDebuff": 20,
-        "Dmg Amp": 4
+        "Dmg Debuff (%)": 20,
+        "Dmg Bonus (%)": 4
       }
     },
     "Cursed": {
       "2": {
-        "dmgToDebuff": 5.5,
-        "Dmg Amp": 6.5
+        "Dmg Debuff (%)": 5.5,
+        "Dmg Bonus (%)": 6.5
       },
       "3": {
-        "Crit Dmg": 24,
-        "dmgToDebuff": 15,
-        "Dmg Amp": 7,
-        "Extra Dmg": -3,
-        "Multiplier": -2
+        "Crit Dmg (%)": 24,
+        "Dmg Debuff (%)": 15,
+        "Dmg Bonus (%)": 7,
+        "Additional (%)": -3,
+        "Skill Ratio (%)": -2
       },
       "5": {
-        "dmgToDebuff": 25.5,
-        "Dmg Amp": 10
+        "Dmg Debuff (%)": 25.5,
+        "Dmg Bonus (%)": 10
       }
     },
     "Glimmer": {
       "2": {
-        "Elem Boost": 16,
-        "Dmg Amp": 10,
-        "Skill Dmg": 6
+        "Elem Boost (%)": 16,
+        "Dmg Bonus (%)": 10,
+        "Skill DMG (%)": 6
       },
       "3": {
-        "Elem Boost": 7.5,
-        "Crit Dmg": 24,
-        "dmgToDebuff": 8,
-        "Dmg Amp": 6
+        "Elem Boost (%)": 7.5,
+        "Crit Dmg (%)": 24,
+        "Dmg Debuff (%)": 8,
+        "Dmg Bonus (%)": 6
       },
       "5": {
-        "Elem Boost": 20,
-        "Dmg Amp": 10,
-        "Skill Dmg": 16,
-        "dmgToDebuff": 14,
-        "Multiplier": 4
+        "Elem Boost (%)": 20,
+        "Dmg Bonus (%)": 10,
+        "Skill DMG (%)": 16,
+        "Dmg Debuff (%)": 14,
+        "Skill Ratio (%)": 4
       }
     },
     "Butterfly": {
       "2": {
-        "Elem Boost": 32,
-        "Dmg Amp": 10,
-        "Skill Dmg": 7,
-        "Cooldown": 30
+        "Elem Boost (%)": 32,
+        "Dmg Bonus (%)": 10,
+        "Skill DMG (%)": 7,
+        "Cooldown (flat)": 30
       },
       "3": {
-        "Elem Boost": 28,
-        "Crit Dmg": 42,
-        "dmgToDebuff": 18,
-        "Dmg Amp": 8
+        "Elem Boost (%)": 28,
+        "Crit Dmg (%)": 42,
+        "Dmg Debuff (%)": 18,
+        "Dmg Bonus (%)": 8
       },
       "5": {
-        "Elem Boost": 23,
-        "Dmg Amp": 17,
-        "Skill Dmg": 18,
-        "dmgToDebuff": 14,
-        "Multiplier": 4,
-        "Skill Dmg Boost": 8.4
+        "Elem Boost (%)": 23,
+        "Dmg Bonus (%)": 17,
+        "Skill DMG (%)": 18,
+        "Dmg Debuff (%)": 14,
+        "Skill Ratio (%)": 4,
+        "Skill DMG Boost (%)": 8.4
       }
     },
     "Avarice": {
       "2": {
-        "dmgToDebuff": 4,
-        "Skill Dmg": 10
+        "Dmg Debuff (%)": 4,
+        "Skill DMG (%)": 10
       },
       "3": {
-        "Crit Dmg": 20,
-        "dmgToDebuff": 17,
-        "Dmg Amp": 13
+        "Crit Dmg (%)": 20,
+        "Dmg Debuff (%)": 17,
+        "Dmg Bonus (%)": 13
       },
       "5": {
-        "Elem Boost": 35,
-        "Extra Dmg": 14,
-        "Skill Dmg": 10,
-        "dmgToDebuff": 5
+        "Elem Boost (%)": 35,
+        "Additional (%)": 14,
+        "Skill DMG (%)": 10,
+        "Dmg Debuff (%)": 5
       }
     },
     "Demon Heart": {
       "2": {
-        "dmgToDebuff": 5,
-        "Skill Dmg": 12,
-        "Dmg Amp": 5
+        "Dmg Debuff (%)": 5,
+        "Skill DMG (%)": 12,
+        "Dmg Bonus (%)": 5
       },
       "3": {
-        "Crit Dmg": 38,
-        "dmgToDebuff": 19,
-        "Dmg Amp": 18.5
+        "Crit Dmg (%)": 38,
+        "Dmg Debuff (%)": 19,
+        "Dmg Bonus (%)": 18.5
       },
       "5": {
-        "Elem Boost": 37,
-        "Extra Dmg": 17,
-        "Elem Dmg": 8,
-        "Skill Dmg": 10,
-        "dmgToDebuff": 6,
-        "Crit Dmg": 5,
-        "Dmg Amp": 2.5
+        "Elem Boost (%)": 37,
+        "Additional (%)": 17,
+        "Elem Dmg (%)": 8,
+        "Skill DMG (%)": 10,
+        "Dmg Debuff (%)": 6,
+        "Crit Dmg (%)": 5,
+        "Dmg Bonus (%)": 2.5
       }
     },
     "Solar": {
       "3": {
-        "Skill Haste": 27.3
+        "ASPD (%)": 27.3
       },
       "5": {
-        "Dmg Amp": 19,
-        "Skill Dmg": 9
+        "Dmg Bonus (%)": 19,
+        "Skill DMG (%)": 9
       }
     },
     "Holy Glory": {
       "3": {
-        "Resonance Dmg": 20,
-        "Skill Dmg Boost": 10
+        "Resonance DMG (%)": 20,
+        "Skill DMG Boost (%)": 10
       },
       "5": {
-        "Dmg Amp": 5,
-        "Skill Dmg": 12,
-        "Crit Dmg": 8,
-        "Elem Boost": 6,
-        "Str Bonus": 4.5,
-        "Resonance Dmg": 20
+        "Dmg Bonus (%)": 5,
+        "Skill DMG (%)": 12,
+        "Crit Dmg (%)": 8,
+        "Elem Boost (%)": 6,
+        "Strength Bonus (%)": 4.5,
+        "Resonance DMG (%)": 20
       }
     },
     "Demon Shadow": {
       "3": {},
       "5": {
-        "Dmg Amp": 11,
-        "dmgToDebuff": 6,
-        "Skill Haste": 7.5
+        "Dmg Bonus (%)": 11,
+        "Dmg Debuff (%)": 6,
+        "ASPD (%)": 7.5
       }
     },
     "Resonance Effect I": {
       "550": {
-        "Def Break Bonus": 1.6
+        "Def Break Bonus (%)": 1.6
       },
       "600": {
-        "Def Break Bonus": 2
+        "Def Break Bonus (%)": 2
       },
       "630": {
-        "Def Break Atk": 50
+        "PDEF Shred (flat)": 50
       },
       "640": {
-        "Def Break Atk": 70
+        "PDEF Shred (flat)": 70
       },
       "650": {
-        "Def Break Bonus": 2.4
+        "Def Break Bonus (%)": 2.4
       },
       "660": {
-        "Atk Bonus": 1.2
+        "Atk Bonus (%)": 1.2
       },
       "670": {
-        "Elem Boost": 6
+        "Elem Boost (%)": 6
       },
       "680": {
-        "Atk Bonus": 1.8
+        "Atk Bonus (%)": 1.8
       },
       "690": {
-        "Resonance Dmg": 3.5
+        "Resonance DMG (%)": 3.5
       },
       "700": {
-        "Def Break Bonus": 2.8
+        "Def Break Bonus (%)": 2.8
       },
       "720": {
-        "Resonance Dmg": 2
+        "Resonance DMG (%)": 2
       },
       "730": {
-        "Def Break Bonus": 3.2
+        "Def Break Bonus (%)": 3.2
       },
       "740": {
-        "Multiplier": 0.25
+        "Skill Ratio (%)": 0.25
       },
       "745": {
-        "Atk Bonus": 2.4
+        "Atk Bonus (%)": 2.4
       },
       "750": {
-        "Multiplier": 1
+        "Skill Ratio (%)": 1
       },
       "755": {
-        "Crit Dmg": 5
+        "Crit Dmg (%)": 5
       },
       "760": {
-        "Str Bonus": 3
+        "Strength Bonus (%)": 3
       },
       "765": {
-        "Dmg Amp": 3
+        "Dmg Bonus (%)": 3
       },
       "770": {
-        "Multiplier": 1.75
+        "Skill Ratio (%)": 1.75
       },
       "775": {
-        "dmgToDebuff": 5
+        "Dmg Debuff (%)": 5
       }
     },
     "Resonance Effect II": {
       "690": {
-        "Base Atk": 20
+        "Atk (flat)": 20
       },
       "700": {
-        "Base Atk": 20
+        "Atk (flat)": 20
       },
       "710": {
-        "Base Atk": 20,
-        "Def Break Atk": 100
+        "Atk (flat)": 20,
+        "PDEF Shred (flat)": 100
       },
       "720": {
-        "Base Atk": 20,
-        "Def Break Atk": 100
+        "Atk (flat)": 20,
+        "PDEF Shred (flat)": 100
       },
       "730": {
-        "Base Atk": 20,
-        "Def Break Atk": 100
+        "Atk (flat)": 20,
+        "PDEF Shred (flat)": 100
       },
       "740": {
-        "Base Atk": 20,
-        "Def Break Atk": 100
+        "Atk (flat)": 20,
+        "PDEF Shred (flat)": 100
       },
       "750": {
-        "Base Atk": 20,
-        "Def Break Atk": 100
+        "Atk (flat)": 20,
+        "PDEF Shred (flat)": 100
       },
       "760": {
-        "Base Atk": 20,
-        "Def Break Atk": 100
+        "Atk (flat)": 20,
+        "PDEF Shred (flat)": 100
       },
       "770": {
-        "Multiplier": 1,
-        "Base Atk": 20,
-        "Def Break Atk": 100
+        "Skill Ratio (%)": 1,
+        "Atk (flat)": 20,
+        "PDEF Shred (flat)": 100
       },
       "775": {
-        "Base Atk": 10,
-        "Def Break Atk": 50
+        "Atk (flat)": 10,
+        "PDEF Shred (flat)": 50
       }
     },
     "Transcendence": {
       "1": {
-        "Skill Dmg Boost": 1
+        "Skill DMG Boost (%)": 1
       },
       "2": {
-        "Skill Dmg Boost": 1
+        "Skill DMG Boost (%)": 1
       },
       "3": {
-        "Skill Dmg Boost": 1
+        "Skill DMG Boost (%)": 1
       },
       "4": {
-        "Skill Dmg Boost": 2
+        "Skill DMG Boost (%)": 2
       },
       "5": {
-        "Skill Dmg Boost": 1
+        "Skill DMG Boost (%)": 1
       },
       "6": {
-        "Skill Dmg Boost": 1
+        "Skill DMG Boost (%)": 1
       },
       "7": {
-        "Skill Dmg Boost": 2
+        "Skill DMG Boost (%)": 2
       },
       "8": {
-        "Skill Dmg Boost": 1
+        "Skill DMG Boost (%)": 1
       },
       "9": {
-        "Elem Dmg": 5,
-        "Special": 10
+        "Elem Dmg (%)": 5,
+        "Special (%)": 10
       }
     },
     "Adaptation": {
       "1": {
-        "Skill Dmg Boost": 1.3
+        "Skill DMG Boost (%)": 1.3
       },
       "2": {
-        "Skill Dmg Boost": 1.3
+        "Skill DMG Boost (%)": 1.3
       },
       "3": {
-        "Skill Dmg Boost": 1.3
+        "Skill DMG Boost (%)": 1.3
       },
       "4": {
-        "Skill Haste": 3.9
+        "ASPD (%)": 3.9
       },
       "5": {
-        "Skill Dmg Boost": 1.95
+        "Skill DMG Boost (%)": 1.95
       },
       "6": {
-        "Skill Dmg Boost": 1.95
+        "Skill DMG Boost (%)": 1.95
       },
       "7": {
-        "Skill Dmg Boost": 1.3,
-        "Skill Haste": 7.2
+        "Skill DMG Boost (%)": 1.3,
+        "ASPD (%)": 7.2
       },
       "8": {
-        "Skill Dmg Boost": 2.6
+        "Skill DMG Boost (%)": 2.6
       },
       "9": {
-        "Skill Haste": 5.6
+        "ASPD (%)": 5.6
       }
     },
     "Destruction": {
       "1": {
-        "Extra Dmg": 2.5
+        "Additional (%)": 2.5
       },
       "2": {
-        "Extra Dmg": 2.5
+        "Additional (%)": 2.5
       },
       "3": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "4": {
-        "Skill Haste": 1.8
+        "ASPD (%)": 1.8
       },
       "5": {
-        "Extra Dmg": 2.5
+        "Additional (%)": 2.5
       },
       "6": {
-        "Extra Dmg": 5
+        "Additional (%)": 5
       },
       "7": {
-        "Skill Haste": 5.6
+        "ASPD (%)": 5.6
       },
       "8": {
-        "Extra Dmg": 10
+        "Additional (%)": 10
       },
       "9": {
-        "Skill Haste": 5.6
+        "ASPD (%)": 5.6
       }
     },
     "Swiftness": {
       "1": {
-        "Cooldown": 10
+        "Cooldown (flat)": 10
       },
       "2": {
-        "Cooldown": 10
+        "Cooldown (flat)": 10
       },
       "3": {
-        "Cooldown": 10
+        "Cooldown (flat)": 10
       },
       "4": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "5": {
-        "Cooldown": 15,
-        "Extra Dmg": 2
+        "Additional (%)": 2,
+        "Cooldown (flat)": 15
       },
       "6": {
-        "Cooldown": 15,
-        "Extra Dmg": 2
+        "Additional (%)": 2,
+        "Cooldown (flat)": 15
       },
       "7": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "8": {
-        "Cooldown": 20,
-        "Extra Dmg": 2
+        "Additional (%)": 2,
+        "Cooldown (flat)": 20
       },
       "9": {
-        "Extra Dmg": 9
+        "Additional (%)": 9
       }
     },
     "Combo": {
       "1": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "2": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "3": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "4": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "5": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "6": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "7": {
-        "Extra Dmg": 5
+        "Additional (%)": 5
       },
       "8": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "9": {
-        "Extra Dmg": 6
+        "Additional (%)": 6
       }
     },
     "Offensive": {
       "1": {
-        "Skill Haste": 10
+        "ASPD (%)": 10
       },
       "2": {
-        "Skill Haste": 10
+        "ASPD (%)": 10
       },
       "3": {
-        "Skill Haste": 10
+        "ASPD (%)": 10
       },
       "4": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "5": {
-        "Skill Haste": 15,
-        "Extra Dmg": 2
+        "ASPD (%)": 15,
+        "Additional (%)": 2
       },
       "6": {
-        "Skill Haste": 15,
-        "Extra Dmg": 2
+        "ASPD (%)": 15,
+        "Additional (%)": 2
       },
       "7": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "8": {
-        "Skill Haste": 20,
-        "Extra Dmg": 2
+        "ASPD (%)": 20,
+        "Additional (%)": 2
       },
       "9": {
-        "Extra Dmg": 9
+        "Additional (%)": 9
       }
     },
     "Extraordinary": {
       "1": {
-        "Skill Haste": 0.22
+        "ASPD (%)": 0.22
       },
       "2": {
-        "Skill Haste": 0.65
+        "ASPD (%)": 0.65
       },
       "3": {
-        "Skill Haste": 0.58,
-        "Skill Dmg Boost": 0.35
+        "ASPD (%)": 0.58,
+        "Skill DMG Boost (%)": 0.35
       },
       "4": {
-        "Skill Dmg": 12
+        "Skill DMG (%)": 12
       },
       "5": {
-        "Skill Dmg Boost": 2.45
+        "Skill DMG Boost (%)": 2.45
       },
       "6": {
-        "Skill Haste": 10,
-        "Skill Dmg Boost": 3
+        "ASPD (%)": 10,
+        "Skill DMG Boost (%)": 3
       }
     },
     "Quenching": {
       "1": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "2": {
-        "Extra Dmg": 1
+        "Additional (%)": 1
       },
       "3": {
-        "Extra Dmg": 1
+        "Additional (%)": 1
       },
       "4": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "5": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "6": {
-        "Extra Dmg": 5
+        "Additional (%)": 5
       }
     },
     "Advanced Tech": {
       "1": {
-        "Skill Dmg Boost": 2.5
+        "Skill DMG Boost (%)": 2.5
       },
       "2": {
-        "Skill Dmg Boost": 2.5
+        "Skill DMG Boost (%)": 2.5
       },
       "3": {
-        "Skill Dmg Boost": 2.5
+        "Skill DMG Boost (%)": 2.5
       },
       "4": {
-        "Multiplier": 5.6
+        "Skill Ratio (%)": 5.6
       },
       "5": {
-        "Skill Dmg Boost": 0.75
+        "Skill DMG Boost (%)": 0.75
       },
       "6": {
-        "Skill Dmg Boost": 2.75,
-        "Multiplier": 0.96
+        "Skill DMG Boost (%)": 2.75,
+        "Skill Ratio (%)": 0.96
       }
     },
     "Status Break": {
       "1": {
-        "dmgToDebuff": 1
+        "Dmg Debuff (%)": 1
       },
       "2": {
-        "dmgToDebuff": 1
+        "Dmg Debuff (%)": 1
       },
       "3": {
-        "dmgToDebuff": 1
+        "Dmg Debuff (%)": 1
       },
       "4": {
-        "dmgToDebuff": 2
+        "Dmg Debuff (%)": 2
       },
       "5": {
-        "dmgToDebuff": 2
+        "Dmg Debuff (%)": 2
       },
       "6": {
-        "dmgToDebuff": 6
+        "Dmg Debuff (%)": 6
       }
     },
     "Basic": {
       "1": {
-        "Skill Dmg Boost": 0.8
+        "Skill DMG Boost (%)": 0.8
       },
       "2": {
-        "Skill Dmg Boost": 0.8
+        "Skill DMG Boost (%)": 0.8
       },
       "3": {
-        "Skill Dmg Boost": 0.8
+        "Skill DMG Boost (%)": 0.8
       },
       "4": {
-        "Multiplier": 0.64
+        "Skill Ratio (%)": 0.64
       },
       "5": {
-        "Skill Dmg Boost": 1.5
+        "Skill DMG Boost (%)": 1.5
       },
       "6": {
-        "Skill Dmg Boost": 2.6,
-        "Multiplier": 0.4
+        "Skill DMG Boost (%)": 2.6,
+        "Skill Ratio (%)": 0.4
       }
     },
     "Pierce": {
       "1": {
-        "Penetration": 1
+        "PEN (flat)": 1
       },
       "2": {
-        "Penetration": 1
+        "PEN (flat)": 1
       },
       "3": {
-        "Penetration": 1
+        "PEN (flat)": 1
       },
       "4": {
-        "Penetration": 2
+        "PEN (flat)": 2
       },
       "5": {
-        "Penetration": 3
+        "PEN (flat)": 3
       },
       "6": {
-        "Penetration": 4
+        "PEN (flat)": 4
       }
     },
     "Siege": {
       "4": {
-        "Def Reduction": 3
+        "Def Reduction (%)": 3
       },
       "5": {
-        "Def Reduction": 3
+        "Def Reduction (%)": 3
       },
       "6": {
-        "Dmg Amp": 6
+        "Dmg Bonus (%)": 6
       }
     },
     "Charge": {
       "1": {
-        "Skill Dmg": 1
+        "Skill DMG (%)": 1
       },
       "2": {
-        "Skill Dmg": 1
+        "Skill DMG (%)": 1
       },
       "3": {
-        "Skill Dmg": 1
+        "Skill DMG (%)": 1
       },
       "4": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "5": {
-        "Skill Dmg": 3
+        "Skill DMG (%)": 3
       },
       "6": {
-        "Skill Dmg": 5
+        "Skill DMG (%)": 5
       }
     },
     "Wall Break": {
       "4": {
-        "Dmg Amp": 4
+        "Dmg Bonus (%)": 4
       },
       "5": {
-        "Dmg Amp": 4
+        "Dmg Bonus (%)": 4
       }
     },
     "Excellence": {
       "1": {
-        "Multiplier": 0.04
+        "Skill Ratio (%)": 0.04
       },
       "2": {
-        "Multiplier": 0.32
+        "Skill Ratio (%)": 0.32
       },
       "3": {
-        "Multiplier": 0.2
+        "Skill Ratio (%)": 0.2
       },
       "4": {
-        "Class Dmg": 8
+        "Class DMG Bonus (%)": 8
       },
       "5": {
-        "Multiplier": 0.2
+        "Skill Ratio (%)": 0.2
       },
       "6": {
-        "Multiplier": 0.2
+        "Skill Ratio (%)": 0.2
       },
       "7": {
-        "Skill Haste": 7
+        "ASPD (%)": 7
       },
       "8": {
-        "Multiplier": 1
+        "Skill Ratio (%)": 1
       },
       "9": {
-        "Multiplier": 1,
-        "Class Dmg": 12
+        "Skill Ratio (%)": 1,
+        "Class DMG Bonus (%)": 12
       }
     },
     "Adversity": {
       "1": {
-        "Dmg Amp": 2
+        "Dmg Bonus (%)": 2
       },
       "2": {
-        "Dmg Amp": 2
+        "Dmg Bonus (%)": 2
       },
       "3": {
-        "Dmg Amp": 2
+        "Dmg Bonus (%)": 2
       },
       "4": {
-        "Dmg Amp": 9
+        "Dmg Bonus (%)": 9
       },
       "5": {
-        "Dmg Amp": 2.5
+        "Dmg Bonus (%)": 2.5
       },
       "6": {
-        "Dmg Amp": 2.5
+        "Dmg Bonus (%)": 2.5
       },
       "7": {
-        "Dmg Amp": 5
+        "Dmg Bonus (%)": 5
       },
       "8": {
-        "Dmg Amp": 5
+        "Dmg Bonus (%)": 5
       },
       "9": {
-        "Dmg Amp": 5
+        "Dmg Bonus (%)": 5
       }
     },
     "Fullness": {
       "4": {
-        "Extra Dmg": 5
+        "Additional (%)": 5
       },
       "5": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "6": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "7": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "8": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "9": {
-        "Extra Dmg": 5
+        "Additional (%)": 5
       }
     },
     "Air Supremacy": {
       "1": {
-        "Dmg Amp": 1
+        "Dmg Bonus (%)": 1
       },
       "2": {
-        "Dmg Amp": 1
+        "Dmg Bonus (%)": 1
       },
       "3": {
-        "Dmg Amp": 1
+        "Dmg Bonus (%)": 1
       },
       "4": {
-        "Dmg Amp": 3
+        "Dmg Bonus (%)": 3
       },
       "5": {
-        "Dmg Amp": 2
+        "Dmg Bonus (%)": 2
       },
       "6": {
-        "Dmg Amp": 2
+        "Dmg Bonus (%)": 2
       },
       "7": {
-        "Dmg Amp": 2
+        "Dmg Bonus (%)": 2
       },
       "8": {
-        "Dmg Amp": 3
+        "Dmg Bonus (%)": 3
       },
       "9": {
-        "Dmg Amp": 3
+        "Dmg Bonus (%)": 3
       }
     },
     "Smite": {
       "1": {
-        "Crit Rate": 1
+        "Crit Rate (%)": 1
       },
       "2": {
-        "Crit Rate": 0.5
+        "Crit Rate (%)": 0.5
       },
       "3": {
-        "Crit Rate": 0.5
+        "Crit Rate (%)": 0.5
       },
       "4": {
-        "Crit Rate": 2,
-        "Crit Dmg": 8
+        "Crit Rate (%)": 2,
+        "Crit Dmg (%)": 8
       },
       "5": {
-        "Crit Rate": 0.5,
-        "Crit Dmg": 2
+        "Crit Rate (%)": 0.5,
+        "Crit Dmg (%)": 2
       },
       "6": {
-        "Crit Rate": 0.5,
-        "Crit Dmg": 2
+        "Crit Rate (%)": 0.5,
+        "Crit Dmg (%)": 2
       },
       "7": {
-        "Crit Rate": 1,
-        "Crit Dmg": 6
+        "Crit Rate (%)": 1,
+        "Crit Dmg (%)": 6
       },
       "8": {
-        "Crit Rate": 1,
-        "Crit Dmg": 2
+        "Crit Rate (%)": 1,
+        "Crit Dmg (%)": 2
       },
       "9": {
-        "Crit Rate": 2,
-        "Crit Dmg": 2
+        "Crit Rate (%)": 2,
+        "Crit Dmg (%)": 2
       }
     },
     "Alliance": {
       "1": {
-        "Crit Dmg": 3
+        "Crit Dmg (%)": 3
       },
       "2": {
-        "Crit Dmg": 3
+        "Crit Dmg (%)": 3
       },
       "3": {
-        "Crit Dmg": 3
+        "Crit Dmg (%)": 3
       },
       "4": {
-        "Skill Dmg": 3
+        "Skill DMG (%)": 3
       },
       "5": {
-        "Skill Dmg": 3
+        "Skill DMG (%)": 3
       },
       "6": {
-        "Skill Dmg": 3
+        "Skill DMG (%)": 3
       },
       "7": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "8": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       }
     },
     "Unbreakable": {
       "1": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "2": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "3": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "5": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "6": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "7": {
-        "Extra Dmg": 12
+        "Additional (%)": 12
       },
       "8": {
-        "Extra Dmg": 4
+        "Additional (%)": 4
       },
       "9": {
-        "Extra Dmg": 1
+        "Additional (%)": 1
       }
     },
     "Elem Master": {
       "1": {
-        "Elem Boost": 2
+        "Elem Boost (%)": 2
       },
       "2": {
-        "Elem Boost": 2
+        "Elem Boost (%)": 2
       },
       "3": {
-        "Elem Boost": 1
+        "Elem Boost (%)": 1
       },
       "4": {
-        "Elem Boost": 3,
-        "Elem Dmg": 3
+        "Elem Boost (%)": 3,
+        "Elem Dmg (%)": 3
       },
       "5": {
-        "Elem Boost": 3
+        "Elem Boost (%)": 3
       },
       "6": {
-        "Elem Boost": 3
+        "Elem Boost (%)": 3
       },
       "7": {
-        "Elem Boost": 3,
-        "Elem Dmg": 2
+        "Elem Boost (%)": 3,
+        "Elem Dmg (%)": 2
       },
       "8": {
-        "Elem Boost": 3,
-        "Crit Dmg": 2
+        "Elem Boost (%)": 3,
+        "Crit Dmg (%)": 2
       },
       "9": {
-        "Elem Boost": 6,
-        "Elem Dmg": 2
+        "Elem Boost (%)": 6,
+        "Elem Dmg (%)": 2
       }
     },
     "Challenger": {
       "1": {
-        "dmgToDebuff": 1
+        "Dmg Debuff (%)": 1
       },
       "2": {
-        "dmgToDebuff": 1
+        "Dmg Debuff (%)": 1
       },
       "3": {
-        "dmgToDebuff": 1
+        "Dmg Debuff (%)": 1
       },
       "4": {
-        "Skill Dmg": 4.5
+        "Skill DMG (%)": 4.5
       },
       "5": {
-        "dmgToDebuff": 1.5
+        "Dmg Debuff (%)": 1.5
       },
       "6": {
-        "dmgToDebuff": 1.5
+        "Dmg Debuff (%)": 1.5
       },
       "7": {
-        "dmgToDebuff": 2,
-        "Skill Dmg": 1.5
+        "Dmg Debuff (%)": 2,
+        "Skill DMG (%)": 1.5
       },
       "8": {
-        "dmgToDebuff": 2
+        "Dmg Debuff (%)": 2
       },
       "9": {
-        "Skill Dmg": 12
+        "Skill DMG (%)": 12
       }
     },
     "Resonance": {
       "4": {
-        "Resonance Dmg": 3
+        "Resonance DMG (%)": 3
       },
       "5": {
-        "Resonance Dmg": 1
+        "Resonance DMG (%)": 1
       },
       "6": {
-        "Resonance Dmg": 1
+        "Resonance DMG (%)": 1
       },
       "8": {
-        "Resonance Dmg": 5
+        "Resonance DMG (%)": 5
       }
     },
     "Evasion": {
       "4": {
-        "Extra Dmg": 10
+        "Additional (%)": 10
       },
       "8": {
-        "Extra Dmg": 8
+        "Additional (%)": 8
       }
     },
     "Elem Resist": {
       "4": {
-        "Elem Dmg": 3
+        "Elem Dmg (%)": 3
       },
       "5": {
-        "Elem Dmg": 0.5
+        "Elem Dmg (%)": 0.5
       },
       "6": {
-        "Elem Dmg": 0.5
+        "Elem Dmg (%)": 0.5
       },
       "7": {
-        "Elem Dmg": 2
+        "Elem Dmg (%)": 2
       },
       "8": {
-        "Elem Dmg": 2
+        "Elem Dmg (%)": 2
       },
       "9": {
-        "Elem Dmg": 2,
-        "Elem Boost": 10
+        "Elem Dmg (%)": 2,
+        "Elem Boost (%)": 10
       }
     },
     "Recovery": {
       "4": {
-        "Extra Dmg": 6
+        "Additional (%)": 6
       },
       "7": {
-        "Extra Dmg": 6
+        "Additional (%)": 6
       },
       "8": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "9": {
-        "Extra Dmg": 13
+        "Additional (%)": 13
       }
     },
     "Solitary": {
       "1": {
-        "Dmg Amp": 1.5
+        "Dmg Bonus (%)": 1.5
       },
       "2": {
-        "Dmg Amp": 1.5
+        "Dmg Bonus (%)": 1.5
       },
       "3": {
-        "Dmg Amp": 1.5
+        "Dmg Bonus (%)": 1.5
       },
       "4": {
-        "Dmg Amp": 4.5
+        "Dmg Bonus (%)": 4.5
       },
       "5": {
-        "Dmg Amp": 1
+        "Dmg Bonus (%)": 1
       },
       "6": {
-        "Dmg Amp": 2
+        "Dmg Bonus (%)": 2
       },
       "7": {
-        "Dmg Amp": 4
+        "Dmg Bonus (%)": 4
       },
       "8": {
-        "Dmg Amp": 3
+        "Dmg Bonus (%)": 3
       },
       "9": {
-        "Dmg Amp": 3
+        "Dmg Bonus (%)": 3
       }
     },
     "Suppress": {
       "1": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "2": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "3": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "4": {
-        "Extra Dmg": 5
+        "Additional (%)": 5
       },
       "5": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "6": {
-        "Extra Dmg": 2
+        "Additional (%)": 2
       },
       "7": {
-        "Extra Dmg": 4
+        "Additional (%)": 4
       },
       "8": {
-        "Extra Dmg": 3
+        "Additional (%)": 3
       },
       "9": {
-        "Extra Dmg": 1
+        "Additional (%)": 1
       }
     },
     "Unyielding": {
       "9": {
-        "Extra Dmg": 8
+        "Additional (%)": 8
       }
     },
     "Sprint": {
       "7": {
-        "Extra Dmg": 10
+        "Additional (%)": 10
       },
       "9": {
-        "Extra Dmg": 10
+        "Additional (%)": 10
       }
     },
     "Lightning Summon": {
@@ -2933,119 +2933,119 @@
     },
     "New Sky": {
       "2": {
-        "Strength": 40,
-        "Dmg Amp": 6
+        "Strength (flat)": 40,
+        "Dmg Bonus (%)": 6
       },
       "3": {
-        "Crit Rate": 4,
-        "Crit Dmg": 12
+        "Crit Rate (%)": 4,
+        "Crit Dmg (%)": 12
       },
       "5": {
-        "Elem Boost": 20,
-        "Dmg Amp": 7
+        "Elem Boost (%)": 20,
+        "Dmg Bonus (%)": 7
       }
     },
     "Old Sky": {
       "2": {
-        "Strength": 30,
-        "Dmg Amp": 5
+        "Strength (flat)": 30,
+        "Dmg Bonus (%)": 5
       },
       "3": {
-        "Crit Rate": 3,
-        "Crit Dmg": 10
+        "Crit Rate (%)": 3,
+        "Crit Dmg (%)": 10
       },
       "5": {
-        "Elem Boost": 8,
-        "Resonance Dmg": 10
+        "Elem Boost (%)": 8,
+        "Resonance DMG (%)": 10
       }
     },
     "Car Collection": {
       "1": {
-        "Agility": 75
+        "Agility (flat)": 75
       },
       "3": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "5": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "7": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "9": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "11": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "13": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "15": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "17": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "19": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "21": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "23": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "25": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "27": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "29": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "31": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "33": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "35": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "37": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "39": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "41": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "43": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "45": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "47": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "49": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "51": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       },
       "53": {
-        "Strength": 150
+        "Strength (flat)": 150
       },
       "55": {
-        "Agility": 150
+        "Agility (flat)": 150
       },
       "57": {
-        "Skill Dmg": 2
+        "Skill DMG (%)": 2
       }
     }
   }

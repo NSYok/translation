@@ -6,14 +6,21 @@ import { fetchGameData } from './firebase.js';
 
 let gameData = null;
 
-async function loadGameData() {
-  let data = await fetchGameData();
-  if (!data) {
+async function loadGameData(source = getState('dataSource')) {
+  let data = null;
+  if (source === 'firebase') {
+    data = await fetchGameData();
+    if (!data) {
+      console.warn("Firebase failed, falling back to local");
+      const resp = await fetch('/data.json');
+      data = await resp.json();
+    }
+  } else {
     try {
       const resp = await fetch('/data.json');
       data = await resp.json();
     } catch (e) {
-      console.error("Local fallback failed:", e);
+      console.error("Local data load failed:", e);
     }
   }
   gameData = data;
@@ -22,18 +29,25 @@ async function loadGameData() {
     const injectOptions = (objMap) => {
       for (const obj of Object.values(objMap)) {
         if (!obj.options && !obj.sets) continue;
+        
+        // Save and reset to original options to avoid duplicates/stale items when switching
+        if (!obj._originalOptions) {
+          if (obj.options) {
+            obj._originalOptions = [...obj.options];
+          } else if (obj.sets) {
+            obj._originalOptions = obj.sets.filter(s => s !== 'None').map(s => `${s} ${obj.suffix}`).concat('None');
+          } else {
+            obj._originalOptions = ['None'];
+          }
+        }
+        obj.options = [...obj._originalOptions];
+
         const typeLabel = obj.label;
         const matchingItems = Object.keys(gameData.Single).filter(itemName => {
           const item = gameData.Single[itemName];
           return (item.type === typeLabel || item.Type === typeLabel);
         });
         
-        // Ensure obj.options exists if we're adding to it
-        if (!obj.options) {
-          // If it's a SLOT that normally uses sets, we need to handle its options array
-          obj.options = obj.sets ? obj.sets.filter(s => s !== 'None').map(s => `${s} ${obj.suffix}`).concat('None') : ['None'];
-        }
-
         for (const itemName of matchingItems) {
           if (!obj.options.includes(itemName)) {
             const noneIdx = obj.options.indexOf('None');
@@ -43,31 +57,35 @@ async function loadGameData() {
         }
       }
     };
-    injectOptions(SLOTS); // Added SLOTS here to catch Weapons, Armor, etc.
+    injectOptions(SLOTS);
     injectOptions(FASHION);
     injectOptions(FASHION_EMBLEMS);
     injectOptions(BUFFS);
     injectOptions(EMBLEMS);
     
-    const injectSingle = (obj, label) => {
-      if (!obj.options) return;
-      const matchingItems = Object.keys(gameData.Single).filter(itemName => {
-        const item = gameData.Single[itemName];
-        return (item.type === label || item.Type === label);
-      });
-      for (const itemName of matchingItems) {
-        if (!obj.options.includes(itemName)) {
-          const noneIdx = obj.options.indexOf('None');
-          if (noneIdx !== -1) obj.options.splice(noneIdx, 0, itemName);
-          else obj.options.push(itemName);
-        }
+    // Also inject into PETS.options
+    if (!PETS._originalOptions) PETS._originalOptions = [...PETS.options];
+    PETS.options = [...PETS._originalOptions];
+    const petItems = Object.keys(gameData.Single).filter(n => gameData.Single[n].type === 'Pet');
+    for (const n of petItems) {
+      if (!PETS.options.includes(n)) {
+        const noneIdx = PETS.options.indexOf('None');
+        if (noneIdx !== -1) PETS.options.splice(noneIdx, 0, n);
+        else PETS.options.push(n);
       }
-    };
-    injectSingle(PETS, 'Pet');
-    injectSingle(CARDS, 'Card');
-
-    // CRITICAL: Rebuild tabs after data is injected so dropdowns see the new items
-    buildAllTabs();
+    }
+    
+    // Also inject into CARDS.options
+    if (!CARDS._originalOptions) CARDS._originalOptions = [...CARDS.options];
+    CARDS.options = [...CARDS._originalOptions];
+    const cardItems = Object.keys(gameData.Single).filter(n => gameData.Single[n].type === 'Card');
+    for (const n of cardItems) {
+      if (!CARDS.options.includes(n)) {
+        const noneIdx = CARDS.options.indexOf('None');
+        if (noneIdx !== -1) CARDS.options.splice(noneIdx, 0, n);
+        else CARDS.options.push(n);
+      }
+    }
   }
 }
 
@@ -185,38 +203,56 @@ function buildGearTab() {
   const tab = document.getElementById('tab-gear');
   tab.innerHTML = '';
   
-  const gearSlots = ['weapon', 'head', 'armor', 'hand', 'legs', 'shoes', 'neck', 'bracer', 'ring', 'seal', 'amulet', 'treasure'];
+  const gearGroups = [
+    { title: 'Weapon', slots: ['weapon'] },
+    { title: 'Armor', slots: ['head', 'armor', 'hand', 'legs', 'shoes'] },
+    { title: 'Accessory', slots: ['neck', 'bracer', 'ring', 'seal', 'talisman'] },
+    { title: 'Other', slots: ['treasure'] },
+  ];
   
-  for (const slotKey of gearSlots) {
-    const slot = SLOTS[slotKey];
-    const section = document.createElement('div');
-    section.className = 'slot-section';
-    section.innerHTML = `<div class="slot-label">${slot.label}</div>`;
+  for (const group of gearGroups) {
+    const groupTitle = document.createElement('div');
+    groupTitle.className = 'section-title';
+    groupTitle.textContent = group.title;
+    tab.appendChild(groupTitle);
+
+    const groupContainer = document.createElement('div');
+    groupContainer.className = 'gear-group-container';
     
-    // Equipment + Emblem row
-    const row = document.createElement('div');
-    row.className = 'slot-row';
-    
-    const options = slot.options || slot.sets.filter(s => s !== 'None').map(s => `${s} ${slot.suffix}`).concat('None');
-    createIconSelect(`s_${slotKey}`, slot.label, options, row);
-    
-    if (EMBLEMS[slotKey]) {
-      createIconSelect(`emb_${slotKey}`, EMBLEMS[slotKey].label, EMBLEMS[slotKey].options, row);
-    }
-    section.appendChild(row);
-    
-    // Engravings row
-    if (ENGRAVING_SLOTS[slotKey]) {
-      const engRow = document.createElement('div');
-      engRow.className = 'slot-row-3';
-      const engType = ENGRAVING_SLOTS[slotKey].type;
-      for (let i = 0; i < 3; i++) {
-        createIconSelect(`eng_${slotKey}_${i}`, `Engrave ${i+1}`, ENGRAVINGS[engType], engRow);
+    for (const slotKey of group.slots) {
+      const slot = SLOTS[slotKey];
+      if (!slot) continue;
+      
+      const section = document.createElement('div');
+      section.className = 'slot-section';
+      section.innerHTML = `<div class="slot-label">${slot.label}</div>`;
+      
+      // Equipment + Emblem row
+      const row = document.createElement('div');
+      row.className = 'slot-row';
+      
+      const options = slot.options || slot.sets.filter(s => s !== 'None').map(s => `${s} ${slot.suffix}`).concat('None');
+      createIconSelect(`s_${slotKey}`, slot.label, options, row);
+      
+      if (EMBLEMS[slotKey]) {
+        createIconSelect(`emb_${slotKey}`, EMBLEMS[slotKey].label, EMBLEMS[slotKey].options, row);
       }
-      section.appendChild(engRow);
+      section.appendChild(row);
+      
+      // Engravings row
+      if (ENGRAVING_SLOTS[slotKey]) {
+        const engRow = document.createElement('div');
+        engRow.className = 'slot-row-3';
+        const engType = ENGRAVING_SLOTS[slotKey].type;
+        for (let i = 0; i < 3; i++) {
+          createIconSelect(`eng_${slotKey}_${i}`, `Engrave ${i+1}`, ENGRAVINGS[engType], engRow);
+        }
+        section.appendChild(engRow);
+      }
+      
+      groupContainer.appendChild(section);
     }
-    
-    tab.appendChild(section);
+    tab.appendChild(groupContainer);
   }
 }
 
@@ -232,7 +268,7 @@ function buildEnhanceTab() {
   const grid = document.createElement('div');
   grid.className = 'slot-row-3';
   
-  const order = ['head', 'armor', 'hand', 'legs', 'shoes', 'weapon', 'neck', 'bracer', 'ring', 'seal', 'amulet'];
+  const order = ['head', 'armor', 'hand', 'legs', 'shoes', 'weapon', 'neck', 'bracer', 'ring', 'seal', 'talisman'];
   for (const slotKey of order) {
     const cfg = ENHANCEMENT_SLOTS[slotKey];
     const opts = ENHANCEMENTS[cfg.type].options;
@@ -265,7 +301,7 @@ function buildPetTab() {
   
   const s1Row = document.createElement('div');
   s1Row.className = 'slot-row-3';
-  createIconSelect('pet_soul_1_str', PETS.souls.str.label, PETS.souls.str.options, s1Row);
+  createIconSelect('pet_soul_1_strength', PETS.souls.strength.label, PETS.souls.strength.options, s1Row);
   createIconSelect('pet_soul_1_skill', PETS.souls.skill.label, PETS.souls.skill.options, s1Row);
   createIconSelect('pet_soul_1_spd', PETS.souls.spd.label, PETS.souls.spd.options, s1Row);
   tab.appendChild(s1Row);
@@ -287,7 +323,7 @@ function buildPetTab() {
   
   const s2Row = document.createElement('div');
   s2Row.className = 'slot-row-3';
-  createIconSelect('pet_soul_2_str', PETS.souls.str.label, PETS.souls.str.options, s2Row);
+  createIconSelect('pet_soul_2_strength', PETS.souls.strength.label, PETS.souls.strength.options, s2Row);
   createIconSelect('pet_soul_2_skill', PETS.souls.skill.label, PETS.souls.skill.options, s2Row);
   createIconSelect('pet_soul_2_spd', PETS.souls.spd.label, PETS.souls.spd.options, s2Row);
   tab.appendChild(s2Row);
@@ -348,8 +384,8 @@ function buildManualTab() {
   
   const g1 = document.createElement('div');
   g1.className = 'slot-row';
-  createNumInput('monsterDef', 'Monster Def', g1, 100);
-  createNumInput('dotRatio', 'Effect Ratio', g1, 0.1);
+  createNumInput('monsterDef', 'Monster Def (flat)', g1, 100);
+  createNumInput('dotRatio', 'Effect Ratio (%)', g1, 0.1);
   tab.appendChild(g1);
   
   const t2 = document.createElement('div');
@@ -360,9 +396,9 @@ function buildManualTab() {
   const g2 = document.createElement('div');
   g2.className = 'slot-row-3';
   const circuitFields = [
-    ['manAtk', 'Base Atk (+)'], ['manCritDmg', 'Crit Dmg (+)'], ['manCritRate', 'Crit Rate (+)'],
-    ['manElem', 'Elem Boost (+)'], ['manCd', 'Cooldown (+)'], ['manAgi', 'Agility (+)'],
-    ['manStr', 'Strength (+)'], ['manSkillDmg', 'Skill Dmg (+)'], ['manAtkBonus', 'Atk Bonus (+)'],
+    ['manAtk', 'Atk (flat)'], ['manCritDmg', 'Crit Dmg (%)'], ['manCritRate', 'Crit Rate (%)'],
+    ['manElem', 'Elem Boost (%)'], ['manCd', 'Cooldown (flat)'], ['manAgility', 'Agility (flat)'],
+    ['manStrength', 'Strength (flat)'], ['manSkillDmg', 'Skill DMG (%)'], ['manAtkBonus', 'Atk Bonus (%)'],
   ];
   for (const [key, label] of circuitFields) {
     createNumInput(key, label, g2, key.includes('Rate') || key.includes('Dmg') || key.includes('Elem') || key.includes('Cd') || key.includes('Bonus') ? 0.1 : 1);
@@ -422,7 +458,7 @@ function collectEquipmentList() {
     }
   }
   // Pet souls
-  for (const suffix of ['1_str', '1_skill', '1_spd', '2_str', '2_skill', '2_spd']) {
+  for (const suffix of ['1_strength', '1_skill', '1_spd', '2_strength', '2_skill', '2_spd']) {
     list.push(s[`pet_soul_${suffix}`]);
   }
   // Cards
@@ -450,8 +486,8 @@ function collectManualInputs() {
     manCritRate: s.manCritRate ?? MANUAL_DEFAULTS.manCritRate,
     manElem: s.manElem ?? MANUAL_DEFAULTS.manElem,
     manCd: s.manCd ?? MANUAL_DEFAULTS.manCd,
-    manAgi: s.manAgi ?? MANUAL_DEFAULTS.manAgi,
-    manStr: s.manStr ?? MANUAL_DEFAULTS.manStr,
+    manAgility: s.manAgility ?? MANUAL_DEFAULTS.manAgility,
+    manStrength: s.manStrength ?? MANUAL_DEFAULTS.manStrength,
     manSkillDmg: s.manSkillDmg ?? MANUAL_DEFAULTS.manSkillDmg,
     manAtkBonus: s.manAtkBonus ?? MANUAL_DEFAULTS.manAtkBonus,
     manCar: s.manCar ?? MANUAL_DEFAULTS.manCar,
@@ -468,11 +504,11 @@ function collectManualInputs() {
 // ====== RESULTS RENDERING ======
 
 const STATS_DISPLAY = [
-  ['Attack (ATK)', 'Atk'], ['Crit Rate', 'Crit Rate'], ['Crit DMG', 'Crit Dmg'], ['Elem', 'Elem Boost'],
-  ['ENH DMG', 'Elem Dmg'], ['Dmg Bonus', 'Dmg Amp'], ['Skill DMG', 'Skill Dmg'], ['Dmg Debuff', 'dmgToDebuff'], ['DMG to Boss', 'Boss Dmg'],
-  ['Def Shred', 'Def Break Atk'], ['PEN', 'Penetration'], ['ASPD', 'Skill Haste'], ['Cooldown', 'Cooldown'],
-  ['Additional', 'Extra Dmg'], ['Resonance DMG', 'Resonance Dmg'],
-  ['Class DMG Bonus', 'Class Dmg'], ['Skill DMG Boost', 'Skill Dmg Boost'], ['Special', 'Special'], ['Skill Ratio', 'Multiplier'],
+  ['Attack', 'Atk (flat)'], ['Crit Rate (%)', 'Crit Rate (%)'], ['Crit DMG (%)', 'Crit Dmg (%)'], ['Elem Boost (%)', 'Elem Boost (%)'],
+  ['ENH DMG (%)', 'Elem Dmg (%)'], ['Dmg Bonus (%)', 'Dmg Bonus (%)'], ['Skill DMG (%)', 'Skill DMG (%)'], ['Dmg Debuff (%)', 'Dmg Debuff (%)'], ['DMG to Boss (%)', 'DMG to Boss (%)'],
+  ['PDEF Shred (flat)', 'PDEF Shred (flat)'], ['PEN (flat)', 'PEN (flat)'], ['ASPD (%)', 'ASPD (%)'], ['Cooldown (flat)', 'Cooldown (flat)'],
+  ['Additional (%)', 'Additional (%)'], ['Resonance DMG (%)', 'Resonance DMG (%)'],
+  ['Class DMG Bonus (%)', 'Class DMG Bonus (%)'], ['Skill DMG Boost (%)', 'Skill DMG Boost (%)'], ['Special (%)', 'Special (%)'], ['Skill Ratio (%)', 'Skill Ratio (%)'],
 ];
 
 function formatNum(n) {
@@ -483,7 +519,7 @@ function formatNum(n) {
 function renderResults(finalStatus, burst, sustained) {
   document.getElementById('val-burst').textContent = Math.round(burst).toLocaleString();
   document.getElementById('val-sustained').textContent = Math.round(sustained).toLocaleString();
-  document.getElementById('val-cdr').textContent = `${finalStatus['Cooldown Reduction'].toFixed(1)}%`;
+  document.getElementById('val-cdr').textContent = `${(finalStatus['Cooldown Reduction (%)'] || 0).toFixed(1)}%`;
   
   const snapshot = getSnapshot();
   const deltaEl = document.getElementById('snapshot-delta');
@@ -603,6 +639,19 @@ function buildAllTabs() {
 
 async function init() {
   initState(generateDefaults());
+  
+  const dsSelect = document.getElementById('data-source-select');
+  if (dsSelect) {
+    dsSelect.value = getState('dataSource') || 'firebase';
+    dsSelect.addEventListener('change', async (e) => {
+      const source = e.target.value;
+      setState('dataSource', source);
+      await loadGameData(source);
+      buildAllTabs();
+      recalculate();
+    });
+  }
+
   await loadGameData();
   buildAllTabs();
   recalculate();
