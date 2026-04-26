@@ -1,6 +1,8 @@
 {
   "Single": {
-    "None": {},
+    "None": {
+      "type": "Other"
+    },
     "Abyssal Gaze": {
       "type": "Weapon",
       "Crit Rate (%)": 11,
@@ -263,11 +265,6 @@
       "Demon Heart": 1,
       "Avarice": 1
     },
-    "Demon Heart Kraken": {
-      "type": "Emblem",
-      "Crit Dmg (%)": 16,
-      "Elem Boost (%)": 22
-    },
     "Demon Heart Legs": {
       "type": "Legs",
       "Elem Boost (%)": 22,
@@ -339,10 +336,6 @@
       "Black Feather": 1,
       "Glimmer": 1
     },
-    "Glimmer Venom Wing": {
-      "type": "Emblem",
-      "Crit Dmg (%)": 25
-    },
     "Venom Armor": {
       "type": "Armor",
       "Crit Rate (%)": 5,
@@ -352,11 +345,6 @@
       "Strength (flat)": 264,
       "Black Feather": 1,
       "Venom": 1
-    },
-    "Venom Behemoth": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 6,
-      "Dmg Bonus (%)": 6
     },
     "Venom Hand": {
       "type": "Hand",
@@ -1042,14 +1030,6 @@
       "type": "Card",
       "Dmg Bonus (%)": 10
     },
-    "Andre": {
-      "type": "Emblem",
-      "Elem Boost (%)": 12
-    },
-    "Azrael": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 12
-    },
     "Basic 1": {
       "type": "Other",
       "Basic": 1
@@ -1072,16 +1052,6 @@
       "Special (%)": 0.5,
       "Atk (flat)": 30
     },
-    "Bishop": {
-      "type": "Emblem",
-      "Elem Boost (%)": 20,
-      "Cooldown (flat)": 40
-    },
-    "Bogit": {
-      "type": "Emblem",
-      "Dmg Bonus (%)": 5,
-      "Crit Dmg (%)": 10
-    },
     "Cat": {
       "type": "Pet"
     },
@@ -1091,10 +1061,6 @@
       "Atk (flat)": 17,
       "Crit Rate (%)": 1.2,
       "Elem Dmg (%)": 5
-    },
-    "Centaur": {
-      "type": "Emblem",
-      "Skill DMG (%)": 8
     },
     "Challenger 1": {
       "type": "Other",
@@ -1119,15 +1085,6 @@
     "Charge 3": {
       "type": "Other",
       "Charge": 3
-    },
-    "Chariot": {
-      "type": "Emblem",
-      "Crit Rate (%)": 10
-    },
-    "Charlotte": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 6,
-      "Crit Dmg (%)": 10
     },
     "Chrome Arms": {
       "type": "Card",
@@ -1175,10 +1132,6 @@
       "Atk (flat)": 15,
       "Dmg Debuff (%)": 2
     },
-    "Demon Sickle Emblem": {
-      "type": "Fashion Emblem",
-      "Skill Ratio (%)": 0.25
-    },
     "Demon Touch": {
       "type": "Fashion",
       "Strength (flat)": 80,
@@ -1216,10 +1169,6 @@
       "type": "Buff",
       "Resonance DMG (%)": 5
     },
-    "Eclipse Creator": {
-      "type": "Emblem",
-      "Skill DMG (%)": 7
-    },
     "Eclipse Realm": {
       "type": "Fashion",
       "Strength (flat)": 80,
@@ -1240,15 +1189,6 @@
       "Skill Ratio (%)": 3.5,
       "Dmg Bonus (%)": 8,
       "Skill DMG (%)": 7
-    },
-    "Electric Whip (Joker)": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 4,
-      "Elem Boost (%)": 12
-    },
-    "Elem Mark": {
-      "type": "Emblem",
-      "Elem Boost (%)": 18
     },
     "Elem Master 1": {
       "type": "Other",
@@ -1316,11 +1256,6 @@
       "type": "Other",
       "Extraordinary": 3
     },
-    "Famion": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 4,
-      "Elem Boost (%)": 18
-    },
     "Fox": {
       "type": "Pet"
     },
@@ -1364,45 +1299,9 @@
       "Skill Ratio (%)": 2,
       "Dmg Bonus (%)": 9
     },
-    "Goramos": {
-      "type": "Emblem",
-      "Dmg Bonus (%)": 4
-    },
-    "Gorga": {
-      "type": "Emblem",
-      "Crit Dmg (%)": 12
-    },
-    "Hawk": {
-      "type": "Emblem",
-      "Elem Boost (%)": 18,
-      "Dmg Debuff (%)": 2
-    },
-    "Heat Wave Title Emblem": {
-      "type": "Fashion Emblem",
-      "Skill Ratio (%)": 4,
-      "Skill DMG Boost (%)": 3.5
-    },
-    "Heavy Shield": {
-      "type": "Emblem",
-      "Skill DMG (%)": 5
-    },
-    "Ice Fist (Vic)": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 4,
-      "Elem Boost (%)": 12
-    },
     "Insight Eye": {
       "type": "Pet Soul",
       "Strength (flat)": 35
-    },
-    "Isaac": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 2,
-      "Elem Boost (%)": 12
-    },
-    "King": {
-      "type": "Emblem",
-      "Crit Dmg (%)": 20
     },
     "Koto": {
       "type": "Pet"
@@ -1443,55 +1342,26 @@
       "type": "Pet Soul",
       "Special (%)": 0.5
     },
-    "Mars": {
-      "type": "Emblem",
-      "Skill DMG (%)": 7,
-      "Crit Dmg (%)": 8
-    },
     "Mech Empire": {
       "type": "Card",
       "Dmg Debuff (%)": 2
-    },
-    "Michael": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 4,
-      "Dmg Bonus (%)": 8
     },
     "Mine War": {
       "type": "Buff",
       "Atk Bonus (%)": 3,
       "Crit Rate (%)": 3
     },
-    "Mingjin Accessory Emblem": {
-      "type": "Fashion Emblem",
-      "Elem Boost (%)": 8,
-      "Strength Bonus (%)": 4
-    },
     "Mingjin Armor Emblem": {
-      "type": "Fashion Emblem",
+      "type": "Armor",
       "Elem Boost (%)": 8,
       "Strength Bonus (%)": 4
-    },
-    "Mingjin Aura Emblem": {
-      "type": "Fashion Emblem",
-      "Atk Bonus (%)": 6,
-      "Dmg Bonus (%)": 2
-    },
-    "Mingjin Footmark Emblem": {
-      "type": "Fashion Emblem",
-      "Elem Boost (%)": 8,
-      "Dmg Bonus (%)": 2
     },
     "Mingjin Head Emblem": {
-      "type": "Fashion Emblem",
+      "type": "Head",
       "Dmg Debuff (%)": 5
     },
-    "Mingjin Title Emblem": {
-      "type": "Fashion Emblem",
-      "Skill Ratio (%)": 3
-    },
     "Mingjin Weapon Emblem": {
-      "type": "Fashion Emblem",
+      "type": "Weapon",
       "Skill DMG (%)": 5,
       "Dmg Bonus (%)": 2
     },
@@ -1508,14 +1378,14 @@
       "Cooldown (flat)": 40
     },
     "New Sky Armor": {
-      "type": "Fashion",
+      "type": "Armor",
       "Strength (flat)": 80,
       "Agility (flat)": 80,
       "Old Sky": 1,
       "New Sky": 1
     },
     "New Sky Badge": {
-      "type": "Fashion",
+      "type": "Badge",
       "Strength (flat)": 50,
       "Agility (flat)": 50,
       "Elem Boost (%)": 9,
@@ -1530,7 +1400,7 @@
       "New Sky": 1
     },
     "New Sky Head": {
-      "type": "Fashion",
+      "type": "Head",
       "Strength (flat)": 50,
       "Agility (flat)": 50,
       "Crit Rate (%)": 4,
@@ -1562,10 +1432,6 @@
     "NonePiaoPiao": {
       "type": "Other"
     },
-    "Odisha": {
-      "type": "Emblem",
-      "Dmg Bonus (%)": 5
-    },
     "Offensive 1": {
       "type": "Other",
       "Offensive": 1
@@ -1586,13 +1452,13 @@
       "Cooldown (flat)": 30
     },
     "Old Sky Armor": {
-      "type": "Fashion",
+      "type": "Armor",
       "Strength (flat)": 80,
       "Agility (flat)": 80,
       "Old Sky": 1
     },
     "Old Sky Badge": {
-      "type": "Fashion",
+      "type": "Badge",
       "Strength (flat)": 40,
       "Agility (flat)": 40,
       "Elem Boost (%)": 7,
@@ -1605,7 +1471,7 @@
       "Old Sky": 1
     },
     "Old Sky Head": {
-      "type": "Fashion",
+      "type": "Head",
       "Strength (flat)": 40,
       "Agility (flat)": 40,
       "Crit Rate (%)": 3,
@@ -1632,19 +1498,6 @@
     "Pierce 3": {
       "type": "Other",
       "Pierce": 3
-    },
-    "Plague": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 4,
-      "Elem Boost (%)": 16
-    },
-    "Puzzle": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 9
-    },
-    "Queen": {
-      "type": "Emblem",
-      "Dmg Bonus (%)": 8
     },
     "Quenching 1": {
       "type": "Other",
@@ -1690,7 +1543,7 @@
       "Resonance": 3
     },
     "S-Rank Fashion Weapon": {
-      "type": "Fashion",
+      "type": "Weapon",
       "Strength (flat)": 60,
       "Agility (flat)": 60,
       "Atk Bonus (%)": 3,
@@ -1730,11 +1583,6 @@
       "type": "Other",
       "Siege": 3
     },
-    "Skull": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 4,
-      "Elem Boost (%)": 18
-    },
     "Smite 1": {
       "type": "Other",
       "Smite": 1
@@ -1747,11 +1595,6 @@
       "type": "Other",
       "Smite": 3
     },
-    "Soldier": {
-      "type": "Emblem",
-      "Crit Rate (%)": 4,
-      "Crit Dmg (%)": 10
-    },
     "Solitary 1": {
       "type": "Other",
       "Solitary": 1
@@ -1763,12 +1606,6 @@
     "Solitary 3": {
       "type": "Other",
       "Solitary": 3
-    },
-    "Star God Aura Emblem": {
-      "type": "Fashion Emblem",
-      "Atk Bonus (%)": 7,
-      "Dmg Bonus (%)": 3,
-      "Dmg Debuff (%)": 3
     },
     "Status Break 1": {
       "type": "Other",
@@ -1805,24 +1642,10 @@
       "type": "Other",
       "Swiftness": 3
     },
-    "Sword of Power": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 3,
-      "Dmg Bonus (%)": 6
-    },
     "The evil hook": {
       "type": "Card",
       "Dmg Debuff (%)": 10,
       "Dmg Bonus (%)": 10
-    },
-    "Thunder Light": {
-      "type": "Emblem",
-      "Crit Dmg (%)": 10
-    },
-    "Touch of Greed": {
-      "type": "Emblem",
-      "Dmg Debuff (%)": 6,
-      "Skill DMG (%)": 8
     },
     "Transcendence 1": {
       "type": "Other",
@@ -1847,10 +1670,6 @@
     "Unbreakable 3": {
       "type": "Other",
       "Unbreakable": 3
-    },
-    "Verbena": {
-      "type": "Emblem",
-      "Atk Bonus (%)": 10
     },
     "Void Crown": {
       "type": "Fashion",
@@ -1919,6 +1738,343 @@
     "Unyielding 3": {
       "type": "Other",
       "Unyielding": 3
+    },
+    "Witch": {
+      "type": "Emblem",
+      "Elem Boost (%)": 18.0
+    },
+    "Steel Chimera": {
+      "type": "Emblem",
+      "Elem Boost (%)": 18.0
+    },
+    "Barbena": {
+      "type": "Emblem",
+      "Atk Bonus (%)": 10.0
+    },
+    "Krag": {
+      "type": "Emblem",
+      "Elem Boost (%)": 18.0
+    },
+    "Mechanical Core": {
+      "type": "Emblem",
+      "Elem Boost (%)": 18.0
+    },
+    "Void Sovereign": {
+      "type": "Emblem",
+      "DMG to Boss (%)": 6.0
+    },
+    "Void Bladematron": {
+      "type": "Emblem",
+      "Skill DMG (%)": 7.0,
+      "Atk Bonus (%)": 7.0
+    },
+    "Hexchess Guard": {
+      "type": "Emblem",
+      "Crit Rate (%)": 4.0,
+      "Crit Dmg (%)": 10.0
+    },
+    "Leotid": {
+      "type": "Emblem",
+      "Skill DMG (%)": 8.0
+    },
+    "Ophelia": {
+      "type": "Emblem",
+      "Strength (flat)": 20.0,
+      "Agility (flat)": 20.0,
+      "Intelligence (flat)": 20.0,
+      "Crit Rate (%)": 40.0
+    },
+    "Polones": {
+      "type": "Emblem",
+      "Crit Rate (%)": 10.0
+    },
+    "Claudius": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 20.0
+    },
+    "Meredia": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 8.0
+    },
+    "Plague the Filth": {
+      "type": "Emblem",
+      "Strength (flat)": 16.0,
+      "Agility (flat)": 16.0,
+      "Intelligence (flat)": 16.0,
+      "DMG to Boss (%)": 4.0
+    },
+    "Famine the Hungry": {
+      "type": "Emblem",
+      "Strength (flat)": 18.0,
+      "Agility (flat)": 18.0,
+      "Intelligence (flat)": 18.0,
+      "Dmg Debuff (%)": 4.0
+    },
+    "Azrael the Annihilation": {
+      "type": "Emblem",
+      "DMG to Boss (%)": 8.0,
+      "Dmg Debuff (%)": 4.0
+    },
+    "Mars": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 8.0,
+      "Skill DMG (%)": 7.0
+    },
+    "Michael": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 8.0
+    },
+    "Golem Shield": {
+      "type": "Emblem"
+    },
+    "Crystallian Beast": {
+      "type": "Emblem",
+      "Resonance DMG (%)": 6.0
+    },
+    "Vik Brotherhood": {
+      "type": "Emblem",
+      "Elem Boost (%)": 12.0,
+      "Dmg Debuff (%)": 4.0
+    },
+    "Goramos": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 4.0
+    },
+    "Andre": {
+      "type": "Emblem",
+      "Strength (flat)": 12.0,
+      "Agility (flat)": 12.0,
+      "Intelligence (flat)": 12.0
+    },
+    "Joker": {
+      "type": "Emblem",
+      "Elem Boost (%)": 12.0,
+      "Dmg Debuff (%)": 4.0
+    },
+    "Clockwork Warden": {
+      "type": "Emblem",
+      "Crit Rate (%)": 6.0
+    },
+    "Thunderbolt Striker": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 10.0
+    },
+    "Kernnos": {
+      "type": "Emblem",
+      "Strength (flat)": 180.0,
+      "Intelligence (flat)": 180.0
+    },
+    "Ancient Guardian - Fist": {
+      "type": "Emblem",
+      "Elem Boost (%)": 12.0,
+      "Dmg Debuff (%)": 4.0
+    },
+    "Ancient Guardian - Charm": {
+      "type": "Emblem",
+      "Crit Rate (%)": 40.0
+    },
+    "Sawblade Mech": {
+      "type": "Emblem",
+      "Atk Bonus (%)": 10.0
+    },
+    "Tower Shield Mech": {
+      "type": "Emblem",
+      "Skill DMG (%)": 5.0
+    },
+    "Electric Whip Guard": {
+      "type": "Emblem",
+      "Elem Boost (%)": 6.0,
+      "Dmg Debuff (%)": 2.0
+    },
+    "Magitech Heavy Mech": {
+      "type": "Emblem",
+      "Atk Bonus (%)": 6.0
+    },
+    "Darkflame Expeller": {
+      "type": "Emblem"
+    },
+    "Thunderous Trasher": {
+      "type": "Emblem"
+    },
+    "Void Ring Keeper": {
+      "type": "Emblem",
+      "Resonance DMG (%)": 6.0
+    },
+    "Chaos Breaker": {
+      "type": "Emblem"
+    },
+    "Mystic": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 8.0
+    },
+    "Hawke": {
+      "type": "Emblem",
+      "Strength (flat)": 18.0,
+      "Agility (flat)": 18.0,
+      "Intelligence (flat)": 18.0,
+      "DMG to Boss (%)": 2.0
+    },
+    "Skull": {
+      "type": "Emblem",
+      "Strength (flat)": 18.0,
+      "Agility (flat)": 18.0,
+      "Intelligence (flat)": 18.0,
+      "Dmg Debuff (%)": 4.0
+    },
+    "Boget": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 5.0,
+      "Crit Dmg (%)": 10.0
+    },
+    "Charlotte": {
+      "type": "Emblem",
+      "DMG to Boss (%)": 6.0,
+      "Crit Dmg (%)": 10.0
+    },
+    "Shimmerscale Poison Wing": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 25.0
+    },
+    "Bitter Behemoth": {
+      "type": "Emblem",
+      "DMG to Boss (%)": 6.0,
+      "Dmg Bonus (%)": 6.0
+    },
+    "Greedy Touch": {
+      "type": "Emblem",
+      "Skill DMG (%)": 8.0,
+      "Atk Bonus (%)": 8.0,
+      "DMG to Boss (%)": 6.0
+    },
+    "Kraken": {
+      "type": "Emblem",
+      "Strength (flat)": 22.0,
+      "Agility (flat)": 22.0,
+      "Intelligence (flat)": 22.0,
+      "Crit Dmg (%)": 16.0
+    },
+    "Fading Thoughts": {
+      "type": "Emblem",
+      "DMG to Boss (%)": 10.0,
+      "Strength (flat)": 13.0,
+      "Agility (flat)": 13.0,
+      "Intelligence (flat)": 13.0
+    },
+    "Annihilation of Thoughts": {
+      "type": "Emblem",
+      "DMG to Boss (%)": 10.0,
+      "Crit Dmg (%)": 10.0
+    },
+    "Ember of Soul": {
+      "type": "Emblem",
+      "Dmg Debuff (%)": 7.0,
+      "Skill DMG (%)": 8.0,
+      "Atk Bonus (%)": 8.0
+    },
+    "Twin Prisoner": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 10.0,
+      "Skill DMG (%)": 6.0,
+      "Atk Bonus (%)": 6.0
+    },
+    "Eros": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 10.0,
+      "Crit Dmg (%)": 13.0
+    },
+    "Eternal Life": {
+      "type": "Emblem",
+      "Strength (flat)": 8.0,
+      "Agility (flat)": 8.0,
+      "Intelligence (flat)": 8.0,
+      "Crit Dmg (%)": 6.0,
+      "Def Break Bonus (%)": 3.0
+    },
+    "Isaac": {
+      "type": "Emblem",
+      "Strength (flat)": 12.0,
+      "Agility (flat)": 12.0,
+      "Intelligence (flat)": 12.0,
+      "Dmg Debuff (%)": 2.0
+    },
+    "Odyssa": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 5.0
+    },
+    "Gorga": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 12.0
+    },
+    "Morning Dew": {
+      "type": "Emblem",
+      "Strength (flat)": 6.0,
+      "Agility (flat)": 6.0,
+      "Intelligence (flat)": 6.0,
+      "Def Break Bonus (%)": 0.8
+    },
+    "Judgement Paladin": {
+      "type": "Emblem",
+      "Strength (flat)": 21.0,
+      "Agility (flat)": 21.0,
+      "Intelligence (flat)": 21.0,
+      "Dmg Bonus (%)": 3.0
+    },
+    "Rangovi": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 25.0,
+      "Crit Rate (%)": 40.0
+    },
+    "Beelzebub": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 12.0,
+      "DMG to Boss (%)": 8.0
+    },
+    "Deus": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 12.0,
+      "Strength (flat)": 15.0,
+      "Agility (flat)": 15.0,
+      "Intelligence (flat)": 15.0
+    },
+    "Martin": {
+      "type": "Emblem",
+      "Skill DMG (%)": 10.0,
+      "Atk Bonus (%)": 10.0,
+      "Crit Rate (%)": 40.0
+    },
+    "Ulysses": {
+      "type": "Emblem",
+      "Skill DMG (%)": 10.0,
+      "Atk Bonus (%)": 10.0,
+      "Strength (flat)": 12.0,
+      "Agility (flat)": 12.0,
+      "Intelligence (flat)": 12.0
+    },
+    "Maiden of Punishment": {
+      "type": "Emblem",
+      "Skill DMG (%)": 10.0,
+      "Atk Bonus (%)": 10.0,
+      "Dmg Bonus (%)": 10.0
+    },
+    "Evolution's End": {
+      "type": "Emblem",
+      "Elem Boost (%)": 30.0,
+      "Atk Bonus (%)": 14.0,
+      "Skill DMG (%)": 14.0
+    },
+    "Goliath": {
+      "type": "Emblem",
+      "Strength (flat)": 16.0,
+      "Agility (flat)": 16.0,
+      "Intelligence (flat)": 16.0
+    },
+    "Leviathan": {
+      "type": "Emblem",
+      "Crit Dmg (%)": 14.0
+    },
+    "Adam": {
+      "type": "Emblem",
+      "Dmg Bonus (%)": 6.0
     }
   },
   "Sets": {

@@ -32,18 +32,19 @@ export const SLOTS = {
 };
 
 export const EMBLEMS = {
-  weapon: { label: 'Weapon Emblem', options: ['Elem Mark', 'Verbena', 'Hawk', 'Demon Heart Kraken', 'None'], default: 'Elem Mark' },
-  head: { label: 'Head Emblem', options: ['Soldier', 'Chariot', 'King', 'Plague', 'Glimmer Venom Wing', 'Andre', 'Isaac', 'None'], default: 'Soldier' },
-  armor: { label: 'Armor Emblem', options: ['Eclipse Creator', 'Centaur', 'Bishop', 'King', 'Charlotte', 'Heavy Shield', 'Odisha', 'None'], default: 'King' },
-  hand: { label: 'Hand Emblem', options: ['Soldier', 'Centaur', 'Bishop', 'Chariot', 'Queen', 'Skull', 'Bogit', 'Ice Fist (Vic)', 'Isaac', 'None'], default: 'Bishop' },
-  legs: { label: 'Legs Emblem', options: ['Mars', 'Venom Behemoth', 'Goramos', 'Odisha', 'None'], default: 'Goramos' },
-  shoes: { label: 'Shoes Emblem', options: ['Eclipse Creator', 'Queen', 'Famion', 'Touch of Greed', 'Electric Whip (Joker)', 'Isaac', 'None'], default: 'Eclipse Creator' },
-  neck: { label: 'Necklace Emblem', options: ['Michael', 'Sword of Power', 'Electric Whip (Joker)', 'Thunder Light', 'Gorga', 'None'], default: 'Thunder Light' },
-  bracer: { label: 'Bracer Emblem', options: ['Michael', 'Sword of Power', 'Ice Fist (Vic)', 'Thunder Light', 'Gorga', 'None'], default: 'Michael' },
-  ring: { label: 'Ring Emblem', options: ['Mars', 'Andre', 'Gorga', 'None'], default: 'Mars' },
-  seal: { label: 'Seal Emblem', options: ['Azrael', 'Plague', 'Puzzle', 'Goramos', 'None'], default: 'Azrael' },
-  talisman: { label: 'Talisman Emblem', options: ['Azrael', 'Famion', 'Puzzle', 'Heavy Shield', 'None'], default: 'Heavy Shield' },
+  weapon: { label: 'Weapon Emblem', options: ["Barbena", "Krag", "Void Sovereign", "Magitech Heavy Mech", "Hawke", "Kraken", "Mystic", "Steel Chimera", "Judgement Paladin", "Witch", "Mechanical Core", "Evolution's End", "None"], default: 'None' },
+  head: { label: 'Head Emblem', options: ["Plague the Filth", "Kernnos", "Claudius", "Isaac", "Andre", "Polones", "Shimmerscale Poison Wing", "Rangovi", "Thunderous Trasher", "Hexchess Guard", "None"], default: 'None' },
+  armor: { label: 'Armor Emblem', options: ["Ophelia", "Claudius", "Beelzebub", "Tower Shield Mech", "Adam", "Crystallian Beast", "Void Bladematron", "Golem Shield", "Darkflame Expeller", "Odyssa", "Charlotte", "Leotid", "None"], default: 'None' },
+  hand: { label: 'Hand Emblem', options: ["Ophelia", "Boget", "Vik Brotherhood", "Isaac", "Chaos Breaker", "Meredia", "Ancient Guardian - Charm", "Ancient Guardian - Fist", "Skull", "Polones", "Deus", "Hexchess Guard", "Leotid", "None"], default: 'None' },
+  legs: { label: 'Legs Emblem', options: ["Martin", "Sawblade Mech", "Bitter Behemoth", "Mars", "Adam", "Ulysses", "Golem Shield", "Darkflame Expeller", "Goramos", "Odyssa", "None"], default: 'None' },
+  shoes: { label: 'Shoes Emblem', options: ["Joker", "Greedy Touch", "Isaac", "Meredia", "Ancient Guardian - Charm", "Maiden of Punishment", "Void Bladematron", "Electric Whip Guard", "Famine the Hungry", "Goliath", "Thunderous Trasher", "None"], default: 'None' },
+  neck: { label: 'Necklace Emblem', options: ["Joker", "Clockwork Warden", "Void Ring Keeper", "Gorga", "Thunderbolt Striker", "Twin Prisoner", "Leviathan", "Electric Whip Guard", "Michael", "None"], default: 'None' },
+  bracer: { label: 'Bracer Emblem', options: ["Clockwork Warden", "Gorga", "Vik Brotherhood", "Chaos Breaker", "Thunderbolt Striker", "Leviathan", "Ancient Guardian - Fist", "Eros", "Michael", "None"], default: 'None' },
+  ring: { label: 'Ring Emblem', options: ["Kernnos", "Void Ring Keeper", "Ember of Soul", "Gorga", "Mars", "Andre", "Goliath", "None"], default: 'None' },
+  seal: { label: 'Seal Emblem', options: ["Plague the Filth", "Sawblade Mech", "Azrael the Annihilation", "Fading Thoughts", "Goramos", "None"], default: 'None' },
+  talisman: { label: 'Talisman Emblem', options: ["Annihilation of Thoughts", "Tower Shield Mech", "Azrael the Annihilation", "Crystallian Beast", "Famine the Hungry", "None"], default: 'None' },
 };
+
 
 export const ENHANCEMENTS = {
   strength: { label: 'Strength/Intelligence', options: Array.from({ length: 11 }, (_, i) => `+${i + 15}(Strength_Intelligence)`).concat('None') },

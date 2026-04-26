@@ -212,12 +212,7 @@
             </optgroup>
             <option value="Other">Other</option>
           </select>
-        <div class="form-group" id="edit-set-bonus-container">
-          <label>Linked Set Bonus</label>
-          <select id="edit-set-bonus">
-            <option value="">None (Auto-detect)</option>
-          </select>
-        </div>
+
         <div id="edit-stats-list"></div>
         <button type="button" class="btn btn-sm" id="btn-add-stat" style="margin-bottom:0.75rem">➕ Add Stat</button>
         <div class="btn-row">
@@ -461,23 +456,8 @@
       if (section === 'Single') {
         document.getElementById('edit-type-container').style.display = 'block';
         document.getElementById('edit-type').value = stats.type || stats.Type || '';
-        
-        // Populate and set set_bonus
-        const setBonusSel = document.getElementById('edit-set-bonus');
-        setBonusSel.innerHTML = '<option value="">None (Auto-detect)</option>';
-        if (data && data.Sets) {
-          Object.keys(data.Sets).sort().forEach(s => {
-            const opt = document.createElement('option');
-            opt.value = s;
-            opt.textContent = s;
-            if (stats.set_bonus === s) opt.selected = true;
-            setBonusSel.appendChild(opt);
-          });
-        }
-        document.getElementById('edit-set-bonus-container').style.display = 'block';
       } else {
         document.getElementById('edit-type-container').style.display = 'none';
-        document.getElementById('edit-set-bonus-container').style.display = 'none';
       }
 
       renderStatFields(stats);
@@ -609,9 +589,6 @@
       if (editingSection === 'Single') {
         const typeVal = document.getElementById('edit-type').value.trim();
         if (typeVal) stats.type = typeVal;
-        
-        const setBonusVal = document.getElementById('edit-set-bonus').value.trim();
-        if (setBonusVal) stats.set_bonus = setBonusVal;
       }
 
       document.querySelectorAll('#edit-stats-list .form-row').forEach(row => {
