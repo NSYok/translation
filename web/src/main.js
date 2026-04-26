@@ -45,7 +45,9 @@ async function loadGameData(source = getState('dataSource')) {
         const typeLabel = obj.label;
         const matchingItems = Object.keys(gameData.Single).filter(itemName => {
           const item = gameData.Single[itemName];
-          return (item.type === typeLabel || item.Type === typeLabel);
+          const isExactMatch = item.type === typeLabel || item.Type === typeLabel;
+          const isGenericEmblem = typeLabel.includes('Emblem') && item.type === 'Emblem';
+          return isExactMatch || isGenericEmblem;
         });
         
         for (const itemName of matchingItems) {
