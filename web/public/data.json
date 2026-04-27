@@ -1,7 +1,13 @@
 {
   "Single": {
     "None": {
-      "type": "Other"
+      "type": "Other",
+      "tiers": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {}
+      }
     },
     "Abyssal Gaze": {
       "type": "Weapon",
@@ -530,356 +536,9 @@
       "Resonance Effect I": 500,
       "Resonance Effect II": 500
     },
-    "+15(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 15,
-      "Resonance Effect II": 15
-    },
-    "+15(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 362,
-      "Resonance Effect I": 15,
-      "Resonance Effect II": 15
-    },
-    "+15(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 117,
-      "Resonance Effect I": 15,
-      "Resonance Effect II": 15
-    },
-    "+16(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 16,
-      "Resonance Effect II": 16
-    },
-    "+16(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 450,
-      "Resonance Effect I": 16,
-      "Resonance Effect II": 16
-    },
-    "+16(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 155,
-      "Resonance Effect I": 16,
-      "Resonance Effect II": 16
-    },
-    "+17(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 17,
-      "Resonance Effect II": 17
-    },
-    "+17(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 560,
-      "Resonance Effect I": 17,
-      "Resonance Effect II": 17
-    },
-    "+17(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 198,
-      "Resonance Effect I": 17,
-      "Resonance Effect II": 17
-    },
-    "+18(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 18,
-      "Resonance Effect II": 18
-    },
-    "+18(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 695,
-      "Resonance Effect I": 18,
-      "Resonance Effect II": 18
-    },
-    "+18(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 246,
-      "Resonance Effect I": 18,
-      "Resonance Effect II": 18
-    },
-    "+18(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 3476,
-      "Resonance Effect I": 18,
-      "Resonance Effect II": 18
-    },
-    "+19(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 19,
-      "Resonance Effect II": 19
-    },
-    "+19(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 873,
-      "Resonance Effect I": 19,
-      "Resonance Effect II": 19
-    },
-    "+19(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 300,
-      "Resonance Effect I": 19,
-      "Resonance Effect II": 19
-    },
-    "+19(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 4368,
-      "Resonance Effect I": 19,
-      "Resonance Effect II": 19
-    },
-    "+20(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 20,
-      "Resonance Effect II": 20
-    },
-    "+20(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 1084,
-      "Resonance Effect I": 20,
-      "Resonance Effect II": 20
-    },
-    "+20(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 360,
-      "Resonance Effect I": 20,
-      "Resonance Effect II": 20
-    },
-    "+20(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 5420,
-      "Resonance Effect I": 20,
-      "Resonance Effect II": 20
-    },
-    "+21(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 21,
-      "Resonance Effect II": 21
-    },
-    "+21(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 1355,
-      "Resonance Effect I": 21,
-      "Resonance Effect II": 21
-    },
-    "+21(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 426,
-      "Resonance Effect I": 21,
-      "Resonance Effect II": 21
-    },
-    "+21(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 6775,
-      "Resonance Effect I": 21,
-      "Resonance Effect II": 21
-    },
-    "+22(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 22,
-      "Resonance Effect II": 22
-    },
-    "+22(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 1682,
-      "Resonance Effect I": 22,
-      "Resonance Effect II": 22
-    },
-    "+22(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 497,
-      "Resonance Effect I": 22,
-      "Resonance Effect II": 22
-    },
-    "+22(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 8410,
-      "Resonance Effect I": 22,
-      "Resonance Effect II": 22
-    },
-    "+23(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 23,
-      "Resonance Effect II": 23
-    },
-    "+23(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 2065,
-      "Resonance Effect I": 23,
-      "Resonance Effect II": 23
-    },
-    "+23(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 573,
-      "Resonance Effect I": 23,
-      "Resonance Effect II": 23
-    },
-    "+23(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 10326,
-      "Resonance Effect I": 23,
-      "Resonance Effect II": 23
-    },
-    "+24(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 24,
-      "Resonance Effect II": 24
-    },
-    "+24(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 2541,
-      "Resonance Effect I": 24,
-      "Resonance Effect II": 24
-    },
-    "+24(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 656,
-      "Resonance Effect I": 24,
-      "Resonance Effect II": 24
-    },
-    "+24(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 12709,
-      "Resonance Effect I": 24,
-      "Resonance Effect II": 24
-    },
-    "+25(HP)": {
-      "type": "Other",
-      "Resonance Effect I": 25,
-      "Resonance Effect II": 25
-    },
-    "+25(L_R Slot)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 3111,
-      "Resonance Effect I": 25,
-      "Resonance Effect II": 25
-    },
-    "+25(Str_Int)": {
-      "type": "Other",
-      "Strength (flat)": 743,
-      "Resonance Effect I": 25,
-      "Resonance Effect II": 25
-    },
-    "+25(Weapon)": {
-      "type": "Other",
-      "PDEF Shred (flat)": 15559,
-      "Resonance Effect I": 25,
-      "Resonance Effect II": 25
-    },
-    "1 Star": {
-      "type": "Other"
-    },
-    "1 Star Cat": {
-      "type": "Other"
-    },
-    "1 Star Dragon": {
-      "type": "Other",
-      "Strength (flat)": 230,
-      "Dmg Bonus (%)": 11.9,
-      "Additional (%)": 10,
-      "Elem Dmg (%)": 7.5
-    },
-    "1 Star Eagle": {
-      "type": "Other",
-      "Strength (flat)": 230,
-      "Dmg Debuff (%)": 18.7,
-      "Additional (%)": 5.1,
-      "Elem Boost (%)": 40,
-      "Skill Ratio (%)": 4
-    },
-    "1 Star Fox": {
-      "type": "Other",
-      "Strength (flat)": 230,
-      "Dmg Bonus (%)": 14.2,
-      "Additional (%)": 6,
-      "Cooldown (flat)": 46.7
-    },
-    "1 Star Koto": {
-      "type": "Other",
-      "Strength (flat)": 230,
-      "Crit Dmg (%)": 7.3,
-      "Elem Boost (%)": 15,
-      "Dmg Debuff (%)": 6,
-      "Skill Ratio (%)": 1.7
-    },
-    "1 Star None": {
-      "type": "Other"
-    },
-    "1 Star Panda": {
-      "type": "Other",
-      "Strength (flat)": 230,
-      "Dmg Debuff (%)": 6,
-      "Crit Dmg (%)": 9.3,
-      "Special (%)": 9
-    },
-    "1 Star PiaoPiao": {
-      "type": "Other",
-      "Strength (flat)": 230,
-      "Atk (flat)": 64,
-      "Dmg Bonus (%)": 1,
-      "Elem Boost (%)": 6.5,
-      "Additional (%)": 6.25,
-      "Dmg Debuff (%)": 4,
-      "Skill DMG (%)": 3
-    },
     "10 Crit Dmg": {
       "type": "Buff",
       "Crit Dmg (%)": 10
-    },
-    "2 Star": {
-      "type": "Other"
-    },
-    "2 Star Cat": {
-      "type": "Other"
-    },
-    "2 Star Dragon": {
-      "type": "Other",
-      "Strength (flat)": 287,
-      "Dmg Bonus (%)": 13,
-      "Additional (%)": 10,
-      "Elem Dmg (%)": 7.5
-    },
-    "2 Star Eagle": {
-      "type": "Other",
-      "Strength (flat)": 287,
-      "Dmg Debuff (%)": 20.3,
-      "Additional (%)": 7.7,
-      "Elem Boost (%)": 40,
-      "Skill Ratio (%)": 4
-    },
-    "2 Star Fox": {
-      "type": "Other",
-      "Strength (flat)": 287,
-      "Dmg Bonus (%)": 14.2,
-      "Additional (%)": 6,
-      "Cooldown (flat)": 58.3
-    },
-    "2 Star Koto": {
-      "type": "Other",
-      "Strength (flat)": 287,
-      "Crit Dmg (%)": 9.2,
-      "Elem Boost (%)": 15,
-      "Dmg Debuff (%)": 6,
-      "Skill Ratio (%)": 1.7
-    },
-    "2 Star None": {
-      "type": "Other"
-    },
-    "2 Star Panda": {
-      "type": "Other",
-      "Strength (flat)": 287,
-      "Dmg Debuff (%)": 6,
-      "Crit Dmg (%)": 11.7,
-      "Special (%)": 9
-    },
-    "2 Star PiaoPiao": {
-      "type": "Other",
-      "Strength (flat)": 287,
-      "Atk (flat)": 80,
-      "Dmg Bonus (%)": 1,
-      "Elem Boost (%)": 6.5,
-      "Additional (%)": 6.25,
-      "Dmg Debuff (%)": 4,
-      "Skill DMG (%)": 3
     },
     "22 Elem Potion": {
       "type": "Buff",
@@ -888,67 +547,6 @@
     "25 Elem Potion": {
       "type": "Buff",
       "Elem Boost (%)": 25
-    },
-    "3 Star": {
-      "type": "Other"
-    },
-    "3 Star Cat": {
-      "type": "Other",
-      "Strength (flat)": 330,
-      "Atk (flat)": 86,
-      "Crit Rate (%)": 6,
-      "Elem Boost (%)": 15,
-      "ASPD (%)": 37
-    },
-    "3 Star Dragon": {
-      "type": "Other",
-      "Strength (flat)": 345,
-      "Dmg Bonus (%)": 17.2,
-      "Additional (%)": 10,
-      "Elem Dmg (%)": 7.5
-    },
-    "3 Star Eagle": {
-      "type": "Other",
-      "Strength (flat)": 345,
-      "Dmg Debuff (%)": 22,
-      "Additional (%)": 11.5,
-      "Elem Boost (%)": 40,
-      "Skill Ratio (%)": 4
-    },
-    "3 Star Fox": {
-      "type": "Other",
-      "Strength (flat)": 345,
-      "Dmg Bonus (%)": 16.5,
-      "Additional (%)": 6,
-      "Cooldown (flat)": 70
-    },
-    "3 Star Koto": {
-      "type": "Other",
-      "Strength (flat)": 345,
-      "Crit Dmg (%)": 11,
-      "Elem Boost (%)": 15,
-      "Dmg Debuff (%)": 6,
-      "Skill Ratio (%)": 2.8
-    },
-    "3 Star None": {
-      "type": "Other"
-    },
-    "3 Star Panda": {
-      "type": "Other",
-      "Strength (flat)": 345,
-      "Dmg Debuff (%)": 6,
-      "Crit Dmg (%)": 20.6,
-      "Special (%)": 9
-    },
-    "3 Star PiaoPiao": {
-      "type": "Other",
-      "Strength (flat)": 345,
-      "Atk (flat)": 96,
-      "Dmg Bonus (%)": 1.7,
-      "Elem Boost (%)": 12,
-      "Additional (%)": 6.25,
-      "Dmg Debuff (%)": 4,
-      "Skill DMG (%)": 3
     },
     "6 dmgToDebuff": {
       "type": "Buff",
@@ -966,81 +564,9 @@
       "type": "Buff",
       "Skill DMG (%)": 8
     },
-    "Adaptation 1": {
-      "type": "Other",
-      "Adaptation": 1
-    },
-    "Adaptation 2": {
-      "type": "Other",
-      "Adaptation": 2
-    },
-    "Adaptation 3": {
-      "type": "Other",
-      "Adaptation": 3
-    },
-    "Advanced Tech 1": {
-      "type": "Other",
-      "Advanced Tech": 1
-    },
-    "Advanced Tech 2": {
-      "type": "Other",
-      "Advanced Tech": 2
-    },
-    "Advanced Tech 3": {
-      "type": "Other",
-      "Advanced Tech": 3
-    },
-    "Adversity 1": {
-      "type": "Other",
-      "Adversity": 1
-    },
-    "Adversity 2": {
-      "type": "Other",
-      "Adversity": 2
-    },
-    "Adversity 3": {
-      "type": "Other",
-      "Adversity": 3
-    },
-    "Air Supremacy 1": {
-      "type": "Other",
-      "Air Supremacy": 1
-    },
-    "Air Supremacy 2": {
-      "type": "Other",
-      "Air Supremacy": 2
-    },
-    "Air Supremacy 3": {
-      "type": "Other",
-      "Air Supremacy": 3
-    },
-    "Alliance 1": {
-      "type": "Other",
-      "Alliance": 1
-    },
-    "Alliance 2": {
-      "type": "Other",
-      "Alliance": 2
-    },
-    "Alliance 3": {
-      "type": "Other",
-      "Alliance": 3
-    },
     "Ancient Guardian": {
       "type": "Card",
       "Dmg Bonus (%)": 10
-    },
-    "Basic 1": {
-      "type": "Other",
-      "Basic": 1
-    },
-    "Basic 2": {
-      "type": "Other",
-      "Basic": 2
-    },
-    "Basic 3": {
-      "type": "Other",
-      "Basic": 3
     },
     "Beast Legion": {
       "type": "Card",
@@ -1053,7 +579,19 @@
       "Atk (flat)": 30
     },
     "Cat": {
-      "type": "Pet"
+      "type": "Pet",
+      "tiers": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {
+          "Strength (flat)": 330,
+          "Atk (flat)": 86,
+          "Crit Rate (%)": 6,
+          "Elem Boost (%)": 15,
+          "ASPD (%)": 37
+        }
+      }
     },
     "Cat Paw": {
       "type": "Pet Soul",
@@ -1061,30 +599,6 @@
       "Atk (flat)": 17,
       "Crit Rate (%)": 1.2,
       "Elem Dmg (%)": 5
-    },
-    "Challenger 1": {
-      "type": "Other",
-      "Challenger": 1
-    },
-    "Challenger 2": {
-      "type": "Other",
-      "Challenger": 2
-    },
-    "Challenger 3": {
-      "type": "Other",
-      "Challenger": 3
-    },
-    "Charge 1": {
-      "type": "Other",
-      "Charge": 1
-    },
-    "Charge 2": {
-      "type": "Other",
-      "Charge": 2
-    },
-    "Charge 3": {
-      "type": "Other",
-      "Charge": 3
     },
     "Chrome Arms": {
       "type": "Card",
@@ -1104,18 +618,6 @@
     "Clockwork Legion": {
       "type": "Card",
       "Elem Boost (%)": 11
-    },
-    "Combo 1": {
-      "type": "Other",
-      "Combo": 1
-    },
-    "Combo 2": {
-      "type": "Other",
-      "Combo": 2
-    },
-    "Combo 3": {
-      "type": "Other",
-      "Combo": 3
     },
     "Dmg Debuff (%)": {
       "type": "Buff",
@@ -1142,20 +644,31 @@
       "Elem Boost (%)": 8,
       "Dmg Bonus (%)": 13
     },
-    "Destruction 1": {
-      "type": "Other",
-      "Destruction": 1
-    },
-    "Destruction 2": {
-      "type": "Other",
-      "Destruction": 2
-    },
-    "Destruction 3": {
-      "type": "Other",
-      "Destruction": 3
-    },
     "Dragon": {
-      "type": "Pet"
+      "type": "Pet",
+      "tiers": {
+        "0": {
+          "Strength (flat)": 100,
+          "Agility (flat)": 100,
+          "Intelligence (flat)": 100
+        },
+        "1": {
+          "Strength (flat)": 300,
+          "Agility (flat)": 300,
+          "Intelligence (flat)": 300
+        },
+        "2": {
+          "Strength (flat)": 400,
+          "Agility (flat)": 400,
+          "Intelligence (flat)": 400
+        },
+        "3": {
+          "Strength (flat)": 500,
+          "Agility (flat)": 500,
+          "Intelligence (flat)": 500,
+          "Atk Bonus (%)": 5
+        }
+      }
     },
     "Dragon Breath": {
       "type": "Buff",
@@ -1163,7 +676,31 @@
       "Atk (flat)": 50
     },
     "Eagle": {
-      "type": "Pet"
+      "type": "Pet",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Strength (flat)": 230,
+          "Dmg Debuff (%)": 18.7,
+          "Additional (%)": 5.1,
+          "Elem Boost (%)": 40,
+          "Skill Ratio (%)": 4
+        },
+        "2": {
+          "Strength (flat)": 287,
+          "Dmg Debuff (%)": 20.3,
+          "Additional (%)": 7.7,
+          "Elem Boost (%)": 40,
+          "Skill Ratio (%)": 4
+        },
+        "3": {
+          "Strength (flat)": 345,
+          "Dmg Debuff (%)": 22,
+          "Additional (%)": 11.5,
+          "Elem Boost (%)": 40,
+          "Skill Ratio (%)": 4
+        }
+      }
     },
     "East": {
       "type": "Buff",
@@ -1190,86 +727,35 @@
       "Dmg Bonus (%)": 8,
       "Skill DMG (%)": 7
     },
-    "Elem Master 1": {
-      "type": "Other",
-      "Elem Master": 1
-    },
-    "Elem Master 2": {
-      "type": "Other",
-      "Elem Master": 2
-    },
-    "Elem Master 3": {
-      "type": "Other",
-      "Elem Master": 3
-    },
-    "Elem Resist 1": {
-      "type": "Other",
-      "Elem Resist": 1
-    },
-    "Elem Resist 2": {
-      "type": "Other",
-      "Elem Resist": 2
-    },
-    "Elem Resist 3": {
-      "type": "Other",
-      "Elem Resist": 3
-    },
     "Emperor Thorn": {
       "type": "Pet Soul",
       "Strength (flat)": 69,
       "Dmg Bonus (%)": 1,
       "Dmg Debuff (%)": 1.5
     },
-    "Evasion 1": {
-      "type": "Other",
-      "Evasion": 1
-    },
-    "Evasion 2": {
-      "type": "Other",
-      "Evasion": 2
-    },
-    "Evasion 3": {
-      "type": "Other",
-      "Evasion": 3
-    },
-    "Excellence 1": {
-      "type": "Other",
-      "Excellence": 1
-    },
-    "Excellence 2": {
-      "type": "Other",
-      "Excellence": 2
-    },
-    "Excellence 3": {
-      "type": "Other",
-      "Excellence": 3
-    },
-    "Extraordinary 1": {
-      "type": "Other",
-      "Extraordinary": 1
-    },
-    "Extraordinary 2": {
-      "type": "Other",
-      "Extraordinary": 2
-    },
-    "Extraordinary 3": {
-      "type": "Other",
-      "Extraordinary": 3
-    },
     "Fox": {
-      "type": "Pet"
-    },
-    "Fullness 1": {
-      "type": "Other",
-      "Fullness": 1
-    },
-    "Fullness 2": {
-      "type": "Other",
-      "Fullness": 2
-    },
-    "Fullness 3": {
-      "type": "Other",
-      "Fullness": 3
+      "type": "Pet",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Strength (flat)": 230,
+          "Dmg Bonus (%)": 14.2,
+          "Additional (%)": 6,
+          "Cooldown (flat)": 46.7
+        },
+        "2": {
+          "Strength (flat)": 287,
+          "Dmg Bonus (%)": 14.2,
+          "Additional (%)": 6,
+          "Cooldown (flat)": 58.3
+        },
+        "3": {
+          "Strength (flat)": 345,
+          "Dmg Bonus (%)": 16.5,
+          "Additional (%)": 6,
+          "Cooldown (flat)": 70
+        }
+      }
     },
     "Gale": {
       "type": "Buff",
@@ -1304,24 +790,36 @@
       "Strength (flat)": 35
     },
     "Koto": {
-      "type": "Pet"
+      "type": "Pet",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Strength (flat)": 230,
+          "Crit Dmg (%)": 7.3,
+          "Elem Boost (%)": 15,
+          "Dmg Debuff (%)": 6,
+          "Skill Ratio (%)": 1.7
+        },
+        "2": {
+          "Strength (flat)": 287,
+          "Crit Dmg (%)": 9.2,
+          "Elem Boost (%)": 15,
+          "Dmg Debuff (%)": 6,
+          "Skill Ratio (%)": 1.7
+        },
+        "3": {
+          "Strength (flat)": 345,
+          "Crit Dmg (%)": 11,
+          "Elem Boost (%)": 15,
+          "Dmg Debuff (%)": 6,
+          "Skill Ratio (%)": 2.8
+        }
+      }
     },
     "Light Chaser": {
       "type": "Card",
       "Crit Rate (%)": 3,
       "Crit Dmg (%)": 6
-    },
-    "Lightning Summon 1": {
-      "type": "Other",
-      "Lightning Summon": 1
-    },
-    "Lightning Summon 2": {
-      "type": "Other",
-      "Lightning Summon": 2
-    },
-    "Lightning Summon 3": {
-      "type": "Other",
-      "Lightning Summon": 3
     },
     "Loyal Partner": {
       "type": "Card",
@@ -1352,16 +850,16 @@
       "Crit Rate (%)": 3
     },
     "Mingjin Armor Emblem": {
-      "type": "Armor",
+      "type": "Emblem",
       "Elem Boost (%)": 8,
       "Strength Bonus (%)": 4
     },
     "Mingjin Head Emblem": {
-      "type": "Head",
+      "type": "Emblem",
       "Dmg Debuff (%)": 5
     },
     "Mingjin Weapon Emblem": {
-      "type": "Weapon",
+      "type": "Emblem",
       "Skill DMG (%)": 5,
       "Dmg Bonus (%)": 2
     },
@@ -1378,14 +876,14 @@
       "Cooldown (flat)": 40
     },
     "New Sky Armor": {
-      "type": "Armor",
+      "type": "Fashion",
       "Strength (flat)": 80,
       "Agility (flat)": 80,
       "Old Sky": 1,
       "New Sky": 1
     },
     "New Sky Badge": {
-      "type": "Badge",
+      "type": "Fashion",
       "Strength (flat)": 50,
       "Agility (flat)": 50,
       "Elem Boost (%)": 9,
@@ -1400,49 +898,13 @@
       "New Sky": 1
     },
     "New Sky Head": {
-      "type": "Head",
+      "type": "Fashion",
       "Strength (flat)": 50,
       "Agility (flat)": 50,
       "Crit Rate (%)": 4,
       "Crit Dmg (%)": 3,
       "Old Sky": 1,
       "New Sky": 1
-    },
-    "NoneCat": {
-      "type": "Other"
-    },
-    "NoneDragon": {
-      "type": "Other"
-    },
-    "NoneEagle": {
-      "type": "Other"
-    },
-    "NoneFox": {
-      "type": "Other"
-    },
-    "NoneKoto": {
-      "type": "Other"
-    },
-    "NoneNone": {
-      "type": "Other"
-    },
-    "NonePanda": {
-      "type": "Other"
-    },
-    "NonePiaoPiao": {
-      "type": "Other"
-    },
-    "Offensive 1": {
-      "type": "Other",
-      "Offensive": 1
-    },
-    "Offensive 2": {
-      "type": "Other",
-      "Offensive": 2
-    },
-    "Offensive 3": {
-      "type": "Other",
-      "Offensive": 3
     },
     "Old Sky Accessory": {
       "type": "Fashion",
@@ -1452,13 +914,13 @@
       "Cooldown (flat)": 30
     },
     "Old Sky Armor": {
-      "type": "Armor",
+      "type": "Fashion",
       "Strength (flat)": 80,
       "Agility (flat)": 80,
       "Old Sky": 1
     },
     "Old Sky Badge": {
-      "type": "Badge",
+      "type": "Fashion",
       "Strength (flat)": 40,
       "Agility (flat)": 40,
       "Elem Boost (%)": 7,
@@ -1471,7 +933,7 @@
       "Old Sky": 1
     },
     "Old Sky Head": {
-      "type": "Head",
+      "type": "Fashion",
       "Strength (flat)": 40,
       "Agility (flat)": 40,
       "Crit Rate (%)": 3,
@@ -1479,37 +941,64 @@
       "Old Sky": 1
     },
     "Panda": {
-      "type": "Pet"
+      "type": "Pet",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Strength (flat)": 230,
+          "Dmg Debuff (%)": 6,
+          "Crit Dmg (%)": 9.3,
+          "Special (%)": 9
+        },
+        "2": {
+          "Strength (flat)": 287,
+          "Dmg Debuff (%)": 6,
+          "Crit Dmg (%)": 11.7,
+          "Special (%)": 9
+        },
+        "3": {
+          "Strength (flat)": 345,
+          "Dmg Debuff (%)": 6,
+          "Crit Dmg (%)": 20.6,
+          "Special (%)": 9
+        }
+      }
     },
     "Park Guard": {
       "type": "Card"
     },
     "PiaoPiao": {
-      "type": "Pet"
-    },
-    "Pierce 1": {
-      "type": "Other",
-      "Pierce": 1
-    },
-    "Pierce 2": {
-      "type": "Other",
-      "Pierce": 2
-    },
-    "Pierce 3": {
-      "type": "Other",
-      "Pierce": 3
-    },
-    "Quenching 1": {
-      "type": "Other",
-      "Quenching": 1
-    },
-    "Quenching 2": {
-      "type": "Other",
-      "Quenching": 2
-    },
-    "Quenching 3": {
-      "type": "Other",
-      "Quenching": 3
+      "type": "Pet",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Strength (flat)": 230,
+          "Atk (flat)": 64,
+          "Dmg Bonus (%)": 1,
+          "Elem Boost (%)": 6.5,
+          "Additional (%)": 6.25,
+          "Dmg Debuff (%)": 4,
+          "Skill DMG (%)": 3
+        },
+        "2": {
+          "Strength (flat)": 287,
+          "Atk (flat)": 80,
+          "Dmg Bonus (%)": 1,
+          "Elem Boost (%)": 6.5,
+          "Additional (%)": 6.25,
+          "Dmg Debuff (%)": 4,
+          "Skill DMG (%)": 3
+        },
+        "3": {
+          "Strength (flat)": 345,
+          "Atk (flat)": 96,
+          "Dmg Bonus (%)": 1.7,
+          "Elem Boost (%)": 12,
+          "Additional (%)": 6.25,
+          "Dmg Debuff (%)": 4,
+          "Skill DMG (%)": 3
+        }
+      }
     },
     "Realm Creature": {
       "type": "Card",
@@ -1518,32 +1007,8 @@
       "Skill DMG (%)": 1,
       "Elem Boost (%)": 7.5
     },
-    "Recovery 1": {
-      "type": "Other",
-      "Recovery": 1
-    },
-    "Recovery 2": {
-      "type": "Other",
-      "Recovery": 2
-    },
-    "Recovery 3": {
-      "type": "Other",
-      "Recovery": 3
-    },
-    "Resonance 1": {
-      "type": "Other",
-      "Resonance": 1
-    },
-    "Resonance 2": {
-      "type": "Other",
-      "Resonance": 2
-    },
-    "Resonance 3": {
-      "type": "Other",
-      "Resonance": 3
-    },
     "S-Rank Fashion Weapon": {
-      "type": "Weapon",
+      "type": "Fashion",
       "Strength (flat)": 60,
       "Agility (flat)": 60,
       "Atk Bonus (%)": 3,
@@ -1571,54 +1036,6 @@
       "Elem Boost (%)": 15,
       "Skill DMG (%)": 10
     },
-    "Siege 1": {
-      "type": "Other",
-      "Siege": 1
-    },
-    "Siege 2": {
-      "type": "Other",
-      "Siege": 2
-    },
-    "Siege 3": {
-      "type": "Other",
-      "Siege": 3
-    },
-    "Smite 1": {
-      "type": "Other",
-      "Smite": 1
-    },
-    "Smite 2": {
-      "type": "Other",
-      "Smite": 2
-    },
-    "Smite 3": {
-      "type": "Other",
-      "Smite": 3
-    },
-    "Solitary 1": {
-      "type": "Other",
-      "Solitary": 1
-    },
-    "Solitary 2": {
-      "type": "Other",
-      "Solitary": 2
-    },
-    "Solitary 3": {
-      "type": "Other",
-      "Solitary": 3
-    },
-    "Status Break 1": {
-      "type": "Other",
-      "Status Break": 1
-    },
-    "Status Break 2": {
-      "type": "Other",
-      "Status Break": 2
-    },
-    "Status Break 3": {
-      "type": "Other",
-      "Status Break": 3
-    },
     "Sun Decree Seat": {
       "type": "Fashion",
       "Strength (flat)": 80,
@@ -1630,46 +1047,10 @@
       "Dmg Bonus (%)": 7,
       "Cooldown (flat)": 30
     },
-    "Swiftness 1": {
-      "type": "Other",
-      "Swiftness": 1
-    },
-    "Swiftness 2": {
-      "type": "Other",
-      "Swiftness": 2
-    },
-    "Swiftness 3": {
-      "type": "Other",
-      "Swiftness": 3
-    },
     "The evil hook": {
       "type": "Card",
       "Dmg Debuff (%)": 10,
       "Dmg Bonus (%)": 10
-    },
-    "Transcendence 1": {
-      "type": "Other",
-      "Transcendence": 1
-    },
-    "Transcendence 2": {
-      "type": "Other",
-      "Transcendence": 2
-    },
-    "Transcendence 3": {
-      "type": "Other",
-      "Transcendence": 3
-    },
-    "Unbreakable 1": {
-      "type": "Other",
-      "Unbreakable": 1
-    },
-    "Unbreakable 2": {
-      "type": "Other",
-      "Unbreakable": 2
-    },
-    "Unbreakable 3": {
-      "type": "Other",
-      "Unbreakable": 3
     },
     "Void Crown": {
       "type": "Fashion",
@@ -1681,214 +1062,158 @@
       "Elem Boost (%)": 12,
       "Dmg Bonus (%)": 11
     },
-    "Void Dragon": {
-      "type": "Other",
-      "Dmg Debuff (%)": 6
-    },
     "Void Shadow": {
       "type": "Card",
       "Strength (flat)": 36,
       "Crit Rate (%)": 4,
       "Crit Dmg (%)": 15
     },
-    "Wall Break 1": {
-      "type": "Other",
-      "Wall Break": 1
-    },
-    "Wall Break 2": {
-      "type": "Other",
-      "Wall Break": 2
-    },
-    "Wall Break 3": {
-      "type": "Other",
-      "Wall Break": 3
-    },
-    "Sprint 1": {
-      "type": "Other",
-      "Sprint": 1
-    },
-    "Sprint 2": {
-      "type": "Other",
-      "Sprint": 2
-    },
-    "Sprint 3": {
-      "type": "Other",
-      "Sprint": 3
-    },
-    "Suppress 1": {
-      "type": "Other",
-      "Suppress": 1
-    },
-    "Suppress 2": {
-      "type": "Other",
-      "Suppress": 2
-    },
-    "Suppress 3": {
-      "type": "Other",
-      "Suppress": 3
-    },
-    "Unyielding 1": {
-      "type": "Other",
-      "Unyielding": 1
-    },
-    "Unyielding 2": {
-      "type": "Other",
-      "Unyielding": 2
-    },
-    "Unyielding 3": {
-      "type": "Other",
-      "Unyielding": 3
-    },
     "Witch": {
       "type": "Emblem",
-      "Elem Boost (%)": 18.0
+      "Elem Boost (%)": 18
     },
     "Steel Chimera": {
       "type": "Emblem",
-      "Elem Boost (%)": 18.0
+      "Elem Boost (%)": 18
     },
     "Barbena": {
       "type": "Emblem",
-      "Atk Bonus (%)": 10.0
+      "Atk Bonus (%)": 10
     },
     "Krag": {
       "type": "Emblem",
-      "Elem Boost (%)": 18.0
+      "Elem Boost (%)": 18
     },
     "Mechanical Core": {
       "type": "Emblem",
-      "Elem Boost (%)": 18.0
-    },
-    "Void Sovereign": {
-      "type": "Emblem",
-      "DMG to Boss (%)": 6.0
+      "Elem Boost (%)": 18
     },
     "Void Bladematron": {
       "type": "Emblem",
-      "Skill DMG (%)": 7.0,
-      "Atk Bonus (%)": 7.0
+      "Skill DMG (%)": 7,
+      "Atk Bonus (%)": 7
     },
     "Hexchess Guard": {
       "type": "Emblem",
-      "Crit Rate (%)": 4.0,
-      "Crit Dmg (%)": 10.0
+      "Crit Rate (%)": 4,
+      "Crit Dmg (%)": 10
     },
     "Leotid": {
       "type": "Emblem",
-      "Skill DMG (%)": 8.0
+      "Skill DMG (%)": 8
     },
     "Ophelia": {
       "type": "Emblem",
-      "Strength (flat)": 20.0,
-      "Agility (flat)": 20.0,
-      "Intelligence (flat)": 20.0,
-      "Crit Rate (%)": 40.0
+      "Strength (flat)": 20,
+      "Agility (flat)": 20,
+      "Intelligence (flat)": 20,
+      "Crit Rate (%)": 40
     },
     "Polones": {
       "type": "Emblem",
-      "Crit Rate (%)": 10.0
+      "Crit Rate (%)": 10
     },
     "Claudius": {
       "type": "Emblem",
-      "Crit Dmg (%)": 20.0
+      "Crit Dmg (%)": 20
     },
     "Meredia": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 8.0
+      "Dmg Bonus (%)": 8
     },
     "Plague the Filth": {
       "type": "Emblem",
-      "Strength (flat)": 16.0,
-      "Agility (flat)": 16.0,
-      "Intelligence (flat)": 16.0,
-      "DMG to Boss (%)": 4.0
+      "Strength (flat)": 16,
+      "Agility (flat)": 16,
+      "Intelligence (flat)": 16,
+      "DMG to Boss (%)": 4
     },
     "Famine the Hungry": {
       "type": "Emblem",
-      "Strength (flat)": 18.0,
-      "Agility (flat)": 18.0,
-      "Intelligence (flat)": 18.0,
-      "Dmg Debuff (%)": 4.0
+      "Strength (flat)": 18,
+      "Agility (flat)": 18,
+      "Intelligence (flat)": 18,
+      "Dmg Debuff (%)": 4
     },
     "Azrael the Annihilation": {
       "type": "Emblem",
-      "DMG to Boss (%)": 8.0,
-      "Dmg Debuff (%)": 4.0
+      "DMG to Boss (%)": 8,
+      "Dmg Debuff (%)": 4
     },
     "Mars": {
       "type": "Emblem",
-      "Crit Dmg (%)": 8.0,
-      "Skill DMG (%)": 7.0
+      "Crit Dmg (%)": 8,
+      "Skill DMG (%)": 7
     },
     "Michael": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 8.0
+      "Dmg Bonus (%)": 8
     },
     "Golem Shield": {
       "type": "Emblem"
     },
     "Crystallian Beast": {
       "type": "Emblem",
-      "Resonance DMG (%)": 6.0
+      "Resonance DMG (%)": 6
     },
     "Vik Brotherhood": {
       "type": "Emblem",
-      "Elem Boost (%)": 12.0,
-      "Dmg Debuff (%)": 4.0
+      "Elem Boost (%)": 12,
+      "Dmg Debuff (%)": 4
     },
     "Goramos": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 4.0
+      "Dmg Bonus (%)": 4
     },
     "Andre": {
       "type": "Emblem",
-      "Strength (flat)": 12.0,
-      "Agility (flat)": 12.0,
-      "Intelligence (flat)": 12.0
+      "Strength (flat)": 12,
+      "Agility (flat)": 12,
+      "Intelligence (flat)": 12
     },
     "Joker": {
       "type": "Emblem",
-      "Elem Boost (%)": 12.0,
-      "Dmg Debuff (%)": 4.0
+      "Elem Boost (%)": 12,
+      "Dmg Debuff (%)": 4
     },
     "Clockwork Warden": {
       "type": "Emblem",
-      "Crit Rate (%)": 6.0
+      "Crit Rate (%)": 6
     },
     "Thunderbolt Striker": {
       "type": "Emblem",
-      "Crit Dmg (%)": 10.0
+      "Crit Dmg (%)": 10
     },
     "Kernnos": {
       "type": "Emblem",
-      "Strength (flat)": 180.0,
-      "Intelligence (flat)": 180.0
+      "Strength (flat)": 180,
+      "Intelligence (flat)": 180
     },
     "Ancient Guardian - Fist": {
       "type": "Emblem",
-      "Elem Boost (%)": 12.0,
-      "Dmg Debuff (%)": 4.0
+      "Elem Boost (%)": 12,
+      "Dmg Debuff (%)": 4
     },
     "Ancient Guardian - Charm": {
       "type": "Emblem",
-      "Crit Rate (%)": 40.0
+      "Crit Rate (%)": 40
     },
     "Sawblade Mech": {
       "type": "Emblem",
-      "Atk Bonus (%)": 10.0
+      "Atk Bonus (%)": 10
     },
     "Tower Shield Mech": {
       "type": "Emblem",
-      "Skill DMG (%)": 5.0
+      "Skill DMG (%)": 5
     },
     "Electric Whip Guard": {
       "type": "Emblem",
-      "Elem Boost (%)": 6.0,
-      "Dmg Debuff (%)": 2.0
+      "Elem Boost (%)": 6,
+      "Dmg Debuff (%)": 2
     },
     "Magitech Heavy Mech": {
       "type": "Emblem",
-      "Atk Bonus (%)": 6.0
+      "Atk Bonus (%)": 6
     },
     "Darkflame Expeller": {
       "type": "Emblem"
@@ -1898,183 +1223,892 @@
     },
     "Void Ring Keeper": {
       "type": "Emblem",
-      "Resonance DMG (%)": 6.0
+      "Resonance DMG (%)": 6
     },
     "Chaos Breaker": {
       "type": "Emblem"
     },
     "Mystic": {
       "type": "Emblem",
-      "Crit Dmg (%)": 8.0
+      "Crit Dmg (%)": 8
     },
     "Hawke": {
       "type": "Emblem",
-      "Strength (flat)": 18.0,
-      "Agility (flat)": 18.0,
-      "Intelligence (flat)": 18.0,
-      "DMG to Boss (%)": 2.0
+      "Strength (flat)": 18,
+      "Agility (flat)": 18,
+      "Intelligence (flat)": 18,
+      "DMG to Boss (%)": 2
     },
     "Skull": {
       "type": "Emblem",
-      "Strength (flat)": 18.0,
-      "Agility (flat)": 18.0,
-      "Intelligence (flat)": 18.0,
-      "Dmg Debuff (%)": 4.0
+      "Strength (flat)": 18,
+      "Agility (flat)": 18,
+      "Intelligence (flat)": 18,
+      "Dmg Debuff (%)": 4
     },
     "Boget": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 5.0,
-      "Crit Dmg (%)": 10.0
+      "Dmg Bonus (%)": 5,
+      "Crit Dmg (%)": 10
     },
     "Charlotte": {
       "type": "Emblem",
-      "DMG to Boss (%)": 6.0,
-      "Crit Dmg (%)": 10.0
+      "DMG to Boss (%)": 6,
+      "Crit Dmg (%)": 10
     },
     "Shimmerscale Poison Wing": {
       "type": "Emblem",
-      "Crit Dmg (%)": 25.0
+      "Crit Dmg (%)": 25
     },
     "Bitter Behemoth": {
       "type": "Emblem",
-      "DMG to Boss (%)": 6.0,
-      "Dmg Bonus (%)": 6.0
+      "DMG to Boss (%)": 6,
+      "Dmg Bonus (%)": 6
     },
     "Greedy Touch": {
       "type": "Emblem",
-      "Skill DMG (%)": 8.0,
-      "Atk Bonus (%)": 8.0,
-      "DMG to Boss (%)": 6.0
+      "Skill DMG (%)": 8,
+      "Atk Bonus (%)": 8,
+      "DMG to Boss (%)": 6
     },
     "Kraken": {
       "type": "Emblem",
-      "Strength (flat)": 22.0,
-      "Agility (flat)": 22.0,
-      "Intelligence (flat)": 22.0,
-      "Crit Dmg (%)": 16.0
+      "Strength (flat)": 22,
+      "Agility (flat)": 22,
+      "Intelligence (flat)": 22,
+      "Crit Dmg (%)": 16
     },
     "Fading Thoughts": {
       "type": "Emblem",
-      "DMG to Boss (%)": 10.0,
-      "Strength (flat)": 13.0,
-      "Agility (flat)": 13.0,
-      "Intelligence (flat)": 13.0
+      "DMG to Boss (%)": 10,
+      "Strength (flat)": 13,
+      "Agility (flat)": 13,
+      "Intelligence (flat)": 13
     },
     "Annihilation of Thoughts": {
       "type": "Emblem",
-      "DMG to Boss (%)": 10.0,
-      "Crit Dmg (%)": 10.0
+      "DMG to Boss (%)": 10,
+      "Crit Dmg (%)": 10
     },
     "Ember of Soul": {
       "type": "Emblem",
-      "Dmg Debuff (%)": 7.0,
-      "Skill DMG (%)": 8.0,
-      "Atk Bonus (%)": 8.0
+      "Dmg Debuff (%)": 7,
+      "Skill DMG (%)": 8,
+      "Atk Bonus (%)": 8
     },
     "Twin Prisoner": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 10.0,
-      "Skill DMG (%)": 6.0,
-      "Atk Bonus (%)": 6.0
+      "Dmg Bonus (%)": 10,
+      "Skill DMG (%)": 6,
+      "Atk Bonus (%)": 6
     },
     "Eros": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 10.0,
-      "Crit Dmg (%)": 13.0
+      "Dmg Bonus (%)": 10,
+      "Crit Dmg (%)": 13
     },
     "Eternal Life": {
       "type": "Emblem",
-      "Strength (flat)": 8.0,
-      "Agility (flat)": 8.0,
-      "Intelligence (flat)": 8.0,
-      "Crit Dmg (%)": 6.0,
-      "Def Break Bonus (%)": 3.0
+      "Strength (flat)": 8,
+      "Agility (flat)": 8,
+      "Intelligence (flat)": 8,
+      "Crit Dmg (%)": 6,
+      "Def Break Bonus (%)": 3
     },
     "Isaac": {
       "type": "Emblem",
-      "Strength (flat)": 12.0,
-      "Agility (flat)": 12.0,
-      "Intelligence (flat)": 12.0,
-      "Dmg Debuff (%)": 2.0
+      "Strength (flat)": 12,
+      "Agility (flat)": 12,
+      "Intelligence (flat)": 12,
+      "Dmg Debuff (%)": 2
     },
     "Odyssa": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 5.0
+      "Dmg Bonus (%)": 5
     },
     "Gorga": {
       "type": "Emblem",
-      "Crit Dmg (%)": 12.0
+      "Crit Dmg (%)": 12
     },
     "Morning Dew": {
       "type": "Emblem",
-      "Strength (flat)": 6.0,
-      "Agility (flat)": 6.0,
-      "Intelligence (flat)": 6.0,
+      "Strength (flat)": 6,
+      "Agility (flat)": 6,
+      "Intelligence (flat)": 6,
       "Def Break Bonus (%)": 0.8
     },
     "Judgement Paladin": {
       "type": "Emblem",
-      "Strength (flat)": 21.0,
-      "Agility (flat)": 21.0,
-      "Intelligence (flat)": 21.0,
-      "Dmg Bonus (%)": 3.0
+      "Strength (flat)": 21,
+      "Agility (flat)": 21,
+      "Intelligence (flat)": 21,
+      "Dmg Bonus (%)": 3
     },
     "Rangovi": {
       "type": "Emblem",
-      "Crit Dmg (%)": 25.0,
-      "Crit Rate (%)": 40.0
+      "Crit Dmg (%)": 25,
+      "Crit Rate (%)": 40
     },
     "Beelzebub": {
       "type": "Emblem",
-      "Crit Dmg (%)": 12.0,
-      "DMG to Boss (%)": 8.0
+      "Crit Dmg (%)": 12,
+      "DMG to Boss (%)": 8
     },
     "Deus": {
       "type": "Emblem",
-      "Crit Dmg (%)": 12.0,
-      "Strength (flat)": 15.0,
-      "Agility (flat)": 15.0,
-      "Intelligence (flat)": 15.0
+      "Crit Dmg (%)": 12,
+      "Strength (flat)": 15,
+      "Agility (flat)": 15,
+      "Intelligence (flat)": 15
     },
     "Martin": {
       "type": "Emblem",
-      "Skill DMG (%)": 10.0,
-      "Atk Bonus (%)": 10.0,
-      "Crit Rate (%)": 40.0
+      "Skill DMG (%)": 10,
+      "Atk Bonus (%)": 10,
+      "Crit Rate (%)": 40
     },
     "Ulysses": {
       "type": "Emblem",
-      "Skill DMG (%)": 10.0,
-      "Atk Bonus (%)": 10.0,
-      "Strength (flat)": 12.0,
-      "Agility (flat)": 12.0,
-      "Intelligence (flat)": 12.0
+      "Skill DMG (%)": 10,
+      "Atk Bonus (%)": 10,
+      "Strength (flat)": 12,
+      "Agility (flat)": 12,
+      "Intelligence (flat)": 12
     },
     "Maiden of Punishment": {
       "type": "Emblem",
-      "Skill DMG (%)": 10.0,
-      "Atk Bonus (%)": 10.0,
-      "Dmg Bonus (%)": 10.0
+      "Skill DMG (%)": 10,
+      "Atk Bonus (%)": 10,
+      "Dmg Bonus (%)": 10
     },
     "Evolution's End": {
       "type": "Emblem",
-      "Elem Boost (%)": 30.0,
-      "Atk Bonus (%)": 14.0,
-      "Skill DMG (%)": 14.0
+      "Elem Boost (%)": 30,
+      "Atk Bonus (%)": 14,
+      "Skill DMG (%)": 14
     },
     "Goliath": {
       "type": "Emblem",
-      "Strength (flat)": 16.0,
-      "Agility (flat)": 16.0,
-      "Intelligence (flat)": 16.0
+      "Strength (flat)": 16,
+      "Agility (flat)": 16,
+      "Intelligence (flat)": 16
     },
     "Leviathan": {
       "type": "Emblem",
-      "Crit Dmg (%)": 14.0
+      "Crit Dmg (%)": 14
     },
     "Adam": {
       "type": "Emblem",
-      "Dmg Bonus (%)": 6.0
+      "Dmg Bonus (%)": 6
+    },
+    "Adaptation": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Adaptation": 1
+        },
+        "2": {
+          "Adaptation": 2
+        },
+        "3": {
+          "Adaptation": 3
+        }
+      }
+    },
+    "Advanced Tech": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Advanced Tech": 1
+        },
+        "2": {
+          "Advanced Tech": 2
+        },
+        "3": {
+          "Advanced Tech": 3
+        }
+      }
+    },
+    "Adversity": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Adversity": 1
+        },
+        "2": {
+          "Adversity": 2
+        },
+        "3": {
+          "Adversity": 3
+        }
+      }
+    },
+    "Air Supremacy": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Air Supremacy": 1
+        },
+        "2": {
+          "Air Supremacy": 2
+        },
+        "3": {
+          "Air Supremacy": 3
+        }
+      }
+    },
+    "Alliance": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Alliance": 1
+        },
+        "2": {
+          "Alliance": 2
+        },
+        "3": {
+          "Alliance": 3
+        }
+      }
+    },
+    "Basic": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Basic": 1
+        },
+        "2": {
+          "Basic": 2
+        },
+        "3": {
+          "Basic": 3
+        }
+      }
+    },
+    "Challenger": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Challenger": 1
+        },
+        "2": {
+          "Challenger": 2
+        },
+        "3": {
+          "Challenger": 3
+        }
+      }
+    },
+    "Charge": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Charge": 1
+        },
+        "2": {
+          "Charge": 2
+        },
+        "3": {
+          "Charge": 3
+        }
+      }
+    },
+    "Combo": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Combo": 1
+        },
+        "2": {
+          "Combo": 2
+        },
+        "3": {
+          "Combo": 3
+        }
+      }
+    },
+    "Destruction": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Destruction": 1
+        },
+        "2": {
+          "Destruction": 2
+        },
+        "3": {
+          "Destruction": 3
+        }
+      }
+    },
+    "Elem Master": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Elem Master": 1
+        },
+        "2": {
+          "Elem Master": 2
+        },
+        "3": {
+          "Elem Master": 3
+        }
+      }
+    },
+    "Elem Resist": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Elem Resist": 1
+        },
+        "2": {
+          "Elem Resist": 2
+        },
+        "3": {
+          "Elem Resist": 3
+        }
+      }
+    },
+    "Evasion": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Evasion": 1
+        },
+        "2": {
+          "Evasion": 2
+        },
+        "3": {
+          "Evasion": 3
+        }
+      }
+    },
+    "Excellence": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Excellence": 1
+        },
+        "2": {
+          "Excellence": 2
+        },
+        "3": {
+          "Excellence": 3
+        }
+      }
+    },
+    "Extraordinary": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Extraordinary": 1
+        },
+        "2": {
+          "Extraordinary": 2
+        },
+        "3": {
+          "Extraordinary": 3
+        }
+      }
+    },
+    "Fullness": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Fullness": 1
+        },
+        "2": {
+          "Fullness": 2
+        },
+        "3": {
+          "Fullness": 3
+        }
+      }
+    },
+    "Lightning Summon": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Lightning Summon": 1
+        },
+        "2": {
+          "Lightning Summon": 2
+        },
+        "3": {
+          "Lightning Summon": 3
+        }
+      }
+    },
+    "Offensive": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Offensive": 1
+        },
+        "2": {
+          "Offensive": 2
+        },
+        "3": {
+          "Offensive": 3
+        }
+      }
+    },
+    "Pierce": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Pierce": 1
+        },
+        "2": {
+          "Pierce": 2
+        },
+        "3": {
+          "Pierce": 3
+        }
+      }
+    },
+    "Quenching": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Quenching": 1
+        },
+        "2": {
+          "Quenching": 2
+        },
+        "3": {
+          "Quenching": 3
+        }
+      }
+    },
+    "Recovery": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Recovery": 1
+        },
+        "2": {
+          "Recovery": 2
+        },
+        "3": {
+          "Recovery": 3
+        }
+      }
+    },
+    "Resonance": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Resonance": 1
+        },
+        "2": {
+          "Resonance": 2
+        },
+        "3": {
+          "Resonance": 3
+        }
+      }
+    },
+    "Siege": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Siege": 1
+        },
+        "2": {
+          "Siege": 2
+        },
+        "3": {
+          "Siege": 3
+        }
+      }
+    },
+    "Smite": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Smite": 1
+        },
+        "2": {
+          "Smite": 2
+        },
+        "3": {
+          "Smite": 3
+        }
+      }
+    },
+    "Solitary": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Solitary": 1
+        },
+        "2": {
+          "Solitary": 2
+        },
+        "3": {
+          "Solitary": 3
+        }
+      }
+    },
+    "Status Break": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Status Break": 1
+        },
+        "2": {
+          "Status Break": 2
+        },
+        "3": {
+          "Status Break": 3
+        }
+      }
+    },
+    "Swiftness": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Swiftness": 1
+        },
+        "2": {
+          "Swiftness": 2
+        },
+        "3": {
+          "Swiftness": 3
+        }
+      }
+    },
+    "Transcendence": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Transcendence": 1
+        },
+        "2": {
+          "Transcendence": 2
+        },
+        "3": {
+          "Transcendence": 3
+        }
+      }
+    },
+    "Unbreakable": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Unbreakable": 1
+        },
+        "2": {
+          "Unbreakable": 2
+        },
+        "3": {
+          "Unbreakable": 3
+        }
+      }
+    },
+    "Wall Break": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Wall Break": 1
+        },
+        "2": {
+          "Wall Break": 2
+        },
+        "3": {
+          "Wall Break": 3
+        }
+      }
+    },
+    "Sprint": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Sprint": 1
+        },
+        "2": {
+          "Sprint": 2
+        },
+        "3": {
+          "Sprint": 3
+        }
+      }
+    },
+    "Suppress": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Suppress": 1
+        },
+        "2": {
+          "Suppress": 2
+        },
+        "3": {
+          "Suppress": 3
+        }
+      }
+    },
+    "Unyielding": {
+      "type": "Engraving",
+      "tiers": {
+        "0": {},
+        "1": {
+          "Unyielding": 1
+        },
+        "2": {
+          "Unyielding": 2
+        },
+        "3": {
+          "Unyielding": 3
+        }
+      }
+    },
+    "HP": {
+      "type": "Enchance",
+      "tiers": {
+        "15": {
+          "Resonance Effect I": 15,
+          "Resonance Effect II": 15
+        },
+        "16": {
+          "Resonance Effect I": 16,
+          "Resonance Effect II": 16
+        },
+        "17": {
+          "Resonance Effect I": 17,
+          "Resonance Effect II": 17
+        },
+        "18": {
+          "Resonance Effect I": 18,
+          "Resonance Effect II": 18
+        },
+        "19": {
+          "Resonance Effect I": 19,
+          "Resonance Effect II": 19
+        },
+        "20": {
+          "Resonance Effect I": 20,
+          "Resonance Effect II": 20
+        },
+        "21": {
+          "Resonance Effect I": 21,
+          "Resonance Effect II": 21
+        },
+        "22": {
+          "Resonance Effect I": 22,
+          "Resonance Effect II": 22
+        },
+        "23": {
+          "Resonance Effect I": 23,
+          "Resonance Effect II": 23
+        },
+        "24": {
+          "Resonance Effect I": 24,
+          "Resonance Effect II": 24
+        },
+        "25": {
+          "Resonance Effect I": 25,
+          "Resonance Effect II": 25
+        }
+      }
+    },
+    "L_R Slot": {
+      "type": "Enchance",
+      "tiers": {
+        "15": {
+          "PDEF Shred (flat)": 362,
+          "Resonance Effect I": 15,
+          "Resonance Effect II": 15
+        },
+        "16": {
+          "PDEF Shred (flat)": 450,
+          "Resonance Effect I": 16,
+          "Resonance Effect II": 16
+        },
+        "17": {
+          "PDEF Shred (flat)": 560,
+          "Resonance Effect I": 17,
+          "Resonance Effect II": 17
+        },
+        "18": {
+          "PDEF Shred (flat)": 695,
+          "Resonance Effect I": 18,
+          "Resonance Effect II": 18
+        },
+        "19": {
+          "PDEF Shred (flat)": 873,
+          "Resonance Effect I": 19,
+          "Resonance Effect II": 19
+        },
+        "20": {
+          "PDEF Shred (flat)": 1084,
+          "Resonance Effect I": 20,
+          "Resonance Effect II": 20
+        },
+        "21": {
+          "PDEF Shred (flat)": 1355,
+          "Resonance Effect I": 21,
+          "Resonance Effect II": 21
+        },
+        "22": {
+          "PDEF Shred (flat)": 1682,
+          "Resonance Effect I": 22,
+          "Resonance Effect II": 22
+        },
+        "23": {
+          "PDEF Shred (flat)": 2065,
+          "Resonance Effect I": 23,
+          "Resonance Effect II": 23
+        },
+        "24": {
+          "PDEF Shred (flat)": 2541,
+          "Resonance Effect I": 24,
+          "Resonance Effect II": 24
+        },
+        "25": {
+          "PDEF Shred (flat)": 3111,
+          "Resonance Effect I": 25,
+          "Resonance Effect II": 25
+        }
+      }
+    },
+    "Weapon": {
+      "type": "Enchance",
+      "tiers": {
+        "18": {
+          "PDEF Shred (flat)": 3476,
+          "Resonance Effect I": 18,
+          "Resonance Effect II": 18
+        },
+        "19": {
+          "PDEF Shred (flat)": 4368,
+          "Resonance Effect I": 19,
+          "Resonance Effect II": 19
+        },
+        "20": {
+          "PDEF Shred (flat)": 5420,
+          "Resonance Effect I": 20,
+          "Resonance Effect II": 20
+        },
+        "21": {
+          "PDEF Shred (flat)": 6775,
+          "Resonance Effect I": 21,
+          "Resonance Effect II": 21
+        },
+        "22": {
+          "PDEF Shred (flat)": 8410,
+          "Resonance Effect I": 22,
+          "Resonance Effect II": 22
+        },
+        "23": {
+          "PDEF Shred (flat)": 10326,
+          "Resonance Effect I": 23,
+          "Resonance Effect II": 23
+        },
+        "24": {
+          "PDEF Shred (flat)": 12709,
+          "Resonance Effect I": 24,
+          "Resonance Effect II": 24
+        },
+        "25": {
+          "PDEF Shred (flat)": 15559,
+          "Resonance Effect I": 25,
+          "Resonance Effect II": 25
+        }
+      }
+    },
+    "Strength_Intelligence": {
+      "type": "Enchance",
+      "tiers": {
+        "15": {
+          "Strength (flat)": 117,
+          "Resonance Effect I": 15,
+          "Resonance Effect II": 15
+        },
+        "16": {
+          "Strength (flat)": 155,
+          "Resonance Effect I": 16,
+          "Resonance Effect II": 16
+        },
+        "17": {
+          "Strength (flat)": 198,
+          "Resonance Effect I": 17,
+          "Resonance Effect II": 17
+        },
+        "18": {
+          "Strength (flat)": 246,
+          "Resonance Effect I": 18,
+          "Resonance Effect II": 18
+        },
+        "19": {
+          "Strength (flat)": 300,
+          "Resonance Effect I": 19,
+          "Resonance Effect II": 19
+        },
+        "20": {
+          "Strength (flat)": 360,
+          "Resonance Effect I": 20,
+          "Resonance Effect II": 20
+        },
+        "21": {
+          "Strength (flat)": 426,
+          "Resonance Effect I": 21,
+          "Resonance Effect II": 21
+        },
+        "22": {
+          "Strength (flat)": 497,
+          "Resonance Effect I": 22,
+          "Resonance Effect II": 22
+        },
+        "23": {
+          "Strength (flat)": 573,
+          "Resonance Effect I": 23,
+          "Resonance Effect II": 23
+        },
+        "24": {
+          "Strength (flat)": 656,
+          "Resonance Effect I": 24,
+          "Resonance Effect II": 24
+        },
+        "25": {
+          "Strength (flat)": 743,
+          "Resonance Effect I": 25,
+          "Resonance Effect II": 25
+        }
+      }
     }
   },
   "Sets": {

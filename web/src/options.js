@@ -11,38 +11,40 @@ export const ACC_SETS = ['Solar', 'Holy Glory', 'Demon Shadow', 'None'];
 export const SLOTS = {
   weapon: {
     label: 'Weapon',
+    matchTypes: ['Weapon'],
     options: ['True Fate Sickle (Withered)', 'Abyssal Gaze', 'Desperate Dream Song', 'None'],
     default: 'True Fate Sickle (Withered)',
   },
-  head: { label: 'Head', sets: ARMOR_SETS, suffix: 'Head', default: 'Black Feather Head' },
-  armor: { label: 'Armor', sets: ARMOR_SETS, suffix: 'Armor', default: 'Black Feather Armor' },
-  hand: { label: 'Hand', sets: ARMOR_SETS, suffix: 'Hand', default: 'Black Feather Hand' },
-  legs: { label: 'Legs', sets: ARMOR_SETS, suffix: 'Legs', default: 'Black Feather Legs' },
-  shoes: { label: 'Shoes', sets: ARMOR_SETS, suffix: 'Shoes', default: 'Black Feather Shoes' },
-  neck: { label: 'Necklace', sets: ACC_SETS, suffix: 'Necklace', default: 'Holy Glory Necklace' },
-  bracer: { label: 'Bracer', sets: ACC_SETS, suffix: 'Bracer', default: 'Holy Glory Bracer' },
-  ring: { label: 'Ring', sets: ACC_SETS, suffix: 'Ring', default: 'Holy Glory Ring' },
-  seal: { label: 'Seal', sets: ACC_SETS, suffix: 'Seal', default: 'Holy Glory Seal' },
-  talisman: { label: 'Talisman', sets: ACC_SETS, suffix: 'Talisman', default: 'Holy Glory Talisman' },
+  head: { label: 'Head', matchTypes: ['Head'], sets: ARMOR_SETS, suffix: 'Head', default: 'Black Feather Head' },
+  armor: { label: 'Armor', matchTypes: ['Armor'], sets: ARMOR_SETS, suffix: 'Armor', default: 'Black Feather Armor' },
+  hand: { label: 'Hand', matchTypes: ['Hand'], sets: ARMOR_SETS, suffix: 'Hand', default: 'Black Feather Hand' },
+  legs: { label: 'Legs', matchTypes: ['Legs'], sets: ARMOR_SETS, suffix: 'Legs', default: 'Black Feather Legs' },
+  shoes: { label: 'Shoes', matchTypes: ['Shoes'], sets: ARMOR_SETS, suffix: 'Shoes', default: 'Black Feather Shoes' },
+  neck: { label: 'Necklace', matchTypes: ['Necklace'], sets: ACC_SETS, suffix: 'Necklace', default: 'Holy Glory Necklace' },
+  bracer: { label: 'Bracer', matchTypes: ['Bracer'], sets: ACC_SETS, suffix: 'Bracer', default: 'Holy Glory Bracer' },
+  ring: { label: 'Ring', matchTypes: ['Ring'], sets: ACC_SETS, suffix: 'Ring', default: 'Holy Glory Ring' },
+  seal: { label: 'Seal', matchTypes: ['Seal'], sets: ACC_SETS, suffix: 'Seal', default: 'Holy Glory Seal' },
+  talisman: { label: 'Talisman', matchTypes: ['Talisman'], sets: ACC_SETS, suffix: 'Talisman', default: 'Holy Glory Talisman' },
   treasure: {
     label: 'Treasure',
+    matchTypes: ['Treasure'],
     options: ["Hourglass of World's End", 'Hymn of Ancient Demon God', 'None'],
     default: "Hourglass of World's End",
   },
 };
 
 export const EMBLEMS = {
-  weapon: { label: 'Weapon Emblem', options: ["Barbena", "Krag", "Void Sovereign", "Magitech Heavy Mech", "Hawke", "Kraken", "Mystic", "Steel Chimera", "Judgement Paladin", "Witch", "Mechanical Core", "Evolution's End", "None"], default: 'None' },
-  head: { label: 'Head Emblem', options: ["Plague the Filth", "Kernnos", "Claudius", "Isaac", "Andre", "Polones", "Shimmerscale Poison Wing", "Rangovi", "Thunderous Trasher", "Hexchess Guard", "None"], default: 'None' },
-  armor: { label: 'Armor Emblem', options: ["Ophelia", "Claudius", "Beelzebub", "Tower Shield Mech", "Adam", "Crystallian Beast", "Void Bladematron", "Golem Shield", "Darkflame Expeller", "Odyssa", "Charlotte", "Leotid", "None"], default: 'None' },
-  hand: { label: 'Hand Emblem', options: ["Ophelia", "Boget", "Vik Brotherhood", "Isaac", "Chaos Breaker", "Meredia", "Ancient Guardian - Charm", "Ancient Guardian - Fist", "Skull", "Polones", "Deus", "Hexchess Guard", "Leotid", "None"], default: 'None' },
-  legs: { label: 'Legs Emblem', options: ["Martin", "Sawblade Mech", "Bitter Behemoth", "Mars", "Adam", "Ulysses", "Golem Shield", "Darkflame Expeller", "Goramos", "Odyssa", "None"], default: 'None' },
-  shoes: { label: 'Shoes Emblem', options: ["Joker", "Greedy Touch", "Isaac", "Meredia", "Ancient Guardian - Charm", "Maiden of Punishment", "Void Bladematron", "Electric Whip Guard", "Famine the Hungry", "Goliath", "Thunderous Trasher", "None"], default: 'None' },
-  neck: { label: 'Necklace Emblem', options: ["Joker", "Clockwork Warden", "Void Ring Keeper", "Gorga", "Thunderbolt Striker", "Twin Prisoner", "Leviathan", "Electric Whip Guard", "Michael", "None"], default: 'None' },
-  bracer: { label: 'Bracer Emblem', options: ["Clockwork Warden", "Gorga", "Vik Brotherhood", "Chaos Breaker", "Thunderbolt Striker", "Leviathan", "Ancient Guardian - Fist", "Eros", "Michael", "None"], default: 'None' },
-  ring: { label: 'Ring Emblem', options: ["Kernnos", "Void Ring Keeper", "Ember of Soul", "Gorga", "Mars", "Andre", "Goliath", "None"], default: 'None' },
-  seal: { label: 'Seal Emblem', options: ["Plague the Filth", "Sawblade Mech", "Azrael the Annihilation", "Fading Thoughts", "Goramos", "None"], default: 'None' },
-  talisman: { label: 'Talisman Emblem', options: ["Annihilation of Thoughts", "Tower Shield Mech", "Azrael the Annihilation", "Crystallian Beast", "Famine the Hungry", "None"], default: 'None' },
+  weapon:   { label: 'Weapon Emblem',   matchTypes: ['Emblem'], options: ["Barbena", "Krag", "Void Sovereign", "Magitech Heavy Mech", "Hawke", "Kraken", "Mystic", "Steel Chimera", "Judgement Paladin", "Witch", "Mechanical Core", "Evolution's End", "None"], default: 'None' },
+  head:     { label: 'Head Emblem',     matchTypes: ['Emblem'], options: ["Plague the Filth", "Kernnos", "Claudius", "Isaac", "Andre", "Polones", "Shimmerscale Poison Wing", "Rangovi", "Thunderous Trasher", "Hexchess Guard", "None"], default: 'None' },
+  armor:    { label: 'Armor Emblem',    matchTypes: ['Emblem'], options: ["Ophelia", "Claudius", "Beelzebub", "Tower Shield Mech", "Adam", "Crystallian Beast", "Void Bladematron", "Golem Shield", "Darkflame Expeller", "Odyssa", "Charlotte", "Leotid", "None"], default: 'None' },
+  hand:     { label: 'Hand Emblem',     matchTypes: ['Emblem'], options: ["Ophelia", "Boget", "Vik Brotherhood", "Isaac", "Chaos Breaker", "Meredia", "Ancient Guardian - Charm", "Ancient Guardian - Fist", "Skull", "Polones", "Deus", "Hexchess Guard", "Leotid", "None"], default: 'None' },
+  legs:     { label: 'Legs Emblem',     matchTypes: ['Emblem'], options: ["Martin", "Sawblade Mech", "Bitter Behemoth", "Mars", "Adam", "Ulysses", "Golem Shield", "Darkflame Expeller", "Goramos", "Odyssa", "None"], default: 'None' },
+  shoes:    { label: 'Shoes Emblem',    matchTypes: ['Emblem'], options: ["Joker", "Greedy Touch", "Isaac", "Meredia", "Ancient Guardian - Charm", "Maiden of Punishment", "Void Bladematron", "Electric Whip Guard", "Famine the Hungry", "Goliath", "Thunderous Trasher", "None"], default: 'None' },
+  neck:     { label: 'Necklace Emblem', matchTypes: ['Emblem'], options: ["Joker", "Clockwork Warden", "Void Ring Keeper", "Gorga", "Thunderbolt Striker", "Twin Prisoner", "Leviathan", "Electric Whip Guard", "Michael", "None"], default: 'None' },
+  bracer:   { label: 'Bracer Emblem',   matchTypes: ['Emblem'], options: ["Clockwork Warden", "Gorga", "Vik Brotherhood", "Chaos Breaker", "Thunderbolt Striker", "Leviathan", "Ancient Guardian - Fist", "Eros", "Michael", "None"], default: 'None' },
+  ring:     { label: 'Ring Emblem',     matchTypes: ['Emblem'], options: ["Kernnos", "Void Ring Keeper", "Ember of Soul", "Gorga", "Mars", "Andre", "Goliath", "None"], default: 'None' },
+  seal:     { label: 'Seal Emblem',     matchTypes: ['Emblem'], options: ["Plague the Filth", "Sawblade Mech", "Azrael the Annihilation", "Fading Thoughts", "Goramos", "None"], default: 'None' },
+  talisman: { label: 'Talisman Emblem', matchTypes: ['Emblem'], options: ["Annihilation of Thoughts", "Tower Shield Mech", "Azrael the Annihilation", "Crystallian Beast", "Famine the Hungry", "None"], default: 'None' },
 };
 
 
@@ -70,7 +72,7 @@ export const ENHANCEMENT_SLOTS = {
 const engraveLevels = (names) => {
   const result = [];
   for (const name of names) {
-    result.push(`${name} 3`, `${name} 2`, `${name} 1`);
+    result.push(`State 3 ${name}`, `State 2 ${name}`, `State 1 ${name}`);
   }
   result.push('None');
   return result;
@@ -84,22 +86,22 @@ export const ENGRAVINGS = {
 };
 
 export const ENGRAVING_SLOTS = {
-  weapon: { type: 'WSA', defaults: ['Excellence 3', 'Unbreakable 3', 'Smite 3'] },
-  head: { type: 'HGS', defaults: ['Destruction 3', 'Adaptation 3', 'Combo 1'] },
-  armor: { type: 'BP', defaults: ['Extraordinary 3', 'Quenching 3', 'Basic 1'] },
-  hand: { type: 'HGS', defaults: ['Destruction 3', 'Adaptation 3', 'Combo 1'] },
-  legs: { type: 'BP', defaults: ['Extraordinary 3', 'Basic 3', 'Quenching 1'] },
-  shoes: { type: 'HGS', defaults: ['Destruction 3', 'Adaptation 3', 'Combo 1'] },
-  neck: { type: 'RBN', defaults: ['Elem Master 1', 'Elem Resist 3', 'Challenger 3'] },
-  bracer: { type: 'RBN', defaults: ['Elem Master 1', 'Elem Resist 3', 'Challenger 3'] },
-  ring: { type: 'RBN', defaults: ['Elem Master 2', 'Elem Resist 2', 'Challenger 3'] },
-  seal: { type: 'WSA', defaults: ['Excellence 3', 'Unbreakable 3', 'Smite 1'] },
-  talisman: { type: 'WSA', defaults: ['Excellence 3', 'Unbreakable 2', 'Smite 2'] },
+  weapon: { type: 'WSA', defaults: ['State 3 Excellence', 'State 3 Unbreakable', 'State 3 Smite'] },
+  head: { type: 'HGS', defaults: ['State 3 Destruction', 'State 3 Adaptation', 'State 1 Combo'] },
+  armor: { type: 'BP', defaults: ['State 3 Extraordinary', 'State 3 Quenching', 'State 1 Basic'] },
+  hand: { type: 'HGS', defaults: ['State 3 Destruction', 'State 3 Adaptation', 'State 1 Combo'] },
+  legs: { type: 'BP', defaults: ['State 3 Extraordinary', 'State 3 Basic', 'State 1 Quenching'] },
+  shoes: { type: 'HGS', defaults: ['State 3 Destruction', 'State 3 Adaptation', 'State 1 Combo'] },
+  neck: { type: 'RBN', defaults: ['State 1 Elem Master', 'State 3 Elem Resist', 'State 3 Challenger'] },
+  bracer: { type: 'RBN', defaults: ['State 1 Elem Master', 'State 3 Elem Resist', 'State 3 Challenger'] },
+  ring: { type: 'RBN', defaults: ['State 2 Elem Master', 'State 2 Elem Resist', 'State 3 Challenger'] },
+  seal: { type: 'WSA', defaults: ['State 3 Excellence', 'State 3 Unbreakable', 'State 1 Smite'] },
+  talisman: { type: 'WSA', defaults: ['State 3 Excellence', 'State 2 Unbreakable', 'State 2 Smite'] },
 };
 
 export const PETS = {
   options: ['Cat', 'Eagle', 'Panda', 'Dragon', 'PiaoPiao', 'Koto', 'Fox', 'None'],
-  stars: ['1 Star', '2 Star', '3 Star'],
+  stars: ['State 1', 'State 2', 'State 3'],
   souls: {
     strength: { label: 'Strength Soul', options: ['Cat Paw', 'Emperor Thorn', 'Insight Eye', 'None'] },
     skill: { label: 'Skill Soul', options: ['Magic Witch', 'Beast Tooth Mark', 'None'] },
@@ -112,27 +114,27 @@ export const CARDS = {
 };
 
 export const FASHION = {
-  title: { label: 'Title', options: ['Demon Touch', 'Void Crown', 'Gold Crown', 'None'], default: 'Demon Touch' },
-  weapon: { label: 'Fashion Weapon', options: ['Sun Decree Seat', 'S-Rank Fashion Weapon', 'None'], default: 'Sun Decree Seat' },
-  aura: { label: 'Aura', options: ['Shining Star', 'Golden Slumber', 'Eclipse Realm', 'Eclipse Realm II', 'None'], default: 'Golden Slumber' },
-  head: { label: 'Fashion Head', options: ['New Sky Head', 'Old Sky Head', 'None'], default: 'New Sky Head' },
-  cloth: { label: 'Fashion Cloth', options: ['New Sky Armor', 'Old Sky Armor', 'None'], default: 'New Sky Armor' },
-  acc: { label: 'Fashion Acc', options: ['New Sky Accessory', 'Old Sky Accessory', 'None'], default: 'New Sky Accessory' },
-  face: { label: 'Fashion Face', options: ['New Sky Facewear', 'Old Sky Facewear', 'None'], default: 'New Sky Facewear' },
-  badge: { label: 'Fashion Badge', options: ['New Sky Badge', 'Old Sky Badge', 'None'], default: 'New Sky Badge' },
-  foot: { label: 'Footprint', options: ['Shining Star Footmark', 'None'], default: 'Shining Star Footmark' },
+  title: { label: 'Title', matchTypes: ['Fashion'], options: ['Demon Touch', 'Void Crown', 'Gold Crown', 'None'], default: 'Demon Touch' },
+  weapon: { label: 'Fashion Weapon', matchTypes: ['Fashion', 'Weapon'], options: ['Sun Decree Seat', 'S-Rank Fashion Weapon', 'None'], default: 'Sun Decree Seat' },
+  aura: { label: 'Aura', matchTypes: ['Fashion'], options: ['Shining Star', 'Golden Slumber', 'Eclipse Realm', 'Eclipse Realm II', 'None'], default: 'Golden Slumber' },
+  head: { label: 'Fashion Head', matchTypes: ['Fashion', 'Head'], options: ['New Sky Head', 'Old Sky Head', 'None'], default: 'New Sky Head' },
+  cloth: { label: 'Fashion Cloth', matchTypes: ['Fashion', 'Armor'], options: ['New Sky Armor', 'Old Sky Armor', 'None'], default: 'New Sky Armor' },
+  acc: { label: 'Fashion Acc', matchTypes: ['Fashion'], options: ['New Sky Accessory', 'Old Sky Accessory', 'None'], default: 'New Sky Accessory' },
+  face: { label: 'Fashion Face', matchTypes: ['Fashion'], options: ['New Sky Facewear', 'Old Sky Facewear', 'None'], default: 'New Sky Facewear' },
+  badge: { label: 'Fashion Badge', matchTypes: ['Fashion', 'Badge'], options: ['New Sky Badge', 'Old Sky Badge', 'None'], default: 'New Sky Badge' },
+  foot: { label: 'Footprint', matchTypes: ['Fashion'], options: ['Shining Star Footmark', 'None'], default: 'Shining Star Footmark' },
 };
 
 export const FASHION_EMBLEMS = {
-  title: { label: 'Title Emblem', options: ['Heat Wave Title Emblem', 'Mingjin Title Emblem', 'Demon Sickle Emblem', 'None'], default: 'Heat Wave Title Emblem' },
-  weapon: { label: 'Weapon Emblem', options: ['Mingjin Weapon Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Weapon Emblem' },
-  aura: { label: 'Aura Emblem', options: ['Star God Aura Emblem', 'Mingjin Aura Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Aura Emblem' },
-  head: { label: 'Head Emblem', options: ['Mingjin Head Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Head Emblem' },
-  cloth: { label: 'Cloth Emblem', options: ['Mingjin Armor Emblem', 'Demon Sickle Emblem', 'None'], default: 'Demon Sickle Emblem' },
-  acc: { label: 'Acc Emblem', options: ['Mingjin Accessory Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Accessory Emblem' },
-  face: { label: 'Face Emblem', options: ['Demon Sickle Emblem', 'None'], default: 'Demon Sickle Emblem' },
-  badge: { label: 'Badge Emblem', options: ['Demon Sickle Emblem', 'None'], default: 'Demon Sickle Emblem' },
-  foot: { label: 'Foot Emblem', options: ['Mingjin Footmark Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Footmark Emblem' },
+  title:  { label: 'Title Emblem',  matchTypes: ['Emblem'], options: ['Heat Wave Title Emblem', 'Mingjin Title Emblem', 'Demon Sickle Emblem', 'None'], default: 'Heat Wave Title Emblem' },
+  weapon: { label: 'Weapon Emblem', matchTypes: ['Emblem'], options: ['Mingjin Weapon Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Weapon Emblem' },
+  aura:   { label: 'Aura Emblem',   matchTypes: ['Emblem'], options: ['Star God Aura Emblem', 'Mingjin Aura Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Aura Emblem' },
+  head:   { label: 'Head Emblem',   matchTypes: ['Emblem'], options: ['Mingjin Head Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Head Emblem' },
+  cloth:  { label: 'Cloth Emblem',  matchTypes: ['Emblem'], options: ['Mingjin Armor Emblem', 'Demon Sickle Emblem', 'None'], default: 'Demon Sickle Emblem' },
+  acc:    { label: 'Acc Emblem',    matchTypes: ['Emblem'], options: ['Mingjin Accessory Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Accessory Emblem' },
+  face:   { label: 'Face Emblem',   matchTypes: ['Emblem'], options: ['Demon Sickle Emblem', 'None'], default: 'Demon Sickle Emblem' },
+  badge:  { label: 'Badge Emblem',  matchTypes: ['Emblem'], options: ['Demon Sickle Emblem', 'None'], default: 'Demon Sickle Emblem' },
+  foot:   { label: 'Foot Emblem',   matchTypes: ['Emblem'], options: ['Mingjin Footmark Emblem', 'Demon Sickle Emblem', 'None'], default: 'Mingjin Footmark Emblem' },
 };
 
 export const BUFFS = {
@@ -164,7 +166,6 @@ export const MANUAL_DEFAULTS = {
   boostZhuoyue7: -1.0,
   boostZhuoyue9: -1.0,
   boostChaoran9: -1.0,
-  dataSource: 'firebase',
 };
 
 /**
@@ -176,37 +177,37 @@ export function generateDefaults() {
 
   // Equipment slots
   for (const [slotKey, slot] of Object.entries(SLOTS)) {
-    defaults[`s_${slotKey}`] = slot.default;
+    defaults[slotKey] = slot.default;
   }
 
   // Emblems
   for (const [slotKey, emb] of Object.entries(EMBLEMS)) {
-    defaults[`emb_${slotKey}`] = emb.default;
+    defaults[`emblem_${slotKey}`] = emb.default;
   }
 
   // Enhancements
   for (const [slotKey, enh] of Object.entries(ENHANCEMENT_SLOTS)) {
-    defaults[`enh_${slotKey}`] = enh.default;
+    defaults[`enhance_${slotKey}`] = enh.default;
   }
 
   // Engravings
   for (const [slotKey, eng] of Object.entries(ENGRAVING_SLOTS)) {
     for (let i = 0; i < 3; i++) {
-      defaults[`eng_${slotKey}_${i}`] = eng.defaults[i];
+      defaults[`engrave_${slotKey}_${i}`] = eng.defaults[i];
     }
   }
 
   // Pets
-  defaults.pet_main = 'Dragon';
-  defaults.pet_star_1 = '3 Star';
-  defaults.pet_soul_1_strength = 'None';
-  defaults.pet_soul_1_skill = 'None';
-  defaults.pet_soul_1_spd = 'None';
+  defaults.pet_1 = 'Dragon';
+  defaults.pet_1_star = 'State 3';
+  defaults.pet_1_soul_strength = 'None';
+  defaults.pet_1_soul_skill = 'None';
+  defaults.pet_1_soul_spd = 'None';
   defaults.pet_2 = 'Cat';
-  defaults.pet_star_2 = '3 Star';
-  defaults.pet_soul_2_strength = 'None';
-  defaults.pet_soul_2_skill = 'None';
-  defaults.pet_soul_2_spd = 'None';
+  defaults.pet_2_star = 'State 3';
+  defaults.pet_2_soul_strength = 'None';
+  defaults.pet_2_soul_skill = 'None';
+  defaults.pet_2_soul_spd = 'None';
 
   // Cards
   defaults.card_1 = 'Void Shadow';
@@ -219,7 +220,7 @@ export function generateDefaults() {
     defaults[`fashion_${key}`] = f.default;
   }
   for (const [key, f] of Object.entries(FASHION_EMBLEMS)) {
-    defaults[`fashion_emb_${key}`] = f.default;
+    defaults[`fash_emb_${key}`] = f.default;
   }
 
   // Buffs
@@ -228,7 +229,11 @@ export function generateDefaults() {
   }
 
   // Manual inputs
-  Object.assign(defaults, MANUAL_DEFAULTS);
+  for (const [key, value] of Object.entries(MANUAL_DEFAULTS)) {
+    defaults[`manual_${key}`] = value;
+  }
+
+  defaults.dataSource = 'firebase';
 
   return defaults;
 }

@@ -85,3 +85,9 @@ export async function deleteSetItem(name) {
     [`Sets.${name}`]: deleteField()
   });
 }
+
+export async function saveConfig(config) {
+  return updateDoc(DATA_DOC, {
+    Config: config
+  });
+}

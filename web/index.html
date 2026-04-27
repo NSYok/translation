@@ -3,90 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crystal of Atlan — Damage Calculator</title>
-  <meta name="description" content="Advanced damage calculator for Crystal of Atlan (晶核). Simulate equipment, engravings, pets, fashion, and buffs to optimize your build." />
+  <title>Crystal of Atlan Damage Calculator</title>
+  <meta
+    name="description"
+    content="Build and compare Crystal of Atlan setups with equipment, engravings, pets, cards, fashion, buffs, and manual stat tuning."
+  />
   <link rel="icon" type="image/png" href="/icons/icon.png" />
 </head>
 <body>
   <div id="app">
-    <!-- Header -->
     <header class="app-header">
-      <h1>⚔️ Crystal of Atlan — Calculator</h1>
+      <div class="header-copy">
+        <p class="eyebrow">Crystal of Atlan Build Lab</p>
+        <h1>Damage Calculator</h1>
+        <p class="header-subtitle">Tune your full setup, compare snapshots, and inspect the final panel in one place.</p>
+      </div>
+
       <div class="header-actions">
-        <select id="data-source-select" class="btn btn-sm" style="margin-right: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white;">
-          <option value="firebase">🌐 Firebase</option>
-          <option value="local">📁 Local JSON</option>
-        </select>
-        <button class="btn btn-sm" id="btn-import" title="Load Build">📂 Load</button>
-        <button class="btn btn-sm" id="btn-export" title="Save Build">💾 Save</button>
+        <label class="source-picker" for="data-source-select">
+          <span>Data source</span>
+          <select id="data-source-select">
+            <option value="firebase">Firebase</option>
+            <option value="local">Local JSON</option>
+          </select>
+        </label>
+        <button class="btn btn-sm" id="btn-import" title="Load build">Load build</button>
+        <button class="btn btn-sm btn-primary" id="btn-export" title="Export build">Export build</button>
         <input type="file" id="file-import" accept=".json" class="hidden" />
       </div>
     </header>
 
-    <!-- Main Layout -->
     <div class="main-layout">
-      <!-- Left: Configuration Panel -->
-      <div class="config-panel">
-        <!-- Tab Navigation -->
-        <nav class="tab-nav" id="tab-nav">
-          <button class="tab-btn active" data-tab="gear">⚔️ Gear</button>
-          <button class="tab-btn" data-tab="enhance">🔧 Enhance</button>
-          <button class="tab-btn" data-tab="pet">🐾 Pet/Card</button>
-          <button class="tab-btn" data-tab="fashion">👗 Fashion</button>
-          <button class="tab-btn" data-tab="manual">📝 Manual</button>
+      <main class="config-panel">
+        <section class="intro-card">
+          <div>
+            <p class="eyebrow">Root Page</p>
+            <h2>Build faster with searchable slot pickers</h2>
+            <p>Every selector opens a searchable modal, so long equipment lists stay manageable on both desktop and mobile.</p>
+          </div>
+          <div class="intro-metrics">
+            <div class="metric-pill">
+              <span class="metric-label">Sections</span>
+              <span class="metric-value">5</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-label">Selected items</span>
+              <span class="metric-value" id="selected-count">0</span>
+            </div>
+          </div>
+        </section>
+
+        <nav class="tab-nav" id="tab-nav" aria-label="Calculator sections">
+          <button class="tab-btn active" data-tab="gear">Gear</button>
+          <button class="tab-btn" data-tab="enhance">Enhance</button>
+          <button class="tab-btn" data-tab="pet">Pet & Card</button>
+          <button class="tab-btn" data-tab="fashion">Fashion</button>
+          <button class="tab-btn" data-tab="manual">Manual</button>
         </nav>
 
-        <!-- Tab: Gear -->
         <div class="tab-content active" id="tab-gear"></div>
-
-        <!-- Tab: Enhance -->
         <div class="tab-content" id="tab-enhance"></div>
-
-        <!-- Tab: Pet/Card -->
         <div class="tab-content" id="tab-pet"></div>
-
-        <!-- Tab: Fashion/Buff -->
         <div class="tab-content" id="tab-fashion"></div>
-
-        <!-- Tab: Manual -->
         <div class="tab-content" id="tab-manual"></div>
-      </div>
+      </main>
 
-      <!-- Right: Results Panel -->
-      <div class="results-panel" id="results-panel">
-        <!-- Hero damage display -->
+      <aside class="results-panel" id="results-panel">
         <div class="result-hero" id="result-hero">
-          <div class="damage-label">Burst Damage</div>
-          <div class="damage-value" id="val-burst">—</div>
+          <p class="damage-label">Burst damage</p>
+          <div class="damage-value" id="val-burst">-</div>
           <div class="damage-sub">
             <div class="result-sub-item">
               <div class="sub-label">Sustained DPS</div>
-              <div class="sub-value" id="val-sustained">—</div>
+              <div class="sub-value" id="val-sustained">-</div>
             </div>
             <div class="result-sub-item">
-              <div class="sub-label">CDR</div>
-              <div class="sub-value" id="val-cdr">—</div>
+              <div class="sub-label">Cooldown Reduction</div>
+              <div class="sub-value" id="val-cdr">-</div>
             </div>
           </div>
         </div>
 
-        <!-- Snapshot actions -->
-        <div class="btn-group mb-4">
-          <button class="btn btn-sm" id="btn-snapshot" style="flex:1">📸 Save Snapshot</button>
-          <button class="btn btn-sm" id="btn-clear-snap" style="flex:1">🗑️ Clear</button>
+        <div class="action-stack">
+          <div class="btn-group">
+            <button class="btn btn-sm" id="btn-snapshot">Save snapshot</button>
+            <button class="btn btn-sm" id="btn-clear-snap">Clear snapshot</button>
+          </div>
+          <div id="snapshot-delta" class="snapshot-delta"></div>
         </div>
-        <div id="snapshot-delta" class="text-center mb-4" style="display:none"></div>
 
-        <!-- Detailed Stats -->
-        <div class="section-title">Detailed Panel Stats</div>
-        <div class="stat-list" id="stat-list"></div>
-      </div>
+        <section class="stats-card">
+          <div class="section-title">Detailed Panel Stats</div>
+          <div class="stat-list" id="stat-list"></div>
+        </section>
+      </aside>
     </div>
 
-    <!-- Icon Selection Modal -->
     <div class="icon-modal-overlay hidden" id="icon-modal">
-      <div class="icon-modal">
-        <h3 id="modal-title">Select Item</h3>
+      <div class="icon-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header">
+          <div>
+            <h3 id="modal-title">Select Item</h3>
+            <p>Type to filter long item lists.</p>
+          </div>
+          <input id="modal-search" type="search" placeholder="Search items..." autocomplete="off" />
+        </div>
         <div class="icon-grid" id="modal-grid"></div>
       </div>
     </div>

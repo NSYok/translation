@@ -6,99 +6,143 @@
   <title>COA Data Editor — Admin</title>
   <link rel="icon" type="image/png" href="/icons/icon.png" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #06080f; --bg2: #0a0e1a; --bg3: #111827;
-      --glass: rgba(255,255,255,0.04); --glass-h: rgba(255,255,255,0.08);
-      --accent: #6366f1; --accent-l: #818cf8;
-      --ok: #10b981; --warn: #f59e0b; --err: #ef4444;
-      --t1: #f1f5f9; --t2: #94a3b8; --t3: #64748b;
-      --border: rgba(255,255,255,0.06); --border-h: rgba(255,255,255,0.12);
-      --font: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
-      --r: 10px;
-    }
-    html { font-size: 15px; -webkit-font-smoothing: antialiased; }
-    body { font-family: var(--font); background: var(--bg); color: var(--t1); min-height: 100vh; }
-    body::before { content:''; position:fixed; inset:0; background: radial-gradient(ellipse 80% 50% at 20% 0%, rgba(99,102,241,0.08) 0%, transparent 60%); pointer-events:none; z-index:0; }
 
-    .page { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
-    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
-    header h1 { font-size: 1.25rem; font-weight: 700; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    header a { color: var(--t2); text-decoration: none; font-size: 0.8rem; }
+    :root {
+      --bg0:      #08090a;
+      --bg1:      #0f1011;
+      --bg2:      #191a1b;
+      --bg3:      #1e1f21;
+      --bg4:      #28282c;
+      --t1:       #f7f8f8;
+      --t2:       #d0d6e0;
+      --t3:       #8a8f98;
+      --t4:       #62666d;
+      --brand:    #5e6ad2;
+      --accent:   #7170ff;
+      --accent-h: #828fff;
+      --brand-tint: rgba(113,112,255,0.12);
+      --ok:       #27a644;
+      --ok2:      #10b981;
+      --warn:     #f59e0b;
+      --err:      #ef4444;
+      --line:     rgba(255,255,255,0.08);
+      --line-sub: rgba(255,255,255,0.05);
+      --line-s:   #23252a;
+      --line-s2:  #34343a;
+      --shadow-sm: rgba(0,0,0,0.03) 0px 1.2px 0px 0px;
+      --shadow-md: rgba(0,0,0,0.4) 0px 2px 4px;
+      --shadow-lg: rgba(0,0,0,0) 0px 8px 2px, rgba(0,0,0,0.01) 0px 5px 2px, rgba(0,0,0,0.04) 0px 3px 2px, rgba(0,0,0,0.07) 0px 1px 1px, rgba(0,0,0,0.08) 0px 0px 1px;
+      --font:     'Inter', 'SF Pro Display', -apple-system, system-ui, sans-serif;
+      --mono:     'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+      --ot:       "cv01", "ss03";
+      --r:        6px;
+    }
+
+    html { font-size: 15px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); font-feature-settings: var(--ot); background: var(--bg0); color: var(--t2); min-height: 100vh; letter-spacing: -0.165px; }
+
+    .page { max-width: 1240px; margin: 0 auto; padding: 1.5rem 2rem; }
+
+    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line-sub); }
+    header h1 { font-size: 1rem; font-weight: 590; color: var(--t1); letter-spacing: -0.165px; font-feature-settings: var(--ot); }
+    header a { color: var(--t3); text-decoration: none; font-size: 0.82rem; font-weight: 510; display: flex; align-items: center; gap: 6px; font-feature-settings: var(--ot); }
     header a:hover { color: var(--t1); }
 
-    .toolbar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .btn { display:inline-flex; align-items:center; gap:0.4rem; padding:0.45rem 0.9rem; border:1px solid var(--border); border-radius:var(--r); background:var(--glass); color:var(--t1); font-family:var(--font); font-size:0.8rem; font-weight:500; cursor:pointer; transition:all 150ms; }
-    .btn:hover { background:var(--glass-h); border-color:var(--border-h); transform:translateY(-1px); }
-    .btn-primary { background:linear-gradient(135deg,#6366f1,#8b5cf6); border-color:transparent; color:#fff; }
-    .btn-primary:hover { box-shadow:0 0 20px rgba(99,102,241,0.25); }
-    .btn-danger { border-color: rgba(239,68,68,0.3); color: var(--err); }
-    .btn-danger:hover { background: rgba(239,68,68,0.1); }
+    .toolbar { display: flex; gap: 0.4rem; margin-bottom: 1.25rem; flex-wrap: wrap; align-items: center; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.38rem 0.85rem; border: 1px solid var(--line-s); border-radius: var(--r);
+      background: rgba(255,255,255,0.02); color: var(--t2);
+      font-family: var(--font); font-feature-settings: var(--ot);
+      font-size: 0.8rem; font-weight: 510; cursor: pointer;
+      transition: background 140ms, border-color 140ms, color 140ms;
+      box-shadow: var(--shadow-sm);
+    }
+    .btn:hover { background: rgba(255,255,255,0.05); border-color: var(--line-s2); color: var(--t1); }
+    .btn-primary { background: var(--brand); border-color: transparent; color: #fff; font-weight: 590; }
+    .btn-primary:hover { background: var(--accent-h); border-color: transparent; color: #fff; }
+    .btn-secondary { background: rgba(255,255,255,0.04); }
+    .btn-danger { border-color: rgba(239,68,68,0.2); color: var(--err); background: rgba(255,255,255,0.02); }
+    .btn-danger:hover { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.35); }
 
     input[type="text"], input[type="number"], select, textarea {
-      width:100%; padding:0.4rem 0.6rem; background:var(--glass); border:1px solid var(--border);
-      border-radius:var(--r); color:var(--t1); font-family:var(--font); font-size:0.8rem;
-      transition: border-color 150ms;
+      width: 100%; padding: 0.4rem 0.65rem;
+      background: rgba(255,255,255,0.02); border: 1px solid var(--line);
+      border-radius: var(--r); color: var(--t1); font-family: var(--font);
+      font-feature-settings: var(--ot); font-size: 0.82rem;
+      transition: border-color 140ms, box-shadow 140ms;
     }
-    input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 2px rgba(99,102,241,0.15); }
+    input:focus, select:focus, textarea:focus {
+      outline: none; border-color: var(--accent);
+      box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    }
+    input::placeholder { color: var(--t4); }
     textarea { font-family: var(--mono); min-height: 200px; resize: vertical; }
 
-    .search-box { max-width: 300px; }
-    .search-box input { padding-left: 2rem; }
-    .search-box { position: relative; }
-    .search-box::before { content: '🔍'; position: absolute; left: 0.6rem; top: 50%; transform: translateY(-50%); font-size: 0.75rem; }
+    .search-box { max-width: 280px; position: relative; }
+    .search-box input { padding-left: 2.2rem; }
+    .search-box::before { content: '🔍'; position: absolute; left: 0.65rem; top: 50%; transform: translateY(-50%); font-size: 0.75rem; pointer-events: none; }
 
-    .tab-bar { display:flex; gap:2px; background:var(--glass); border-radius:var(--r); padding:3px; margin-bottom:1.5rem; }
-    .tab-bar button { flex:1; padding:0.4rem 0.8rem; border:none; background:transparent; color:var(--t2); font-family:var(--font); font-size:0.8rem; font-weight:500; cursor:pointer; border-radius:8px; transition:all 200ms; }
-    .tab-bar button:hover { color:var(--t1); }
-    .tab-bar button.active { color:var(--t1); background:var(--bg3); box-shadow:0 1px 2px rgba(0,0,0,0.3); }
+    .tab-bar {
+      display: flex; gap: 2px;
+      background: rgba(255,255,255,0.02); border-radius: var(--r);
+      padding: 3px; margin-bottom: 1.25rem; border: 1px solid var(--line-sub);
+    }
+    .tab-bar button {
+      flex: 1; padding: 0.38rem 0.8rem; border: none; background: transparent;
+      color: var(--t4); font-family: var(--font); font-feature-settings: var(--ot);
+      font-size: 0.8rem; font-weight: 510; cursor: pointer; border-radius: 4px; transition: all 160ms;
+    }
+    .tab-bar button:hover { color: var(--t2); background: rgba(255,255,255,0.04); }
+    .tab-bar button.active { color: var(--t1); background: rgba(255,255,255,0.05); font-weight: 590; box-shadow: var(--shadow-sm); }
 
     .panel { display: none; }
-    .panel.active { display: block; animation: fadeIn 200ms ease-out; }
-    @keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+    .panel.active { display: block; animation: fadeIn 160ms ease-out; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(3px); } to { opacity:1; transform:none; } }
 
     /* Item cards */
-    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
-    .item-card { background: var(--glass); border: 1px solid var(--border); border-radius: var(--r); padding: 0.75rem; cursor: pointer; transition: all 150ms; }
-    .item-card:hover { background: var(--glass-h); border-color: var(--border-h); transform: translateY(-1px); }
-    .item-card.editing { border-color: var(--accent); background: rgba(99,102,241,0.06); }
-    .item-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 0.5rem; }
+    .item-card { background: rgba(255,255,255,0.02); border: 1px solid var(--line-sub); border-radius: var(--r); padding: 0.75rem; cursor: pointer; transition: all 140ms; }
+    .item-card:hover { background: rgba(255,255,255,0.04); border-color: var(--line); }
+    .item-card.editing { border-color: var(--accent); background: var(--brand-tint); }
+    .item-name { font-size: 0.85rem; font-weight: 510; margin-bottom: 0.4rem; color: var(--t1); font-feature-settings: var(--ot); }
     .item-stats { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-    .stat-tag { font-size: 0.7rem; padding: 2px 6px; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--t2); font-family: var(--mono); }
+    .stat-tag { font-size: 0.7rem; padding: 1px 7px; background: transparent; border: 1px solid var(--line-s); border-radius: 9999px; color: var(--t3); font-family: var(--mono); }
 
     /* Editor modal */
-    .modal-bg { position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:200; display:flex; align-items:center; justify-content:center; }
-    .modal-bg.hidden { display: none; }
-    .modal { background:var(--bg3); border:1px solid var(--border); border-radius:14px; padding:1.5rem; max-width:600px; width:90vw; max-height:80vh; overflow-y:auto; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
-    .modal h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
-    .modal .form-group { margin-bottom: 0.75rem; }
-    .modal .form-group label { display:block; font-size:0.7rem; color:var(--t3); margin-bottom:0.25rem; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; }
+    .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 200; display: flex; align-items: center; justify-content: center; }
+    .modal-bg.hidden, .hidden { display: none !important; }
+    .modal { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem; max-width: 620px; width: 92vw; max-height: 84vh; overflow-y: auto; box-shadow: var(--shadow-lg); }
+    .modal h3 { font-size: 0.95rem; font-weight: 590; margin-bottom: 1rem; color: var(--t1); font-feature-settings: var(--ot); }
+    .modal .form-group { margin-bottom: 0.7rem; }
+    .modal .form-group label { display: block; font-size: 0.68rem; color: var(--t4); margin-bottom: 0.3rem; font-weight: 510; text-transform: uppercase; letter-spacing: 0.06em; }
     .modal .form-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem; }
     .modal .form-row .btn { padding: 0.4rem; }
-    .modal .btn-row { display:flex; gap:0.5rem; margin-top:1rem; justify-content:flex-end; }
+    .modal .btn-row { display: flex; gap: 0.5rem; margin-top: 1.1rem; justify-content: flex-end; }
 
-    .toast { position:fixed; bottom:1.5rem; right:1.5rem; padding:0.6rem 1rem; border-radius:var(--r); font-size:0.8rem; font-weight:500; z-index:300; animation:slideUp 300ms ease-out; }
-    .toast.ok { background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:var(--ok); }
-    .toast.err { background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.3); color:var(--err); }
-    @keyframes slideUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+    .toast { position: fixed; bottom: 1.5rem; right: 1.5rem; padding: 0.55rem 1rem; border-radius: var(--r); font-size: 0.8rem; font-weight: 510; z-index: 300; animation: slideUp 260ms ease-out; box-shadow: var(--shadow-md); }
+    .toast.ok { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); color: var(--ok2); }
+    .toast.err { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25); color: var(--err); }
+    @keyframes slideUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
 
-    .count-badge { font-size: 0.7rem; padding: 1px 6px; background: rgba(99,102,241,0.15); color: var(--accent-l); border-radius: 99px; margin-left: 0.4rem; }
-    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:transparent; } ::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.1); border-radius:99px; }
+    .count-badge { font-size: 0.68rem; padding: 1px 7px; background: var(--brand-tint); color: var(--accent); border-radius: 9999px; margin-left: 0.4rem; font-weight: 510; border: 1px solid rgba(113,112,255,0.2); }
+    ::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 99px; } ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+
     .category-section { margin-bottom: 2rem; }
-    .category-title { font-size: 1rem; font-weight: 600; color: var(--accent-l); margin-bottom: 0.75rem; display:flex; align-items:center; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    .category-title { font-size: 0.82rem; font-weight: 590; color: var(--t2); margin-bottom: 0.7rem; display: flex; align-items: center; border-bottom: 1px solid var(--line-sub); padding-bottom: 0.5rem; letter-spacing: -0.13px; font-feature-settings: var(--ot); }
 
-    /* Fix select option visibility */
-    select option {
-      background-color: var(--bg3);
-      color: var(--t1);
-    }
-    select optgroup {
-      background-color: var(--bg3);
-      color: var(--accent-l);
-      font-weight: 600;
-    }
+    select option { background-color: var(--bg2); color: var(--t1); }
+    select optgroup { background-color: var(--bg2); color: var(--accent); font-weight: 590; }
+
+    #config-monster-container .form-group,
+    #config-base-container .form-group { display: grid; grid-template-columns: 1fr 130px; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
+    #config-monster-container label,
+    #config-base-container label { font-size: 0.8rem; color: var(--t3); font-weight: 510; font-feature-settings: var(--ot); }
   </style>
+
 </head>
 <body>
   <div class="page">
@@ -123,6 +167,7 @@
     <div class="tab-bar" id="tabs">
       <button type="button" class="active" data-tab="singles">Single Items <span class="count-badge" id="count-singles">0</span></button>
       <button type="button" data-tab="sets">Set Bonuses <span class="count-badge" id="count-sets">0</span></button>
+      <button type="button" data-tab="config">Global Config</button>
     </div>
 
     <div class="panel active" id="panel-singles">
@@ -131,21 +176,38 @@
     <div class="panel" id="panel-sets">
       <div id="grid-sets-container"></div>
     </div>
+    <div class="panel" id="panel-config">
+      <div class="category-section">
+        <h2 class="category-title">Monster & System Stats</h2>
+        <div id="config-monster-container"></div>
+      </div>
+      <div class="category-section">
+        <h2 class="category-title">Default Base Character Stats</h2>
+        <div id="config-base-container"></div>
+      </div>
+      <div class="toolbar" style="justify-content: flex-end; margin-top: 1rem;">
+        <button type="button" class="btn btn-primary" id="btn-save-config">💾 Save Config</button>
+      </div>
+    </div>
 
     <!-- Edit Item Modal -->
     <div class="modal-bg hidden" id="modal-edit">
       <div class="modal">
+        <div class="modal-content" style="max-width: 600px;">
         <h3 id="modal-edit-title">Edit Item</h3>
-        <div class="form-group">
-          <label>Item Name</label>
-          <input type="text" id="edit-name" />
+        
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label style="display:block; margin-bottom:0.25rem; font-weight:bold;">Item Name</label>
+          <input type="text" id="edit-name" class="form-control" placeholder="Item Name">
         </div>
-        <div class="form-group" id="edit-type-container">
-          <label>Category Type</label>
-          <select id="edit-type">
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label style="display:block; margin-bottom:0.25rem; font-weight:bold;">Category Type</label>
+          <select id="edit-type" class="form-control">
             <option value="">None (Auto-detect)</option>
             <optgroup label="Gear">
               <option value="Weapon">Weapon</option>
+              <option value="Engraving">Engraving</option>
               <option value="Head">Head</option>
               <option value="Armor">Armor</option>
               <option value="Hand">Hand</option>
@@ -212,35 +274,21 @@
             </optgroup>
             <option value="Other">Other</option>
           </select>
+        </div>
+        </div>
 
-        <div id="edit-stats-list"></div>
-        <button type="button" class="btn btn-sm" id="btn-add-stat" style="margin-bottom:0.75rem">➕ Add Stat</button>
-        <div class="btn-row">
-          <button type="button" class="btn btn-danger" id="btn-delete-item">🗑️ Delete</button>
-          <button type="button" class="btn" id="btn-cancel-edit">Cancel</button>
-          <button type="button" class="btn btn-primary" id="btn-save-edit">Save</button>
+        <div id="tiers-container" style="max-height: 50vh; overflow-y: auto; margin-bottom: 1rem; padding-right: 0.5rem;">
+          <!-- Tiers (Base, State 1, etc.) will be rendered here -->
+        </div>
+
+        <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+          <button type="button" id="btn-add-state" class="btn btn-secondary">➕ Add State</button>
+          <div style="flex:1"></div>
+          <button type="button" id="btn-delete-item" class="btn btn-danger">🗑️ Delete Item</button>
+          <button type="button" id="btn-cancel-edit" class="btn">Cancel</button>
+          <button type="button" id="btn-save-edit" class="btn btn-primary">💾 Save</button>
         </div>
       </div>
-    </div>
-
-    <!-- Edit Set Modal -->
-    <div class="modal-bg hidden" id="modal-edit-set">
-      <div class="modal" style="max-height: 90vh; overflow-y: auto; max-width: 600px;">
-        <h3 id="modal-edit-set-title">Edit Set</h3>
-        <div class="form-group">
-          <label>Set Name</label>
-          <input type="text" id="edit-set-name" style="padding: 0.5rem; background: var(--bg-deep); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 4px; width: 100%; box-sizing: border-box;" />
-        </div>
-        <div id="edit-set-tiers"></div>
-        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
-          <input type="number" id="edit-set-new-tier-count" placeholder="Pieces (e.g. 2)" style="width: 120px; padding: 0.5rem; background: var(--bg-deep); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 4px;" />
-          <button type="button" class="btn btn-sm" id="btn-add-set-tier">➕ Add Tier</button>
-        </div>
-        <div class="btn-row">
-          <button type="button" class="btn btn-danger" id="btn-delete-set">🗑️ Delete Set</button>
-          <button type="button" class="btn" id="btn-cancel-set-edit">Cancel</button>
-          <button type="button" class="btn btn-primary" id="btn-save-set-edit">Save</button>
-        </div>
       </div>
     </div>
 
@@ -258,27 +306,23 @@
   </div>
 
   <script type="module">
-    import { SLOTS, EMBLEMS, PETS, CARDS, FASHION, FASHION_EMBLEMS, BUFFS, ARMOR_SETS, ACC_SETS } from './src/options.js';
-    import { fetchGameData, saveGameData, subscribeToGameData, saveSingleItem, deleteSingleItem, saveSetItem, deleteSetItem } from './src/firebase.js';
-
+    import { SLOTS, EMBLEMS, PETS, CARDS, FASHION, FASHION_EMBLEMS, BUFFS } from './src/options.js';
+    import { fetchGameData, saveGameData, subscribeToGameData, saveSingleItem, deleteSingleItem, saveSetItem, deleteSetItem, saveConfig } from './src/firebase.js';
 
     function getCategory(name) {
       if (data && data.Single && data.Single[name]) {
         const customType = data.Single[name].type || data.Single[name].Type;
         if (customType) return customType;
       }
-
       if (SLOTS.weapon.options && SLOTS.weapon.options.includes(name)) return 'Weapon';
       if (SLOTS.treasure.options && SLOTS.treasure.options.includes(name)) return 'Treasure';
       if (PETS.options.includes(name)) return 'Pet';
       if (CARDS.options.includes(name)) return 'Card';
-      
       for (const v of Object.values(EMBLEMS)) if (v.options && v.options.includes(name)) return v.label;
       for (const v of Object.values(FASHION)) if (v.options && v.options.includes(name)) return v.label;
       for (const v of Object.values(FASHION_EMBLEMS)) if (v.options && v.options.includes(name)) return v.label;
       for (const v of Object.values(BUFFS)) if (v.options && v.options.includes(name)) return v.label;
       for (const v of Object.values(PETS.souls)) if (v.options && v.options.includes(name)) return v.label;
-
       if (name.endsWith(' Head')) return 'Head';
       if (name.endsWith(' Armor')) return 'Armor';
       if (name.endsWith(' Hand')) return 'Hand';
@@ -289,16 +333,14 @@
       if (name.endsWith(' Ring')) return 'Ring';
       if (name.endsWith(' Seal')) return 'Seal';
       if (name.endsWith(' Talisman')) return 'Talisman';
-
       return 'Other';
     }
 
     let data = null;
     let editingKey = null;
     let editingSection = 'Single';
-    let isEditing = false; // Prevention lock
+    let isEditing = false;
 
-    // --- Toast ---
     function toast(msg, type = 'ok') {
       const el = document.createElement('div');
       el.className = `toast ${type}`;
@@ -307,10 +349,7 @@
       setTimeout(() => el.remove(), 2500);
     }
 
-    // --- Load ---
-    document.getElementById('btn-load').addEventListener('click', () => {
-      document.getElementById('file-input').click();
-    });
+    document.getElementById('btn-load').addEventListener('click', () => document.getElementById('file-input').click());
 
     document.getElementById('file-input').addEventListener('change', (e) => {
       const file = e.target.files[0];
@@ -322,29 +361,19 @@
           enableUI();
           renderAll();
           toast(`Loaded ${Object.keys(data.Single || {}).length} items, ${Object.keys(data.Sets || {}).length} sets`);
-        } catch (err) {
-          toast('Invalid JSON: ' + err.message, 'err');
-        }
+        } catch (err) { toast('Invalid JSON: ' + err.message, 'err'); }
       };
       reader.readAsText(file);
       e.target.value = '';
     });
 
-    // Real-time Cloud Sync
     function initSync() {
       subscribeToGameData((newData) => {
-        // Only update UI if user is NOT currently editing something
-        // to prevent modal data from disappearing while typing
         if (!isEditing) {
           data = newData;
           enableUI();
           renderAll();
-          console.log("Cloud data synced!");
-        } else {
-          // If editing, we still update the background data 
-          // so when they save, they have the latest base
-          data = newData; 
-        }
+        } else { data = newData; }
       });
     }
     initSync();
@@ -358,7 +387,6 @@
       document.getElementById('btn-raw').disabled = false;
     }
 
-    // --- Tabs ---
     document.getElementById('tabs').addEventListener('click', (e) => {
       const btn = e.target.closest('button');
       if (!btn) return;
@@ -368,12 +396,70 @@
       document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
     });
 
-    // --- Render ---
+
+    function renderConfig() {
+      if (!data) return;
+      const config = data.Config || {};
+      const monsterContainer = document.getElementById('config-monster-container');
+      const baseContainer = document.getElementById('config-base-container');
+      
+      monsterContainer.innerHTML = '';
+      baseContainer.innerHTML = '';
+
+      // Standard Config
+      const monsterStats = {
+        'Monster Def (flat)': config['Monster Def (flat)'] || 5000,
+        'Effect Ratio (%)': config['Effect Ratio (%)'] || 5.0
+      };
+
+      for (const [key, val] of Object.entries(monsterStats)) {
+        const row = document.createElement('div');
+        row.className = 'form-group';
+        row.innerHTML = `<label>${key}</label><input type="number" class="config-val" data-key="${key}" value="${val}" step="0.1">`;
+        monsterContainer.appendChild(row);
+      }
+
+      // Default Base Status
+      const defaultBase = config.DefaultBaseStatus || {
+        'Elem Boost (%)': 0, 'Crit Rate (%)': 0, 'Crit Dmg (%)': 56, 'Dmg Debuff (%)': 0, 'DMG to Boss (%)': 0, 'Dmg Bonus (%)': 3,
+        'Skill DMG (%)': 0, 'Resonance DMG (%)': 20, 'Elem Dmg (%)': 0, 'Atk (flat)': 201,
+        'Atk Bonus (%)': 0, 'Strength (flat)': 685, 'Agility (flat)': 445, 'Intelligence (flat)': 0, 'Strength Bonus (%)': 0,
+        'PDEF Shred (flat)': 0, 'Def Break Bonus (%)': 0, 'PEN (flat)': 0, 'Additional (%)': 0,
+        'Def Reduction (%)': 0, 'Skill Ratio (%)': 0,
+        'Skill DMG Boost (%)': 0, 'Cooldown (flat)': 61.8, 'Class DMG Bonus (%)': 0,
+        'ASPD (%)': 0, 'Special (%)': 0,
+        'Resonance Effect I': 0, 'Resonance Effect II': 0, 'Cooldown Reduction (%)': 0
+      };
+
+      for (const [key, val] of Object.entries(defaultBase)) {
+        const row = document.createElement('div');
+        row.className = 'form-group';
+        row.innerHTML = `<label>${key}</label><input type="number" class="base-val" data-key="${key}" value="${val}" step="0.1">`;
+        baseContainer.appendChild(row);
+      }
+    }
+
+    document.getElementById('btn-save-config')?.addEventListener('click', async () => {
+      const config = { DefaultBaseStatus: {} };
+      document.querySelectorAll('.config-val').forEach(input => {
+        config[input.dataset.key] = parseFloat(input.value) || 0;
+      });
+      document.querySelectorAll('.base-val').forEach(input => {
+        config.DefaultBaseStatus[input.dataset.key] = parseFloat(input.value) || 0;
+      });
+      
+      try {
+        await saveConfig(config);
+        data.Config = config;
+        toast('Config Saved to Cloud');
+      } catch (err) { toast('Error: ' + err.message, 'err'); }
+    });
     function renderAll() {
       if (!data) return;
       const filter = document.getElementById('search').value.toLowerCase();
       renderCategorizedGrid('grid-singles-container', data.Single || {}, filter);
       renderSets('grid-sets-container', data.Sets || {}, filter);
+      renderConfig();
       document.getElementById('count-singles').textContent = Object.keys(data.Single || {}).length;
       document.getElementById('count-sets').textContent = Object.keys(data.Sets || {}).length;
     }
@@ -381,7 +467,6 @@
     function renderCategorizedGrid(containerId, items, filter) {
       const container = document.getElementById(containerId);
       container.innerHTML = '';
-      
       const groups = {};
       for (const [name, stats] of Object.entries(items)) {
         if (filter && !name.toLowerCase().includes(filter)) continue;
@@ -389,28 +474,23 @@
         if (!groups[cat]) groups[cat] = [];
         groups[cat].push({ name, stats });
       }
-
       const catOrder = ['Weapon', 'Armor', 'Accessory', 'Treasure', 'Emblem', 'Pet', 'Pet Soul', 'Card', 'Fashion', 'Fashion Emblem', 'Buff', 'Other'];
       const sortedCats = Object.keys(groups).sort((a, b) => {
         let ia = catOrder.indexOf(a); if(ia === -1) ia = 99;
         let ib = catOrder.indexOf(b); if(ib === -1) ib = 99;
         return ia - ib;
       });
-
       for (const cat of sortedCats) {
         const section = document.createElement('div');
         section.className = 'category-section';
         section.innerHTML = `<h2 class="category-title">${cat} <span class="count-badge">${groups[cat].length}</span></h2><div class="item-grid"></div>`;
         const grid = section.querySelector('.item-grid');
-        
         groups[cat].sort((a, b) => a.name.localeCompare(b.name));
-
         for (const item of groups[cat]) {
           const card = document.createElement('div');
           card.className = 'item-card';
-          // Filter out 'type' from stats display
           const displayStats = Object.entries(item.stats)
-            .filter(([k]) => k.toLowerCase() !== 'type')
+            .filter(([k]) => k.toLowerCase() !== 'type' && k.toLowerCase() !== 'tiers')
             .map(([k,v]) => `<span class="stat-tag">${k}: ${v}</span>`)
             .join('');
           card.innerHTML = `<div class="item-name">${item.name}</div><div class="item-stats">${displayStats}</div>`;
@@ -423,85 +503,94 @@
 
     function renderSets(containerId, sets, filter) {
       const container = document.getElementById(containerId);
-      container.innerHTML = '<div class="item-grid" id="sets-grid-inner"></div>';
+      container.innerHTML = '<div class="item-grid"></div>';
       const grid = container.querySelector('.item-grid');
-      
       const sortedSets = Object.keys(sets).sort((a, b) => a.localeCompare(b));
-
       for (const setName of sortedSets) {
         if (filter && !setName.toLowerCase().includes(filter)) continue;
         const tiers = sets[setName];
         const numPieces = Object.keys(tiers).length;
-        
         const card = document.createElement('div');
         card.className = 'item-card';
         card.style.cursor = 'pointer';
-        card.innerHTML = `<div class="item-name" style="font-size: 1.1rem; color: var(--primary-color)">${setName}</div><div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem">${numPieces} Tiers</div>`;
-        card.addEventListener('click', () => openSetEditor(setName));
+        card.innerHTML = `<div class="item-name" style="color: var(--accent)">${setName}</div><div style="color: var(--t3); font-size: 0.8rem; margin-top: 0.3rem">${numPieces} Tiers</div>`;
+        card.addEventListener('click', () => openEditor(setName, 'Sets'));
         grid.appendChild(card);
       }
     }
 
     document.getElementById('search').addEventListener('input', renderAll);
 
-    // --- Item Editor ---
-    function openEditor(name, section) {
-      editingKey = name;
+    // --- Unified Editor Logic ---
+    function openEditor(key, section = 'Single') {
+      editingKey = key;
       editingSection = section;
-      const modal = document.getElementById('modal-edit');
-      document.getElementById('modal-edit-title').textContent = `Edit: ${name}`;
-      document.getElementById('edit-name').value = name;
-      const stats = (section === 'Single' ? data.Single : data.Sets)[name] || {};
+      const stats = data[section][key] || {};
       
-      if (section === 'Single') {
-        document.getElementById('edit-type-container').style.display = 'block';
-        document.getElementById('edit-type').value = stats.type || stats.Type || '';
+      document.getElementById('modal-edit-title').textContent = `${key === '' ? 'Add' : 'Edit'} ${section === 'Sets' ? 'Set' : 'Item'}`;
+      document.getElementById('edit-name').value = key;
+      document.getElementById('edit-name').disabled = false; // Enabled renaming
+      
+      const typeSelect = document.getElementById('edit-type');
+      if (section === 'Sets') {
+        typeSelect.parentElement.style.display = 'none';
+        renderTiers(stats, false, true);
       } else {
-        document.getElementById('edit-type-container').style.display = 'none';
+        typeSelect.parentElement.style.display = 'block';
+        const type = stats.type || stats.Type || '';
+        // If the type is not in the select options, add it
+        if (type && ![...typeSelect.options].some(opt => opt.value === type)) {
+          const newOpt = document.createElement('option');
+          newOpt.value = type;
+          newOpt.textContent = type + ' (Custom)';
+          typeSelect.appendChild(newOpt);
+        }
+        typeSelect.value = type;
+        
+        let tiers = stats.tiers;
+        if (!tiers) {
+          const cleanBase = { ...stats };
+          delete cleanBase.type;
+          delete cleanBase.Type;
+          tiers = { "0": cleanBase };
+        }
+        renderTiers(tiers, type === 'Pet' || type === 'Engraving', false);
       }
 
-      renderStatFields(stats);
       isEditing = true;
-      modal.classList.remove('hidden');
+      document.getElementById('modal-edit').classList.remove('hidden');
     }
 
-    function openSetEditor(setName) {
-      editingKey = setName;
-      editingSection = 'Set';
-      const modal = document.getElementById('modal-edit-set');
-      document.getElementById('modal-edit-set-title').textContent = `Edit Set: ${setName}`;
-      document.getElementById('edit-set-name').value = setName;
-      
-      const tiers = data.Sets[setName] || {};
-      renderSetTiers(tiers);
-      
-      isEditing = true;
-      modal.classList.remove('hidden');
-    }
-
-    function renderSetTiers(tiers) {
-      const container = document.getElementById('edit-set-tiers');
+    function renderTiers(tiers, isTieredType = false, isSet = false) {
+      const container = document.getElementById('tiers-container');
       container.innerHTML = '';
-      const sortedTiers = Object.keys(tiers).sort((a, b) => Number(a) - Number(b));
-      
-      for (const count of sortedTiers) {
-        addTierSection(container, count, tiers[count]);
+      const sortedKeys = Object.keys(tiers).sort((a, b) => parseInt(a) - parseInt(b));
+      for (const key of sortedKeys) {
+        addTierSection(container, key, tiers[key], isTieredType, isSet);
+      }
+      if (sortedKeys.length === 0 && !isSet) {
+        addTierSection(container, "0", {}, isTieredType, false);
       }
     }
 
-    function addTierSection(container, count, stats) {
+    function addTierSection(container, tierId, stats, isTieredType = false, isSet = false) {
       const tierSection = document.createElement('div');
-      tierSection.className = 'set-tier-section';
-      tierSection.dataset.count = count;
-      tierSection.style.marginBottom = '1rem';
-      tierSection.style.padding = '0.75rem';
-      tierSection.style.background = 'rgba(255,255,255,0.05)';
+      tierSection.className = 'tier-section';
+      tierSection.dataset.tier = tierId;
+      tierSection.style.marginBottom = '1.5rem';
+      tierSection.style.padding = '1rem';
+      tierSection.style.background = isSet ? 'rgba(255,255,255,0.05)' : 'rgba(99,102,241,0.08)';
+      tierSection.style.border = '1px solid rgba(99,102,241,0.2)';
       tierSection.style.borderRadius = '8px';
       
+      let title = '';
+      if (isSet) { title = `${tierId} Pieces`; }
+      else { title = tierId === '0' ? 'Base Stats' : (isTieredType ? 'State ' : 'Tier ') + tierId; }
+
       tierSection.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-          <h4 style="margin:0; font-size:1.1rem; color:var(--text-glow)">${count} Pieces</h4>
-          <button type="button" class="btn btn-danger btn-sm btn-drop-tier">🗑️ Drop</button>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+          <h4 style="margin:0; font-size:1.1rem; color:var(--accent-l)">${title}</h4>
+          ${(tierId !== '0' || isSet) ? '<button type="button" class="btn btn-danger btn-sm btn-drop-tier">🗑️ Remove</button>' : ''}
         </div>
         <div class="tier-stats-list"></div>
         <button type="button" class="btn btn-sm btn-add-tier-stat" style="margin-top:0.5rem">➕ Add Stat</button>
@@ -509,246 +598,146 @@
       
       const statsList = tierSection.querySelector('.tier-stats-list');
       for (const [key, val] of Object.entries(stats || {})) {
+        if (key.toLowerCase() === 'type') continue;
         addStatRow(statsList, key, val);
       }
       
-      tierSection.querySelector('.btn-drop-tier').addEventListener('click', () => tierSection.remove());
       tierSection.querySelector('.btn-add-tier-stat').addEventListener('click', () => addStatRow(statsList));
-      
+      if (tierId !== '0' || isSet) {
+        tierSection.querySelector('.btn-drop-tier').addEventListener('click', () => tierSection.remove());
+      }
       container.appendChild(tierSection);
     }
 
-    function renderStatFields(stats) {
-      const container = document.getElementById('edit-stats-list');
-      container.innerHTML = '';
-      for (const [key, val] of Object.entries(stats)) {
-        if (key.toLowerCase() === 'type') continue;
-        addStatRow(container, key, val);
-      }
-    }
-
-    const ALL_STATS = [
-      "Atk (flat)", "Atk Bonus (%)", "Crit Rate (%)", "Crit Dmg (%)", "Elem Boost (%)", "Elem Dmg (%)", "Dmg Bonus (%)", "Skill DMG (%)", "Dmg Debuff (%)",
-      "DMG to Boss (%)", "Def Reduction (%)", "PDEF Shred (flat)", "Def Break Bonus (%)", "PEN (flat)", "Additional (%)", "Special (%)", "Class DMG Bonus (%)",
-      "Skill Ratio (%)", "Skill DMG Boost (%)", "ASPD (%)", "Cooldown (flat)", "Effect Ratio (%)", "Cooldown Reduction (%)",
-      "Resonance DMG (%)", "Strength (flat)", "Strength Bonus (%)", "Agility (flat)", "Intelligence (flat)", "HP (flat)", "PDEF (flat)", "MDEF (flat)", "Monster Def (flat)",
-      "Resonance Effect I", "Resonance Effect II",
-      "Adaptation", "Transcendence", "Destruction", "Swiftness", "Combo", "Offensive", "Suppress", "Unyielding", "Sprint",
-      "Extraordinary", "Quenching", "Advanced Tech", "Status Break", "Basic", "Pierce", "Siege", "Charge", "Wall Break",
-      "Excellence", "Smite", "Alliance", "Unbreakable", "Adversity", "Fullness", "Air Supremacy",
-      "Elem Master", "Challenger", "Resonance", "Evasion", "Elem Resist", "Recovery", "Solitary", "Lightning Summon"
-    ];
+    const ALL_STATS = ["Atk (flat)", "Atk Bonus (%)", "Crit Rate (%)", "Crit Dmg (%)", "Elem Boost (%)", "Elem Dmg (%)", "Dmg Bonus (%)", "Skill DMG (%)", "Dmg Debuff (%)", "DMG to Boss (%)", "Def Reduction (%)", "PDEF Shred (flat)", "Def Break Bonus (%)", "PEN (flat)", "Additional (%)", "Special (%)", "Class DMG Bonus (%)", "Skill Ratio (%)", "Skill DMG Boost (%)", "ASPD (%)", "Cooldown (flat)", "Effect Ratio (%)", "Cooldown Reduction (%)", "Resonance DMG (%)", "Strength (flat)", "Strength Bonus (%)", "Agility (flat)", "Intelligence (flat)", "HP (flat)", "PDEF (flat)", "MDEF (flat)", "Monster Def (flat)", "Resonance Effect I", "Resonance Effect II", "Adaptation", "Transcendence", "Destruction", "Swiftness", "Combo", "Offensive", "Suppress", "Unyielding", "Sprint", "Extraordinary", "Quenching", "Advanced Tech", "Status Break", "Basic", "Pierce", "Siege", "Charge", "Wall Break", "Excellence", "Smite", "Alliance", "Unbreakable", "Adversity", "Fullness", "Air Supremacy", "Elem Master", "Challenger", "Resonance", "Evasion", "Elem Resist", "Recovery", "Solitary", "Lightning Summon"];
 
     function addStatRow(container, key = '', val = 0) {
       const row = document.createElement('div');
       row.className = 'form-row';
-      
-      let optionsHTML = '<option value="">Select Stat</option>';
-      
-      const setKeys = data && data.Sets ? Object.keys(data.Sets) : [];
-      let isCustom = key !== '' && key.toLowerCase() !== 'type' && !ALL_STATS.includes(key) && !setKeys.includes(key);
-      
-      optionsHTML += '<optgroup label="Standard Stats">';
-      for (const stat of ALL_STATS) {
-        optionsHTML += `<option value="${stat}" ${key === stat ? 'selected' : ''}>${stat}</option>`;
-      }
+      let optionsHTML = '<option value="">Select Stat</option><optgroup label="Standard Stats">';
+      for (const stat of ALL_STATS) optionsHTML += `<option value="${stat}" ${key === stat ? 'selected' : ''}>${stat}</option>`;
       optionsHTML += '</optgroup>';
       
+      const setKeys = data && data.Sets ? Object.keys(data.Sets) : [];
       if (setKeys.length > 0) {
         optionsHTML += '<optgroup label="Set Bonuses">';
-        for (const setKey of setKeys) {
-          optionsHTML += `<option value="${setKey}" ${key === setKey ? 'selected' : ''}>${setKey} (Set)</option>`;
-        }
+        for (const setKey of setKeys) optionsHTML += `<option value="${setKey}" ${key === setKey ? 'selected' : ''}>${setKey} (Set)</option>`;
         optionsHTML += '</optgroup>';
       }
       
-      if (isCustom) {
+      if (key !== '' && !ALL_STATS.includes(key) && !setKeys.includes(key)) {
         optionsHTML += `<option value="${key}" selected>${key} (Custom)</option>`;
       }
       
-      row.innerHTML = `<select class="stat-key">${optionsHTML}</select><input type="number" class="stat-val" value="${val}" step="0.1" placeholder="Value"><button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">✕</button>`;
+      row.innerHTML = `<input type="text" class="stat-key" list="stat-keys-list" value="${key}" placeholder="Stat Name"><input type="number" class="stat-val" value="${val}" step="0.1" placeholder="Value"><button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">✕</button>`;
       container.appendChild(row);
     }
 
-    document.getElementById('btn-add-stat').addEventListener('click', () => {
-      addStatRow(document.getElementById('edit-stats-list'));
+    document.getElementById('btn-add-state').addEventListener('click', () => {
+      const container = document.getElementById('tiers-container');
+      const existingTiers = Array.from(container.querySelectorAll('.tier-section')).map(s => parseInt(s.dataset.tier) || 0);
+      const isSet = editingSection === 'Sets';
+      let nextTier = 0;
+      if (isSet) {
+        const count = prompt('Enter Piece Count (e.g. 3):');
+        if (!count || isNaN(count)) return;
+        nextTier = parseInt(count);
+      } else { nextTier = Math.max(0, ...existingTiers) + 1; }
+      if (container.querySelector(`[data-tier="${nextTier}"]`)) return toast('Tier already exists', 'err');
+      const type = document.getElementById('edit-type').value;
+      addTierSection(container, nextTier.toString(), {}, type === 'Pet' || type === 'Engraving', isSet);
     });
 
     document.getElementById('btn-cancel-edit').addEventListener('click', () => {
       document.getElementById('modal-edit').classList.add('hidden');
-      document.getElementById('edit-name').disabled = false;
       isEditing = false;
     });
 
     document.getElementById('btn-save-edit').addEventListener('click', async () => {
       const newName = document.getElementById('edit-name').value.trim();
       if (!newName) return toast('Name required', 'err');
-
+      const isSet = editingSection === 'Sets';
       const stats = {};
-      
-      if (editingSection === 'Single') {
-        const typeVal = document.getElementById('edit-type').value.trim();
+      if (!isSet) {
+        const typeVal = document.getElementById('edit-type').value;
         if (typeVal) stats.type = typeVal;
       }
-
-      document.querySelectorAll('#edit-stats-list .form-row').forEach(row => {
-        const key = row.querySelector('.stat-key').value.trim();
-        const val = parseFloat(row.querySelector('.stat-val').value) || 0;
-        if (key && key.toLowerCase() !== 'type') stats[key] = val;
+      const tierSections = document.querySelectorAll('.tier-section');
+      const resultData = isSet ? {} : stats;
+      const tiers = isSet ? resultData : (resultData.tiers = {});
+      tierSections.forEach(section => {
+        const tierId = section.dataset.tier;
+        const tierStats = {};
+        section.querySelectorAll('.form-row').forEach(row => {
+          const key = row.querySelector('.stat-key').value.trim();
+          const val = parseFloat(row.querySelector('.stat-val').value) || 0;
+          if (key) tierStats[key] = val;
+        });
+        tiers[tierId] = tierStats;
       });
-
+      if (!isSet && Object.keys(resultData.tiers).length === 1 && resultData.tiers["0"] && resultData.type !== 'Pet' && resultData.type !== 'Engraving') {
+        const baseStats = resultData.tiers["0"];
+        delete resultData.tiers;
+        Object.assign(resultData, baseStats);
+      }
       try {
-        await saveSingleItem(editingKey, newName, stats);
+        if (isSet) await saveSetItem(editingKey, newName, resultData);
+        else await saveSingleItem(editingKey, newName, resultData);
         document.getElementById('modal-edit').classList.add('hidden');
-        document.getElementById('edit-name').disabled = false;
         isEditing = false;
         toast('Saved');
-      } catch (err) {
-        toast('Error saving: ' + err.message, 'err');
-      }
+        renderAll();
+      } catch (err) { toast('Error saving: ' + err.message, 'err'); }
     });
 
     document.getElementById('btn-delete-item').addEventListener('click', async () => {
       if (!confirm(`Delete "${editingKey}"?`)) return;
       try {
-        await deleteSingleItem(editingKey);
+        if (editingSection === 'Sets') await deleteSetItem(editingKey);
+        else await deleteSingleItem(editingKey);
         document.getElementById('modal-edit').classList.add('hidden');
-        document.getElementById('edit-name').disabled = false;
         isEditing = false;
         toast('Deleted');
-      } catch(err) {
-        toast('Error: ' + err.message, 'err');
-      }
+        renderAll();
+      } catch(err) { toast('Error: ' + err.message, 'err'); }
     });
 
-    // --- Set Editor Events ---
-    document.getElementById('btn-add-set-tier').addEventListener('click', () => {
-      const input = document.getElementById('edit-set-new-tier-count');
-      const count = parseInt(input.value);
-      if (!count || count <= 0) return toast('Enter a valid piece count', 'err');
-      const container = document.getElementById('edit-set-tiers');
-      if (container.querySelector(`[data-count="${count}"]`)) return toast('Tier already exists', 'err');
-      addTierSection(container, count, {});
-      input.value = '';
-    });
-
-    document.getElementById('btn-cancel-set-edit').addEventListener('click', () => {
-      document.getElementById('modal-edit-set').classList.add('hidden');
-      isEditing = false;
-    });
-
-    document.getElementById('btn-save-set-edit').addEventListener('click', async () => {
-      const newName = document.getElementById('edit-set-name').value.trim();
-      if (!newName) return toast('Set Name required', 'err');
-
-      const tiers = {};
-      document.querySelectorAll('.set-tier-section').forEach(section => {
-        const count = section.dataset.count;
-        const stats = {};
-        section.querySelectorAll('.form-row').forEach(row => {
-          const key = row.querySelector('.stat-key').value.trim();
-          const val = parseFloat(row.querySelector('.stat-val').value) || 0;
-          if (key) stats[key] = val;
-        });
-        tiers[count] = stats;
-      });
-
-      try {
-        await saveSetItem(editingKey, newName, tiers);
-        document.getElementById('modal-edit-set').classList.add('hidden');
-        isEditing = false;
-        toast('Saved Set');
-      } catch (err) {
-        toast('Error: ' + err.message, 'err');
-      }
-    });
-
-    document.getElementById('btn-delete-set').addEventListener('click', async () => {
-      if (!confirm(`Delete entire set "${editingKey}"?`)) return;
-      try {
-        await deleteSetItem(editingKey);
-        document.getElementById('modal-edit-set').classList.add('hidden');
-        isEditing = false;
-        toast('Set Deleted');
-      } catch (err) {
-        toast('Error: ' + err.message, 'err');
-      }
-    });
-
-    // Close modals on overlay click
     document.querySelectorAll('.modal-bg').forEach(bg => {
       bg.addEventListener('click', (e) => {
         if (e.target === bg) {
           bg.classList.add('hidden');
-          document.getElementById('edit-name').disabled = false;
+          isEditing = false;
         }
       });
     });
 
-    // --- Add Item / Set ---
-    document.getElementById('btn-add-item').addEventListener('click', () => {
-      const name = prompt('New item name:');
-      if (!name || !name.trim()) return;
-      if (!data) data = { Single: {}, Sets: {} };
-      if (!data.Single) data.Single = {};
-      data.Single[name.trim()] = {};
-      openEditor(name.trim(), 'Single');
-      renderAll();
-    });
+    document.getElementById('btn-add-item').addEventListener('click', () => openEditor('', 'Single'));
+    document.getElementById('btn-add-set').addEventListener('click', () => openEditor('', 'Sets'));
 
-    document.getElementById('btn-add-set').addEventListener('click', () => {
-      const name = prompt('Set name:');
-      if (!name || !name.trim()) return;
-      if (!data) data = { Single: {}, Sets: {} };
-      if (!data.Sets) data.Sets = {};
-      if (!data.Sets[name]) data.Sets[name.trim()] = {};
-      openSetEditor(name.trim());
-      renderAll();
-    });
-
-    // --- Raw JSON ---
     document.getElementById('btn-raw').addEventListener('click', () => {
       document.getElementById('raw-json').value = JSON.stringify(data, null, 2);
       document.getElementById('modal-raw').classList.remove('hidden');
     });
-
-    document.getElementById('btn-raw-cancel').addEventListener('click', () => {
-      document.getElementById('modal-raw').classList.add('hidden');
-    });
-
+    document.getElementById('btn-raw-cancel').addEventListener('click', () => document.getElementById('modal-raw').classList.add('hidden'));
     document.getElementById('btn-raw-apply').addEventListener('click', () => {
       try {
         data = JSON.parse(document.getElementById('raw-json').value);
         document.getElementById('modal-raw').classList.add('hidden');
         renderAll();
         toast('JSON applied');
-      } catch (err) {
-        toast('Invalid JSON: ' + err.message, 'err');
-      }
+      } catch (err) { toast('Invalid JSON: ' + err.message, 'err'); }
     });
 
-    // --- Save to Cloud ---
     document.getElementById('btn-save-cloud').addEventListener('click', async () => {
       const btn = document.getElementById('btn-save-cloud');
-      btn.textContent = '⏳ Saving...';
-      btn.disabled = true;
+      btn.textContent = '⏳ Saving...'; btn.disabled = true;
       try {
-        if (data && data.Single && data.Single[""]) {
-          delete data.Single[""];
-        }
-        if (data && data.Sets && data.Sets[""]) {
-          delete data.Sets[""];
-        }
         await saveGameData(data);
         toast('Saved to Firebase Cloud!', 'ok');
-      } catch (err) {
-        toast('Failed to save: ' + err.message, 'err');
-      }
-      btn.textContent = '☁️ Save to Cloud';
-      btn.disabled = false;
+      } catch (err) { toast('Failed to save: ' + err.message, 'err'); }
+      btn.textContent = '☁️ Save to Cloud'; btn.disabled = false;
     });
 
-    // --- Download ---
     document.getElementById('btn-download').addEventListener('click', () => {
       const json = JSON.stringify(data, null, 2);
       const blob = new Blob([json], { type: 'application/json' });
@@ -760,5 +749,7 @@
       toast('Downloaded data.json');
     });
   </script>
+<datalist id="stat-keys-list"><option value="Atk (flat)"><option value="Atk Bonus (%)"><option value="Crit Rate (%)"><option value="Crit Dmg (%)"><option value="Elem Boost (%)"><option value="Elem Dmg (%)"><option value="Dmg Bonus (%)"><option value="Skill DMG (%)"><option value="Dmg Debuff (%)"><option value="DMG to Boss (%)"><option value="Def Reduction (%)"><option value="PDEF Shred (flat)"><option value="Def Break Bonus (%)"><option value="PEN (flat)"><option value="Additional (%)"><option value="Special (%)"><option value="Class DMG Bonus (%)"><option value="Skill Ratio (%)"><option value="Skill DMG Boost (%)"><option value="ASPD (%)"><option value="Cooldown (flat)"><option value="Effect Ratio (%)"><option value="Cooldown Reduction (%)"><option value="Resonance DMG (%)"><option value="Strength (flat)"><option value="Strength Bonus (%)"><option value="Agility (flat)"><option value="Intelligence (flat)"><option value="HP (flat)"><option value="PDEF (flat)"><option value="MDEF (flat)"><option value="Monster Def (flat)"><option value="Resonance Effect I"><option value="Resonance Effect II"><option value="Adaptation"><option value="Transcendence"><option value="Destruction"><option value="Swiftness"><option value="Combo"><option value="Offensive"><option value="Suppress"><option value="Unyielding"><option value="Sprint"><option value="Extraordinary"><option value="Quenching"><option value="Advanced Tech"><option value="Status Break"><option value="Basic"><option value="Pierce"><option value="Siege"><option value="Charge"><option value="Wall Break"><option value="Excellence"><option value="Smite"><option value="Alliance"><option value="Unbreakable"><option value="Adversity"><option value="Fullness"><option value="Air Supremacy"><option value="Elem Master"><option value="Challenger"><option value="Resonance"><option value="Evasion"><option value="Elem Resist"><option value="Recovery"><option value="Solitary"><option value="Lightning Summon"></datalist>
+<datalist id="types-list"><option value="Weapon"><option value="Head"><option value="Armor"><option value="Hand"><option value="Legs"><option value="Shoes"><option value="Necklace"><option value="Bracer"><option value="Ring"><option value="Seal"><option value="Talisman"><option value="Pet"><option value="Card"><option value="Engraving"><option value="Emblem"><option value="Fashion"><option value="Buff"></datalist>
 </body>
 </html>

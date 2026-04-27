@@ -1,111 +1,147 @@
 /**
- * State Manager — Build state with localStorage persistence
- * Replaces Streamlit's st.session_state
- * 
+ * State Manager with localStorage persistence and lightweight subscriptions.
+ *
  * @module state
  */
 
 const STORAGE_KEY = 'coa_calculator_state';
 const SNAPSHOT_KEY = 'coa_calculator_snapshot';
 
-/** @type {Object} */
+/** @type {Record<string, unknown>} */
 let _state = {};
 
+/** @type {Map<string, Set<Function>>} */
+const _keyListeners = new Map();
+
 /** @type {Set<Function>} */
-const _listeners = new Set();
+const _globalListeners = new Set();
 
 /**
- * Initialize state from localStorage or defaults
- * @param {Object} defaults - Default values for all keys
+ * Initialize state from localStorage or defaults.
+ * @param {Record<string, unknown>} defaults
  */
 export function initState(defaults) {
   const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved) {
-    try {
-      _state = { ...defaults, ...JSON.parse(saved) };
-    } catch {
-      _state = { ...defaults };
-    }
-  } else {
+  if (!saved) {
+    _state = { ...defaults };
+    return;
+  }
+
+  try {
+    _state = { ...defaults, ...JSON.parse(saved) };
+  } catch {
     _state = { ...defaults };
   }
 }
 
 /**
- * Get a state value
- * @param {string} key 
- * @returns {*}
+ * Get a single state value.
+ * @param {string} key
+ * @returns {unknown}
  */
 export function getState(key) {
   return _state[key];
 }
 
 /**
- * Set a state value and notify listeners
- * @param {string} key 
- * @param {*} value 
- */
-export function setState(key, value) {
-  _state[key] = value;
-  _persist();
-  _notify();
-}
-
-/**
- * Batch-set multiple values and notify once
- * @param {Object} updates 
- */
-export function setStateBatch(updates) {
-  Object.assign(_state, updates);
-  _persist();
-  _notify();
-}
-
-/**
- * Get all state
- * @returns {Object}
+ * Get a shallow copy of the current state.
+ * @returns {Record<string, unknown>}
  */
 export function getAllState() {
   return { ..._state };
 }
 
 /**
- * Subscribe to state changes
- * @param {Function} listener 
- * @returns {Function} Unsubscribe function
+ * Set a single state value and notify listeners.
+ * @param {string} key
+ * @param {unknown} value
  */
-export function subscribe(listener) {
-  _listeners.add(listener);
-  return () => _listeners.delete(listener);
+export function setState(key, value) {
+  _state[key] = value;
+  _persist();
+  _notify([key]);
 }
 
 /**
- * Save a snapshot for comparison
- * @param {{ finalStatus: Object, burst: number, sustained: number }} snapshot 
+ * Batch-set multiple values and notify listeners once.
+ * @param {Record<string, unknown>} updates
+ */
+export function setStateBatch(updates) {
+  Object.assign(_state, updates);
+  _persist();
+  _notify(Object.keys(updates));
+}
+
+/**
+ * Subscribe to state changes.
+ * Supports either `subscribe(listener)` or `subscribe(key, listener)`.
+ * `key` may also be `*` for all updates.
+ *
+ * @param {string|Function} keyOrListener
+ * @param {Function=} maybeListener
+ * @returns {Function}
+ */
+export function subscribe(keyOrListener, maybeListener) {
+  if (typeof keyOrListener === 'function') {
+    _globalListeners.add(keyOrListener);
+    return () => _globalListeners.delete(keyOrListener);
+  }
+
+  const key = keyOrListener;
+  const listener = maybeListener;
+  if (typeof listener !== 'function') {
+    return () => {};
+  }
+
+  if (key === '*') {
+    _globalListeners.add(listener);
+    return () => _globalListeners.delete(listener);
+  }
+
+  if (!_keyListeners.has(key)) {
+    _keyListeners.set(key, new Set());
+  }
+  const bucket = _keyListeners.get(key);
+  bucket.add(listener);
+  return () => bucket.delete(listener);
+}
+
+/**
+ * Save a build result snapshot for later comparison.
+ * @param {{ finalStatus: Record<string, number>, burst: number, sustained: number } | null} snapshot
  */
 export function saveSnapshot(snapshot) {
+  if (!snapshot) {
+    localStorage.removeItem(SNAPSHOT_KEY);
+    return;
+  }
   localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(snapshot));
 }
 
 /**
- * Get saved snapshot
- * @returns {{ finalStatus: Object, burst: number, sustained: number } | null}
+ * Read the saved snapshot, if any.
+ * @returns {{ finalStatus: Record<string, number>, burst: number, sustained: number } | null}
  */
 export function getSnapshot() {
   const saved = localStorage.getItem(SNAPSHOT_KEY);
-  if (saved) {
-    try { return JSON.parse(saved); } catch { return null; }
+  if (!saved) return null;
+
+  try {
+    return JSON.parse(saved);
+  } catch {
+    return null;
   }
-  return null;
 }
 
-/** Clear snapshot */
+/**
+ * Remove the saved snapshot.
+ */
 export function clearSnapshot() {
   localStorage.removeItem(SNAPSHOT_KEY);
 }
 
 /**
- * Export current build as JSON string
+ * Export the current build JSON.
  * @returns {string}
  */
 export function exportBuild() {
@@ -113,15 +149,19 @@ export function exportBuild() {
 }
 
 /**
- * Import a build from JSON string
- * @param {string} jsonStr 
+ * Import a build from either a JSON string or a plain object.
+ * @param {string|Record<string, unknown>} payload
+ * @returns {boolean}
  */
-export function importBuild(jsonStr) {
+export function importBuild(payload) {
   try {
-    const loaded = JSON.parse(jsonStr);
+    const loaded = typeof payload === 'string' ? JSON.parse(payload) : payload;
+    if (!loaded || typeof loaded !== 'object') {
+      return false;
+    }
     Object.assign(_state, loaded);
     _persist();
-    _notify();
+    _notify(Object.keys(loaded));
     return true;
   } catch {
     return false;
@@ -132,8 +172,33 @@ function _persist() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(_state));
 }
 
-function _notify() {
-  for (const listener of _listeners) {
-    try { listener(_state); } catch (e) { console.error('State listener error:', e); }
+/**
+ * @param {string[]} changedKeys
+ */
+function _notify(changedKeys) {
+  const seen = new Set();
+
+  for (const key of changedKeys) {
+    const listeners = _keyListeners.get(key);
+    if (!listeners) continue;
+
+    for (const listener of listeners) {
+      if (seen.has(listener)) continue;
+      seen.add(listener);
+      try {
+        listener(_state[key], key, { ..._state });
+      } catch (error) {
+        console.error('State listener error:', error);
+      }
+    }
+  }
+
+  for (const listener of _globalListeners) {
+    if (seen.has(listener)) continue;
+    try {
+      listener({ ..._state }, changedKeys);
+    } catch (error) {
+      console.error('State listener error:', error);
+    }
   }
 }

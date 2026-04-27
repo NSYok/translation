@@ -134,7 +134,13 @@ export const DEFAULT_BASE_STATUS = {
  */
 export function runCalculation(equipmentList, manualInputs, gameData) {
   // 1. Initialize base_status
-  const baseStatus = { ...DEFAULT_BASE_STATUS };
+  const config = gameData.Config || {};
+  const defaultBase = config.DefaultBaseStatus || DEFAULT_BASE_STATUS;
+  const baseStatus = { ...defaultBase };
+
+  // Set global constants if provided
+  if (config['Monster Def (flat)'] !== undefined) baseStatus['Monster Def (flat)'] = config['Monster Def (flat)'];
+  if (config['Effect Ratio (%)'] !== undefined) baseStatus['Effect Ratio (%)'] = config['Effect Ratio (%)'];
 
   // Update with user-defined base stats
   if (manualInputs.baseStats) {
@@ -145,9 +151,59 @@ export function runCalculation(equipmentList, manualInputs, gameData) {
 
   // 2. Add stats from all selected equipment
   for (const equipName of equipmentList) {
-    if (equipName && equipName !== 'None' && equipName in gameData.Single) {
-      const itemData = gameData.Single[equipName];
-      addEquipment(baseStatus, itemData);
+    if (!equipName || equipName === 'None') continue;
+
+    let itemData = gameData.Single[equipName];
+    let star = null;
+
+    // Detect Star/State prefix for pets (e.g. "3 StarDragon" or "State 4Dragon")
+    if (!itemData) {
+      const plusMatch = equipName.match(/^\+(\d+)\((.+)\)$/);
+      if (plusMatch) {
+        star = plusMatch[1];
+        const baseName = plusMatch[2].trim();
+        if (baseName in gameData.Single) {
+          itemData = gameData.Single[baseName];
+        }
+      } else {
+        const starMatch = equipName.match(/^(\d)\s*Star\s*(.+)$/i);
+        if (starMatch) {
+          star = starMatch[1];
+          const baseName = starMatch[2];
+          if (baseName in gameData.Single) {
+            itemData = gameData.Single[baseName];
+          }
+        } else {
+          const stateMatch = equipName.match(/^State\s*(\d)\s*(.+)$/i);
+          if (stateMatch) {
+            star = stateMatch[1];
+            const baseName = stateMatch[2].trim();
+            if (baseName in gameData.Single) {
+              itemData = gameData.Single[baseName];
+            }
+          } else {
+            // Detect [Name] [1-3] for engravings (e.g. "Excellence 3")
+            const numMatch = equipName.match(/^(.+)\s+(\d)$/);
+            if (numMatch) {
+              const baseName = numMatch[1].trim();
+              star = numMatch[2];
+              if (baseName in gameData.Single) {
+                itemData = gameData.Single[baseName];
+              }
+            }
+          }
+        }
+      }
+    }
+
+    if (itemData) {
+      // If it's a tiered item (like a Pet), apply specific tier stats
+      if (itemData.tiers) {
+        const tierKey = star || "0";
+        addEquipment(baseStatus, itemData.tiers[tierKey] || {});
+      } else {
+        addEquipment(baseStatus, itemData);
+      }
 
       // Check if item explicitly defines any set points (e.g. multi-sets like Avarice)
       let hasExplicitSet = false;
