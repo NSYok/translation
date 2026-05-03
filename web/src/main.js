@@ -25,6 +25,7 @@ import {
   FASHION_EMBLEMS,
   BUFFS,
   MANUAL_DEFAULTS,
+  ENGRAVING_BOOST_GROUPS,
   generateDefaults,
   ARMOR_SETS,
   ACC_SETS,
@@ -212,7 +213,7 @@ function renderModalOptions(options, current, onPick, searchTerm = '') {
     item.type = 'button';
     item.className = `icon-grid-item${option === current ? ' active' : ''}`;
     item.innerHTML = `
-      <img src="${iconPath(option)}" alt="${escapeHtml(option)}" loading="lazy" onerror="this.style.display='none'">
+      <img src="${iconPath(option)}" alt="${escapeHtml(option)}" loading="lazy" onerror="this.src='/icons/None.png';this.onerror=null;">
       <span>${escapeHtml(option)}</span>
       <small class="item-type">${escapeHtml(itemType)}</small>
     `;
@@ -302,7 +303,7 @@ function createIconSelect(stateKey, label, options, container, helperText = '') 
     const itemType = value && value !== 'None' ? getItemType(value) : 'Empty';
     button.classList.toggle('selected', Boolean(value && value !== 'None'));
     button.innerHTML = `
-      <img src="${iconPath(value)}" alt="${escapeHtml(displayName)}" loading="lazy" onerror="this.style.display='none'">
+      <img src="${iconPath(value)}" alt="${escapeHtml(displayName)}" loading="lazy" onerror="this.src='/icons/None.png';this.onerror=null;">
       <div class="icon-copy">
         <div class="icon-name">${escapeHtml(displayName)}</div>
         <div class="icon-meta">${value && value !== 'None' ? `${escapeHtml(label)} · ${escapeHtml(itemType)}` : 'No item selected'}</div>
@@ -325,11 +326,12 @@ function createIconSelect(stateKey, label, options, container, helperText = '') 
   subscribe(stateKey, render);
 }
 
-function createNumericInput(stateKey, label, container) {
+function createNumericInput(stateKey, label, container, helperText = '') {
   const field = document.createElement('div');
   field.className = 'num-input-group';
   field.innerHTML = `
     <label for="${stateKey}">${escapeHtml(label)}</label>
+    ${helperText ? `<small class="num-helper">${escapeHtml(helperText)}</small>` : ''}
     <input id="${stateKey}" type="number" step="0.1" value="${getState(stateKey)}">
   `;
 
@@ -435,6 +437,13 @@ function collectManualInputs(state) {
   for (const key of Object.keys(MANUAL_DEFAULTS)) {
     manual[key] = state[`manual_${key}`];
     manual.baseStats[key] = state[`manual_${key}`];
+  }
+
+  // Collect class engraving boost fields
+  for (const group of ENGRAVING_BOOST_GROUPS) {
+    for (const field of group.fields) {
+      manual[field.key] = state[`manual_${field.key}`];
+    }
   }
 
   return manual;
@@ -656,6 +665,33 @@ async function init() {
   }
   buffsPanel.appendChild(manualBox);
   tabManual.appendChild(buffsSection);
+
+  // Class Engraving Boosts — grouped by class type
+  const classBoostSection = createSection(
+    'Class Engraving Boosts',
+    'Variable bonuses from class-specific engravings. Enter -1 to disable, or the actual in-game % value.',
+    'engraving-boost-layout'
+  );
+  const classBoostPanel = classBoostSection.querySelector('.engraving-boost-layout');
+
+  for (const group of ENGRAVING_BOOST_GROUPS) {
+    const groupEl = document.createElement('div');
+    groupEl.className = 'engraving-group';
+    groupEl.innerHTML = `
+      <div class="engraving-group-header">
+        <span class="engraving-group-name">${escapeHtml(group.label)}</span>
+        <span class="engraving-group-slots">${escapeHtml(group.slots)}</span>
+      </div>
+      <div class="engraving-group-fields"></div>
+    `;
+    const fieldsContainer = groupEl.querySelector('.engraving-group-fields');
+    for (const field of group.fields) {
+      createNumericInput(`manual_${field.key}`, `Tier ${field.tier}`, fieldsContainer, field.stat);
+    }
+    classBoostPanel.appendChild(groupEl);
+  }
+
+  tabManual.appendChild(classBoostSection);
 
   subscribe('*', updateResults);
   updateResults();

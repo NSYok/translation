@@ -159,14 +159,43 @@ export const MANUAL_DEFAULTS = {
   manStrength: 134,
   manSkillDmg: 8,
   manAtkBonus: 0.0,
-  manCar: 34,
-  boostBufan4: -1.0,
-  boostBufan6: -1.0,
-  boostZhuoyue4: -1.0,
-  boostZhuoyue7: -1.0,
-  boostZhuoyue9: -1.0,
-  boostChaoran9: -1.0,
+  manVehicle: 34,
 };
+
+/**
+ * Class engraving boost groups — variable bonuses that depend on your class.
+ * Each field maps to a specific set tier bonus in calculator.js.
+ * Enter -1 to disable a boost, or the actual in-game % value to apply it.
+ */
+export const ENGRAVING_BOOST_GROUPS = [
+  {
+    key: 'extraordinary',
+    label: 'Extraordinary',
+    slots: 'Breastplate · Pants',
+    fields: [
+      { key: 'boostExtraordinary4', tier: 4, stat: '× Dmg Multiplier (%)', default: -1.0 },
+      { key: 'boostExtraordinary6', tier: 6, stat: '× Dmg Multiplier (%)', default: -1.0 },
+    ],
+  },
+  {
+    key: 'excellence',
+    label: 'Excellence',
+    slots: 'Weapon · Seal · Amulet',
+    fields: [
+      { key: 'boostExcellence4', tier: 4, stat: '× Dmg Multiplier (%)', default: -1.0 },
+      { key: 'boostExcellence7', tier: 7, stat: '+ Dmg Bonus (%)',       default: -1.0 },
+      { key: 'boostExcellence9', tier: 9, stat: '+ Additional (%)',      default: -1.0 },
+    ],
+  },
+  {
+    key: 'transcendence',
+    label: 'Transcendence',
+    slots: 'Helmet · Gloves · Shoes',
+    fields: [
+      { key: 'boostTranscendence9', tier: 9, stat: '× Dmg Multiplier (%)', default: -1.0 },
+    ],
+  },
+];
 
 /**
  * Generate all default state values
@@ -231,6 +260,13 @@ export function generateDefaults() {
   // Manual inputs
   for (const [key, value] of Object.entries(MANUAL_DEFAULTS)) {
     defaults[`manual_${key}`] = value;
+  }
+
+  // Class engraving boost fields
+  for (const group of ENGRAVING_BOOST_GROUPS) {
+    for (const field of group.fields) {
+      defaults[`manual_${field.key}`] = field.default;
+    }
   }
 
   defaults.dataSource = 'firebase';

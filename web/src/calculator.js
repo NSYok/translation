@@ -276,7 +276,7 @@ export function runCalculation(equipmentList, manualInputs, gameData) {
   baseStatus['Strength (flat)'] += manualInputs.manStrength;
   baseStatus['Skill DMG (%)'] += manualInputs.manSkillDmg;
   baseStatus['Atk Bonus (%)'] += manualInputs.manAtkBonus;
-  baseStatus['Car Collection'] = manualInputs.manCar;
+  baseStatus['Vehicle Collection'] = manualInputs.manVehicle;
 
   // 4. Handle set bonuses
   const outfits = outfitCount(baseStatus, gameData.Sets);
@@ -290,18 +290,18 @@ export function runCalculation(equipmentList, manualInputs, gameData) {
       addEquipment(baseStatus, gameData.Sets[setName][count]);
     }
 
-    if (key === 'Extraordinary4' && manualInputs.boostBufan4 > 0) {
-      specialBoost *= 1 + manualInputs.boostBufan4 / 100;
-    } else if (key === 'Extraordinary6' && manualInputs.boostBufan6 > 0) {
-      specialBoost *= 1 + manualInputs.boostBufan6 / 100;
-    } else if (key === 'Excellence4' && manualInputs.boostZhuoyue4 > 0) {
-      specialBoost *= 1 + manualInputs.boostZhuoyue4 / 100;
-    } else if (key === 'Excellence7' && manualInputs.boostZhuoyue7 > 0) {
-      baseStatus['Dmg Bonus (%)'] += manualInputs.boostZhuoyue7;
-    } else if (key === 'Excellence9' && manualInputs.boostZhuoyue9 > 0) {
-      baseStatus['Additional (%)'] += manualInputs.boostZhuoyue9;
-    } else if (key === 'Transcendence9' && manualInputs.boostChaoran9 > 0) {
-      specialBoost *= 1 + manualInputs.boostChaoran9 / 100;
+    if (key === 'Extraordinary4' && manualInputs.boostExtraordinary4 > 0) {
+      specialBoost *= 1 + manualInputs.boostExtraordinary4 / 100;
+    } else if (key === 'Extraordinary6' && manualInputs.boostExtraordinary6 > 0) {
+      specialBoost *= 1 + manualInputs.boostExtraordinary6 / 100;
+    } else if (key === 'Excellence4' && manualInputs.boostExcellence4 > 0) {
+      specialBoost *= 1 + manualInputs.boostExcellence4 / 100;
+    } else if (key === 'Excellence7' && manualInputs.boostExcellence7 > 0) {
+      baseStatus['Dmg Bonus (%)'] += manualInputs.boostExcellence7;
+    } else if (key === 'Excellence9' && manualInputs.boostExcellence9 > 0) {
+      baseStatus['Additional (%)'] += manualInputs.boostExcellence9;
+    } else if (key === 'Transcendence9' && manualInputs.boostTranscendence9 > 0) {
+      specialBoost *= 1 + manualInputs.boostTranscendence9 / 100;
     }
   }
 

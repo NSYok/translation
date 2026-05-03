@@ -434,6 +434,59 @@ button, input, select, textarea { font: inherit; font-feature-settings: var(--ot
   gap: 8px;
 }
 
+/* ─── Class Engraving Boosts ─────────────────────────────────────────── */
+.engraving-boost-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.engraving-group {
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.015);
+  border: 1px solid var(--line-sub);
+  border-radius: var(--r3);
+}
+
+.engraving-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-sub);
+}
+
+.engraving-group-name {
+  font-size: 13px;
+  font-weight: 590;
+  color: var(--t1);
+  letter-spacing: -0.13px;
+  font-feature-settings: var(--ot);
+}
+
+.engraving-group-slots {
+  font-size: 10px;
+  color: var(--t4);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.engraving-group-fields {
+  display: grid;
+  gap: 8px;
+}
+
+.num-helper {
+  display: block;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: -0.08px;
+  margin-bottom: 1px;
+  opacity: 0.8;
+}
+
 .num-input-group { display: grid; gap: 4px; }
 
 .num-input-group label {
