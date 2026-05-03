@@ -486,6 +486,38 @@ function renderSummary(result) {
   renderSnapshotDelta(result);
 }
 
+function renderActiveSets(result) {
+  const container = document.getElementById('active-sets');
+  if (!container) return;
+
+  if (!result.outfits || result.outfits.length === 0) {
+    container.innerHTML = `
+      <div class="stat-row" style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+        <span class="stat-name" style="color: var(--text-dim);">Active Sets</span>
+        <span class="stat-value">None</span>
+      </div>
+    `;
+    return;
+  }
+
+  // Sort outfits: by set name, then tier number
+  const sortedOutfits = [...result.outfits].sort((a, b) => {
+    if (a[0] !== b[0]) return a[0].localeCompare(b[0]);
+    return parseInt(a[1]) - parseInt(b[1]);
+  });
+
+  const setStrings = sortedOutfits.map(o => `${o[0]} ${o[1]}`);
+
+  container.innerHTML = `
+    <div class="stat-row" style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+      <span class="stat-name" style="color: var(--accent-primary);">Active Sets</span>
+      <span class="stat-value" style="font-size: 0.85rem; text-align: right; max-width: 60%; line-height: 1.4;">
+        ${escapeHtml(setStrings.join(', '))}
+      </span>
+    </div>
+  `;
+}
+
 function renderStats(result) {
   const list = document.getElementById('stat-list');
   list.innerHTML = '';
@@ -507,6 +539,7 @@ function updateResults() {
   const state = getAllState();
   latestResult = runCalculation(collectEquipment(state), collectManualInputs(state), gameData);
   renderSummary(latestResult);
+  renderActiveSets(latestResult);
   renderStats(latestResult);
 }
 

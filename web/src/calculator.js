@@ -72,11 +72,30 @@ export function addEquipment(statusDict, equipment) {
 export function outfitCount(status, outfitDict) {
   const outfits = [];
 
+  // Define the crossover pairs (Upgraded -> Base)
+  const crossovers = [
+    { up: 'Demon Heart', base: 'Avarice' },
+    { up: 'Butterfly', base: 'Glimmer' },
+    { up: 'Cursed', base: 'Venom' },
+    { up: 'New Sky', base: 'Old Sky' },
+  ];
+
+  const baseToUp = {};
+  crossovers.forEach(c => baseToUp[c.base] = c.up);
+
   for (const outfitName of Object.keys(outfitDict)) {
-    if (outfitName in status) {
-      for (const num of Object.keys(outfitDict[outfitName])) {
-        if (status[outfitName] >= parseInt(num)) {
-          outfits.push([outfitName, num]);
+    let effectiveCount = status[outfitName] || 0;
+    
+    // Base sets inherit the piece count of their upgraded counterparts
+    if (baseToUp[outfitName]) {
+      effectiveCount += (status[baseToUp[outfitName]] || 0);
+    }
+
+    if (effectiveCount > 0) {
+      for (const numStr of Object.keys(outfitDict[outfitName])) {
+        const num = parseInt(numStr);
+        if (effectiveCount >= num) {
+          outfits.push([outfitName, numStr]);
         }
       }
     }
@@ -85,24 +104,35 @@ export function outfitCount(status, outfitDict) {
   // Set priority overrides (data-driven)
   const overrides = [
     // Black Feather removed when upgraded sets exist
-    { if: ['Avarice', 'Black Feather'], remove: 'Black Feather' },
-    { if: ['Glimmer', 'Black Feather'], remove: 'Black Feather' },
-    { if: ['Venom', 'Black Feather'], remove: 'Black Feather' },
-    // Upgraded set removes base set
-    { if: ['Demon Heart', 'Avarice'], remove: 'Avarice' },
-    { if: ['Butterfly', 'Glimmer'], remove: 'Glimmer' },
-    { if: ['Cursed', 'Venom'], remove: 'Venom' },
+    { if: ['Avarice', 'Black Feather'], remove: 'Black Feather', tierByTier: false },
+    { if: ['Glimmer', 'Black Feather'], remove: 'Black Feather', tierByTier: false },
+    { if: ['Venom', 'Black Feather'], remove: 'Black Feather', tierByTier: false },
+    // Upgraded set removes base set tier-by-tier
+    { if: ['Demon Heart', 'Avarice'], remove: 'Avarice', tierByTier: true },
+    { if: ['Butterfly', 'Glimmer'], remove: 'Glimmer', tierByTier: true },
+    { if: ['Cursed', 'Venom'], remove: 'Venom', tierByTier: true },
     // New Sky supersedes Old Sky
-    { if: ['New Sky', 'Old Sky'], remove: 'Old Sky' },
+    { if: ['New Sky', 'Old Sky'], remove: 'Old Sky', tierByTier: true },
   ];
 
   for (const rule of overrides) {
-    const hasA = outfits.some(o => o[0] === rule.if[0]);
-    if (hasA) {
-      // Remove all tiers of the suppressed set
-      for (let i = outfits.length - 1; i >= 0; i--) {
-        if (outfits[i][0] === rule.remove) {
-          outfits.splice(i, 1);
+    if (rule.tierByTier) {
+      const upTiers = outfits.filter(o => o[0] === rule.if[0]).map(o => o[1]);
+      for (const t of upTiers) {
+        for (let i = outfits.length - 1; i >= 0; i--) {
+          if (outfits[i][0] === rule.remove && outfits[i][1] === t) {
+            outfits.splice(i, 1);
+          }
+        }
+      }
+    } else {
+      const hasA = outfits.some(o => o[0] === rule.if[0]);
+      if (hasA) {
+        // Remove all tiers of the suppressed set
+        for (let i = outfits.length - 1; i >= 0; i--) {
+          if (outfits[i][0] === rule.remove) {
+            outfits.splice(i, 1);
+          }
         }
       }
     }
@@ -326,5 +356,6 @@ export function runCalculation(equipmentList, manualInputs, gameData) {
     finalStatus,
     burst: burst * specialBoost,
     sustained: sustained * specialBoost,
+    outfits
   };
 }
